@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	      <ion-buttons (click)="dismiss() " slot="end">
+         <ion-icon name="close-sharp"></ion-icon>
+        </ion-buttons>
+	<ion-title class="ion-text-center">Your Amount</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+<div amountimg class="ion-text-center">
+<img src="assets/images/mappic6.jpg"/>
+<p>Please enter amount that you would like to donate. Miniumum donation amount is 25 cents.</p>
+</div>
+<div formfield>
+				<label>Your Amount</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Your Amount" ></ion-input>
+				</ion-item>
+</div>
+<ion-button  expand="full" shape="round" class="btn-losns">Confirm</ion-button>
+</ion-content>

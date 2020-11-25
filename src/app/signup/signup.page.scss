@@ -1,0 +1,190 @@
+ion-content[bg-white] {
+	background:var( --ion-color-white);
+	--background:var( --ion-color-white);
+
+	h2.vrt_txt {
+		transform: rotate(-90deg);
+        transform-origin: left;
+        bottom: 0;
+        text-align: left;
+        white-space: nowrap;
+        position: absolute;
+        font-size: 60px;
+        left: 48px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: rgba(239, 160, 7, 0.1);
+        z-index: 1;
+	}
+	.top-img-str {
+		background:url("../../assets/images/krishnadasHaiti.jpg");
+		height:150px;
+		position: relative;
+		background-size: cover;
+		z-index: 0;
+		background-position: center;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: var( --ion-color-black);
+			opacity: 0.35;
+		}
+	}
+	.cont-login {
+		position: relative;
+		padding: 25px;
+		background: var( --ion-color-white);
+		border-radius: 30px;
+		margin-top: -30px;
+		.logo-top-al {
+			width: 110px;
+			height: 110px;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: -70px;
+			background:var( --ion-color-white);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);
+			padding-top: 5px;
+			margin-bottom: 35px;
+			img {
+				width: 56px;
+				height: auto;
+			}
+		}
+		.main-ttl {
+			text-align: center;
+			margin-bottom: 40px;
+			h3 {
+				margin: 0px;
+				font-size: 25px;
+				font-weight: 700;
+				color: #272727;
+			}
+			p {
+				margin: 0px;
+				font-size: 13px;
+				color: #9d9d9d;
+				margin-top: 7px;
+				font-weight: 500;
+				letter-spacing: 0.3px;
+			}
+		}
+		.flds-login{		
+		position: relative;
+		z-index: 1;
+		[formfield] {
+			position: relative;
+			border: 1px solid #e8e8e8;
+			height: 52px;
+			border-radius: 50px;
+			background:var( --ion-color-white);
+			padding: 0 16px;
+			label {
+				position: absolute;
+				top: -10px;
+				z-index: 111;
+				background: var( --ion-color-white);
+				left: 29px;
+				padding: 0 3px;
+				font-size: 12px;
+				font-weight: 700;
+				color: #3a3a3a;
+			}
+			ion-input  {
+				padding: 0px;
+				--padding-start: 0px;
+				--padding-end: 0px;
+				font-size: 14px;
+				--placeholder-color: #9a9a9a;
+				--placeholder-opacity: 1;
+				font-family: 'Poppins', sans-serif !important;
+				color: #222;
+			}
+		}
+		.btn-losns{
+			--background:var( --ion-color-primary);
+			margin-top: 20px;
+			--box-shadow: none;
+            min-height: 48px;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		.warning{
+			color: #c2c2c2;
+			text-align: center;
+			margin: 0 4px;
+			font-size: 13px;
+		}
+		.social_signup{
+			text-align:center;
+			margin-top:40px;
+			[sociallink]
+			{justify-content: center;
+			display:flex;
+			align-items:center;
+			margin-top:10px;
+			ion-buttons
+			{curspor:pointer;
+			 &[facebook]
+			 {
+				width: 40px;
+				height: 40px;
+				background: #3c5a98;
+				color:var(--ion-color-white);
+				border-radius: 50%;
+				text-align: center;
+				justify-content: center;
+				margin-right: 10px;
+			} &[google]
+			 {
+				width: 40px;
+				height: 40px;
+				background: #d2412c;
+				color:var(--ion-color-white);
+				border-radius: 50%;
+				text-align: center;
+				justify-content: center;
+			}
+			}
+			}
+			h5{font-size: 14px;
+				text-align:center;
+				display: inline-block;
+				position:relative;
+				color:#878686;
+				&:after{
+					content: "";
+					display: block;
+					height: 1px;
+					width: 30px;
+					background: #878686;
+					position: absolute;
+					right: -40px;
+					top: 10px;
+				}
+				&:before{
+					content: "";
+					display: block;
+					height: 1px;
+					width: 30px;
+					background: #878686;
+					position: absolute;
+					left: -40px;
+					top: 10px;
+				}
+			}
+		}
+	}
+		
+	}
+}

@@ -1,0 +1,54 @@
+   <ion-header>
+      <ion-toolbar color="primary">
+        <ion-back-button defaultHref="/tabs/profile" slot="start">
+        </ion-back-button>
+        <ion-title class="ion-text-center">Edit Profile</ion-title>
+      </ion-toolbar>
+	  </ion-header>
+
+<ion-content>
+<div profileinfo>
+<div profileimg>
+  <img src="assets/images/paul-feeding.jpg"/>
+  <div userinner>
+  <label for="editphoto" btnedit>
+    <ion-icon name="camera-outline"></ion-icon>
+  </label>
+ <input type="file" id="editphoto"  name="editphoto" style="display:none;"/>
+<img src="assets/images/user2.jpg">
+</div>
+
+</div>
+<div editprofile>
+<div userinfo>
+ <h2>John Smith</h2>
+ <p>johnsmith@gmail.com</p>
+</div>
+<div formfield>
+				<label>First Name</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter First Name" Value="John"></ion-input>
+				</ion-item>
+</div>
+<div formfield>
+				<label>Last Name</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Last Name" Value="Smith"></ion-input>
+				</ion-item>
+</div>
+<div formfield>
+				<label>Email Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Email Address" Value="johnsmith@gmail.com"></ion-input>
+				</ion-item>
+</div>
+<div formfield>
+				<label>Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Address" Value=""></ion-input>
+				</ion-item>
+</div>
+<ion-button  expand="full" shape="round" class="btn-losns">Submit</ion-button>
+</div>
+</div>
+</ion-content>

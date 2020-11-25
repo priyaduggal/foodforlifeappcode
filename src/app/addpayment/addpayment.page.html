@@ -1,0 +1,38 @@
+<ion-header>
+      <ion-toolbar color="primary">
+        <ion-back-button defaultHref="/tabs/settings" slot="start">
+        </ion-back-button>
+        <ion-title class="ion-text-center">Add Payment Method</ion-title>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+<div paymentimg class="ion-text-center">
+<img src="assets/images/addpayment.jpg"/>
+</div>
+<div formfield>
+				<label>Card Holder Name</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Name" ></ion-input>
+				</ion-item>
+</div>
+<div formfield>
+				<label>Card Number</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Card Number" ></ion-input>
+				</ion-item>
+</div>
+<div formfield>
+				<label>Expiration Date</label>
+				<ion-item lines="none" class="fls"> 
+				<ion-datetime displayFormat="MM/DD/YYYY" placeholder="Select Date" display-timezone="utc"></ion-datetime>
+				</ion-item>
+</div>
+<div formfield>
+				<label>CVC</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter CVC" ></ion-input>
+				</ion-item>
+</div>
+<ion-button  expand="full" shape="round" class="btn-losns">Save Payment Method</ion-button>
+
+</ion-content>

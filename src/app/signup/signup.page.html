@@ -1,0 +1,43 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content bg-white>
+	<h2 class="vrt_txt">Sign Up</h2>
+	<div class="top-img-str"></div>
+	<div class="cont-login">		
+		<div class="logo-top-al">
+			<img src="assets/images/logo.png">
+		</div>
+		<div class="main-ttl">
+			<h3> Create an account </h3>
+			<p> Fill Email Address to Signup </p>
+		</div>
+		<div class="flds-login">
+			<div formfield>
+				<label>Email Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter email address"></ion-input>
+				</ion-item>
+			</div>
+			<ion-button routerLink="/otp" expand="full" shape="round" class="btn-losns">Verify</ion-button>
+			<div class="warning">By signing up, you are agreeing to our Privacy and
+				Terms of Use.</div>
+			<div class="social_signup">
+				<h5>Or Sign Up With</h5>
+				<div sociallink>
+				<ion-buttons facebook>
+				<ion-icon name="logo-facebook"></ion-icon>
+				</ion-buttons>
+				<ion-buttons google>
+				<ion-icon name="logo-google"></ion-icon>
+				</ion-buttons>
+			</div>
+			<p>Already have an account? <a href="javascript:void(0)" routerLink="/login">Login Here</a></p>
+			</div>
+		</div>	
+	</div>
+
+</ion-content>

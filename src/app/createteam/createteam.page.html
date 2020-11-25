@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/searchteam" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Create Team</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+<div teamdetail>
+<img src="assets/images/createteam.png"/>
+<div formfield>
+				<label>Create Team</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Team Name" ></ion-input>
+				</ion-item>
+</div>
+	<ion-item  teamcont lines="none">
+		 <ion-thumbnail>
+		 <img src="assets/images/team2.jpg"/>
+		 </ion-thumbnail>
+		 <ion-label>
+		 <h2>#ARRIracing</h2>
+		 <p><span><ion-icon name="heart"></ion-icon>1736</span> <span><ion-icon name="people"></ion-icon>344</span></p>
+		 </ion-label>
+		 <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+		</ion-item>
+</div>
+	<ion-fab  vertical="bottom" horizontal="end" edge size="small" slot="fixed">
+    <ion-fab-button>
+     <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

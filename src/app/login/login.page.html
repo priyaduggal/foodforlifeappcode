@@ -1,0 +1,47 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content bg-white>
+	<h2 class="vrt_txt">Login</h2>
+	<div class="top-img-str"></div>
+	<div class="cont-login">		
+		<div class="logo-top-al">
+			<img src="assets/images/logo.png">
+		</div>
+		<div class="main-ttl">
+			<h3> Login </h3>
+			<p> Fill Email Address to Login </p>
+		</div>
+		<div class="flds-login">
+			<div formfield>
+				<label>Email Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter email address"></ion-input>
+				</ion-item>
+			</div>
+			<div formfield>
+				<label>Password</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter password"></ion-input>
+				</ion-item>
+			</div>
+			<ion-button (click)="login()" expand="full" shape="round" class="btn-losns">Login</ion-button>
+			<div class="social_signup">
+				<h5>Or Sign In With</h5>
+				<div sociallink>
+				<ion-buttons facebook>
+				<ion-icon name="logo-facebook"></ion-icon>
+				</ion-buttons>
+				<ion-buttons google>
+				<ion-icon name="logo-google"></ion-icon>
+				</ion-buttons>
+			</div>
+			<p>Don't have an account? <a href="javascript:void(0)" routerLink="/signup">Sign Up Here</a></p>
+			</div>
+		</div>	
+	</div>
+
+</ion-content>

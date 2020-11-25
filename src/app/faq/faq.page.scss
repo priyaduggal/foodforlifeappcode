@@ -1,0 +1,56 @@
+ion-header
+{
+	
+	  ion-toolbar
+	  {--ion-color-base: var(--ion-color-bggradient)!important;
+	  --border-width: 0;
+	
+		  ion-title{
+		  color:var(--ion-color-white);
+		  text-align:center;
+            font-style: normal;
+            font-family: 'Poppins', sans-serif !important;
+        }
+	}
+	&::after
+	{
+	display:none;
+	}
+}ion-content
+{
+--background: #f7f7f7;
+ [faqlist]
+ {    
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: var(--ion-color-white);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+	[subhead] {
+			margin: 15px 0px 10px  0px;
+			font-size: 16px;
+			position: relative;
+			z-index: 1;
+			padding-left: 7px;
+			&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background: var(--ion-color-softgreen);
+			border-radius: 50%;
+			z-index: -1;
+			/*opacity: 0.5;*/
+			top: -6px;
+		}
+		}
+		p
+		{
+		    font-size: 14px;
+		color: #999;
+		margin-bottom: 10px;
+		}
+}
+
+}

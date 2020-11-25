@@ -1,0 +1,67 @@
+ion-header
+	{
+	  ion-toolbar
+	  {--ion-color-base: var(--ion-color-bggradient)!important;
+	  --border-width: 0;
+	
+		  ion-title{
+		  color:var(--ion-color-white);
+		  text-align:center;
+            font-style: normal;
+            font-family: 'Poppins', sans-serif !important;
+        }
+	}
+	&::after
+	{
+	display:none;
+	}
+	}
+ion-content
+{
+[paymentimg]
+{
+  img
+  {
+    max-width:250px;
+  }
+}
+[formfield] {
+			position: relative;
+			border: 1px solid #e8e8e8;
+			height: 52px;
+			border-radius: 50px;
+			background:var( --ion-color-white);
+			padding: 0 16px;
+			margin-top:20px;
+			label {
+				position: absolute;
+				top: -10px;
+				z-index: 111;
+				background: var( --ion-color-white);
+				left: 29px;
+				padding: 0 3px;
+				font-size: 12px;
+				font-weight: 700;
+				color: #3a3a3a;
+			}
+			ion-input , ion-datetime  {
+				padding: 0px;
+				--padding-start: 0px;
+				--padding-end: 0px;
+				font-size: 14px;
+				--placeholder-color: #9a9a9a;
+				--placeholder-opacity: 1;
+				font-family: 'Poppins', sans-serif !important;
+				color: #222;
+			}
+		}
+		.btn-losns{
+			--background:var( --ion-color-primary);
+			margin-top: 20px;
+			--box-shadow: none;
+            min-height: 48px;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+}

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	      <ion-buttons slot="start">
+          <ion-back-button  defaulHref="/thetable"></ion-back-button>
+        </ion-buttons>
+	<ion-title class="ion-text-center">Subscription Plans</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+<div packimg>
+  <img src="assets/images/sliderimg1.jpg" style="width:100%;"/> 
+</div>
+<div packdetail class="ion-padding">
+<h3>Choose An Amount</h3>
+ 
+ <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide>
+          <div plans>
+			  <img src="assets/images/prj11.jpg"/>
+			  <h4>$180</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+        <ion-slide>
+          <div plans>
+			  <img src="assets/images/prj12.jpg"/>
+			  <h4>$360</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+        <ion-slide>
+          <div plans>
+			  <img src="assets/images/prj13.jpg"/>
+			  <h4>$540</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+		 <ion-slide>
+          <div plans>
+			  <img src="assets/images/prj4.jpg"/>
+			  <h4>$900</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+		<ion-slide>
+          <div plans>
+			  <img src="assets/images/prj11.jpg"/>
+			  <h4>$900</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+		<ion-slide>
+          <div plans>
+		  <ion-icon (click)="presentModal()" name="create-outline"></ion-icon>
+			  <img src="assets/images/prj15.jpg"/>
+			  <h4>Your Choice</h4>
+			  <p>monthly</p>
+		  </div>
+        </ion-slide>
+      </ion-slides>
+<div packcontent>
+<p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>
+<div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
+  <ion-button shape="round" expand="full">Confirm Subscription</ion-button>
+<span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
+</div>
+</div>
+</ion-content>

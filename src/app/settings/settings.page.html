@@ -1,0 +1,172 @@
+   <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+		<ion-buttons routerLink="/signup" slot="end">
+		<ion-icon name="log-out-outline"></ion-icon>
+		</ion-buttons>
+      </ion-toolbar>
+	  </ion-header>
+
+<ion-content class="ion-padding">
+<div settinglist>
+<h2 heading>
+Payment Details
+</h2>
+<p>You Saved Payment Methods</p>
+<ion-button  expand="full" shape="round" routerLink="/addpayment">Add Payment Method</ion-button>
+</div>
+<div settinglist>
+ <ion-item lines="none">
+    <ion-label>Set Reminder</ion-label>
+    <ion-toggle checked="true"></ion-toggle>
+  </ion-item>
+  <h3 subhead>
+How Often
+</h3>
+<ion-radio-group>
+    <ion-item lines="none">
+      <ion-label>Once a day</ion-label>
+      <ion-radio value="day"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Once a week</ion-label>
+      <ion-radio value="week"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Once a month</ion-label>
+      <ion-radio value="month"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+  <h3 subhead>
+At What Time
+</h3>
+<ion-radio-group>
+    <ion-item lines="none">
+      <ion-label>Breakfast(8am)</ion-label>
+      <ion-radio value="day"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Lunch (12pm)</ion-label>
+      <ion-radio value="week"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Dinner (7pm)</ion-label>
+      <ion-radio value="month"></ion-radio>
+    </ion-item>
+</ion-radio-group>
+</div>
+
+<div settinglist>
+ <ion-item lines="none">
+    <ion-label>Push Notifications</ion-label>
+    <ion-toggle checked="true"></ion-toggle>
+  </ion-item>
+ 
+</div>
+<div settinglist>
+<h2 heading>
+Privacy
+</h2>
+<p>Control who can see your activities on FoodForLife</p>
+  <h3 subhead>
+When I Donate
+</h3>
+<ion-radio-group>
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="day"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="week"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="month"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+  <h3 subhead>
+The Number Of Meals I Donate
+</h3>
+<ion-radio-group>
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="day"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="week"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="month"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+  <h3 subhead>
+My Profile
+</h3>
+<ion-radio-group>
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="day"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="week"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="month"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+</div>
+<div settinglist settinglinks>
+    <ion-item lines="none">
+	<ion-icon iconleft name="star-outline" slot="start"></ion-icon>
+      <ion-label>Rate Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   <ion-item lines="none">
+	  <ion-icon iconleft name="call-outline" slot="start"></ion-icon>
+      <ion-label>Contact Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	  <ion-item lines="none" routerLink="/faq">
+	  <ion-icon iconleft name="help-circle-outline" slot="start"></ion-icon>
+      <ion-label>FAQ</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	  <ion-item lines="none" routerLink="/terms">
+		<ion-icon iconleft name="pricetags-outline" slot="start"></ion-icon>
+      <ion-label>Terms Of Use</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   	   <ion-item lines="none" routerLink="/about">
+	  <ion-icon iconleft name="information-circle-outline" slot="start"></ion-icon>
+      <ion-label>About Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   	   <ion-item lines="none" routerLink="/privacy">
+	 	<ion-icon iconleft name="pricetags-outline" slot="start"></ion-icon>
+      <ion-label>Privacy Policy</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+</div>
+</ion-content>

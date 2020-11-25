@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/home" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div detailbanner>
+<img src="assets/images/paul-feeding.jpg"/>
+<h2>Feed Children Around World</h2>
+</div>
+<div detailcontent class="ion-padding">
+<div badge>
+<span>Children</span><span>Food Baskets</span> <span>Covid-19</span>
+</div>
+<h3>50,000 Meals Distributed</h3>
+<h2 heading>
+Overview
+</h2>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<h2 heading>
+Image Gallery
+</h2>
+  <ion-slides slidetable  #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider">
+    <ion-slide  hm-slider>
+      <img src="assets/images/krishnadasHaiti.jpg" style="width:100%;"/>
+    </ion-slide>
+    <ion-slide  hm-slider>
+      <img src="assets/images/sliderimg2.png" style="width:100%;"/>
+    </ion-slide>
+</ion-slides>
+  <ion-button shape="round" expand="full">Give Now</ion-button>
+</div>
+</ion-content>

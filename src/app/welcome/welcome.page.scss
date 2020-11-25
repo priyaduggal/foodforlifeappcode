@@ -1,0 +1,123 @@
+ion-content[bg-white] 
+{
+	background:var(--ion-color-primary);
+	--background:var(--ion-color-primary);
+	.top-img-str 
+	{
+		background: url("../../assets/images/haitikidtasty.jpg");
+		position: relative;
+		background-size: cover;
+		z-index: 0;
+	    padding: 40px 0px;	
+		background-position: center;
+		&:after 
+		{
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: var(--ion-color-primary);
+			opacity: 0.9;    
+			z-index: -1;
+		}
+		&:before 
+		{
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient( transparent, var(--ion-color-primary) 84%);
+			z-index: -1;
+			height: 101px;
+		}		
+		.logo-top-al 
+		{
+			margin: 0 auto;
+			display:block;
+			text-align: center;
+			padding-top: 5px;
+			margin-bottom: 35px;
+			img 
+			{
+				width: 180px;
+				height: auto;
+			}
+		}		
+	}
+	.cont-login 
+	{
+		position: relative;
+		padding: 5px 25px 25px;
+		background: var(--ion-color-primary);
+		border-radius: 0px;
+		margin-top: 0px;
+
+		.main-ttl 
+		{
+			text-align: center;
+			margin-bottom: 40px;
+			h3 {
+				margin: 0px;
+				font-size: 25px;
+				font-weight: 700;
+				color: var(--ion-color-white);
+				position:relative;
+				z-index: 1;				
+				&:after 
+				{
+					content: "";
+					background: var(--ion-color-softgreen);
+					height: 30px;
+					width: 30px;
+					position: absolute;
+					bottom: 1px;
+					transform: rotate(45deg);
+					left: 0px;
+					right: 0px;
+					opacity:0.3;
+					margin: auto;
+					z-index: -1;
+				}				
+			}			
+			p 
+			{
+				margin: 0px;
+				font-size: 13px;
+				color: var( --ion-color-white);
+				margin-top: 7px;
+				font-weight: 500;
+				letter-spacing: 0.3px;
+			}
+		}
+		.flds-login
+		{
+			.btn-losns
+			{
+			   --background:var( --ion-color-white);
+			   color:var(--ion-color-primary);
+				margin-top: 20px;
+				--box-shadow: none;
+				min-height: 48px;
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			.btn-Company
+			{
+				margin-top: 20px;
+				--box-shadow: none;
+				color:var(--ion-color-white);
+				border:2px solid var(--ion-color-white);
+				border-radius:40px;
+				min-height: 48px;
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+		
+	}
+}
