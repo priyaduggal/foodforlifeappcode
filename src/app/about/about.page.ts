@@ -34,7 +34,7 @@ about:any;
 	//this.common.presentToast('FAQ fetched successfully !.','success');
 	}else
 	{
-	this.common.presentToast(res.message,'danger');
+	//this.common.presentToast(res.message,'danger');
 	this.about='';
 	}
 	},

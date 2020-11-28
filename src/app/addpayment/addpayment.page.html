@@ -26,8 +26,8 @@
 <div formfield>
 				<label>Expiration Date</label>
 				<ion-item lines="none" class="fls"> 
-				<ion-datetime displayFormat="MM/DD/YYYY" placeholder="Select Date" display-timezone="utc"
-				 [(ngModel)]="exp_date" name="exp_date" max="2030"></ion-datetime>
+				<ion-datetime displayFormat="MM/YYYY" placeholder="Select Date" display-timezone="utc"
+				 [(ngModel)]="exp_date" name="exp_date" min="2021" max="2030"></ion-datetime>
 				</ion-item>
 				 <span error *ngIf="errors.indexOf(exp_date) >= 0 && is_submit_payment == true">Please enter expiration date</span>
 				

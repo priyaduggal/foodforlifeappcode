@@ -50,10 +50,10 @@ timeout=null;
 		res = result;
 		if(res.status==1){
 		this.teams=res.data;
-		this.common.presentToast('Teams fetched successfully !.','success');
+		//this.common.presentToast('Teams fetched successfully !.','success');
 		}else
 		{
-		this.common.presentToast(res.message,'danger');
+		//this.common.presentToast(res.message,'danger');
 		this.teams=[];
 		}
         },

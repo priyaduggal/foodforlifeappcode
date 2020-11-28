@@ -33,7 +33,7 @@ termlist=[];
 	res = result;
 	if(res.status==1){
 	this.termlist=res.data;
-	this.common.presentToast('Terms of use fetched successfully !.','success');
+	//this.common.presentToast('Terms of use fetched successfully !.','success');
 	}else
 	{
 	this.common.presentToast(res.message,'danger');

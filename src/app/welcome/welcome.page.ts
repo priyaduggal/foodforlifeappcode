@@ -29,7 +29,7 @@ errors:any=['',null,undefined];
 			
 			}else
 			{
-				this.router.navigate(['/home2']);
+				this.router.navigate(['/tabs/home2']);
 			}
 		}
 	   

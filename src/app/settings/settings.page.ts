@@ -21,9 +21,9 @@ my_profile:any;
 errors:any=['',null,undefined];
 public SetRemainder: boolean;
 public PushNotification: boolean;
-  constructor(public api:ApiService, public router:Router,private common: CommonService) {
-this.SetRemainder = false;	  }
-
+constructor(public api:ApiService, public router:Router,private common: CommonService) {
+this.SetRemainder = false;
+}
   ngOnInit() {
   }
   PushNotificationfun(event)
@@ -63,8 +63,8 @@ this.SetRemainder = false;	  }
   }
   logout()
   {
-	   localStorage.clear();
-this.router.navigate(["/"]);
+	localStorage.clear();
+	this.router.navigate(["/"]);
   }
   save()
   {
@@ -97,7 +97,6 @@ this.router.navigate(["/"]);
   this.userid=localStorage.getItem('userid');
   this.listpayment();
   this.getsettings();
-  
   }
   getsettings()
   {

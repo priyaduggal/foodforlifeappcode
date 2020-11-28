@@ -31,10 +31,10 @@ faqlist=[];
 	res = result;
 	if(res.status==1){
 	this.faqlist=res.data;
-	this.common.presentToast('FAQ fetched successfully !.','success');
+	//this.common.presentToast('FAQ fetched successfully !.','success');
 	}else
 	{
-	this.common.presentToast(res.message,'danger');
+	//this.common.presentToast(res.message,'danger');
 	this.faqlist=[];
 	}
 	},
