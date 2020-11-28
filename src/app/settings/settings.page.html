@@ -16,45 +16,51 @@
 Payment Details
 </h2>
 <p>You Saved Payment Methods</p>
+
+<div *ngFor="let pay of paymentlist">
+<p>{{pay?.card_number}} {{pay?.card_holder_name}}</p>
+
+</div>
+
 <ion-button  expand="full" shape="round" routerLink="/addpayment">Add Payment Method</ion-button>
 </div>
 <div settinglist>
  <ion-item lines="none">
     <ion-label>Set Reminder</ion-label>
-    <ion-toggle checked="true"></ion-toggle>
+    <ion-toggle [ngModel]="SetRemainder" (ngModelChange)="notifyAndUpdateIsToggled($event)"></ion-toggle>
   </ion-item>
   <h3 subhead>
 How Often
 </h3>
-<ion-radio-group>
+<ion-radio-group value="{{how_often}}">
     <ion-item lines="none">
       <ion-label>Once a day</ion-label>
-      <ion-radio value="day"></ion-radio>
+      <ion-radio value="day"  (click)="howoften('day')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Once a week</ion-label>
-      <ion-radio value="week"></ion-radio>
+      <ion-radio value="week"   (click)="howoften('week')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Once a month</ion-label>
-      <ion-radio value="month"></ion-radio>
+      <ion-radio value="month"  (click)="howoften('month')"></ion-radio>
     </ion-item>
 </ion-radio-group>	
   <h3 subhead>
 At What Time
 </h3>
-<ion-radio-group>
+<ion-radio-group value="{{what_time}}">
     <ion-item lines="none">
       <ion-label>Breakfast(8am)</ion-label>
-      <ion-radio value="day"></ion-radio>
+      <ion-radio value="day" (click)="whattime('day')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Lunch (12pm)</ion-label>
-      <ion-radio value="week"></ion-radio>
+      <ion-radio value="week"(click)="whattime('week')" ></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Dinner (7pm)</ion-label>
-      <ion-radio value="month"></ion-radio>
+      <ion-radio value="month" (click)="whattime('month')"></ion-radio>
     </ion-item>
 </ion-radio-group>
 </div>
@@ -62,7 +68,7 @@ At What Time
 <div settinglist>
  <ion-item lines="none">
     <ion-label>Push Notifications</ion-label>
-    <ion-toggle checked="true"></ion-toggle>
+    <ion-toggle [ngModel]="PushNotification" (ngModelChange)="PushNotificationfun($event)"></ion-toggle>
   </ion-item>
  
 </div>
@@ -74,53 +80,53 @@ Privacy
   <h3 subhead>
 When I Donate
 </h3>
-<ion-radio-group>
+<ion-radio-group value="{{what_donate}}">
     <ion-item lines="none">
       <ion-label>Everybody</ion-label>
-      <ion-radio value="day"></ion-radio>
+      <ion-radio value="everybody"(click)="whatdonate('everybody')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>My Friends</ion-label>
-      <ion-radio value="week"></ion-radio>
+      <ion-radio value="friends" (click)="whatdonate('friends')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Only Me</ion-label>
-      <ion-radio value="month"></ion-radio>
+      <ion-radio value="onlyme" (click)="whatdonate('onlyme')"></ion-radio>
     </ion-item>
 </ion-radio-group>	
   <h3 subhead>
 The Number Of Meals I Donate
 </h3>
-<ion-radio-group>
+<ion-radio-group value="{{no_meals}}">
     <ion-item lines="none">
       <ion-label>Everybody</ion-label>
-      <ion-radio value="day"></ion-radio>
+      <ion-radio value="everybody" (click)="noofmeals('everybody')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>My Friends</ion-label>
-      <ion-radio value="week"></ion-radio>
+      <ion-radio value="friends"(click)="noofmeals('friends')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Only Me</ion-label>
-      <ion-radio value="month"></ion-radio>
+      <ion-radio value="onlyme" (click)="noofmeals('onlyme')"></ion-radio>
     </ion-item>
 </ion-radio-group>	
 
   <h3 subhead>
 My Profile
 </h3>
-<ion-radio-group>
+<ion-radio-group value="{{my_profile}}">
     <ion-item lines="none">
       <ion-label>Everybody</ion-label>
-      <ion-radio value="day"></ion-radio>
+      <ion-radio value="everybody" (click)="myprofile('everybody')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>My Friends</ion-label>
-      <ion-radio value="week"></ion-radio>
+      <ion-radio value="friends"(click)="myprofile('friends')"></ion-radio>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Only Me</ion-label>
-      <ion-radio value="month"></ion-radio>
+      <ion-radio value="onlyme"(click)="myprofile('onlyme')"></ion-radio>
     </ion-item>
 </ion-radio-group>	
 

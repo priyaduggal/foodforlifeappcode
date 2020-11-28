@@ -2,3 +2,84 @@
 ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span {
 	font-family: 'Poppins', sans-serif !important;
 }
+
+.leaveteam  {
+	 height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jointeamconfirm {
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.popupconfirm
+{
+	    width: 100%;
+    padding: 15px;
+    max-width: 325px;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-wrapper{
+    background: transparent !important;
+}
+.about_us p{
+
+font-size: 14px !important;
+    line-height: 22px !important;
+    font-weight: 300 !important;
+    color: #adadad !important;
+    margin-top: 10px !important;
+	}
+.about_us span.left-rf-boc{
+   font-weight: 500;
+    line-height: 1.2;
+	font-size: 17px;
+}
+.privacy_description p{
+	
+	margin-top: 0px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999;
+    font-weight: 400;
+}
+.privacy_description h4 after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
+}
+.privacy_description ul li {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999;
+    font-weight: 400;
+}
+.privacy_description h4{
+	margin: 15px 0px 10px 0px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+    padding-left: 7px;
+}

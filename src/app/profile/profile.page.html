@@ -15,55 +15,42 @@
 <div profileimg>
   <img src="assets/images/paul-feeding.jpg"/>
   <div userinner>
-  <a btnedit  routerLink="/editprofile">
+  <a btnedit    routerLink="/editprofile" >
      <ion-icon name="create-outline"></ion-icon>
   </a>
+<img src="assets/images/user1.jpg" *ngIf="errors.indexOf(userdetails?.image)>=0">
+<img src="{{IMAGES_URL}}/{{userdetails?.image}}" *ngIf="errors.indexOf(userdetails?.image)==-1">
+ <!--img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == false && is_live_image_updated_profile == false" src="{{IMAGES_URL + userdetails?.image}}">
+ <img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == true  && is_live_image_updated_profile == false" src="{{IMAGES_URL}}/{{userdetails?.image}}">
+ <img *ngIf="image_type == 'profile'  && is_live_image_updated_profile == true" [src]="win.Ionic.WebView.convertFileSrc(live_image_url)">
+ <img *ngIf="errors.indexOf(userdetails?.image) >= 0 && is_live_image_updated_profile == false" src="assets/images/user1.jpg"-->
 
-<img src="assets/images/user1.jpg">
+
 </div>
 </div>
 <div userimg>
 
-<h2>Together We Can End The Hunger</h2>
+<!---h2>Together We Can End The Hunger</h2>
 <p>Sign In or Create an account to kep track of your personal impact</p>
-<a btnaccount  routerLink="/signup" href="javascript:void(0)">Create Account or Login</a>
+<a btnaccount  routerLink="/signup" href="javascript:void(0)">Create Account or Login</a-->
 </div>
 </div>
 <div profileinner>
 <h2 heading>
 Your Donations
 </h2>
-<ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/mappic1.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Help children in India</h3>
-	 <p><b>25 Cents</b> giving to feed childen in india</p>
-	 <ion-note><ion-icon name="calendar-outline"></ion-icon> 12 Aug 2020</ion-note>
-	 </ion-label>
-	</ion-item>
-	<ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/sliderimg1.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Help children in South America</h3>
-	 <p><b>$20</b>  giving to feed childen  in South America</p>
-	 <ion-note><ion-icon name="calendar-outline"></ion-icon> 10 July 2020</ion-note>
-	 </ion-label>
-	</ion-item>
-	<ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/laksminath1.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Feed children around the world</h3>
-	 <p><b>$50</b>  giving to feed childen around the world</p>
-	 <ion-note><ion-icon name="calendar-outline"></ion-icon> 11 June 2020</ion-note>
-	 </ion-label>
-	</ion-item>
-</div>
+		<p *ngIf="donationlist?.length==0">No Record Found..!</p>
+		<ion-item lines="none"  *ngFor="let don of donationlist">
+		<ion-thumbnail>
+		<img src="assets/images/mappic1.jpg"/>
+		</ion-thumbnail>
+		<ion-label>
+		<h3>Help children in India</h3>
+		<p><b>25 Cents</b> giving to feed childen in india</p>
+		<ion-note><ion-icon name="calendar-outline"></ion-icon> 12 Aug 2020</ion-note>
+		</ion-label>
+		</ion-item>
+	</div>
 <div certficate-sec>
      <ion-button href="https://ffl.org/donate/join-the-10-a-month-club/" expand="full" shape="round" class="btn-losns">Get Certificate</ion-button>
 </div>

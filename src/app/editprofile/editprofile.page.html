@@ -11,44 +11,57 @@
 <div profileimg>
   <img src="assets/images/paul-feeding.jpg"/>
   <div userinner>
-  <label for="editphoto" btnedit>
+  <label for="editphoto" btnedit (click)="selectImage('profile')">
     <ion-icon name="camera-outline"></ion-icon>
   </label>
- <input type="file" id="editphoto"  name="editphoto" style="display:none;"/>
-<img src="assets/images/user2.jpg">
+ <!--input type="file" id="editphoto"  name="editphoto" style="display:none;" /-->
+<img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == false && is_live_image_updated_profile == false" src="{{IMAGES_URL + userdetails?.image}}">
+ <img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == true  && is_live_image_updated_profile == false" src="{{IMAGES_URL}}/{{userdetails?.image}}">
+ <img *ngIf="image_type == 'profile'  && is_live_image_updated_profile == true" [src]="win.Ionic.WebView.convertFileSrc(live_image_url)">
+ <img *ngIf="errors.indexOf(userdetails?.image) >= 0 && is_live_image_updated_profile == false" src="assets/images/user1.jpg">
 </div>
 
 </div>
 <div editprofile>
 <div userinfo>
- <h2>John Smith</h2>
- <p>johnsmith@gmail.com</p>
+ <h2 class="name">{{userdetails?.first_name}} {{userdetails?.last_name}}</h2>
+ <p class="email_address">{{userdetails?.email}}</p>
 </div>
 <div formfield>
 				<label>First Name</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter First Name" Value="John"></ion-input>
+					<ion-input placeholder="Enter First Name" value="{{userdetails?.first_name}}"
+					[(ngModel)]="first_name" name="first_name" 
+					></ion-input>
 				</ion-item>
+				<span error *ngIf="errors.indexOf(first_name) >= 0 && is_submit_update== true">Please enter your first name</span>
+				
 </div>
 <div formfield>
 				<label>Last Name</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter Last Name" Value="Smith"></ion-input>
+					<ion-input placeholder="Enter Last Name" value="{{userdetails?.last_name}}"[(ngModel)]="last_name" name="last_name" 
+					></ion-input>
 				</ion-item>
+				<span error *ngIf="errors.indexOf(last_name) >= 0 && is_submit_update== true">Please enter your last name</span>
+				
 </div>
 <div formfield>
 				<label>Email Address</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter Email Address" Value="johnsmith@gmail.com"></ion-input>
+					<ion-input placeholder="Enter Email Address" value="{{userdetails?.email}}"[(ngModel)]="email" name="email" 
+					disabled></ion-input>
 				</ion-item>
+				<span error *ngIf="errors.indexOf(email) >= 0 && is_submit_update== true">Please enter your email address</span>
 </div>
 <div formfield>
 				<label>Address</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter Address" Value=""></ion-input>
+					<ion-input placeholder="Enter Address" value="{{userdetails?.address}}" [(ngModel)]="address" name="address" ></ion-input>
 				</ion-item>
+				<span error *ngIf="errors.indexOf(address) >= 0 && is_submit_update== true">Please enter your address</span>
 </div>
-<ion-button  expand="full" shape="round" class="btn-losns">Submit</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns"(click)="update()">Submit</ion-button>
 </div>
 </div>
 </ion-content>

@@ -19,10 +19,19 @@
 			<div formfield>
 				<label>Email Address</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter email address"></ion-input>
+					<ion-input placeholder="Enter email address"[(ngModel)]="signup_email" name="signup_email"  ></ion-input>
 				</ion-item>
+				<span error *ngIf="errors.indexOf(signup_email) >= 0 && is_submit_register == true">Please enter your email address</span>
+				<span error *ngIf="errors.indexOf(signup_email) == -1 && is_submit_register == true && !reg_exp.test(signup_email.toLowerCase())">Please enter valid email address</span>
 			</div>
-			<ion-button routerLink="/otp" expand="full" shape="round" class="btn-losns">Verify</ion-button>
+			<div formfield style="margin-top:26px;">
+				<label>Password</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input type="password"	placeholder="Enter password"[(ngModel)]="signup_password" name="signup_password"  ></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(signup_password) >= 0 && is_submit_register == true">Please enter your password</span>
+			</div>
+			<ion-button expand="full" shape="round" class="btn-losns" (click)="signup()">Verify</ion-button>
 			<div class="warning">By signing up, you are agreeing to our Privacy and
 				Terms of Use.</div>
 			<div class="social_signup">

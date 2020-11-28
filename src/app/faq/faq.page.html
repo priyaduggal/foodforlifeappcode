@@ -6,29 +6,10 @@
   </ion-toolbar>
   </ion-header>
 <ion-content class="ion-padding">
-<div faqlist>
+<div faqlist *ngFor="let faq of faqlist">
 <h3 subhead>
- What Is FoodForLife
+ {{faq?.title}}
 </h3>
-	<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. </p>
-</div>
-<div faqlist>
-<h3 subhead>
- What does  FoodForLife do ?
-</h3>
-<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
-		<p>Veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni. </p>
-</div>
-<div faqlist>
-<h3 subhead>
-Why Hunger ?
-</h3>
-<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
-</div>
-<div faqlist>
-<h3 subhead>
-How Is Donation used ?
-</h3>
-<p>Veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni. </p>
+	<p>{{faq?.description}}</p>
 </div>
 </ion-content>

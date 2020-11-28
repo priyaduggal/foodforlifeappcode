@@ -19,16 +19,21 @@
 			<div formfield>
 				<label>Email Address</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter email address"></ion-input>
+					<ion-input placeholder="Enter email address" [(ngModel)]="login_email" name="login_email" type="email"></ion-input>
+					
 				</ion-item>
+				<span error *ngIf="errors.indexOf(login_email) >= 0 && is_submit_login == true">Please enter your email address</span>
+				    <span error *ngIf="errors.indexOf(login_email) == -1 && is_submit_login == true && !reg_exp.test(login_email.toLowerCase())">Please enter valid email address</span>
 			</div>
 			<div formfield>
 				<label>Password</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter password"></ion-input>
+					<ion-input placeholder="Enter password" [(ngModel)]="login_password" name="login_password" type="password" ></ion-input>
+				
 				</ion-item>
+					<span error *ngIf="errors.indexOf(login_password) >= 0 && is_submit_login == true">Please enter your password</span>
 			</div>
-			<ion-button (click)="login()" expand="full" shape="round" class="btn-losns">Login</ion-button>
+			<ion-button (click)="login()"  type="submit" expand="full" shape="round" class="btn-losns">Login</ion-button>
 			<div class="social_signup">
 				<h5>Or Sign In With</h5>
 				<div sociallink>

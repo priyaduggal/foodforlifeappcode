@@ -8,7 +8,7 @@
 		  <img src="assets/images/user2.jpg"/>
 		</ion-avatar>
 		<ion-label>
-		<h2>John Smith</h2>
+		<h2>John Smith{{userid}}</h2>
 		<p>johnsmith@gmail.com</p>
 		</ion-label>
 		</ion-item>
@@ -16,7 +16,7 @@
         <ion-list>
     
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+            <ion-item (click)="selectedIndex = i" routerDirection="root"  (click)="logout()" lines="none" detail="false" [class.selected]="selectedIndex == i">
               <!--ion-icon slot="start" name="p.icon + '-outline'"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon-->
               <ion-icon slot="start" [name]="p.icon" ></ion-icon>
               <ion-label>{{ p.title }}</ion-label>

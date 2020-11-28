@@ -38,7 +38,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
- 
+ {
+    path: 'home2',
+    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+  },
   {
     path: 'settings',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
@@ -88,11 +91,11 @@ const routes: Routes = [
     loadChildren: () => import('./searchteam/searchteam.module').then( m => m.SearchteamPageModule)
   },
   {
-    path: 'activitydetail',
+    path: 'activitydetail/:id',
     loadChildren: () => import('./activitydetail/activitydetail.module').then( m => m.ActivitydetailPageModule)
   },
   {
-    path: 'teamdetail',
+    path: 'teamdetail/:id',
     loadChildren: () => import('./teamdetail/teamdetail.module').then( m => m.TeamdetailPageModule)
   },
   {
@@ -111,10 +114,19 @@ const routes: Routes = [
     path: 'donationjar',
     loadChildren: () => import('./donationjar/donationjar.module').then( m => m.DonationjarPageModule)
   },
-  {
-    path: 'home2',
-    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+    {
+    path: 'teamdetails/:id',
+    loadChildren: () => import('./teamdetails/teamdetails.module').then( m => m.TeamdetailsPageModule)
   },
+  {
+    path: 'jointeamconfirm',
+    loadChildren: () => import('./jointeamconfirm/jointeamconfirm.module').then( m => m.JointeamconfirmPageModule)
+  },
+  {
+    path: 'leaveteamconfirm',
+    loadChildren: () => import('./leaveteamconfirm/leaveteamconfirm.module').then( m => m.LeaveteamconfirmPageModule)
+  },
+
 ];
 
 @NgModule({

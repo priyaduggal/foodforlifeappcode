@@ -5,29 +5,51 @@
 	<ion-title class="ion-text-center">Create Team</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
-<div teamdetail>
-<img src="assets/images/createteam.png"/>
-<div formfield>
-				<label>Create Team</label>
-				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter Team Name" ></ion-input>
-				</ion-item>
-</div>
-	<ion-item  teamcont lines="none">
+	<ion-content class="ion-padding">
+	<div teamdetail>
+	<!--img src="assets/images/createteam.png" class="user_image" /--->
+	<img   src="assets/images/createteam.png" *ngIf="is_license_uploaded == false"  class="user_image1">
+								<img *ngIf="is_license_uploaded == true"  [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+								class="user_image1">
+								<!--label for="editprofile1"><i class="fa fa-pencil"></i></label--->
+								<label for="editprofile1" btnedit >
+								<ion-icon name="camera-outline"></ion-icon>
+								</label>
+								<input type="file" (change)="uploadImage($event)" name="editprofile1" id="editprofile1" style="display:none">
+								<span error *ngIf="errors.indexOf(this.license_file) >= 0 && is_submit_team == true">Please select Image</span>
+	
+	
+	<div formfield>
+	<label>Name</label>
+	<ion-item lines="none" class="fls"> 
+	<ion-input placeholder="Enter Team Name" [(ngModel)]="name" name="name" ></ion-input>
+	</ion-item>
+	<span error *ngIf="errors.indexOf(name) >= 0 && is_submit_team == true">Please enter team name</span>
+				
+	</div>
+	<div formfield>
+	<label>Description</label>
+	<ion-item lines="none" class="fls"> 
+	<ion-input placeholder="Enter Description" [(ngModel)]="description" name="description" ></ion-input>
+	</ion-item>
+	<span error *ngIf="errors.indexOf(description) >= 0 && is_submit_team == true">Please enter team description</span>		
+	</div>
+	<p *ngIf="teamlist?.length==0">No records found..!</p>
+	<ion-item  teamcont lines="none" *ngFor="let team of teamlist" >
 		 <ion-thumbnail>
-		 <img src="assets/images/team2.jpg"/>
+		 <img src="assets/images/createteam.png"  *ngIf="errors.indexOf(team?.image)>=0">
+         <img src="{{IMAGES_URL}}/{{team?.image}}"  *ngIf="errors.indexOf(team?.image)==-1">
 		 </ion-thumbnail>
 		 <ion-label>
-		 <h2>#ARRIracing</h2>
-		 <p><span><ion-icon name="heart"></ion-icon>1736</span> <span><ion-icon name="people"></ion-icon>344</span></p>
+		 <h2>{{team?.name}}</h2>
+		 <p><span><ion-icon name="heart"></ion-icon>{{team?.meals}}</span> <span><ion-icon name="people"></ion-icon>{{team?.joins}}</span></p>
 		 </ion-label>
-		 <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+		 <ion-icon name="chevron-forward-outline" slot="end" routerLink="/teamdetail/{{team?.id}}"></ion-icon>
 		</ion-item>
 </div>
-	<ion-fab  vertical="bottom" horizontal="end" edge size="small" slot="fixed">
+	<ion-fab  vertical="bottom" horizontal="end" edge size="small" slot="fixed" (click)="submit();">
     <ion-fab-button>
-     <ion-icon name="checkmark-outline"></ion-icon>
+     <ion-icon name="checkmark-outline" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

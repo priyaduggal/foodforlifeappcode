@@ -65,11 +65,11 @@ ion-content {
 				}
 			}
 			p {
-				font-size: 14px;
-				line-height: 22px;
-				font-weight: 300;
-				color: #adadad;
-				margin-top: 10px;
+					font-size: 14px !important;
+					line-height: 22px !important;
+					font-weight: 300 !important;
+					color: #adadad !important;
+					margin-top: 10px !important;
 			}
 			&:after {
 				content:"";
@@ -102,3 +102,11 @@ ion-content {
 
 }
 }
+.about_us p{
+
+font-size: 14px !important;
+    line-height: 22px !important;
+    font-weight: 300 !important;
+    color: #adadad !important;
+    margin-top: 10px !important;
+	}

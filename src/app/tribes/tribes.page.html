@@ -25,47 +25,12 @@
      <div tribetab [ngSwitch]="tribetab">
 	<ion-list *ngSwitchCase="'projects'">
      <div projects>
-		   <ion-item lines="none">
+	<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" >
 	 <ion-thumbnail>
-	   <img src="assets/images/mappic1.jpg"/>
+	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
 	 </ion-thumbnail>
 	 <ion-label>
-	 <h3>Help children in India</h3>
-	
-	 </ion-label>
-	</ion-item>
-	 <ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/haitikidtasty.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Help children in South Africa</h3>
-	
-	 </ion-label>
-	</ion-item>
-	 <ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/laksminath1.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Feed children around the world</h3>
-	
-	 </ion-label>
-	</ion-item>
-	 <ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/img-food.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Help children in South America</h3>
-	
-	 </ion-label>
-	</ion-item> <ion-item lines="none">
-	 <ion-thumbnail>
-	   <img src="assets/images/SydneyFFL1995.jpg"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3>Help victims of war in Ukraine</h3>
+	 <h3>{{project.title}}</h3>
 	
 	 </ion-label>
 	</ion-item>
@@ -73,58 +38,26 @@
 	</ion-list>
 		<ion-list *ngSwitchCase="'beneficiaries'">
            <div beneficiaries>
-		    <div benimg>
-			  <img src="assets/images/project2.jpeg"/>
-			 <h3>Philip Andrew </h3>
-			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
-			
-			</div>
-			<div benimg>
-			  <img src="assets/images/project4.jpg"/>
-			 <h3>Jimmy Jones</h3>
-			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
-			
+		    <div benimg   *ngFor="let bene of beneficiaries;;let index=index;">
+			  <img src="{{IMAGES_URL}}/{{bene?.image}}"/>
+			 <h3>{{bene?.name}} </h3>
+			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> {{bene?.description}} <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
 			
 			</div>
 			</div>
 		  
 	   </ion-list>
 		<ion-list *ngSwitchCase="'activity'">
-		<div activityimg>
-	   <img routerLink="/activitydetail" src="assets/images/paul-feeding.jpg"/>
+		<div activityimg  *ngFor="let act of activities">
+	   <img routerLink="/activitydetail/{{act?.id}}" src="{{IMAGES_URL}}/{{act?.image}}"/>
 	   <div activitycontent>
-	   <ion-note><ion-icon name="calendar-outline"></ion-icon> 25 Sept</ion-note>
-	   <p  routerLink="/activitydetail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+	   <ion-note><ion-icon name="calendar-outline"></ion-icon> {{act?.created_at | date : 'd MMM'}}</ion-note>
+	   <p  routerLink="/activitydetail/{{act?.id}}">{{act?.description}}</p>
 	      <ion-button shape="round" expand="full">Give Now</ion-button>
 	   </div>
 	   </div>
-	   <div activityimg>
-	   <img  routerLink="/activitydetail" src="assets/images/krishnadasHaiti.jpg"/>
-	   <div activitycontent>
-	   <ion-note><ion-icon name="calendar-outline"></ion-icon> 22 Sept</ion-note>
-	   <p  routerLink="/activitydetail">Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-	    <ion-button shape="round" expand="full">Give Now</ion-button>
-	   </div>
-	   </div>
-	   <div activityimg routerLink="/activitydetail">
-	     <ion-slides slidetable  #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider">
-    
-    <ion-slide  hm-slider>
-      <img src="assets/images/Advaita_pics1-022.jpg" style="width:100%;"/>
-    </ion-slide>
-	 
-    <ion-slide  hm-slider>
-      <img src="assets/images/haitikidtasty.jpg" style="width:100%;"/>
-     
-    </ion-slide>
-</ion-slides>
 	  
-	   <div activitycontent>
-	   <ion-note><ion-icon name="calendar-outline"></ion-icon> 17 Sept</ion-note>
-	   <p  routerLink="/activitydetail">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-	    
-	   </div>
-	   </div>
+	   
 	</ion-list>
 	</div>
 </ion-content>
