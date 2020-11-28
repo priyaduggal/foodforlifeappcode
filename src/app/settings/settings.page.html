@@ -4,7 +4,7 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>Settings</ion-title>
-		<ion-buttons routerLink="/signup" slot="end">
+		<ion-buttons (click)="logout()" slot="end">
 		<ion-icon name="log-out-outline"></ion-icon>
 		</ion-buttons>
       </ion-toolbar>

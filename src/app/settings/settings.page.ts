@@ -61,6 +61,11 @@ this.SetRemainder = false;	  }
 	  this.how_often=type;
 	  this.save();
   }
+  logout()
+  {
+	   localStorage.clear();
+this.router.navigate(["/"]);
+  }
   save()
   {
 		let dict={
