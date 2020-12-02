@@ -1,15 +1,18 @@
-<ion-app>
+<ion-app   >
  <!--ion-split-pane contentId="main-content"-->
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="errors.indexOf(userid)==-1">
       <ion-content>
         <ion-list menutop>
 		<ion-item color="primary" lines="none">
 		<ion-avatar>
-		  <img src="assets/images/user2.jpg"/>
+		  <img src="assets/images/user1.jpg" *ngIf="errors.indexOf(profile_pic)>=0"
+		  src="{{IMAGES_URL}}/{{profile_pic}}"/> 
+		  <img  *ngIf="errors.indexOf(profile_pic)==-1" src="{{IMAGES_URL}}/{{profile_pic}}"/>
+		  
 		</ion-avatar>
 		<ion-label>
-		<h2>John Smith{{userid}}</h2>
-		<p>johnsmith@gmail.com</p>
+		<h2>{{first_name}} {{last_name}}</h2>
+		<p>{{email}}</p>
 		</ion-label>
 		</ion-item>
         </ion-list>
@@ -20,6 +23,23 @@
               <!--ion-icon slot="start" name="p.icon + '-outline'"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon-->
               <ion-icon slot="start" [name]="p.icon" ></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+	
+	
+	 <ion-menu contentId="main-content" type="overlay" *ngIf="errors.indexOf(userid)>=0">
+      <ion-content>
+       
+        <ion-list>
+    
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root"  routerLink="/login" lines="none" detail="false" >
+              <!--ion-icon slot="start" name="p.icon + '-outline'"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon-->
+
+              <ion-label>Login</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

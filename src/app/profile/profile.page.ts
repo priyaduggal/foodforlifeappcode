@@ -205,6 +205,13 @@ IMAGES_URL:any = config.IMAGES_URL;
 	  let dict ={
 		id: this.userid
 		};
+		
+		if(this.errors.indexOf(this.userid)>=0 )
+		{
+
+		this.common.presentToast('Please login first!.','danger');
+		return false;
+		}
 		this.common.presentLoading();
   	 	this.api.post('Userdetails', dict,'').subscribe((result) => {  
 		this.common.stopLoading();

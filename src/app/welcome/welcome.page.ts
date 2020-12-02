@@ -3,7 +3,7 @@ import {ApiService } from '../services/api/api.service';
 import {Router } from '@angular/router';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
-
+import { GlobalFooService } from '../services/globalFooService.service';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.page.html',
@@ -13,7 +13,7 @@ export class WelcomePage implements OnInit {
 type_login:any;
 userid:any;
 errors:any=['',null,undefined];
-  constructor(public api:ApiService, public router:Router,private common: CommonService) { }
+  constructor(private globalFooService: GlobalFooService,public api:ApiService, public router:Router,private common: CommonService) { }
 
   ngOnInit() {
   }
@@ -22,18 +22,8 @@ errors:any=['',null,undefined];
 	    this.userid=localStorage.getItem('userid');
 	    this.type_login=localStorage.getItem('type_login');
 	    if(this.errors.indexOf(this.userid)==-1 && this.errors.indexOf(this.type_login)==-1){
-			
-			if(this.type_login==1)
-			{
 			this.router.navigate(['/tabs/home']);
-			
-			}else
-			{
-				this.router.navigate(['/tabs/home2']);
-			}
 		}
-	   
-		
   }
   login(user)
   {
@@ -43,8 +33,13 @@ errors:any=['',null,undefined];
 	this.router.navigate(['/login']);
   }else
   {
-	 localStorage.setItem('type_login','1'); 
-	 this.router.navigate(['/login']);
+	
+	 this.globalFooService.publishSomeData({
+            	set: {'data': '1'}
+				
+			});
+	 //this.router.navigate(['/login']);
+	this.api.navCtrl.navigateRoot('tabs/home');
   }
   }
 

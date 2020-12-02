@@ -55,24 +55,24 @@ team:any;
   }
   async join_team()
   {
-	  const modal = await this.modalController.create({
-      component: JointeamconfirmPage,
-	  cssClass: 'jointeamconfirm',
-      componentProps: {
-      userid:this.userid,
-      teamid:this.team.id,
-      }
-    });
+		const modal = await this.modalController.create({
+		component: JointeamconfirmPage,
+		cssClass: 'jointeamconfirm',
+		componentProps: {
+		userid:this.userid,
+		teamid:this.team.id,
+		}
+		});
 
- modal.onDidDismiss().then((detail) => {
-	if(this.errors.indexOf(detail.data)==-1)
-	{
-    this.team.joins=this.team.joins + 1;
-	this.getuserteams();
-	}
-    
-   });
-    return await modal.present();
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		this.team.joins=this.team.joins + 1;
+		this.getuserteams();
+		}
+
+		});
+		return await modal.present();
   }
   getuserteams()
   {
@@ -84,45 +84,42 @@ team:any;
 		var res;
 		res = result;
 		if(res.status==1){
-			var array2=[];
-			if(res.data.length>0)
-			{
-			res.data.forEach(function (o) {
-			array2.push(o.teamid);
-			});
-			}
-			this.joined=array2;
+		var array2=[];
+		if(res.data.length>0)
+		{
+		res.data.forEach(function (o) {
+		array2.push(o.teamid);
+		});
+		}
+		this.joined=array2;
 		}else
-        {
-			this.joined=[];
+		{
+		this.joined=[];
 		}
 		},
 		err => {
-             
-        });
+		});
 	  
   }
   getteamdetails()
   {
-	   let dict ={
-       id: this.teamid,
-    };
-	   this.common.presentLoading();
-  	 	this.api.post('teamdetail',dict,'').subscribe((result) => {  
+		let dict ={
+		id: this.teamid,
+		};
+		this.common.presentLoading();
+		this.api.post('teamdetail',dict,'').subscribe((result) => {  
 		this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){
-			this.team=res.data;
-			
+		this.team=res.data;
 		}else
-        {
-			
+		{
 		}
 		},
 		err => {
-             
-        });
+
+		});
 	  
   }
 

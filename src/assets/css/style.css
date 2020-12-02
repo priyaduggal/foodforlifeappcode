@@ -9,6 +9,10 @@ ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span
     align-items: center;
     justify-content: center;
 }
+.resend{
+	font-weight: 500;
+	color:var(--ion-color-primary, #3880ff);
+}
 .jointeamconfirm {
     
     height: 100%;
@@ -17,7 +21,10 @@ ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span
     justify-content: center;
     
 }
-
+.list_pay{
+	padding: 4px;
+    text-align: left;
+}
 .popupconfirm
 {
 	    width: 100%;

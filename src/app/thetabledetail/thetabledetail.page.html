@@ -1,11 +1,17 @@
 <ion-header>
+      <ion-toolbar color="primary">
+        <ion-back-button defaultHref="/tabs/thetable" slot="start">
+        </ion-back-button>
+        <ion-title class="ion-text-center">Subscription Plans</ion-title>
+      </ion-toolbar>
+</ion-header><!--ion-header>
   <ion-toolbar color="primary">
 	      <ion-buttons slot="start">
           <ion-back-button  defaulHref="/thetable"></ion-back-button>
         </ion-buttons>
 	<ion-title class="ion-text-center">Subscription Plans</ion-title>
   </ion-toolbar>
-  </ion-header>
+  </ion-header-->
 
 <ion-content>
 <div packimg>
@@ -15,38 +21,10 @@
 <h3>Choose An Amount</h3>
  
  <ion-slides pager="false" [options]="slideOpts">
-        <ion-slide>
+        <ion-slide  *ngFor="let li of list">
           <div plans>
-			  <img src="assets/images/prj11.jpg"/>
-			  <h4>$180</h4>
-			  <p>monthly</p>
-		  </div>
-        </ion-slide>
-        <ion-slide>
-          <div plans>
-			  <img src="assets/images/prj12.jpg"/>
-			  <h4>$360</h4>
-			  <p>monthly</p>
-		  </div>
-        </ion-slide>
-        <ion-slide>
-          <div plans>
-			  <img src="assets/images/prj13.jpg"/>
-			  <h4>$540</h4>
-			  <p>monthly</p>
-		  </div>
-        </ion-slide>
-		 <ion-slide>
-          <div plans>
-			  <img src="assets/images/prj4.jpg"/>
-			  <h4>$900</h4>
-			  <p>monthly</p>
-		  </div>
-        </ion-slide>
-		<ion-slide>
-          <div plans>
-			  <img src="assets/images/prj11.jpg"/>
-			  <h4>$900</h4>
+			  <img src="{{IMAGES_URL}}/{{li?.image}}"/>
+			  <h4>${{li?.amount}}</h4>
 			  <p>monthly</p>
 		  </div>
         </ion-slide>
@@ -61,6 +39,7 @@
       </ion-slides>
 <div packcontent>
 <p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>
+<div *ngFor="let pay of paymentlist" class="list_pay">{{pay?.card_number}}</div>
 <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
   <ion-button shape="round" expand="full">Confirm Subscription</ion-button>
 <span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>

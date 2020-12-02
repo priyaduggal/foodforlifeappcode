@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService } from '../services/api/api.service';
 import {Router } from '@angular/router';
 import { config } from '../config';
+import { ModalController, 
+  NavParams } from '@ionic/angular';
 import {CommonService} from '../common/common.service';
-
+import { GlobalFooService } from '../services/globalFooService.service';
+import { DeleteconfirmPage } from '../deleteconfirm/deleteconfirm.page';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -21,8 +24,35 @@ my_profile:any;
 errors:any=['',null,undefined];
 public SetRemainder: boolean;
 public PushNotification: boolean;
-constructor(public api:ApiService, public router:Router,private common: CommonService) {
+constructor(public modalController: ModalController,private globalFooService: GlobalFooService,public api:ApiService, public router:Router,private common: CommonService) {
 this.SetRemainder = false;
+this.globalFooService.getObservable().subscribe((data) => {
+	if(this.errors.indexOf(data.set)==-1)
+			{
+				//this.listpayment();
+				this.listpayment();
+				this.getsettings();
+			}
+});
+}
+async delete(id)
+{
+	const modal = await this.modalController.create({
+		component: DeleteconfirmPage,
+		cssClass: 'deleteconfirm',
+		componentProps: {
+		paymentid:id
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		this.listpayment();
+		}
+ });
+    return await modal.present();
+  	
 }
   ngOnInit() {
   }
@@ -68,6 +98,12 @@ this.SetRemainder = false;
   }
   save()
   {
+	  if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
 		let dict={
 		userid:this.userid,
 		set_remainder:this.SetRemainder,
@@ -82,7 +118,7 @@ this.SetRemainder = false;
 		var res;
 		res = result;
 		if(res.status==1){
-			this.common.presentToast(res.message,'success');
+			//this.common.presentToast(res.message,'success');
 		}else
 		{
 			this.common.presentToast(res.message,'danger');
@@ -100,6 +136,12 @@ this.SetRemainder = false;
   }
   getsettings()
   {
+	   if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
 		let dict ={
 		userid: this.userid,
 		};
@@ -130,6 +172,12 @@ this.SetRemainder = false;
   }
   listpayment()
   {
+	  if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
 		let dict ={
 		userid: this.userid,
 		};

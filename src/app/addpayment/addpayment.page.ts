@@ -3,7 +3,7 @@ import {ApiService } from '../services/api/api.service';
 import {ActivatedRoute,Router } from '@angular/router';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
-
+import { GlobalFooService } from '../services/globalFooService.service';
 @Component({
   selector: 'app-addpayment',
   templateUrl: './addpayment.page.html',
@@ -17,7 +17,7 @@ cvc:any;
 card_number:any;
 exp_date:any;
 errors:any=['',null,undefined];
-  constructor(public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {}
+  constructor(private globalFooService: GlobalFooService,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {}
 
   ngOnInit() {
   }
@@ -31,6 +31,12 @@ errors:any=['',null,undefined];
     if(this.errors.indexOf(this.name) >= 0 ||  this.errors.indexOf(this.card_number) >= 0 ||  this.errors.indexOf(this.cvc) >= 0 ||  this.errors.indexOf(this.exp_date) >= 0){
       return false;
     }
+	if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
 	  let dict ={
       name: this.name,
       card_number: this.card_number,
@@ -49,7 +55,12 @@ errors:any=['',null,undefined];
 				this.exp_date = '';
 				this.cvc = '';
 				this.common.presentToast('Added Successfully !.','success');
-				this.router.navigate(['/tabs/settings']);
+				this.globalFooService.publishSomeData({
+            	set: {'data': res.status}
+				
+			    });
+				this.api.navCtrl.navigateRoot('/tabs/settings');
+				//this.router.navigate(['/tabs/settings']);
 		}else
 		{
 		this.common.presentToast(res.message,'danger');

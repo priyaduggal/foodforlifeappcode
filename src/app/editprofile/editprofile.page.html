@@ -11,14 +11,18 @@
 <div profileimg>
   <img src="assets/images/paul-feeding.jpg"/>
   <div userinner>
-  <label for="editphoto" btnedit (click)="selectImage('profile')">
+  <label for="editphoto" btnedit >
     <ion-icon name="camera-outline"></ion-icon>
   </label>
- <!--input type="file" id="editphoto"  name="editphoto" style="display:none;" /-->
-<img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == false && is_live_image_updated_profile == false" src="{{IMAGES_URL + userdetails?.image}}">
+  <img   src="assets/images/user1.jpg" *ngIf="is_license_uploaded == false && errors.indexOf(userdetails?.image) >= 0"  class="user_image1">
+   <img   src="{{IMAGES_URL}}/{{userdetails?.image}}" *ngIf="errors.indexOf(userdetails?.image) == -1"  class="user_image1">
+  <img *ngIf="is_license_uploaded == true"  [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+								class="user_image1">
+ <input type="file" id="editphoto" (change)="uploadImage($event)"  name="editphoto" style="display:none;" />
+<!--img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == false && is_live_image_updated_profile == false" src="{{IMAGES_URL + userdetails?.image}}">
  <img *ngIf="errors.indexOf(userdetails?.image) == -1 && getimage(userdetails?.image) == true  && is_live_image_updated_profile == false" src="{{IMAGES_URL}}/{{userdetails?.image}}">
  <img *ngIf="image_type == 'profile'  && is_live_image_updated_profile == true" [src]="win.Ionic.WebView.convertFileSrc(live_image_url)">
- <img *ngIf="errors.indexOf(userdetails?.image) >= 0 && is_live_image_updated_profile == false" src="assets/images/user1.jpg">
+ <img *ngIf="errors.indexOf(userdetails?.image) >= 0 && is_live_image_updated_profile == false" src="assets/images/user1.jpg"-->
 </div>
 
 </div>

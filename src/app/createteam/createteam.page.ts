@@ -83,6 +83,13 @@ description:any;
     if(this.errors.indexOf(this.license_file)>=0 || this.errors.indexOf(this.name) >= 0 || this.errors.indexOf(this.description) >= 0){
       return false;
     }
+	
+	if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
 	this.common.presentLoading();
 	const frmData = new FormData();  
 	frmData.append("image", this.license_file);	

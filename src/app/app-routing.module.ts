@@ -83,7 +83,7 @@ const routes: Routes = [
     loadChildren: () => import('./thetable/thetable.module').then( m => m.ThetablePageModule)
   },
   {
-    path: 'charitydetail',
+    path: 'charitydetail/:id',
     loadChildren: () => import('./charitydetail/charitydetail.module').then( m => m.CharitydetailPageModule)
   },
   {
@@ -125,6 +125,14 @@ const routes: Routes = [
   {
     path: 'leaveteamconfirm',
     loadChildren: () => import('./leaveteamconfirm/leaveteamconfirm.module').then( m => m.LeaveteamconfirmPageModule)
+  },
+  {
+    path: 'edit_payment/:id',
+    loadChildren: () => import('./edit-payment/edit-payment.module').then( m => m.EditPaymentPageModule)
+  },
+  {
+    path: 'deleteconfirm',
+    loadChildren: () => import('./deleteconfirm/deleteconfirm.module').then( m => m.DeleteconfirmPageModule)
   },
 
 ];

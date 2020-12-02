@@ -19,6 +19,14 @@ Payment Details
 
 <div *ngFor="let pay of paymentlist">
 <p>{{pay?.card_number}} {{pay?.card_holder_name}}</p>
+<ion-buttons   edit-btn routerLink="/edit_payment/{{pay?.id}}">
+<ion-icon name="pencil-outline"></ion-icon>
+</ion-buttons>
+
+<ion-buttons   edit-btn (click)="delete(pay?.id)">
+<ion-icon name="trash-outline"></ion-icon>
+</ion-buttons>
+
 
 </div>
 

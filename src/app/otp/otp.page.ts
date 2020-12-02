@@ -23,6 +23,30 @@ errors:any=['',null,undefined];
 
   ngOnInit() {
   }
+  resend()
+  {
+	  let dict ={
+		otpid: this.otpid,
+		userid:this.signup_data,
+		};
+		this.common.presentLoading();
+  	 	this.api.post('resendemail', dict,'').subscribe((result) => {  
+		this.common.stopLoading();
+		var res;
+		res = result;
+		if(res.status==1){
+			localStorage.setItem('otp_verify',res.otp);
+		
+		this.common.presentToast(res.message,'success');
+		}else
+		{
+		this.common.presentToast(res.message,'danger');
+		}
+        },
+        err => {
+             
+        });
+  }
   test(event)
   {
 	  $('#two').focus();
@@ -46,6 +70,7 @@ errors:any=['',null,undefined];
   }
   verify()
   {
+	   this.otpid=localStorage.getItem('otp_verify');
     if(this.errors.indexOf(this.input1) >= 0 ||this.errors.indexOf(this.input2) >= 0 ||this.errors.indexOf(this.input3) >= 0 ||this.errors.indexOf(this.input4) >= 0 ){
 		this.common.presentToast('Please enter 4 digit OTP!.','danger');
       return false;
@@ -73,15 +98,7 @@ errors:any=['',null,undefined];
 			localStorage.setItem('food_last_name',res.data.last_name);
 			localStorage.setItem('food_email',res.data.email);
 			localStorage.setItem('food_type',res.data.type);
-		if(this.type_login==1)
-		{
-
 		this.router.navigate(['/tabs/home']);
-		}else
-		{
-		
-		this.router.navigate(['/tabs/home2']);		
-		}
 		this.common.presentToast(res.message,'success');
 		}else
 		{
@@ -91,9 +108,6 @@ errors:any=['',null,undefined];
         err => {
              
         });
-		
-		
-		
 	}
   }
   

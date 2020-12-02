@@ -26,25 +26,25 @@ export class ActivitydetailPage implements OnInit {
   }
   getactivitydetails()
   {
-	   let dict ={
-      id: this.activityid,
-    };
-	   this.common.presentLoading();
-  	 	this.api.post('activitydetail', dict,'').subscribe((result) => {  
+		let dict ={
+		id: this.activityid,
+		};
+		this.common.presentLoading();
+		this.api.post('activitydetail', dict,'').subscribe((result) => {  
 		this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){
-			this.activity=res.data;
-			
+		this.activity=res.data;
+
 		}else
-        {
-			
+		{
+
 		}
 		},
 		err => {
-             
-        });
+
+		});
   }
   
   

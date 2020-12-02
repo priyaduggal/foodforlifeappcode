@@ -9,7 +9,8 @@ import { File, FileEntry } from '@ionic-native/file/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
-
+import { FileUploader } from 'ng2-file-upload';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-editprofile',
   templateUrl: './editprofile.page.html',
@@ -37,6 +38,12 @@ first_name:any;
 last_name:any;
 email:any;
 address:any;
+allowedMimes:any = ['image/png', 'image/jpg', 'image/jpeg'];
+license_error:boolean=false;
+license_file:any;
+is_license_uploaded:boolean=false;
+license_image_url:any;
+public uploader:FileUploader = new FileUploader({url: ''});
   constructor(public api:ApiService,
   public router:Router,
   private common: CommonService,
@@ -82,6 +89,25 @@ address:any;
 	    });
 	    await actionSheet.present();
 	 }
+	 uploadImage(event){
+    this.license_error = false;
+    var self = this;
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      var image_file = event.target.files[0];
+      if(self.allowedMimes.indexOf(image_file.type) == -1){
+      this.license_error = true;
+      this.common.presentToast('This format is not allowed !.','danger');
+      }
+      else{
+        self.license_file = image_file;
+        self.license_image_url = window.URL.createObjectURL(image_file);
+        $('.user_image1').attr('src',self.license_image_url);
+		
+     
+      }
+    }
+  }
 	 takePicture(sourceType: PictureSourceType, type) {
 	    
 	    var options: CameraOptions = {
@@ -210,6 +236,13 @@ address:any;
 	  let dict ={
 		id: this.userid
 		};
+		
+		if(this.errors.indexOf(this.userid)>=0 )
+		{
+		this.common.presentToast('Please login first!.','danger');
+		return false;
+		}
+		
 		this.common.presentLoading();
   	 	this.api.post('Userdetails', dict,'').subscribe((result) => {  
 		this.common.stopLoading();
@@ -236,16 +269,25 @@ address:any;
     if(this.errors.indexOf(this.first_name) >= 0 ||  this.errors.indexOf(this.last_name) >= 0 ||  this.errors.indexOf(this.email) >= 0 ||  this.errors.indexOf(this.address) >= 0){
       return false;
     }
-	 let dict ={
-      first_name: this.first_name,
-      last_name: this.last_name,
-	  email:this.email,
-	  address:this.address,
-	  id:this.userid,
-    };
+	if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
+	const frmData = new FormData();
+	if(this.errors.indexOf(this.license_file)==-1)
+	{
+	frmData.append("image", this.license_file);	
+	}
+	frmData.append("first_name", this.first_name);
+	frmData.append("last_name",this.last_name);
+	frmData.append("email",this.email);
+	frmData.append("address",this.address);
+	frmData.append("id",this.userid);
 	
 	this.common.presentLoading();
-		this.api.post('updateUserDetails', dict,'').subscribe((result) => {  
+		this.api.post('updateUserDetails',frmData,'').subscribe((result) => {  
 		this.is_submit_update = false;
 		this.common.stopLoading();
 		var res;

@@ -15,9 +15,12 @@ import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { JointeamconfirmPage } from './jointeamconfirm/jointeamconfirm.page';
 import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
+import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 @NgModule({
-  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage],
-  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage],
+  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage],
+  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -32,6 +35,8 @@ import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
     File,
     FilePath,
     FileTransfer,
+	Facebook,
+    GooglePlus, 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

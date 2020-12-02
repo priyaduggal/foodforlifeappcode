@@ -30,9 +30,9 @@
 </div>
 <div userimg>
 
-<!---h2>Together We Can End The Hunger</h2>
-<p>Sign In or Create an account to kep track of your personal impact</p>
-<a btnaccount  routerLink="/signup" href="javascript:void(0)">Create Account or Login</a-->
+<h2 *ngIf="errors.indexOf(userid)>=0">Together We Can End The Hunger</h2>
+<p *ngIf="errors.indexOf(userid)>=0">Sign In or Create an account to kep track of your personal impact</p>
+<a btnaccount  routerLink="/signup" href="javascript:void(0)"*ngIf="errors.indexOf(userid)>=0">Create Account or Login</a>
 </div>
 </div>
 <div profileinner>
