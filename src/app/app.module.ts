@@ -14,13 +14,14 @@ import { File } from '@ionic-native/file/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { JointeamconfirmPage } from './jointeamconfirm/jointeamconfirm.page';
+import { PaymentlistmodalPage } from './paymentlistmodal/paymentlistmodal.page';
 import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
 import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 @NgModule({
-  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage],
-  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage],
+  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage],
+  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

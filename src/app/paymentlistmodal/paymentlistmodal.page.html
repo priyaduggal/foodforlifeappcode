@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	      <ion-buttons (click)="dismiss() " slot="end">
+         <ion-icon name="close-sharp"></ion-icon>
+        </ion-buttons>
+	<ion-title class="ion-text-center">Payment Method</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+<div amountimg class="ion-text-center">
+<img src="assets/images/mappic6.jpg"/>
+<p>Please choose payment method or add new card</p>
+<p *ngIf="paymentlist.length==0">No records found</p>
+
+<ion-radio-group value=""class="radiobox">
+    <ion-item lines="none" *ngFor="let pay of paymentlist">
+      <ion-label>{{pay?.card_number}}</ion-label>
+      <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+<ion-button  expand="full" shape="round" class="btn-losns add_new_card_btn" (click)="confirm();">Add new card</ion-button>
+</div>
+<div class="add_payment" style="display:none">
+<div formfield>
+				<label>Card Holder Name</label>
+				
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Name" [(ngModel)]="name" name="name" 
+					(keyup)="search_keyword($event);" class="namee"></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(name) >= 0 && is_submit_payment == true">Please enter card holder name</span>
+</div>
+<div formfield>
+				<label>Card Number</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Card Number" class="card_numberr" (keyup)="search_keyword($event);"[(ngModel)]="card_number" name="card_number"></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(card_number) >= 0 && is_submit_payment == true">Please enter card number</span>
+</div>
+<div formfield>
+				<label>Expiration Date</label>
+				<ion-item lines="none" class="fls"> 
+				<ion-datetime displayFormat="MM/YYYY" (keyup)="search_keyword($event);" placeholder="Select Date" display-timezone="utc"
+				 [(ngModel)]="exp_date" name="exp_date" min="2021" max="2030" class="exp_datee" ></ion-datetime>
+				</ion-item>
+				 <span error *ngIf="errors.indexOf(exp_date) >= 0 && is_submit_payment == true">Please enter expiration date</span>
+				
+</div>
+<div formfield>
+				<label>CVC</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter CVC"  class="cvcc"(keyup)="search_keyword($event);" [(ngModel)]="cvc" name="cvc"></ion-input>
+				</ion-item>
+				 <span error *ngIf="errors.indexOf(cvc) >= 0 && is_submit_payment == true">Please enter cvc</span>
+			
+</div>
+
+</div><!--ion-button  expand="full" shape="round" class="btn-losns" (click)="addcard()">Save Payment Method</ion-button-->
+
+<!--div formfield>
+				<label>Your Amount</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Your Amount" id="amount" (keyup)="search_keyword($event);"></ion-input>
+				</ion-item>
+				<p style="padding-top: 5px;
+    margin: 0px;
+    font-size: 12px;
+    padding-left: 12px;"><span class="no_meals">0</span> meals</p>
+</div-->
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="pay();">Pay</ion-button>
+</ion-content>

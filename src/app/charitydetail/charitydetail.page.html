@@ -27,6 +27,6 @@ Image Gallery
       <img src="{{IMAGES_URL}}/{{image?.image}}" style="width:100%;"/>
     </ion-slide>
 </ion-slides>
-<ion-button shape="round" expand="full">Give Now</ion-button>
+<ion-button shape="round" expand="full" (click)="give(charity?.id)">Give Now</ion-button>
 </div>
 </ion-content>

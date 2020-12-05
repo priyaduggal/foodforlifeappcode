@@ -3,7 +3,8 @@ import {ApiService } from '../services/api/api.service';
 import {ActivatedRoute,Router } from '@angular/router';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
-
+import { AddamountPage } from '../addamount/addamount.page';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-charitydetail',
   templateUrl: './charitydetail.page.html',
@@ -15,12 +16,31 @@ charity:any;
 IMAGES_URL:any = config.IMAGES_URL;
 images:any;
 tags:any;
-constructor(public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
+constructor(public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
 this.charityid = activatedRoute.snapshot.paramMap.get('id');
 }
 
   ngOnInit() {
   }
+  async give(id)
+   {
+	   const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		id:id,
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		//this.team.joins=this.team.joins - 1;
+		//this.getuserteams();
+		}
+ });
+    return await modal.present();
+   }
   
    ionViewDidEnter()
   {

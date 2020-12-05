@@ -134,6 +134,10 @@ const routes: Routes = [
     path: 'deleteconfirm',
     loadChildren: () => import('./deleteconfirm/deleteconfirm.module').then( m => m.DeleteconfirmPageModule)
   },
+  {
+    path: 'paymentlistmodal',
+    loadChildren: () => import('./paymentlistmodal/paymentlistmodal.module').then( m => m.PaymentlistmodalPageModule)
+  },
 
 ];
 

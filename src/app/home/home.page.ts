@@ -6,6 +6,7 @@ import { DonationjarPage } from '../donationjar/donationjar.page';
 import {CommonService} from '../common/common.service';
 import {ApiService } from '../services/api/api.service';
 import { config } from '../config';
+import { AddamountPage } from '../addamount/addamount.page';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -40,28 +41,42 @@ autoplay: true
 			
         });
    }
+   async give(id)
+   {
+	   const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		id:id,
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		//this.team.joins=this.team.joins - 1;
+		//this.getuserteams();
+		}
+ });
+    return await modal.present();
+   }
   ngOnInit() {
    }
   ionViewDidEnter()
    {
 	this.userid=localStorage.getItem('userid');
 	this.type_login=localStorage.getItem('type_login');
-	//alert();
 	this.Charitylist();
    }
    Charitylist()
    {
-	   // this.common.presentLoading();
   	 	this.api.post('charitylist','','').subscribe((result) => {  
-		//this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){
-			this.list=res.data;	
-		 
+		this.list=res.data;	
 		}else
 		{
-		//this.common.presentToast(res.message,'danger');
 		}
         },
         err => {

@@ -77,7 +77,7 @@
         <p>{{charity?.description}}</p>
 		<ion-row>
 		<ion-col size="6">
-        <ion-button shape="round">Give Now</ion-button>
+        <ion-button shape="round" (click)="give(charity?.id)">Give Now</ion-button>
 		</ion-col>
 		<ion-col size="6">
 		<p class="ion-text-right"><b>{{charity?.meals}} Meals</b></p>
