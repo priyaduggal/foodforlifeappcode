@@ -41,6 +41,24 @@ autoplay: true
 			
         });
    }
+   async give_in()
+   {
+			const modal = await this.modalController.create({
+			component: AddamountPage,
+			cssClass: 'leaveteam',
+			componentProps: {
+			}
+			});
+
+			modal.onDidDismiss().then((detail) => {
+			if(this.errors.indexOf(detail.data)==-1)
+			{
+			//this.team.joins=this.team.joins - 1;
+			//this.getuserteams();
+			}
+ });
+    return await modal.present();
+   }
    async give(id)
    {
 	   const modal = await this.modalController.create({
@@ -70,7 +88,7 @@ autoplay: true
    }
    Charitylist()
    {
-  	 	this.api.post('charitylist','','').subscribe((result) => {  
+  	 	this.api.post('tribesProject', '','').subscribe((result) => {  
 		var res;
 		res = result;
 		if(res.status==1){

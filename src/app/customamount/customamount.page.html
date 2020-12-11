@@ -18,22 +18,14 @@
 <div formfield>
 				<label>Your Amount</label>
 				<ion-item lines="none" class="fls"> 
-					<ion-input placeholder="Enter Your Amount" id="amount" (keyup)="search_keyword($event);"></ion-input>
+					<ion-input placeholder="Enter Your Amount" id="amount1" (keyup)="search_keyword($event);"></ion-input>
 				</ion-item>
 				<p style="padding-top: 5px;
     margin: 0px;
     font-size: 12px;
     padding-left: 12px;"><span class="no_meals">0</span> meals</p>
 </div>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="confirm();"
-*ngIf="errors.indexOf(charityid)==-1">Confirm</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="confirm();">Confirm</ion-button>
 
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="confirm_in();"
-*ngIf="errors.indexOf(charityid)>=0 && errors.indexOf(actid)>=0  && errors.indexOf(teamid)>=0  " >Confirm</ion-button>
 
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="confirm_act();"
-*ngIf="errors.indexOf(actid)==-1">Confirm</ion-button>
-
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="confirm_team();"
-*ngIf="errors.indexOf(teamid)==-1">Confirm</ion-button>
 </ion-content>

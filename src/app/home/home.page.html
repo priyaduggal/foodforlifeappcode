@@ -22,7 +22,7 @@
       <div class="sld_cnt">
         <div>
         <h3 routerLink="/charitydetail/{{charity?.id}}">{{charity?.title}}</h3>
-        <p>{{charity?.description}}</p>
+        <p>{{charity?.description.substring(0,100)}}...</p>
 		<ion-row>
 		<!--><ion-col size="6">
         <ion-button shape="round">Give Now</ion-button>
@@ -46,9 +46,11 @@
 	  <div donationimg>
 	   <img src="assets/images/donationjar1.png"/>
 	  </div>
-     <p>Please press button below to donate 25 cents</p>
-<ion-button  expand="full" shape="round" class="btn-losns">Give Now</ion-button>
-<span>To Donate More <a href="javasctipt:void(0)">Click Here</a> </span>     
+     <!--p>Please press button below to donate 25 cents</p-->
+     <p>Click here to feed a child</p>
+	 
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
     </div>
   </ion-col>
 </ion-row>
@@ -74,7 +76,7 @@
       <div class="sld_cnt">
         <div>
         <h3 routerLink="/charitydetail/{{charity?.id}}">{{charity?.title}}</h3>
-        <p>{{charity?.description}}</p>
+        <p>{{substring(charity?.description,20)}}</p>
 		<ion-row>
 		<ion-col size="6">
         <ion-button shape="round" (click)="give(charity?.id)">Give Now</ion-button>

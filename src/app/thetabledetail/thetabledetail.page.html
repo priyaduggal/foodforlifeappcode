@@ -20,28 +20,39 @@
 <div packdetail class="ion-padding">
 <h3>Choose An Amount</h3>
  
- <ion-slides pager="false" [options]="slideOpts">
-        <ion-slide  *ngFor="let li of list">
+ <ion-slides pager="false" [options]="slideOpts">{{job_type}}
+        <ion-slide  *ngFor="let li of list"  (click)="selectwekk($event,li?.id)" class="day day{{li?.id}}" >
           <div plans>
 			  <img src="{{IMAGES_URL}}/{{li?.image}}"/>
 			  <h4>${{li?.amount}}</h4>
 			  <p>monthly</p>
 		  </div>
         </ion-slide>
-		<ion-slide>
+		<ion-slide class="amount_day day">
           <div plans>
-		  <ion-icon (click)="presentModal()" name="create-outline"></ion-icon>
+		  <ion-icon (click)="addamount()" name="create-outline"></ion-icon>
 			  <img src="assets/images/prj15.jpg"/>
-			  <h4>Your Choice</h4>
+			  <h4 id="amount">Your Choice</h4>
+			  <input type="hidden" value="" id="amountval">
 			  <p>monthly</p>
 		  </div>
         </ion-slide>
       </ion-slides>
 <div packcontent>
 <p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>
-<div *ngFor="let pay of paymentlist" class="list_pay">{{pay?.card_number}}</div>
+
+
+<ion-radio-group value=""class="radiobox">
+    <ion-item lines="none" *ngFor="let pay of paymentlist">
+      <ion-label>{{pay?.card_number}}</ion-label>
+      <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+
+
 <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
-  <ion-button shape="round" expand="full">Confirm Subscription</ion-button>
+  <ion-button shape="round" expand="full" (click)="subs();">Confirm Subscription</ion-button>
 <span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
 </div>
 </div>

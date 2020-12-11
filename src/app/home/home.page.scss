@@ -203,7 +203,7 @@ ion-header
         
         img{
 		   border-radius: 0px 0px 20px 20px;
-			height: 65vh;
+			height: 44vh;
 			object-fit: cover;
         }
         .sld_cnt{
@@ -248,12 +248,12 @@ ion-header
         position:relative;
         color:var(--ion-color-black);
         text-align:center;
-		margin-bottom:10px;
+		margin-bottom:0px;
 		[donationimg]
-		{    margin: 5px 0px;
+		{    margin:0px;
 		img
 		{
-		 max-width: 120px;
+		 max-width: 72px;
 		}
 		}
         h3{
@@ -281,23 +281,24 @@ ion-header
         p{
             color: rgba(0, 0, 0 , 0.50);
             font-size: 13px;
+			margin:0;
         }
  span
   {font-size: 14px;
     line-height: 22px;
     font-weight: 300;
     color: #adadad;
-    margin-top: 10px;
+    margin-top: 0px;
     display: block;
     text-align: center;
   
   }
 		.btn-losns{
 			--background:var( --ion-color-primary);
-			margin-top: 20px;
+			margin-top: 5px;
 			--box-shadow: none;
-            min-height: 48px;
-			margin-bottom: 15px;
+            min-height: 42px;
+			margin-bottom: 5px;
 			text-transform: uppercase;
 			letter-spacing: 1px;
 		}		

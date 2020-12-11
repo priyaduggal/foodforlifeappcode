@@ -32,7 +32,12 @@ ion-content
 			border-radius: 50px;
 			background:var( --ion-color-white);
 			padding: 0 16px;
-			margin-top:20px;
+			margin-bottom:30px;
+			[error] {
+    margin-top: 5px;
+    font-size: 12px;
+	color:red;
+}
 			label {
 				position: absolute;
 				top: -10px;

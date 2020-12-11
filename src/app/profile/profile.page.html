@@ -42,16 +42,29 @@ Your Donations
 		<p *ngIf="donationlist?.length==0">No Record Found..!</p>
 		<ion-item lines="none"  *ngFor="let don of donationlist">
 		<ion-thumbnail>
-		<img src="{{IMAGES_URL}}/{{don?.image}}"/>
+		<img   *ngIf="errors.indexOf(don?.charityid)==-1" src="{{IMAGES_URL}}/{{don?.image}}"/>
+		<img   *ngIf="errors.indexOf(don?.actid)==-1" src="{{IMAGES_URL}}/{{don?.aimage}}"/>
+		<img   *ngIf="errors.indexOf(don?.teamid)==-1" src="{{IMAGES_URL}}/{{don?.timage}}"/>
 		</ion-thumbnail>
 		<ion-label>
-		<h3>{{don?.title}}</h3>
-		<p><b>{{don?.amount}} Cents</b> giving to {{don?.title}}</p>
+		
+		
+		<h3  *ngIf="errors.indexOf(don?.actid)==-1">{{don?.atitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.teamid)==-1">{{don?.ttitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.charityid)==-1">{{don?.title}}</h3>
+		<p *ngIf="errors.indexOf(don?.actid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.atitle}}</p>
+		<p *ngIf="errors.indexOf(don?.teamid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.ttitle}}</p>
+		<p *ngIf="errors.indexOf(don?.charityid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.title}}</p>
+		
+		<p *ngIf="errors.indexOf(don?.charityid)>=0 && errors.indexOf(don?.teamid)>=0 &&
+		errors.indexOf(don?.actid)>=0 "><b>{{don?.amount}} Cents</b> giving to donation jar</p>
+		
+		
 		<ion-note><ion-icon name="calendar-outline"></ion-icon> {{don?.donated_at | date : 'd MMM yyyy'}}</ion-note>
 		</ion-label>
 		</ion-item>
 	</div>
-<div certficate-sec>
+<div certficate-sec   *ngIf="userdetails?.type==1">
      <ion-button href="https://ffl.org/donate/join-the-10-a-month-club/" expand="full" shape="round" class="btn-losns">Get Certificate</ion-button>
 </div>
 </ion-content>

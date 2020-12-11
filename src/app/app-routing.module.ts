@@ -138,6 +138,10 @@ const routes: Routes = [
     path: 'paymentlistmodal',
     loadChildren: () => import('./paymentlistmodal/paymentlistmodal.module').then( m => m.PaymentlistmodalPageModule)
   },
+  {
+    path: 'customamount',
+    loadChildren: () => import('./customamount/customamount.module').then( m => m.CustomamountPageModule)
+  },
 
 ];
 

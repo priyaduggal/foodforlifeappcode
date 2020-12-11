@@ -15,13 +15,20 @@ export class AddamountPage implements OnInit {
 charityid:any;
 charity:any;
 search_text:any;
+team:any;
 userid:any;
+actid:any;
+teamid:any;
 IMAGES_URL:any = config.IMAGES_URL;
 errors:any=['',null,undefined];
 minimum:any;
 timeout=null;
+act:any;
   constructor(public navParams: NavParams,public api:ApiService,public router:Router,private common: CommonService,public modalController: ModalController) {
+	  
 	this.charityid = navParams.get('id');
+	this.actid = navParams.get('actid');
+	this.teamid = navParams.get('teamid');
 	//alert(this.charityid);
 	  }
 
@@ -34,10 +41,10 @@ timeout=null;
       this.timeout = setTimeout(function () {
 		  if(self.errors.indexOf(event.target.value)==-1){
 			  self.search_text=event.target.value;
-			  self.minimum=25;
+			  self.minimum=100;
 			  if(self.search_text < self.minimum)
 			  {
-				  self.common.presentToast('Minimum donation is 25 cents !.','danger');
+				  self.common.presentToast('Minimum donation is 100 cents !.','danger');
 				  self.search_text='';
 				  $('#amount').val('');
 			  }
@@ -52,7 +59,7 @@ timeout=null;
 				   self.common.presentToast('We have rounded the amount entered to the nearest number of meals','success');
 			  }
 			  var val=$('#amount').val();
-			  var tot1=val / self.minimum;
+			  var tot1=val / 100;
 			  $('.no_meals').text(tot1);
 			   console.log(self.search_text);
 		  }
@@ -70,11 +77,107 @@ timeout=null;
   }
    ionViewDidEnter()
    {
+	if(this.errors.indexOf(this.charityid)==-1)
+	{
 	this.Charitydetail();
+	}
+	
+	if(this.errors.indexOf(this.teamid)==-1)
+	{
+	this.teamdetails();
+	}
+	
+	if(this.errors.indexOf(this.actid)==-1)
+	{
+	this.actdetail();
+	}
 	this.userid=localStorage.getItem('userid');
+   }
+   async confirm_act()
+    {
+		if(this.errors.indexOf($('#amount').val())>=0)
+		{
+			this.common.presentToast('Please enter amount !','danger');
+			return false;
+		}
+		
+	    this.dismiss();
+	    const modal = await this.modalController.create({
+		component: PaymentlistmodalPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		actid:this.actid,
+		amount:$('#amount').val(),
+		userid:this.userid
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		}
+		});
+    return await modal.present();
+	   
+   }
+   async confirm_team()
+   {
+	   if(this.errors.indexOf($('#amount').val())>=0)
+		{
+			this.common.presentToast('Please enter amount !','danger');
+			return false;
+		}
+	    this.dismiss();
+	    const modal = await this.modalController.create({
+		component: PaymentlistmodalPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		teamid: this.teamid,
+		amount:$('#amount').val(),
+		userid:this.userid
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		}
+		});
+    return await modal.present();
+	   
+   }
+   async confirm_in()
+   {
+	    if(this.errors.indexOf($('#amount').val())>=0)
+		{
+			this.common.presentToast('Please enter amount !','danger');
+			return false;
+		}
+	    this.dismiss();
+	    const modal = await this.modalController.create({
+		component: PaymentlistmodalPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		amount:$('#amount').val(),
+		userid:this.userid
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		}
+		});
+    return await modal.present();
+	   
    }
    async confirm()
    {
+	   if(this.errors.indexOf($('#amount').val())>=0)
+		{
+			this.common.presentToast('Please enter amount !','danger');
+			return false;
+		}
 	   this.dismiss();
 	    const modal = await this.modalController.create({
 		component: PaymentlistmodalPage,
@@ -94,6 +197,51 @@ timeout=null;
 		}
 		});
     return await modal.present();
+   }
+   teamdetails()
+    {
+	   	let dict ={
+		id: this.teamid,
+		};
+		this.common.presentLoading();
+		this.api.post('teamdetail', dict,'').subscribe((result) => {  
+		this.common.stopLoading();
+		var res;
+		res = result;
+		if(res.status==1){
+		this.team=res.data;
+		}else
+		{
+
+		}
+		},
+		err => {
+
+		});
+	    
+   }
+   actdetail()
+   {
+	   	let dict ={
+		id: this.actid,
+		};
+		this.common.presentLoading();
+		this.api.post('activitydetail', dict,'').subscribe((result) => {  
+		this.common.stopLoading();
+		var res;
+		res = result;
+		if(res.status==1){
+		this.act=res.data;
+		
+		}else
+		{
+
+		}
+		},
+		err => {
+
+		});
+	    
    }
    Charitydetail()
    {

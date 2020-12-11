@@ -16,12 +16,15 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { JointeamconfirmPage } from './jointeamconfirm/jointeamconfirm.page';
 import { PaymentlistmodalPage } from './paymentlistmodal/paymentlistmodal.page';
 import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
+import { CustomamountPage } from './customamount/customamount.page';
+
+
 import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 @NgModule({
-  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage],
-  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage],
+  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
+  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

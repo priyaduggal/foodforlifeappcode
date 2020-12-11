@@ -15,6 +15,7 @@ charityid:any;
 charity:any;
 IMAGES_URL:any = config.IMAGES_URL;
 images:any;
+errors:any=['',null,undefined];
 tags:any;
 constructor(public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
 this.charityid = activatedRoute.snapshot.paramMap.get('id');

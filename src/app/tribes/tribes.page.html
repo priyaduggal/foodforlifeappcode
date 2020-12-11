@@ -3,7 +3,8 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Tribes</ion-title>
+        <!--ion-title>Tribes</ion-title-->
+        <ion-title>Impact</ion-title>
 		<ion-buttons routerLink="/searchteam" slot="end" mr-10>
 		<ion-icon name="search-outline"></ion-icon>
 		</ion-buttons>
@@ -25,12 +26,12 @@
      <div tribetab [ngSwitch]="tribetab">
 	<ion-list *ngSwitchCase="'projects'">
      <div projects>
-	<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" >
+	<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
 	 <ion-thumbnail>
 	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
 	 </ion-thumbnail>
 	 <ion-label>
-	 <h3>{{project.title}}</h3>
+	 <h3 >{{project.title}}</h3>
 	
 	 </ion-label>
 	</ion-item>
@@ -48,12 +49,12 @@
 		  
 	   </ion-list>
 		<ion-list *ngSwitchCase="'activity'">
-		<div activityimg  *ngFor="let act of activities">
-	   <img routerLink="/activitydetail/{{act?.id}}" src="{{IMAGES_URL}}/{{act?.image}}"/>
+		<div activityimg  *ngFor="let act of activities" routerLink="/activitydetail/{{act?.id}}">
+	   <img  src="{{IMAGES_URL}}/{{act?.image}}"/>
 	   <div activitycontent>
 	   <ion-note><ion-icon name="calendar-outline"></ion-icon> {{act?.created_at | date : 'd MMM'}}</ion-note>
 	   <p  routerLink="/activitydetail/{{act?.id}}">{{act?.description}}</p>
-	      <ion-button shape="round" expand="full">Give Now</ion-button>
+	      <ion-button shape="round" expand="full"  (click)="give(act?.id)">Give Now</ion-button>
 	   </div>
 	   </div>
 	  

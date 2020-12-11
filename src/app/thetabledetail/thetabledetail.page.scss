@@ -26,6 +26,13 @@ ion-header
 }
 ion-content
 {
+.active_plan
+{
+[plans]
+{
+    border: 2px solid var(--ion-color-primary);
+}	
+}
 [packimg]
 {      min-height: 290px;
     max-height: 290px;

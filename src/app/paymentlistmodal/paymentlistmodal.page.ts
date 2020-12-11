@@ -5,7 +5,7 @@ import { config } from '../config';
 import {CommonService} from '../common/common.service';
 import * as $ from 'jquery';
 import { ModalController,NavParams } from '@ionic/angular';
-
+import { GlobalFooService } from '../services/globalFooService.service';
 @Component({
   selector: 'app-paymentlistmodal',
   templateUrl: './paymentlistmodal.page.html',
@@ -14,7 +14,9 @@ import { ModalController,NavParams } from '@ionic/angular';
 export class PaymentlistmodalPage implements OnInit {
 amount:any;
 charityid:any;
+actid:any;
 name:any;
+teamid:any;
 card_number:any;
 exp_date:any;
 cvc:any;
@@ -23,8 +25,10 @@ userid:any;
 paymentlist=[];
 cardid:any;
 is_submit_payment:boolean=false;
-  constructor(public navParams: NavParams,public api:ApiService,public router:Router,private common: CommonService,public modalController: ModalController) { 
+  constructor(private globalFooService: GlobalFooService,public navParams: NavParams,public api:ApiService,public router:Router,private common: CommonService,public modalController: ModalController) { 
   	this.charityid = navParams.get('charityid');
+  	this.teamid = navParams.get('teamid');
+  	this.actid = navParams.get('actid');
 	this.amount = navParams.get('amount');
 	this.userid = navParams.get('userid');
 	this.listpayment();
@@ -35,6 +39,7 @@ is_submit_payment:boolean=false;
 		
 		$('.radiobox').val('');
 		}
+	
 	pay()
 	{
 		this.name=$('.namee').val();
@@ -56,6 +61,8 @@ is_submit_payment:boolean=false;
 							userid:this.userid,
 							amount:this.amount,
 							charityid:this.charityid,
+							actid:this.actid,
+							teamid:this.teamid,
 							};
 							this.common.presentLoading();
 							this.api.post('AddPaymentwithsubscriptionCard', dict,'').subscribe((result) => {  
@@ -68,16 +75,29 @@ is_submit_payment:boolean=false;
 							this.card_number = '';
 							this.exp_date = '';
 							this.cvc = '';
-								this.common.presentToast('Meals donated Successfully !.','success');
+								this.common.presentToast('Donated Successfully !.','success');
 							this.dismiss();
+							/* this.globalFooService.publishSomeData({
+							set: {'paydata': res.status}
+
+							}); */
+							if(this.errors.indexOf(this.actid)==-1)
+							{
+							this.router.navigate(['/activitydetail/'+this.actid]);
+							}else if(this.errors.indexOf(this.teamid)==-1)
+							{
+							this.router.navigate(['/teamdetail/'+this.teamid]);
+							}else{
 							this.router.navigate(['/tabs/home']);
+							}
 					}else
 					{
 					this.common.presentToast(res.message,'danger');
 					}
 					},
 					err => {
-
+this.common.stopLoading();
+                         this.common.presentToast('Some error occured','danger');
 					});
 					
 			}else
@@ -96,6 +116,8 @@ is_submit_payment:boolean=false;
 							userid:this.userid,
 							amount:this.amount,
 							charityid:this.charityid,
+							actid:this.actid,
+							teamid:this.teamid,
 							};
 							this.common.presentLoading();
 							this.api.post('AddPaymentwithsubscription', dict,'').subscribe((result) => {  
@@ -108,16 +130,34 @@ is_submit_payment:boolean=false;
 							this.card_number = '';
 							this.exp_date = '';
 							this.cvc = '';
-							this.common.presentToast('Meals donated Successfully !.','success');
+							this.common.presentToast('Donated Successfully !.','success');
 							this.dismiss();
+							
+							if(this.errors.indexOf(this.actid)==-1)
+							{
+								/* this.globalFooService.publishSomeData({
+							set: {'paydata': res.status}
+
+							}); */
+							this.router.navigate(['/tabs/tribes']);
+							}else if(this.errors.indexOf(this.teamid)==-1)
+							{
+								/* this.globalFooService.publishSomeData({
+							set: {'paydata1': res.status}
+
+							}); */
+							this.router.navigate(['/searchteam']);
+							}else{
 							this.router.navigate(['/tabs/home']);
+							}
 					}else
 					{
 					this.common.presentToast(res.message,'danger');
 					}
 					},
 					err => {
-
+						this.common.stopLoading();
+                         this.common.presentToast('Some error occured','danger');
 					});
 						
 					}

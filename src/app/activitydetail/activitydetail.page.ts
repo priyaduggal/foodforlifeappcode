@@ -3,7 +3,9 @@ import {ApiService } from '../services/api/api.service';
 import {ActivatedRoute,Router } from '@angular/router';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
-
+import { AddamountPage } from '../addamount/addamount.page';
+import { ModalController } from '@ionic/angular';
+import { GlobalFooService } from '../services/globalFooService.service';
 @Component({
   selector: 'app-activitydetail',
   templateUrl: './activitydetail.page.html',
@@ -13,10 +15,35 @@ export class ActivitydetailPage implements OnInit {
 	activityid:any;
 	activity:any;
 	IMAGES_URL:any = config.IMAGES_URL;
-	constructor(public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
+	errors:any=['',null,undefined];
+	constructor(private globalFooService: GlobalFooService,public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
 	this.activityid = activatedRoute.snapshot.paramMap.get('id');
+	this.globalFooService.getObservable().subscribe((data) => {
+	if(this.errors.indexOf(data.paydata)==-1)
+			{
+				this.getactivitydetails();
+			}
+});
 	}
+ async give(id)
+   {
+	   const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		actid:id,
+		}
+		});
 
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		//this.team.joins=this.team.joins - 1;
+		//this.getuserteams();
+		}
+       });
+    return await modal.present();
+   }
   ngOnInit() {
   }
   

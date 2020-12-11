@@ -7,6 +7,8 @@ import { config } from '../config';
 import {CommonService} from '../common/common.service';
 import { JointeamconfirmPage } from '../jointeamconfirm/jointeamconfirm.page';
 import { LeaveteamconfirmPage } from '../leaveteamconfirm/leaveteamconfirm.page';
+import { AddamountPage } from '../addamount/addamount.page';
+import { GlobalFooService } from '../services/globalFooService.service';
 @Component({
   selector: 'app-teamdetail',
   templateUrl: './teamdetail.page.html',
@@ -19,13 +21,38 @@ errors:any=['',null,undefined];
 userid:any;
 joined=[];
 team:any;
-  constructor(public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
+  constructor(private globalFooService: GlobalFooService,public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
 	this.teamid = activatedRoute.snapshot.paramMap.get('id');
+	this.globalFooService.getObservable().subscribe((data) => {
+	if(this.errors.indexOf(data.paydata1)==-1)
+			{
+				console.log('ssssss');
+				this.userid=localStorage.getItem('userid');
+				this.getteamdetails();
+				this.getuserteams();
+			}
+});
   }
 
   ngOnInit() {
   }
-  
+  async give(id)
+   {
+	   const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		teamid:id,
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		}
+       });
+    return await modal.present();
+   }
   ionViewDidEnter()
   {
 	this.userid=localStorage.getItem('userid');

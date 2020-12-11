@@ -23,6 +23,37 @@ ion-header
 ion-content
 {
 --background: #f7f7f7;
+.paymentlist {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+	&  > div
+	{
+	display: flex;
+	}
+	ion-buttons{	
+	    width: 30px;
+    height: 30px;
+	margin-left:3px;
+    line-height: 30px;
+color:var(--ion-color-white);
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+	&[edit-btn] {
+
+    background: var(--ion-color-primary);
+    
+	
+}
+&[delete-btn] {
+    
+  background: var(--ion-color-primary);
+    
+}
+}
+}
  [settinglist]
  {    
     margin-bottom: 20px;
