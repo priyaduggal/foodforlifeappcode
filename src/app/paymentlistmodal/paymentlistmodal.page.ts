@@ -83,16 +83,16 @@ is_submit_payment:boolean=false;
 							}); */
 							if(this.errors.indexOf(this.actid)==-1)
 							{
-							this.router.navigate(['/activitydetail/'+this.actid]);
+							this.router.navigate(['/tabs/tribes']);
 							}else if(this.errors.indexOf(this.teamid)==-1)
 							{
-							this.router.navigate(['/teamdetail/'+this.teamid]);
+							this.router.navigate(['/searchteam']);
 							}else{
 							this.router.navigate(['/tabs/home']);
 							}
 					}else
 					{
-					this.common.presentToast(res.message,'danger');
+					this.common.presentToast(res.msg,'danger');
 					}
 					},
 					err => {
@@ -152,7 +152,7 @@ this.common.stopLoading();
 							}
 					}else
 					{
-					this.common.presentToast(res.message,'danger');
+					this.common.presentToast(res.msg,'danger');
 					}
 					},
 					err => {

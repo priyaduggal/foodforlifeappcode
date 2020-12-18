@@ -14,10 +14,20 @@
   </ion-header-->
 
 <ion-content>
+
 <div packimg>
   <img src="assets/images/sliderimg1.jpg" style="width:100%;"/> 
 </div>
-<div packdetail class="ion-padding">
+<!--div packdetail class="ion-padding"  *ngIf="sublist?.length>0">
+<h3>Transactions</h3>
+<table>
+<th>Transaction ID</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Date</th>
+</table>
+</div-->
+<div packdetail class="ion-padding" >
 <h3>Choose An Amount</h3>
  
  <ion-slides pager="false" [options]="slideOpts">{{job_type}}
@@ -40,9 +50,7 @@
       </ion-slides>
 <div packcontent>
 <p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>
-
-
-<ion-radio-group value=""class="radiobox">
+<ion-radio-group value="{{cardid}}" class="radiobox">
     <ion-item lines="none" *ngFor="let pay of paymentlist">
       <ion-label>{{pay?.card_number}}</ion-label>
       <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
@@ -52,7 +60,8 @@
 
 
 <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
-  <ion-button shape="round" expand="full" (click)="subs();">Confirm Subscription</ion-button>
+  <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)>=0">Confirm Subscription</ion-button>
+   <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)==-1">Update Subscription</ion-button>
 <span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
 </div>
 </div>

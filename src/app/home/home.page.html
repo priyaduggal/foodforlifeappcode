@@ -76,7 +76,7 @@
       <div class="sld_cnt">
         <div>
         <h3 routerLink="/charitydetail/{{charity?.id}}">{{charity?.title}}</h3>
-        <p>{{substring(charity?.description,20)}}</p>
+        <p>{{charity?.description.substring(0,100)}}...</p>
 		<ion-row>
 		<ion-col size="6">
         <ion-button shape="round" (click)="give(charity?.id)">Give Now</ion-button>
@@ -94,7 +94,7 @@
 
 
   <ion-col size="12" class="ion-padding-start ion-padding-end"> 
-    <div class="service_box"> 
+    <div class="service_box home_page"> 
 	<h2 heads>Get Certified For Doing Good</h2>
 	<ion-slides #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider" loop="false" >
 	<ion-slide>
@@ -104,32 +104,29 @@
 	  <div omgcertify>
 	   <img src="assets/images/omg.png"/>
 	  </div>
-      <ion-button shape="round" fill="outline" href="https://ffl.org/get-om-guarantee-certified/">Get Certified</ion-button>
-    </div>
-	  </ion-slide>
-	<ion-slide>
-    <div class="width100"> 
-      <h3><span>Feed </span>  An Animal</h3>
-      <!--p>Show that your company cares</p-->
-	  <div omgcertify>
-	   <img src="assets/images/omg.png"/>
-	  </div>
-      <ion-button shape="round" fill="outline" href="https://ffl.org/get-om-guarantee-certified/">Get Certified</ion-button>
-    </div>
-	  </ion-slide>
-	<ion-slide>
-    <div class="width100"> 
-      <h3><span>Plant </span>  A Tree</h3>
-      <!--p>Show that your company cares</p-->
-	  <div omgcertify>
-	   <img src="assets/images/omg.png"/>
-	  </div>
-      <ion-button shape="round" fill="outline" href="https://ffl.org/get-om-guarantee-certified/">Get Certified</ion-button>
+      <ion-button shape="round" fill="outline" href="https://omguarantee.com/company-registration/">Get Certified</ion-button>
     </div>
 	  </ion-slide>
      </ion-slides>
     </div>
   </ion-col>
 </ion-row>
+<ion-row>
 
+
+  <ion-col size="12" class="ion-padding-start ion-padding-end"> 
+    <div class="donationjar">
+      <h3><span>Donation</span> Jar</h3>
+  
+	  <div donationimg>
+	   <img src="assets/images/donationjar1.png"/>
+	  </div>
+     <!--p>Please press button below to donate 25 cents</p-->
+     <p>Click here to feed a child</p>
+	 
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
+    </div>
+  </ion-col>
+</ion-row>
 </ion-content>

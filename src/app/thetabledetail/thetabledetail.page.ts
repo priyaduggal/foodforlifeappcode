@@ -5,6 +5,7 @@ import { CustomamountPage } from '../customamount/customamount.page';
 import {ApiService } from '../services/api/api.service';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
+import {Router } from '@angular/router';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-thetabledetail',
@@ -14,6 +15,7 @@ import * as $ from 'jquery';
 export class ThetabledetailPage implements OnInit {
 list=[];
 paymentlist=[];
+sublist=[];
 days:any;
 userid:any;
 planid:any;
@@ -30,7 +32,7 @@ slideOpts = {
   public show:boolean = false;
   public buttonName:any = 'Show';
 
-  constructor(public modalController: ModalController,public api:ApiService,private common: CommonService) { }
+  constructor(public router:Router,public modalController: ModalController,public api:ApiService,private common: CommonService) { }
   async addamount() {
 
 	  const modal = await this.modalController.create({
@@ -71,25 +73,64 @@ slideOpts = {
 	  
 	   if(this.errors.indexOf(this.days)==-1)
 	  {
-		  this.common.presentToast('Subscribed Successfully','success');
-		  this.api.navCtrl.navigateRoot('tabs/home');
+							let dict ={
+							cardid:this.cardid,
+							plan_id:this.days,
+							userid:this.userid,
+							};
+							this.common.presentLoading();
+							this.api.post('add_monthly_Subscription', dict,'').subscribe((result) => {  
+							this.common.stopLoading();
+							var res;
+							res = result;
+							if(res.status==1){
+							this.common.presentToast('Subscribed Successfully !.','success');
+							this.router.navigate(['/tabs/home']);
+
+							}else
+							{
+							this.common.presentToast(res.message,'danger');
+							}
+							},
+							err => {
+							this.common.stopLoading();
+							this.common.presentToast('Some error occured','danger');
+							});
 		  
 	  }
 	  
 	    if(this.errors.indexOf($('#amountval').val())==-1)
 	  {
-		  this.common.presentToast('Subscribed Successfully','success');
-		  this.api.navCtrl.navigateRoot('tabs/home');
-		  
-	  }
-	  
-	  
-	  
-	  
+							let dict ={
+							cardid:this.cardid,
+							userid:this.userid,
+							amount:$('#amountval').val(),
+
+							};
+							this.common.presentLoading();
+							this.api.post('add_monthly_Subscription', dict,'').subscribe((result) => {  
+							this.common.stopLoading();
+							var res;
+							res = result;
+							if(res.status==1){
+							this.cardid = '';
+							$('#amountval').val("");
+							this.common.presentToast('Subscribed Successfully !.','success');
+							this.router.navigate(['/tabs/home']);
+
+							}else
+							{
+							this.common.presentToast(res.message,'danger');
+							}
+							},
+							err => {
+							this.common.stopLoading();
+							this.common.presentToast('Some error occured','danger');
+							});
+	  } 
   }
   selectwekk(event,day)
   {
-	  
 		if ($.inArray(day, this.days) >= 0) {
 		var carIndex = this.days.indexOf(day);
 		this.days='';
@@ -102,10 +143,6 @@ slideOpts = {
 		}
   }
   ngOnInit() {
-  }
-  type1(type,id)
-  {
-	  
   }
   select(id)
   {
@@ -128,6 +165,46 @@ slideOpts = {
 	  this.userid=localStorage.getItem('userid');
 	  this.getsubscription();
 	  this.listpayment();
+	  this.subscriptionlistUser();
+  }
+  subscriptionlistUser()
+  {
+		let dict ={
+		userid: this.userid,
+		};
+  	 	this.api.post('Sublistuser', dict,'').subscribe((result) => {  
+		var res;
+		res = result;
+		if(res.status==1){
+			this.sublist=res.data;
+			console.log(this.sublist);
+			 if(this.errors.indexOf(this.sublist)==-1)
+			{
+				
+				var res1;
+				res1 = this.sublist;
+				this.cardid=res1.cardid;
+				
+				if(this.errors.indexOf(res1.plan_id)>=0)
+				{
+				$('#amountval').val(res1.payment_amount);
+			    $('#amount').text(res1.payment_amount);
+			    $('.amount_day').addClass('active_plan');
+				}else
+				{
+				this.days=res1.plan_id;
+				} 
+			} 
+			
+		}else
+		{
+		this.common.presentToast(res.message,'danger');
+		}
+        },
+        err => {
+             
+        });
+   
   }
   listpayment()
   {

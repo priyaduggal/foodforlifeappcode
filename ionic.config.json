@@ -1,5 +1,7 @@
 {
   "name": "food-for-life",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

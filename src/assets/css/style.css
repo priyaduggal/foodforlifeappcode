@@ -2,7 +2,12 @@
 ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span {
 	font-family: 'Poppins', sans-serif !important;
 }
-
+.profile_listing
+{
+	font-weight:500;
+	color: #000000b8;
+	border-bottom: 1px solid #0000001c;
+}
 .leaveteam  {
 	 height: 100%;
     display: flex;
@@ -89,4 +94,8 @@ font-size: 14px !important;
     position: relative;
     z-index: 1;
     padding-left: 7px;
+}
+.home_page .swiper-pagination
+{
+	display:none;
 }

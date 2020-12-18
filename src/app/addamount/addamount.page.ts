@@ -203,9 +203,9 @@ act:any;
 	   	let dict ={
 		id: this.teamid,
 		};
-		this.common.presentLoading();
+		//this.common.presentLoading();
 		this.api.post('teamdetail', dict,'').subscribe((result) => {  
-		this.common.stopLoading();
+		//this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){
@@ -225,9 +225,9 @@ act:any;
 	   	let dict ={
 		id: this.actid,
 		};
-		this.common.presentLoading();
+		//this.common.presentLoading();
 		this.api.post('activitydetail', dict,'').subscribe((result) => {  
-		this.common.stopLoading();
+		//this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){
@@ -248,9 +248,9 @@ act:any;
 	   	let dict ={
 		id: this.charityid,
 		};
-		this.common.presentLoading();
+		//this.common.presentLoading();
 		this.api.post('charitydetail', dict,'').subscribe((result) => {  
-		this.common.stopLoading();
+		//this.common.stopLoading();
 		var res;
 		res = result;
 		if(res.status==1){

@@ -34,12 +34,14 @@ errors:any=['',null,undefined];
   }else
   {
 	
-	 this.globalFooService.publishSomeData({
+	/*  this.globalFooService.publishSomeData({
             	set: {'data': '1'}
 				
-			});
+			}); */
 	 //this.router.navigate(['/login']);
-	this.api.navCtrl.navigateRoot('tabs/home');
+	//this.api.navCtrl.navigateRoot('tabs/home');
+	localStorage.setItem('type_login','1'); 
+	this.router.navigate(['/login']);
   }
   }
 
