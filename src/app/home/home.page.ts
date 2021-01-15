@@ -88,6 +88,7 @@ autoplay: true
    }
    Charitylist()
    {
+	   if(this.type_login=='2'){
   	 	this.api.post('tribesProject', '','').subscribe((result) => {  
 		var res;
 		res = result;
@@ -100,6 +101,21 @@ autoplay: true
         err => {
              
         });
+	   }else
+	   {
+		 this.api.post('tribesProjectCompany', '','').subscribe((result) => {  
+		var res;
+		res = result;
+		if(res.status==1){
+		this.list=res.data;	
+		}else
+		{
+		}
+        },
+        err => {
+             
+        });  
+	   }
    }
 
 }

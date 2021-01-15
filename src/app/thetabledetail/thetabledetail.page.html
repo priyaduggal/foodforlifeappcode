@@ -61,7 +61,7 @@
 
 <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
   <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)>=0">Confirm Subscription</ion-button>
-   <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)==-1">Update Subscription</ion-button>
+   <ion-button shape="round" expand="full" (click)="updatesubs();" *ngIf="errors.indexOf(sublist)==-1">Update Subscription</ion-button>
 <span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
 </div>
 </div>

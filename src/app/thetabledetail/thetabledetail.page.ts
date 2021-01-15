@@ -57,6 +57,76 @@ slideOpts = {
 	{
 		this.cardid=id;
 	}
+	updatesubs()
+	{
+	if(this.errors.indexOf(this.cardid)>=0)
+	  {
+		  this.common.presentToast('Please select card','danger');
+		  return false;
+	  }
+	   if(this.errors.indexOf(this.days)>=0 && this.errors.indexOf($('#amountval').val())>=0)
+	  {
+		  this.common.presentToast('Please select plan or add amount','danger');
+		  return false;
+	  }
+	    if(this.errors.indexOf(this.days)==-1)
+	  {
+							let dict ={
+							cardid:this.cardid,
+							plan_id:this.days,
+							userid:this.userid,
+							};
+							this.common.presentLoading();
+							this.api.post('update_monthly_Subscription', dict,'').subscribe((result) => {  
+							this.common.stopLoading();
+							var res;
+							res = result;
+							if(res.status==1){
+							this.common.presentToast('Subscription updated Successfully !.','success');
+							this.router.navigate(['/tabs/home']);
+
+							}else
+							{
+							this.common.presentToast(res.message,'danger');
+							}
+							},
+							err => {
+							this.common.stopLoading();
+							this.common.presentToast('Some error occured','danger');
+							});
+		  
+	  }
+	  
+	    if(this.errors.indexOf($('#amountval').val())==-1)
+	  {
+							let dict ={
+							cardid:this.cardid,
+							userid:this.userid,
+							amount:$('#amountval').val(),
+
+							};
+							this.common.presentLoading();
+							this.api.post('update_monthly_Subscription', dict,'').subscribe((result) => {  
+							this.common.stopLoading();
+							var res;
+							res = result;
+							if(res.status==1){
+							this.cardid = '';
+							$('#amountval').val("");
+							this.common.presentToast('Subscribed Successfully !.','success');
+							this.router.navigate(['/tabs/home']);
+
+							}else
+							{
+							this.common.presentToast(res.message,'danger');
+							}
+							},
+							err => {
+							this.common.stopLoading();
+							this.common.presentToast('Some error occured','danger');
+							});
+	  } 
+	}
   subs()
   {
 	  if(this.errors.indexOf(this.cardid)>=0)
@@ -131,15 +201,20 @@ slideOpts = {
   }
   selectwekk(event,day)
   {
-		if ($.inArray(day, this.days) >= 0) {
-		var carIndex = this.days.indexOf(day);
-		this.days='';
-		$('.day').removeClass('active_plan');
-		}else {
-		$('.day').removeClass('active_plan');
-		this.days='';
-		this.days=day;
-		$('.day'+day).addClass('active_plan');
+			if ($.inArray(day, this.days) >= 0) {
+			var carIndex = this.days.indexOf(day);
+			this.days='';
+			$('.day').removeClass('active_plan');
+
+
+			}else {
+			$('.day').removeClass('active_plan');
+			$('#amountval').val('');
+			$('#amount').text('0');
+			$('.amount_day').removeClass('active_plan');
+			this.days='';
+			this.days=day;
+			$('.day'+day).addClass('active_plan');
 		}
   }
   ngOnInit() {
@@ -193,6 +268,7 @@ slideOpts = {
 				}else
 				{
 				this.days=res1.plan_id;
+				$('.day'+this.days).addClass('active_plan');
 				} 
 			} 
 			
