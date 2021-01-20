@@ -35,10 +35,10 @@ act:any;
       this.timeout = setTimeout(function () {
 		  if(self.errors.indexOf(event.target.value)==-1){
 			  self.search_text=event.target.value;
-			  self.minimum=100;
+			  self.minimum=1;
 			  if(self.search_text < self.minimum)
 			  {
-				  self.common.presentToast('Minimum donation is 100 cents !.','danger');
+				  self.common.presentToast('Minimum donation is 1 dollar !.','danger');
 				  self.search_text='';
 				  $('#amount1').val('');
 			  }
@@ -53,7 +53,7 @@ act:any;
 				   self.common.presentToast('We have rounded the amount entered to the nearest number of meals','success');
 			  }
 			  var val=$('#amount1').val();
-			  var tot1=val / 100;
+			  var tot1=val / 1;
 			  $('.no_meals').text(tot1);
 			   console.log(self.search_text);
 		  }
