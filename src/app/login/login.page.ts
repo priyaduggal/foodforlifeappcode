@@ -20,7 +20,11 @@ reg_exp:any;
 otp:any;
 errors:any=['',null,undefined];
 login_password:any;
-  constructor(private fb: Facebook, private googlePlus: GooglePlus,private globalFooService: GlobalFooService, public api:ApiService, public router:Router,private common: CommonService) {
+  constructor(private fb: Facebook,
+   private googlePlus: GooglePlus,
+   private globalFooService: GlobalFooService, 
+   public api:ApiService, public router:Router,
+   private common: CommonService) {
 	this.reg_exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   }
 

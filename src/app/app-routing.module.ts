@@ -142,6 +142,10 @@ const routes: Routes = [
     path: 'customamount',
     loadChildren: () => import('./customamount/customamount.module').then( m => m.CustomamountPageModule)
   },
+  {
+    path: 'contactus',
+    loadChildren: () => import('./contactus/contactus.module').then( m => m.ContactusPageModule)
+  },
 
 ];
 

@@ -8,10 +8,10 @@
 
 <ion-content class="ion-padding">
 <div class="content-terms">
-        <div *ngFor="let term of termlist">
-		<h4 subhead>{{term?.title}} </h4>
-		<p>{{term?.description}} </p>
+        
+		<div class="content-terms privacy_description" [innerHTML]="privacy?.description">
 		</div>
+		
 		
 	</div>
 </ion-content>

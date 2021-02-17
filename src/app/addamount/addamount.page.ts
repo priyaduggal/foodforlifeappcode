@@ -59,7 +59,7 @@ act:any;
 				   self.common.presentToast('We have rounded the amount entered to the nearest number of meals','success');
 			  }
 			  var val=$('#amount').val();
-			  var tot1=val / 1;
+			  var tot1=val * 4;
 			  $('.no_meals').text(tot1);
 			   console.log(self.search_text);
 		  }

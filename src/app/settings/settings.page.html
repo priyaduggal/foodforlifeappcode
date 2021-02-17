@@ -12,10 +12,13 @@
 
 <ion-content class="ion-padding">
 <div settinglist>
-<h2 heading>
-Payment Details
-</h2>
-<p>You Saved Payment Methods</p>
+	<div class="ocid-s">
+		<span class="ich-d"> <ion-icon name="shield-checkmark-outline"></ion-icon> </span>
+		<h2 heading>
+		Payment Details
+		</h2>
+		<p>You Saved Payment Methods</p>
+	</div>
 
 <div *ngFor="let pay of paymentlist" class="paymentlist">
 <p>{{pay?.card_number}} {{pay?.card_holder_name}}</p>
@@ -145,7 +148,7 @@ My Profile
 	  <ion-icon name="chevron-forward"></ion-icon>
 	  </ion-buttons>
 	   </ion-item>
-	   <ion-item lines="none">
+	   <ion-item lines="none" routerLink="/contactus">
 	  <ion-icon iconleft name="call-outline" slot="start"></ion-icon>
       <ion-label>Contact Us</ion-label>
 	  <ion-buttons slot="end">

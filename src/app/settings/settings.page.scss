@@ -142,5 +142,35 @@ color:var(--ion-color-white);
 		 }
 		}
 	}
-
+	.ocid-s {
+		position: relative;
+		margin: -10px -15px 0;
+		padding: 15px 15px;
+		background: #fff6e6;
+		border-bottom: 1px solid #f9e4ba;
+		border-radius: 10px 10px 0 0;
+		padding-left: 80px;
+		span.ich-d {
+			position: absolute;
+			left: 15px;
+			width: 50px;
+			height: 50px;
+			background: #f8aa12;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 26px;
+			color: #fff;
+		}
+		h2 {
+			font-size: 17px;
+			margin-bottom: 2px;
+			margin-top: 8px;
+		}
+		p {
+			margin: 0px;
+			font-size: 12px;
+		}
+	}
 }

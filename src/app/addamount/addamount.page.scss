@@ -71,10 +71,22 @@ ion-content
 				font-family: 'Poppins', sans-serif !important;
 				color: #222;
 			}
+			&[dollar-input]
+			{
+			    img
+			    {
+			         max-width:15px;
+			         margin-right: 4px;
+			    }
+			     ion-item
+			     {
+			          --padding-start:0px;
+			     }
+			}
 		}
 		.btn-losns{
 			--background:var( --ion-color-primary);
-			margin-top: 20px;
+			margin-top: 10px;
 			--box-shadow: none;
             min-height: 48px;
 			margin-bottom: 15px;

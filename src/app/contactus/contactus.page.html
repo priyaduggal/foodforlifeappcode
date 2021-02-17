@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/settings" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Contact Us</ion-title>
+  </ion-toolbar>
+  </ion-header>
+<ion-content class="ion-padding">
+	<div profileinfo>
+	<div editprofile>
+<div class="flds-login">
+			<div formfield>
+				<label>Name</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Name" value=""
+					[(ngModel)]="name" name="name" 
+					></ion-input>
+				</ion-item>
+					<span error *ngIf="errors.indexOf(name) >= 0 && is_submit== true">Please enter your name</span>
+				
+			</div>
+			<div formfield>
+				<label>Email Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Email Address" value=""
+					[(ngModel)]="email" name="email" 
+					></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(email) >= 0 && is_submit == true">Please enter your email address</span>
+				<span error *ngIf="errors.indexOf(email) == -1 && is_submit == true && !reg_exp.test(email.toLowerCase())">Please enter valid email address</span>
+				
+			</div>
+			<div formfield>
+				<label>Phone Number</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter phone number" [(ngModel)]="phone" name="phone" type="number"></ion-input>
+					
+				</ion-item>
+					<span error *ngIf="errors.indexOf(phone) >= 0 && is_submit == true">Please enter your phone number</span>
+			</div>
+			<div formfield>
+				<label>Message</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Message" [(ngModel)]="message" name="message" type="text"></ion-input>
+					
+				</ion-item>
+				<span error *ngIf="errors.indexOf(message) >= 0 && is_submit == true">Please enter message</span>
+			</div>
+			<ion-button  expand="full" shape="round" class="btn-losns"(click)="save()">Submit</ion-button>
+		</div>
+		</div>
+	</div>
+</ion-content>
