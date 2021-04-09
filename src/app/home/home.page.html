@@ -15,13 +15,13 @@
 		</ion-buttons-->
       </ion-toolbar>
 	  </ion-header>
-      <ion-slides #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider">
+      <ion-slides #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider">
     
-    <ion-slide  hm-slider  *ngFor="let charity of list">
+    <ion-slide  hm-slider  *ngFor="let charity of list"  routerLink="/charitydetail/{{charity?.id}}">
       <img src="{{IMAGES_URL}}/{{charity?.image}}" style="width:100%;"/>
       <div class="sld_cnt">
         <div>
-        <h3 routerLink="/charitydetail/{{charity?.id}}">{{charity?.title}}</h3>
+        <h3>{{charity?.title}}</h3>
         <p>{{charity?.description.substring(0,100)}}...</p>
 		<ion-row>
 		<!--><ion-col size="6">
@@ -44,7 +44,7 @@
       <h3><span>Donation</span> Jar</h3>
   
 	  <div donationimg>
-	   <img src="assets/images/donationjar1.png"/>
+	   <img src="assets/images/don.gif"/>
 	  </div>
      <!--p>Please press button below to donate 25 cents</p-->
      <p>Click here to feed a child</p>
@@ -119,7 +119,7 @@
       <h3><span>Donation</span> Jar</h3>
   
 	  <div donationimg>
-	   <img src="assets/images/donationjar1.png"/>
+	   <img src="assets/images/don.gif"/>
 	  </div>
      <!--p>Please press button below to donate 25 cents</p-->
      <p>Click here to feed a child</p>

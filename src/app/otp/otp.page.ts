@@ -98,6 +98,7 @@ errors:any=['',null,undefined];
 			localStorage.setItem('food_last_name',res.data.last_name);
 			localStorage.setItem('food_email',res.data.email);
 			localStorage.setItem('food_type',res.data.type);
+			localStorage.setItem('is_logged_in_user','true');
 		this.router.navigate(['/tabs/home']);
 		this.common.presentToast(res.message,'success');
 		}else
@@ -105,6 +106,7 @@ errors:any=['',null,undefined];
 		this.common.presentToast(res.message,'danger');
 		}
         },
+		
         err => {
              
         });

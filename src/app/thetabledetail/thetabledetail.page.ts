@@ -22,6 +22,7 @@ planid:any;
 cardid:any;
 errors:any=['',null,undefined];
 IMAGES_URL:any = config.IMAGES_URL;
+job_type:any;
 slideOpts = {
 	slidesPerView: 3,
 	centeredSlides: true,

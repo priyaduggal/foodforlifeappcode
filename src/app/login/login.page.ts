@@ -100,6 +100,7 @@ login_password:any;
 		  if(res.status==1){
 	  	 	var userId = this.api.encryptData(res.data.id,config.ENC_SALT);
 			localStorage.setItem('userid',res.data.id);
+			  localStorage.setItem('is_logged_in_user','true');
 			localStorage.setItem('food_token',userId);
 			localStorage.setItem('food_first_name',res.data.first_name);
 			localStorage.setItem('food_last_name',res.data.last_name);

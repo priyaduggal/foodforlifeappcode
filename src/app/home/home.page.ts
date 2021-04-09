@@ -22,7 +22,9 @@ list=[];
 slideOptsOne = {
 initialSlide: 0,
 slidesPerView: 1,
-autoplay: true
+autoplay: true,
+speed:900,
+
 };
   constructor(public api:ApiService,private globalFooService: GlobalFooService,public modalController: ModalController,private common: CommonService)  { 
 		this.globalFooService.getObservable().subscribe((data) => {

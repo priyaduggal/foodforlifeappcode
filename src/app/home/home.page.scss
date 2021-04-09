@@ -131,6 +131,7 @@ ion-header
 				font-weight: 500;
 				display: inline-block;
 				font-size: 17px;
+
 				color: #1d1d1d;
 				span{
 					position:relative;
@@ -203,7 +204,7 @@ ion-header
         
         img{
 		   border-radius: 0px 0px 20px 20px;
-			height: 44vh;
+			height: 43vh;
 			object-fit: cover;
         }
         .sld_cnt{
@@ -242,7 +243,7 @@ ion-header
 .home-slider .swiper-pagination {
     --scroll-bar-background: red;
 }.donationjar{
-         padding:15px 10px  5px;
+         padding:10px 10px  5px;
         border-radius:10px;
         background-color:var(--ion-color-white);
         position:relative;
@@ -253,7 +254,7 @@ ion-header
 		{    margin:0px;
 		img
 		{
-		 max-width: 72px;
+		 max-width: 132px;
 		}
 		}
         h3{
@@ -295,10 +296,10 @@ ion-header
   }
 		.btn-losns{
 			--background:var( --ion-color-primary);
-			margin-top: 5px;
+			margin-top: 0px;
 			--box-shadow: none;
             min-height: 42px;
-			margin-bottom: 5px;
+			margin-bottom: 0px;
 			text-transform: uppercase;
 			letter-spacing: 1px;
 		}		

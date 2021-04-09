@@ -30,7 +30,7 @@
 <div packdetail class="ion-padding" >
 <h3>Choose An Amount</h3>
  
- <ion-slides pager="false" [options]="slideOpts">{{job_type}}
+ <ion-slides pager="false" [options]="slideOpts">
         <ion-slide  *ngFor="let li of list"  (click)="selectwekk($event,li?.id)" class="day day{{li?.id}}" >
           <div plans>
 			  <img src="{{IMAGES_URL}}/{{li?.image}}"/>

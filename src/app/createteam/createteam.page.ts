@@ -25,7 +25,7 @@ is_license_uploaded:boolean=false;
 license_image_url:any;
 public uploader:FileUploader = new FileUploader({url: ''});
 description:any;
-  constructor(public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) { 
+  constructor(public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService,public sanitizer:DomSanitizer) { 
   this.userid=localStorage.getItem('userid');
   }
 

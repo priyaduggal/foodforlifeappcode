@@ -38,6 +38,7 @@ profile_pic:any;
 	private router: Router,
 	private globalFooService: GlobalFooService
   ) {
+	 
 	  this.globalFooService.getObservable().subscribe((data) => {
 			if(this.errors.indexOf(data.foo)==-1)
 			{
