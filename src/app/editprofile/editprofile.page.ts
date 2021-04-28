@@ -43,6 +43,9 @@ license_error:boolean=false;
 license_file:any;
 is_license_uploaded:boolean=false;
 license_image_url:any;
+facebook:any;
+twitter:any;
+linkedin:any;
 public uploader:FileUploader = new FileUploader({url: ''});
   constructor(public api:ApiService,
   public router:Router,
@@ -284,6 +287,9 @@ public uploader:FileUploader = new FileUploader({url: ''});
 	frmData.append("last_name",this.last_name);
 	frmData.append("email",this.email);
 	frmData.append("address",this.address);
+	frmData.append("facebook",this.facebook);
+	frmData.append("twitter",this.twitter);
+	frmData.append("linkedin",this.linkedin);
 	frmData.append("id",this.userid);
 	
 	this.common.presentLoading();

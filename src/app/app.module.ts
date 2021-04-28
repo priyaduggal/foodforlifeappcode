@@ -22,6 +22,11 @@ import { CustomamountPage } from './customamount/customamount.page';
 import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+
+
+
+
+
 @NgModule({
   declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],

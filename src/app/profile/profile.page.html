@@ -59,12 +59,11 @@ Your Donations
 		<h3  *ngIf="errors.indexOf(don?.actid)==-1">{{don?.atitle}}</h3>
 		<h3  *ngIf="errors.indexOf(don?.teamid)==-1">{{don?.ttitle}}</h3>
 		<h3  *ngIf="errors.indexOf(don?.charityid)==-1">{{don?.title}}</h3>
-		<p *ngIf="errors.indexOf(don?.actid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.atitle}}</p>
-		<p *ngIf="errors.indexOf(don?.teamid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.ttitle}}</p>
-		<p *ngIf="errors.indexOf(don?.charityid)==-1"><b>{{don?.amount}} Cents</b> giving to {{don?.title}}</p>
-		
+		<p *ngIf="errors.indexOf(don?.actid)==-1"><b>${{don?.amount}} </b> given to {{don?.atitle}}</p>
+		<p *ngIf="errors.indexOf(don?.teamid)==-1"><b>${{don?.amount}} </b> given to {{don?.ttitle}}</p>
+		<p *ngIf="errors.indexOf(don?.charityid)==-1"><b>${{don?.amount}} </b> given to {{don?.title}}</p>
 		<p *ngIf="errors.indexOf(don?.charityid)>=0 && errors.indexOf(don?.teamid)>=0 &&
-		errors.indexOf(don?.actid)>=0 "><b>{{don?.amount}} Cents</b> giving to donation jar</p>
+		errors.indexOf(don?.actid)>=0 "><b>${{don?.amount}} </b> given to donation jar</p>
 		
 		
 		<ion-note><ion-icon name="calendar-outline"></ion-icon> {{don?.donated_at | date : 'd MMM yyyy'}}</ion-note>

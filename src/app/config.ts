@@ -10,7 +10,8 @@ export const config = {
 };
 
 export const social_config = {
-  	FACEBOOK_ID: ''
+  	FACEBOOK_ID: '290796082669378',
+	 GOOLGLE_CLIENT_ID: '608339143855-msuu5n847treif8htdsju9kia98nr4ms.apps.googleusercontent.com'
 };
 
 /* export const socket_config = {

@@ -65,6 +65,30 @@
 				</ion-item>
 				<span error *ngIf="errors.indexOf(address) >= 0 && is_submit_update== true">Please enter your address</span>
 </div>
+
+<div formfield>
+				<label>Facebook Url</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Facebook Url" value="{{userdetails?.facebook}}" [(ngModel)]="facebook" name="facebook" ></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(facebook) >= 0 && is_submit_update== true">Please enter your facebook url</span>
+</div>
+<div formfield>
+				<label>Twitter Url</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Twitter Url" value="{{userdetails?.twitter}}" [(ngModel)]="twitter" name="twitter" ></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(twitter) >= 0 && is_submit_update== true">Please enter your twitter url</span>
+</div>
+<div formfield>
+				<label>LinkedIn Url</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="LinkedIn Url" value="{{userdetails?.linkedin}}" [(ngModel)]="linkedin" name="linkedin" ></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(linkedin) >= 0 && is_submit_update== true">Please enter your linkedin url</span>
+</div>
+
+
 <ion-button  expand="full" shape="round" class="btn-losns"(click)="update()">Submit</ion-button>
 </div>
 </div>
