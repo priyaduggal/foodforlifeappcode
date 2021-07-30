@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "616880040152",
+    "project_id": "foodforlife-312813",
+    "storage_bucket": "foodforlife-312813.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616880040152:android:50cce39596349adfe14fad",
+        "android_client_info": {
+          "package_name": "io.foodforlife.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616880040152-f2b6ak0o95f8sqjfmafpj2em396k1bpu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0JbRHt0ufSuX_o48g13z3cz0n0xnAduk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616880040152-f2b6ak0o95f8sqjfmafpj2em396k1bpu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

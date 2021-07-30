@@ -20,12 +20,17 @@ reg_exp:any;
 otp:any;
 errors:any=['',null,undefined];
 login_password:any;
+type_login:any;
   constructor(private fb: Facebook,
    private googlePlus: GooglePlus,
    private globalFooService: GlobalFooService, 
    public api:ApiService, public router:Router,
    private common: CommonService) {
 	this.reg_exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  }
+   ionViewDidEnter()
+  {
+	  this.type_login=localStorage.getItem('type_login');
   }
 
   ngOnInit() {
@@ -42,9 +47,10 @@ login_password:any;
 			            email: profile['email'],
 			            password: '',
 			            medium: 'facebook',
-						type:'',
+
 			            social_id: profile['id'],
-			            image: profile['picture_large']['data']['url']
+			            image: profile['picture_large']['data']['url'],
+						type:this.type_login
 			        };
 	          		console.log('dict', dict);
 	          		this.finalSignup(dict); 
@@ -74,8 +80,8 @@ login_password:any;
 		            password: '',
 		            medium: 'google',
 		            social_id: profile['userId'],
-					type:'',
-		            image: !profile['imageUrl'] ? '' : profile['imageUrl']
+		            image: !profile['imageUrl'] ? '' : profile['imageUrl'],
+					type:this.type_login
 	          	};
 	          	console.log('dict', dict);
 	         	this.finalSignup(dict);             

@@ -56,9 +56,9 @@ Your Donations
 		<ion-label>
 		
 		
-		<h3  *ngIf="errors.indexOf(don?.actid)==-1">{{don?.atitle}}</h3>
-		<h3  *ngIf="errors.indexOf(don?.teamid)==-1">{{don?.ttitle}}</h3>
-		<h3  *ngIf="errors.indexOf(don?.charityid)==-1">{{don?.title}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.actid)==-1"    routerLink="/activitydetail/{{don?.actid}}">{{don?.atitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.teamid)==-1"    routerLink="/teamdetail/{{don?.teamid}}">{{don?.ttitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.charityid)==-1"   routerLink="/charitydetail/{{don?.charityid}}">{{don?.title}}</h3>
 		<p *ngIf="errors.indexOf(don?.actid)==-1"><b>${{don?.amount}} </b> given to {{don?.atitle}}</p>
 		<p *ngIf="errors.indexOf(don?.teamid)==-1"><b>${{don?.amount}} </b> given to {{don?.ttitle}}</p>
 		<p *ngIf="errors.indexOf(don?.charityid)==-1"><b>${{don?.amount}} </b> given to {{don?.title}}</p>

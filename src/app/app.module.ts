@@ -18,12 +18,10 @@ import { PaymentlistmodalPage } from './paymentlistmodal/paymentlistmodal.page';
 import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
 import { CustomamountPage } from './customamount/customamount.page';
 
-
+import {  social_config } from './config';
 import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
-
-
 
 
 

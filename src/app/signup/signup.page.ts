@@ -45,7 +45,8 @@ userid:any;
 			            medium: 'facebook',
 						type:this.type_login,
 			            social_id: profile['id'],
-			            image: profile['picture_large']['data']['url']
+			            image: profile['picture_large']['data']['url'],
+						
 			        };
 	          		console.log('dict', dict);
 	          		this.finalSignup(dict); 
