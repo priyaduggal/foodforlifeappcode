@@ -17,7 +17,9 @@ cvc:any;
 card_number:any;
 exp_date:any;
 errors:any=['',null,undefined];
-  constructor(private globalFooService: GlobalFooService,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {}
+  constructor(private globalFooService: GlobalFooService,
+  public activatedRoute: ActivatedRoute,public api:ApiService
+  , public router:Router,private common: CommonService) {}
 
   ngOnInit() {
   }
