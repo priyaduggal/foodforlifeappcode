@@ -99,3 +99,46 @@ font-size: 14px !important;
 {
 	display:none;
 }
+
+ion-toolbar ion-buttons.buttons-last-slot {
+    margin-right: 10px;;
+}
+
+
+ion-header ion-toolbar ion-back-button {
+    color: #fff;
+}
+.can-go-back > ion-header ion-toolbar ion-back-button span.button-text {
+    display: none;
+}
+
+ion-header ion-toolbar ion-buttons.buttons-first-slot.md, ion-header ion-toolbar  ion-back-button.md.button  {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+ion-header ion-toolbar ion-buttons.buttons-last-slot.md {
+    position: absolute;
+    right:5px;
+    z-index: 2;
+}
+
+
+.search ion-searchbar .searchbar-search-icon {
+    top: 0 !important;
+}
+.search ion-searchbar .searchbar-search-icon.md {
+    top: 15px !important;
+}
+
+
+.popupconfirm {
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 15px;
+}

@@ -23,6 +23,8 @@ ion-fab {
     bottom: 3px;
     right: 4px; 
 }
+
+
 ion-item
 	{--padding-start: 10px;
        margin-top: 15px;
@@ -34,6 +36,7 @@ ion-item
 	  {
 	      width: 70px;
     height: 70px;
+	margin: 8px 0;
 	img
 	{
 	    width: 70px;
@@ -53,12 +56,17 @@ ion-item
 	   span
 	   {margin-right:10px;
 	   font-size:14px;
+	   display: inline-flex;
+	   align-items: center;
 	   ion-icon
 	   {margin-right:3px;
 	   color:var(--ion-color-primary);
 	   }
 	   }
 	   }
+	  }
+	  ion-icon{
+		color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
 	  }
 	}
 }

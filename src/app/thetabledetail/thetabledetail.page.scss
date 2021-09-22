@@ -12,13 +12,16 @@ ion-header
 	  margin-right:10px;
 	 }
 	 }
+    
 		  ion-title{
 		  color:var(--ion-color-white);
 		  text-align:center;
             font-style: normal;
             font-family: 'Poppins', sans-serif !important;
         }
+       
 	}
+    
 	&::after
 	{
 	display:none;
