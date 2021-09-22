@@ -2,9 +2,10 @@
 
 <ion-content>
 <div class="popupconfirm">
-<p>Your team will miss you! </p>
+<h4>Your team will miss you! </h4>
 <p>If you leave team  {{team_name}} , your donations will no longer support their team goals </p>
-<ion-button shape="round" expand="full" (click)="cancel()">Cancel</ion-button>
+<div class="popup_actionwrap"><ion-button shape="round" expand="full" (click)="cancel()">Cancel</ion-button>
 <ion-button shape="round" expand="full" (click)="join()" >Leave</ion-button>
+</div>
 </div>
 </ion-content>

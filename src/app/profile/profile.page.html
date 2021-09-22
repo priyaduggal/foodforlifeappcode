@@ -5,10 +5,10 @@
         </ion-buttons>
         <ion-title>Profile</ion-title>
 		<ion-buttons routerLink="/tabs/settings"  slot="end">
-		<ion-icon name="settings-outline"></ion-icon>
+			<ion-icon name="settings-outline"></ion-icon>
 		</ion-buttons>
       </ion-toolbar>
-	  </ion-header>
+	</ion-header>
 
 <ion-content>
 <div profileinfo>
@@ -65,7 +65,7 @@ Your Donations
 		<p *ngIf="errors.indexOf(don?.charityid)>=0 && errors.indexOf(don?.teamid)>=0 &&
 		errors.indexOf(don?.actid)>=0 "><b>${{don?.amount}} </b> given to donation jar</p>
 		
-		
+		<span class="dontns_share"><ion-icon name="share-social-outline"></ion-icon></span>
 		<ion-note><ion-icon name="calendar-outline"></ion-icon> {{don?.donated_at | date : 'd MMM yyyy'}}</ion-note>
 		</ion-label>
 		</ion-item>

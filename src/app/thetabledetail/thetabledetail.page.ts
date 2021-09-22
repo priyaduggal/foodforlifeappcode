@@ -25,7 +25,7 @@ IMAGES_URL:any = config.IMAGES_URL;
 job_type:any;
 slideOpts = {
 	slidesPerView: 3,
-	centeredSlides: true,
+	centeredSlides: false,
 	 spaceBetween: 10,
     initialSlide: 1,
     speed: 400

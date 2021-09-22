@@ -8,15 +8,20 @@
 	<ion-content class="ion-padding">
 	<div teamdetail>
 	<!--img src="assets/images/createteam.png" class="user_image" /--->
-	<img   src="assets/images/createteam.png" *ngIf="is_license_uploaded == false"  class="user_image1">
-								<img *ngIf="is_license_uploaded == true"  [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
-								class="user_image1">
-								<!--label for="editprofile1"><i class="fa fa-pencil"></i></label--->
-								<label for="editprofile1" btnedit >
-								<ion-icon name="camera-outline"></ion-icon>
-								</label>
-								<input type="file" (change)="uploadImage($event)" name="editprofile1" id="editprofile1" style="display:none">
-								<span error *ngIf="errors.indexOf(this.license_file) >= 0 && is_submit_team == true">Please select Image</span>
+	<div class="profile_thumbnail_wrpr">
+		<div class="profile_thumbnail_userimg">
+			<img   src="assets/images/createteam.png" *ngIf="is_license_uploaded == false"  class="user_image1">
+			<img *ngIf="is_license_uploaded == true"  [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+			class="user_image1">
+			<!--label for="editprofile1"><i class="fa fa-pencil"></i></label--->
+			<label for="editprofile1" btnedit >
+			<ion-icon name="camera-outline"></ion-icon>
+			</label>
+			<input type="file" (change)="uploadImage($event)" name="editprofile1" id="editprofile1" style="display:none">
+			
+		</div>
+		<span error *ngIf="errors.indexOf(this.license_file) >= 0 && is_submit_team == true">Please select Image</span>
+		</div>	
 	
 	
 	<div formfield>
