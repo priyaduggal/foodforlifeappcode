@@ -45,7 +45,7 @@ ion-header
 			border-radius: 50px;
 			background:var( --ion-color-white);
 			padding: 0 16px;
-			margin-top:25px;
+			margin-top:32px;
 			label {
 				position: absolute;
 				top: -10px;
@@ -130,6 +130,8 @@ ion-header
 	{
 	color:red;
 	font-size:12px;
+	position: relative;
+    top: 0;
 	}
 	ion-content{
 	margin-top: 25px !important;

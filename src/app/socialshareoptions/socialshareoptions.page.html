@@ -1,26 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>socialshareoptions</ion-title>
-  </ion-toolbar>
-</ion-header>
-<div class="popup_actionwrap"><ion-button shape="round" expand="full" (click)="cancel()">Cancel</ion-button>
-</div>
+
 <ion-content>
-<ion-row class="ion-align-items-center shareicons" >
-      <ion-col size="2">
-          <ion-button color="warning" (click)="SendEmail()"><ion-icon name="mail-outline"></ion-icon></ion-button>
+	<div class="popupsocialshare">
+		<h4>Social Share Options </h4>
+
+	
+    <ion-row class="ion-align-items-center shareicons" >
+      <ion-col size="3">
+          <ion-button  (click)="SendEmail()" class="envelopeIcon"><ion-icon name="mail-outline"></ion-icon></ion-button>
       </ion-col>
-      <ion-col size="2">
-        <ion-button color="primary" (click)="ShareFacebook()"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+      <ion-col size="3">
+        <ion-button  (click)="ShareFacebook()"  class="facebookIcon"><ion-icon name="logo-facebook"></ion-icon></ion-button>
       </ion-col>
-      <ion-col size="2">
-          <ion-button color="success" (click)="ShareWhatsapp()"><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
+      <ion-col size="3">
+          <ion-button  (click)="ShareWhatsapp()"  class="whatsappIcon"><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
       </ion-col>
       <!--ion-col size="2">
         <ion-button  color="secondary" (click)="SendTwitter()"><ion-icon name="logo-twitter"></ion-icon></ion-button>
       </ion-col-->   
-      <ion-col size="2">
-        <ion-button color="tertiary" (click)="SendInstagram()"><ion-icon name="logo-instagram"></ion-icon></ion-button>
+      <ion-col size="3">
+        <ion-button  (click)="SendInstagram()"  class="instagramIcon"><ion-icon name="logo-instagram"></ion-icon></ion-button>
       </ion-col>    
     </ion-row>
+
+    <div class="popup_actionwrap">
+      <ion-button expand="full" (click)="cancel()"><ion-icon name="close-circle-outline"></ion-icon></ion-button>
+		</div>
+	</div>
 </ion-content>
+
+

@@ -52,21 +52,38 @@ ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span
 font-size: 14px !important;
     line-height: 22px !important;
     font-weight: 300 !important;
-    color: #adadad !important;
+    color:#666!important;
     margin-top: 10px !important;
 	}
+    .about_us h4 {
+        margin: 20px 0px 20px 0px;
+    }
 .about_us span.left-rf-boc{
-   font-weight: 500;
-    line-height: 1.2;
-	font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+    font-size: 18px;
+    position: relative;
 }
+
+.about_us span.left-rf-boc:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
+ }
+
 .privacy_description p{
 	
 	margin-top: 0px;
     margin-bottom: 7px;
     font-size: 14px;
     line-height: 24px;
-    color: #999;
+    color: #666;
     font-weight: 400;
 }
 .privacy_description h4 after {
@@ -80,16 +97,31 @@ font-size: 14px !important;
     z-index: -1;
     top: -6px;
 }
+.privacy_description ul {
+    padding-left: 35px;
+}
 .privacy_description ul li {
     display: block;
     margin-bottom: 7px;
     font-size: 14px;
     line-height: 24px;
-    color: #999;
+    color: #666;
     font-weight: 400;
+    position: relative;
+}
+.privacy_description ul li:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    width: 7px;
+    height: 7px;
+    background: #f2a40b;
+    border-radius: 50%;
+    z-index: -1;
+    top: 7px;
 }
 .privacy_description h4{
-	margin: 15px 0px 10px 0px;
+	margin: 20px 0px 20px 0px;
     font-size: 18px;
     position: relative;
     z-index: 1;
@@ -141,4 +173,16 @@ ion-header ion-toolbar ion-buttons.buttons-last-slot.md {
     transform: translate(-50%, -50%);
     background: #ffffff;
     border-radius: 15px;
+}
+
+.privacy_description h4:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
 }
