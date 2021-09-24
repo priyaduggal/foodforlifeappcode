@@ -17,17 +17,17 @@ import { JointeamconfirmPage } from './jointeamconfirm/jointeamconfirm.page';
 import { PaymentlistmodalPage } from './paymentlistmodal/paymentlistmodal.page';
 import { LeaveteamconfirmPage } from './leaveteamconfirm/leaveteamconfirm.page';
 import { CustomamountPage } from './customamount/customamount.page';
-
+import { SocialshareoptionsPage } from './socialshareoptions/socialshareoptions.page';
 import {  social_config } from './config';
 import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 @NgModule({
-  declarations: [AppComponent,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
-  entryComponents: [JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
+  declarations: [AppComponent,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
+  entryComponents: [JointeamconfirmPage,SocialshareoptionsPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -36,6 +36,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
   ],
   providers: [
     StatusBar,
+	SocialSharing,
     SplashScreen,
     HttpClient,
 	Camera,

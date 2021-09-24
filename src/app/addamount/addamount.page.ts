@@ -16,6 +16,7 @@ charityid:any;
 charity:any;
 search_text:any;
 team:any;
+totalcents:any;
 userid:any;
 actid:any;
 teamid:any;
@@ -29,6 +30,7 @@ act:any;
 	this.charityid = navParams.get('id');
 	this.actid = navParams.get('actid');
 	this.teamid = navParams.get('teamid');
+	
 	//alert(this.charityid);
 	  }
 
@@ -59,7 +61,12 @@ act:any;
 				   self.common.presentToast('We have rounded the amount entered to the nearest number of meals','success');
 			  }
 			  var val=$('#amount').val();
-			  var tot1=val * 4;
+			 
+			//  var tot1=val * 4;
+			  
+			  var mul=val * 100;
+			  var tot1=mul / self.totalcents;
+			
 			  $('.no_meals').text(tot1);
 			   console.log(self.search_text);
 		  }
@@ -91,7 +98,25 @@ act:any;
 	{
 	this.actdetail();
 	}
+	this.getsettings();
 	this.userid=localStorage.getItem('userid');
+   }
+   getsettings()
+   {
+	 this.api.post('getadsettings', '','').subscribe((result) => {  
+		var res;
+		res = result;
+		if(res.status==1){
+		this.totalcents=res.data.totalcents;	
+		//alert(this.totalcents);
+		
+		}else
+		{
+		}
+        },
+        err => {
+             
+        });     
    }
    async confirm_act()
     {

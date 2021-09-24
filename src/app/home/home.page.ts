@@ -18,6 +18,7 @@ userid:any;
 IMAGES_URL:any = config.IMAGES_URL;
 errors:any=['',null,undefined];
 type_login:any;
+totalcents:any;
 list=[];
 slideOptsOne = {
 initialSlide: 0,
@@ -87,6 +88,7 @@ speed:900,
 	this.userid=localStorage.getItem('userid');
 	this.type_login=localStorage.getItem('type_login');
 	this.Charitylist();
+
    }
    Charitylist()
    {
@@ -96,8 +98,10 @@ speed:900,
 		res = result;
 		if(res.status==1){
 		this.list=res.data;	
+			this.totalcents=res.settings.totalcents;
 		}else
 		{
+			this.totalcents=res.settings.totalcents;
 		}
         },
         err => {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService } from '../services/api/api.service';
 import {Router } from '@angular/router';
 import { config } from '../config';
+import { ModalController, 
+  NavParams } from '@ionic/angular';
 import {CommonService} from '../common/common.service';
 import * as $ from 'jquery';
 import { Camera, CameraOptions, PictureSourceType } from '@ionic-native/camera/ngx';
@@ -9,6 +11,8 @@ import { File, FileEntry } from '@ionic-native/file/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { SocialshareoptionsPage } from '../socialshareoptions/socialshareoptions.page';
 declare var window: any; 
 @Component({
   selector: 'app-profile',
@@ -32,7 +36,9 @@ userid:any;
 donationlist=[];
 userdetails:any;
 IMAGES_URL:any = config.IMAGES_URL;
-  constructor(public api:ApiService,
+  constructor(public modalController: ModalController,
+  private socialSharing: SocialSharing,
+  public api:ApiService,
   public router:Router,
   private common: CommonService,
   private camera: Camera,
@@ -42,6 +48,28 @@ IMAGES_URL:any = config.IMAGES_URL;
 
   ngOnInit() {
   }
+ async socialshare(donation)
+  {
+	 
+		const modal = await this.modalController.create({
+		component: SocialshareoptionsPage,
+		cssClass: 'jointeamconfirm',
+		componentProps: {
+		donation:donation,
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		/////this.team.joins=this.team.joins + 1;
+		//this.getuserteams();
+		}
+
+		});
+		return await modal.present();
+  }
+  
   getimage(img){
       if(this.errors.indexOf(img) == -1){
       if(img.includes('https') == true){
@@ -220,7 +248,7 @@ IMAGES_URL:any = config.IMAGES_URL;
 		if(res.status==1){
 		this.userdetails=res.data;
 		this.donationlist=res.donations;
-		this.common.presentToast(res.message,'success');
+		//this.common.presentToast(res.message,'success');
 		}else
 		{
 		this.common.presentToast(res.message,'danger');

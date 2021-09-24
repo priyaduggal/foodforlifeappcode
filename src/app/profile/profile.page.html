@@ -49,24 +49,35 @@ Your Donations
 		<p *ngIf="donationlist?.length==0">No Record Found..!</p>
 		<ion-item lines="none"  *ngFor="let don of donationlist">
 		<ion-thumbnail>
-		<img   *ngIf="errors.indexOf(don?.charityid)==-1" src="{{IMAGES_URL}}/{{don?.image}}"/>
-		<img   *ngIf="errors.indexOf(don?.actid)==-1" src="{{IMAGES_URL}}/{{don?.aimage}}"/>
-		<img   *ngIf="errors.indexOf(don?.teamid)==-1" src="{{IMAGES_URL}}/{{don?.timage}}"/>
+		<img  routerLink="/charitydetail/{{don?.charityid}}" *ngIf="errors.indexOf(don?.charityid)==-1" src="{{IMAGES_URL}}/{{don?.image}}"/>
+		<img   routerLink="/activitydetail/{{don?.actid}}"  *ngIf="errors.indexOf(don?.actid)==-1" src="{{IMAGES_URL}}/{{don?.aimage}}"/>
+		<img     routerLink="/teamdetail/{{don?.teamid}}" *ngIf="errors.indexOf(don?.teamid)==-1" 
+		src="{{IMAGES_URL}}/{{don?.timage}}"/>
+		
+		<img   *ngIf="errors.indexOf(don?.charityid)>=0 && errors.indexOf(don?.teamid)>=0 &&
+		errors.indexOf(don?.actid)>=0" 
+		src="assets/images/logonew.png"/>
 		</ion-thumbnail>
 		<ion-label>
 		
 		
-		<h3  *ngIf="errors.indexOf(don?.actid)==-1"    routerLink="/activitydetail/{{don?.actid}}">{{don?.atitle}}</h3>
-		<h3  *ngIf="errors.indexOf(don?.teamid)==-1"    routerLink="/teamdetail/{{don?.teamid}}">{{don?.ttitle}}</h3>
-		<h3  *ngIf="errors.indexOf(don?.charityid)==-1"   routerLink="/charitydetail/{{don?.charityid}}">{{don?.title}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.actid)==-1"   >{{don?.atitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.teamid)==-1"  >{{don?.ttitle}}</h3>
+		<h3  *ngIf="errors.indexOf(don?.charityid)==-1"   >{{don?.title}}</h3>
 		<p *ngIf="errors.indexOf(don?.actid)==-1"><b>${{don?.amount}} </b> given to {{don?.atitle}}</p>
 		<p *ngIf="errors.indexOf(don?.teamid)==-1"><b>${{don?.amount}} </b> given to {{don?.ttitle}}</p>
 		<p *ngIf="errors.indexOf(don?.charityid)==-1"><b>${{don?.amount}} </b> given to {{don?.title}}</p>
 		<p *ngIf="errors.indexOf(don?.charityid)>=0 && errors.indexOf(don?.teamid)>=0 &&
 		errors.indexOf(don?.actid)>=0 "><b>${{don?.amount}} </b> given to donation jar</p>
-		
-		<span class="dontns_share"><ion-icon name="share-social-outline"></ion-icon></span>
-		<ion-note><ion-icon name="calendar-outline"></ion-icon> {{don?.donated_at | date : 'd MMM yyyy'}}</ion-note>
+		    
+		<ion-note>
+		<ion-icon name="calendar-outline">
+		</ion-icon>
+		{{don?.donated_at | date : 'd MMM yyyy'}}
+		</ion-note>
+		<span class="dontns_share">
+		<ion-icon name="share-social-outline" class="socialshare" (click)="socialshare(don)"></ion-icon>
+		</span>
 		</ion-label>
 		</ion-item>
 	</div>
