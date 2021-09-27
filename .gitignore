@@ -29,4 +29,5 @@ npm-debug.log*
 /plugins
 /www
 /admin
-/node_modules
+node_modules
+node_modulesbk
