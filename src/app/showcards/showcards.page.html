@@ -3,31 +3,24 @@
 	      <ion-buttons (click)="dismiss() " slot="end">
          <ion-icon name="close-sharp"></ion-icon>
         </ion-buttons>
-	<ion-title class="ion-text-center">Payment Method</ion-title>
+	<ion-title class="ion-text-center">Added Cards</ion-title>
   </ion-toolbar>
-  </ion-header>
+ </ion-header>
 
-<ion-content class="ion-padding">
-
+<ion-content>
 <div amountimg class="ion-text-center">
-<img src="assets/images/mappic6.jpg"/>
-<!--p>Please choose payment method or add new card</p-->
-<p>Select Payment Method</p>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('stripe')">Stripe</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('paypal')">Paypal</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns"(click)="paywith('googlepay')">Google Pay</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('applepay')">Apple Pay</ion-button>
-<p *ngIf="paymentlist.length==0">No records found</p>
+<!--p>Added Cards</p-->
 
-<!--ion-radio-group value=""class="radiobox">
-    <ion-item lines="none" *ngFor="let pay of paymentlist">
+<p *ngIf="cards?.length==0">No cards found</p>
+<ion-radio-group value=""class="radiobox">
+    <ion-item lines="none" *ngFor="let pay of cards">
+		
+					
       <ion-label>{{pay?.card_number}}</ion-label>
       <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
     </ion-item>
-</ion-radio-group-->	
-
-<!--ion-button  expand="full" shape="round" class="btn-losns add_new_card_btn" 
-(click)="confirm();">Add new card</ion-button-->
+</ion-radio-group>	
+<ion-button  expand="full" shape="round" class="btn-losns add_new_card_btn" (click)="confirm();">Add new card</ion-button>
 </div>
 <div class="add_payment" style="display:none">
 <div formfield>
@@ -65,7 +58,6 @@
 </div>
 
 </div>
-
-
-<!--ion-button  expand="full" shape="round" class="btn-losns" (click)="pay();" >Pay</ion-button-->
+<ion-button  expand="full" shape="round" class="btn-losns add_payment" (click)="hide();" style="display:none">Hide Form</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="pay();" >Pay</ion-button>
 </ion-content>

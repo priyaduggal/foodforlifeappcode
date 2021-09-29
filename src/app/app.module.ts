@@ -23,11 +23,12 @@ import { DeleteconfirmPage } from './deleteconfirm/deleteconfirm.page';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
 
-
+import { ShowcardsPage } from './showcards/showcards.page';
 @NgModule({
-  declarations: [AppComponent,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
-  entryComponents: [JointeamconfirmPage,SocialshareoptionsPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
+  declarations: [AppComponent,ShowcardsPage,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
+  entryComponents: [JointeamconfirmPage,ShowcardsPage,SocialshareoptionsPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -36,6 +37,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
   ],
   providers: [
     StatusBar,
+	PayPal,
 	SocialSharing,
     SplashScreen,
     HttpClient,

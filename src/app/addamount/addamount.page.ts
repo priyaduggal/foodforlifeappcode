@@ -25,7 +25,8 @@ errors:any=['',null,undefined];
 minimum:any;
 timeout=null;
 act:any;
-  constructor(public navParams: NavParams,public api:ApiService,public router:Router,private common: CommonService,public modalController: ModalController) {
+  constructor(public navParams: NavParams,public api:ApiService,
+  public router:Router,private common: CommonService,public modalController: ModalController) {
 	  
 	this.charityid = navParams.get('id');
 	this.actid = navParams.get('actid');

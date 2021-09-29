@@ -150,6 +150,10 @@ const routes: Routes = [
     path: 'socialshareoptions',
     loadChildren: () => import('./socialshareoptions/socialshareoptions.module').then( m => m.SocialshareoptionsPageModule)
   },
+  {
+    path: 'showcards',
+    loadChildren: () => import('./showcards/showcards.module').then( m => m.ShowcardsPageModule)
+  },
 
 ];
 
