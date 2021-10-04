@@ -15,9 +15,9 @@
 <p>Select Payment Method</p>
 <ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('stripe')">Stripe</ion-button>
 <ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('paypal')">Paypal</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns"(click)="paywith('googlepay')">Google Pay</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns"(click)="gpay()" >Google Pay</ion-button>
 <ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('applepay')">Apple Pay</ion-button>
-<p *ngIf="paymentlist.length==0">No records found</p>
+<!--p *ngIf="paymentlist.length==0">No records found</p-->
 
 <!--ion-radio-group value=""class="radiobox">
     <ion-item lines="none" *ngFor="let pay of paymentlist">

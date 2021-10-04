@@ -24,8 +24,9 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
-
+import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { ShowcardsPage } from './showcards/showcards.page';
+import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';
 @NgModule({
   declarations: [AppComponent,ShowcardsPage,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   entryComponents: [JointeamconfirmPage,ShowcardsPage,SocialshareoptionsPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
@@ -37,7 +38,9 @@ import { ShowcardsPage } from './showcards/showcards.page';
   ],
   providers: [
     StatusBar,
+	AppLauncher,
 	PayPal,
+	WebIntent,
 	SocialSharing,
     SplashScreen,
     HttpClient,

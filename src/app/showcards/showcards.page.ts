@@ -14,6 +14,7 @@ import { ModalController,NavParams } from '@ionic/angular';
 export class ShowcardsPage implements OnInit {
 cards=[];
 amount:any;
+userid:any;
 charityid:any;
 actid:any;
 name:any;
