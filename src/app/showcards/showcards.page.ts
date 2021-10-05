@@ -41,6 +41,8 @@ errors:any=['',null,undefined];
 confirm()
 	{
 		this.cardid='';
+		$('.ionradioch').prop('checked', false);
+		$('.ionradioch').attr('checked', false);
 		$('.add_new_card_btn').hide();
 		$('.add_payment').show();
 	}
