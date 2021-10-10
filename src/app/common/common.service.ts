@@ -16,7 +16,15 @@ export class CommonService {
         duration: 5000,
         position: 'bottom',
         color: color,
-        //showCloseButton: true,
+        buttons: [
+        {
+          text: 'Close',
+          role: 'cancel',
+          handler: () =>{
+            console.log('Cancel clicked');
+          }
+        }
+      ],
         mode:"ios"
       });
       toast.present();

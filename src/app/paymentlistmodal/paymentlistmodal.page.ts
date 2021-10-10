@@ -203,113 +203,15 @@ shippingType: string = "shipping"
    {
      const options = {
      action: this.webIntent.ACTION_VIEW,
-     url: 'upi://pay?pa=7404172002@ybl&pn=Food For Life &tid=esdsdfs&tr=deeefff&am='+this.amount+'&cu=INR&tn=Donation Payment',
+     url: 'upi://pay?pa=7404172002@okbizaxis&pn=Food For Life &tid=esdsdfs&mc=&tr=25584584&am='+this.amount+'&cu=INR&tn=Donation Payment',
     // type: 'application/vnd.android.package-archive'
      }
 
      this.webIntent.startActivity(options).then(
        onSuccess => {
          console.log('onSuccess',onSuccess);
-         if(localStorage.getItem('user_auth_id_hitfit') != undefined && localStorage.getItem('user_auth_id_hitfit') != null)
-       {
-       var frmdata = {
-       trans_num: 221,
-       product_id:22,
-       user_id: localStorage.getItem('user_auth_id_hitfit'),
-       amount: this.amount,
-       total:this.amount,
-       response:onSuccess,
-       gateway: 'google'
-       };
-	   this.common.presentLoading();
-      // this.userService.presentLoading();post('AddPaymentwithsubscriptionCard', dict,'')
-       this.api.post('register',frmdata,'').subscribe((result) => {
-       this.common.stopLoading();
-       this.common.presentToast('Your account has been registered successfully!.','success');
-        /*  var userId = this.userService.encryptData(result.data.userData.data.ID,config.ENC_SALT);
-           localStorage.setItem('user_auth_token',userId.toString());
-           localStorage.setItem('user_auth_id_hitfit',result.data.userData.ID);
-           localStorage.setItem('user_id',result.data.userData.data.ID);
-           localStorage.setItem('user_name',result.data.userData.data.display_name);
-           //localStorage.setItem('user_lastname',result.data.lastname);
-           localStorage.setItem('user_email',result.data.userData.data.user_email);
-           if(result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '' )
-         {
-            localStorage.setItem('user_image',result.data.userData.data.profile_image);
-         }else
-         {
-           localStorage.setItem('user_image','assets/img/user.png');
-         }
- */
-         /*  this.globalfoo.publishSomeData({
-               foo: {'data': result.data.userData.data, 'page': 'profile', 'name': result.data.userData.data.display_name, 'profile_image': (result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '')  ? result.data.userData.data.profile_image : 'assets/img/user.png'}
-           }); */
-
-          // localStorage.setItem('user_phone',result.data.phone);
-           this.router.navigate(['/tabs/home']);
-       },
-       err => {
-       this.common.stopLoading();
-       this.common.presentToast('Failed to send request. Please try again','danger');
-       });
-       }else
-       {
-       var frmdatas = {
-       trans_num: 221,
-       product_id: 22,
-       amount: this.amount,
-       total: this.amount,
-       response:onSuccess,
-       gateway: 'google'
-       };
-       var signup_data = JSON.parse(localStorage.getItem('signup_data'));
-           frmdatas['fullname'] = signup_data.fullname;
-           frmdatas['email']  = signup_data.email;
-           frmdatas['password'] = signup_data.password;
-           frmdatas['dob'] = signup_data.dob;
-           frmdatas['agreement'] = signup_data.agreement;
-  //         frmdatas['insecure'] = signup_data.insecure;
-
-           if(localStorage.getItem('sominfo_data') != undefined && localStorage.getItem('sominfo_data') != null)
-           {
-             var sominfo_data = JSON.parse(localStorage.getItem('sominfo_data'));
-             frmdatas['weight'] = sominfo_data.weight;
-             frmdatas['height'] = sominfo_data.height;
-             frmdatas['gender'] = sominfo_data.gender;
-           }
-       this.common.presentLoading();
-       this.api.post('register',frmdatas,'').subscribe((result) => {
-       this.common.stopLoading();
-       this.common.presentToast('Your account has been registered successfully!.','success');
-        /*  var userId = data.userData.data.ID;
-           localStorage.setItem('user_auth_token',userId.toString());
-           localStorage.setItem('user_auth_id_hitfit',result.data.userData.ID);
-           localStorage.setItem('user_id',result.data.userData.data.ID);
-           localStorage.setItem('user_name',result.data.userData.data.display_name);
-           //localStorage.setItem('user_lastname',result.data.lastname);
-           localStorage.setItem('user_email',result.data.userData.data.user_email);
-           if(result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '' )
-         {
-            localStorage.setItem('user_image',result.data.userData.data.profile_image);
-         }else
-         {
-           localStorage.setItem('user_image','assets/img/user.png');
-         } */
-
-         /*  this.globalfoo.publishSomeData({
-               foo: {'data': result.data.userData.data, 'page': 'profile', 'name': result.data.userData.data.display_name, 'profile_image': (result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '')  ? result.data.userData.data.profile_image : 'assets/img/user.png'}
-           }); */
-
-          // localStorage.setItem('user_phone',result.data.phone);
-           this.router.navigate(['/tabs/home']);
-       },
-       err => {
-       this.common.stopLoading();
-       this.common.presentToast('Failed to send request. Please try again','danger');
-       });
-       }
-
-        // alert('payment done');
+        
+        alert('payment done');
        }
        , onError => {
             console.log('onError',onError);
