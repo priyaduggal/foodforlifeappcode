@@ -13,10 +13,11 @@
 <img src="assets/images/mappic6.jpg"/>
 <!--p>Please choose payment method or add new card</p-->
 <p>Select Payment Method</p>
+<div id="paypal-button-container"></div>
 <ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('stripe')">Stripe</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('paypal')">Paypal</ion-button>
+<!--ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('paypal')">Paypal</ion-button-->
 <ion-button  expand="full" shape="round" class="btn-losns"(click)="gpay()" >Google Pay</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('applepay')">Apple Pay</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="payWithApplePay()">Apple Pay</ion-button>
 <!--p *ngIf="paymentlist.length==0">No records found</p-->
 
 <!--ion-radio-group value=""class="radiobox">
@@ -29,7 +30,7 @@
 <!--ion-button  expand="full" shape="round" class="btn-losns add_new_card_btn" 
 (click)="confirm();">Add new card</ion-button-->
 </div>
-<div class="add_payment" style="display:none">
+<!---div class="add_payment" style="display:none">
 <div formfield>
 				<label>Card Holder Name</label>
 				
@@ -64,7 +65,7 @@
 			
 </div>
 
-</div>
+</div-->
 
 
 <!--ion-button  expand="full" shape="round" class="btn-losns" (click)="pay();" >Pay</ion-button-->

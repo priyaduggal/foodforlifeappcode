@@ -4,18 +4,23 @@ import {Router } from '@angular/router';
 import { config } from '../config';
 import {CommonService} from '../common/common.service';
 import * as $ from 'jquery';
-import { ModalController,NavParams } from '@ionic/angular';
+import { ModalController,NavParams,AlertController} from '@ionic/angular';
 import { GlobalFooService } from '../services/globalFooService.service';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
 import { ShowcardsPage } from '../showcards/showcards.page';
 import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';
+import { ApplePay } from '@ionic-native/apple-pay/ngx';
+
 @Component({
   selector: 'app-paymentlistmodal',
   templateUrl: './paymentlistmodal.page.html',
   styleUrls: ['./paymentlistmodal.page.scss'],
 })
 export class PaymentlistmodalPage implements OnInit {
+paymentAmount: string = '3.33';
+currency: string = 'INR';
+currencyIcon: string = '₹';
 amount:any;
 charityid:any;
 actid:any;
@@ -29,8 +34,30 @@ userid:any;
 paymentlist=[];
 cardid:any;
 is_submit_payment:boolean=false;
-  constructor(private payPal: PayPal,
-  private globalfoo: GlobalFooService,
+shippingMethods: any = [
+  {
+    identifier: 'NextDay',
+    label: 'NextDay',
+    detail: 'Arrives tomorrow by 5pm.',
+    amount: 3.99
+  }
+];
+items: any = [
+  {
+    label:'Food For Life',
+    amount:this.navParams.get('amount')
+  },
+];
+supportedNetworks: any = ['visa'];
+merchantCapabilities: any = ['3ds', 'debit', 'credit'];
+merchantIdentifier: string = 'merchant.hititfit.indiankey';
+currencyCode: string = 'USD';
+countryCode: string = 'US';
+billingAddressRequirement: any = ['name', 'email', 'phone'];
+shippingAddressRequirement: any = 'none';
+shippingType: string = "shipping"
+  constructor(private payPal: PayPal, private applePay: ApplePay,
+  private globalfoo: GlobalFooService,  public alertController: AlertController,
   public navParams: NavParams,
   public api:ApiService,
   public router:Router,private webIntent: WebIntent,
@@ -42,121 +69,149 @@ is_submit_payment:boolean=false;
   	this.actid = navParams.get('actid');
 	this.amount = navParams.get('amount');
 	this.userid = navParams.get('userid');
+	 let _this = this;
+    setTimeout(() => {
+      // Render the PayPal button into #paypal-button-container
+      <any>window['paypal'].Buttons({
+
+        // Set up the transaction
+        createOrder: function (data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value:navParams.get('amount')
+              }
+            }]
+          });
+        },
+
+        // Finalize the transaction
+        onApprove: function (data, actions) {
+          return actions.order.capture()
+            .then(function (details) {
+              // Show a success message to the buyer
+			  console.log(details);
+			  	let dict ={
+							//cardid:this.cardid,
+							userid: navParams.get('userid'),
+							amount:navParams.get('amount'),
+							charityid:navParams.get('charityid'),
+							actid:navParams.get('actid'),
+							teamid:navParams.get('teamid'),
+							transactionid:details.id
+							};
+							
+						
+							_this.api.post('AddPaymentwithsubscriptionPaypal', dict,'').subscribe((result) => {  
+							
+							_this.is_submit_payment=false;
+							var res;
+							res = result;
+							if(res.status==1){
+						    _this.dismiss();
+							_this.common.presentToast('Donated Successfully !.','success');
+							if(_this.errors.indexOf(_this.actid)==-1)
+							{
+							_this.router.navigate(['/tabs/tribes']);
+							}else if(_this.errors.indexOf(_this.teamid)==-1)
+							{
+							_this.router.navigate(['/searchteam']);
+							}else{
+							_this.router.navigate(['/tabs/home']);
+							}
+					}else
+					{
+					_this.common.presentToast(res.msg,'danger');
+					}
+					},
+					err => {
+						
+					_this.common.presentToast('Some error occured','danger');
+					});
+					//alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            })
+            .catch(err => {
+              console.log(err);
+            })
+        }
+      }).render('#paypal-button-container');
+    },200)
 	this.listpayment();
-	}
 	
+
+	}
+	 async presentAlert(message) {
+    const alert = await this.alertController.create({
+      header: 'Apple Pay',
+      subHeader: 'Payment with apple pay.',
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+	async payWithApplePay() 
+	{
+	try {
+      let order: any = {
+        items: [
+          {
+            label:'Food For Life',
+            amount: this.amount
+          },
+        ],
+        shippingMethods: this.shippingMethods,
+        merchantIdentifier: this.merchantIdentifier,
+        currencyCode: this.currencyCode,
+        countryCode: this.countryCode,
+        billingAddressRequirement: this.billingAddressRequirement,
+        shippingAddressRequirement: this.shippingAddressRequirement,
+        shippingType: this.shippingType,
+        merchantCapabilities: this.merchantCapabilities,
+        supportedNetworks: this.supportedNetworks
+      }
+      this.applePay.makePaymentRequest(order).then(message => {
+        console.log(message);
+        this.applePay.completeLastTransaction('success');
+      }).catch((error) => {
+        console.log(error);
+        this.applePay.completeLastTransaction('failure');
+        this.presentAlert(error);
+      });
+
+      // In real payment, this step should be replaced by an actual payment call to payment provider
+      // Here is an example implementation:
+
+      // MyPaymentProvider.authorizeApplePayToken(token.paymentData)
+      //    .then((captureStatus) => {
+      //        // Displays the 'done' green tick and closes the sheet.
+      //        ApplePay.completeLastTransaction('success');
+      //    })
+      //    .catch((err) => {
+      //        // Displays the 'failed' red cross.
+      //        ApplePay.completeLastTransaction('failure');
+      //    });
+
+    } catch {
+      // handle payment request error
+      // Can also handle stop complete transaction but these should normally not occur
+    }
+	}
 
   gpay()
    {
      const options = {
      action: this.webIntent.ACTION_VIEW,
-     url: 'upi://pay?pa=7404172002@ybl&pn=Food For Life &tid=esdsdfs&tr=deeefff&am='+this.amount+'&cu=INR&tn=Donation Payment',
+     url: 'upi://pay?pa=7404172002@okbizaxis&pn=Food For Life &tid=esdsdfs&mc=&tr=25584584&am='+this.amount+'&cu=INR&tn=Donation Payment',
     // type: 'application/vnd.android.package-archive'
      }
 
      this.webIntent.startActivity(options).then(
        onSuccess => {
          console.log('onSuccess',onSuccess);
-         if(localStorage.getItem('user_auth_id_hitfit') != undefined && localStorage.getItem('user_auth_id_hitfit') != null)
-       {
-       var frmdata = {
-       trans_num: 221,
-       product_id:22,
-       user_id: localStorage.getItem('user_auth_id_hitfit'),
-       amount: this.amount,
-       total:this.amount,
-       response:onSuccess,
-       gateway: 'google'
-       };
-	   this.common.presentLoading();
-      // this.userService.presentLoading();post('AddPaymentwithsubscriptionCard', dict,'')
-       this.api.post('register',frmdata,'').subscribe((result) => {
-       this.common.stopLoading();
-       this.common.presentToast('Your account has been registered successfully!.','success');
-        /*  var userId = this.userService.encryptData(result.data.userData.data.ID,config.ENC_SALT);
-           localStorage.setItem('user_auth_token',userId.toString());
-           localStorage.setItem('user_auth_id_hitfit',result.data.userData.ID);
-           localStorage.setItem('user_id',result.data.userData.data.ID);
-           localStorage.setItem('user_name',result.data.userData.data.display_name);
-           //localStorage.setItem('user_lastname',result.data.lastname);
-           localStorage.setItem('user_email',result.data.userData.data.user_email);
-           if(result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '' )
-         {
-            localStorage.setItem('user_image',result.data.userData.data.profile_image);
-         }else
-         {
-           localStorage.setItem('user_image','assets/img/user.png');
-         }
- */
-         /*  this.globalfoo.publishSomeData({
-               foo: {'data': result.data.userData.data, 'page': 'profile', 'name': result.data.userData.data.display_name, 'profile_image': (result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '')  ? result.data.userData.data.profile_image : 'assets/img/user.png'}
-           }); */
-
-          // localStorage.setItem('user_phone',result.data.phone);
-           this.router.navigate(['/tabs/home']);
-       },
-       err => {
-       this.common.stopLoading();
-       this.common.presentToast('Failed to send request. Please try again','danger');
-       });
-       }else
-       {
-       var frmdatas = {
-       trans_num: 221,
-       product_id: 22,
-       amount: this.amount,
-       total: this.amount,
-       response:onSuccess,
-       gateway: 'google'
-       };
-       var signup_data = JSON.parse(localStorage.getItem('signup_data'));
-           frmdatas['fullname'] = signup_data.fullname;
-           frmdatas['email']  = signup_data.email;
-           frmdatas['password'] = signup_data.password;
-           frmdatas['dob'] = signup_data.dob;
-           frmdatas['agreement'] = signup_data.agreement;
-  //         frmdatas['insecure'] = signup_data.insecure;
-
-           if(localStorage.getItem('sominfo_data') != undefined && localStorage.getItem('sominfo_data') != null)
-           {
-             var sominfo_data = JSON.parse(localStorage.getItem('sominfo_data'));
-             frmdatas['weight'] = sominfo_data.weight;
-             frmdatas['height'] = sominfo_data.height;
-             frmdatas['gender'] = sominfo_data.gender;
-           }
-       this.common.presentLoading();
-       this.api.post('register',frmdatas,'').subscribe((result) => {
-       this.common.stopLoading();
-       this.common.presentToast('Your account has been registered successfully!.','success');
-        /*  var userId = data.userData.data.ID;
-           localStorage.setItem('user_auth_token',userId.toString());
-           localStorage.setItem('user_auth_id_hitfit',result.data.userData.ID);
-           localStorage.setItem('user_id',result.data.userData.data.ID);
-           localStorage.setItem('user_name',result.data.userData.data.display_name);
-           //localStorage.setItem('user_lastname',result.data.lastname);
-           localStorage.setItem('user_email',result.data.userData.data.user_email);
-           if(result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '' )
-         {
-            localStorage.setItem('user_image',result.data.userData.data.profile_image);
-         }else
-         {
-           localStorage.setItem('user_image','assets/img/user.png');
-         } */
-
-         /*  this.globalfoo.publishSomeData({
-               foo: {'data': result.data.userData.data, 'page': 'profile', 'name': result.data.userData.data.display_name, 'profile_image': (result.data.userData.data.profile_image != undefined && result.data.userData.data.profile_image != '')  ? result.data.userData.data.profile_image : 'assets/img/user.png'}
-           }); */
-
-          // localStorage.setItem('user_phone',result.data.phone);
-           this.router.navigate(['/tabs/home']);
-       },
-       err => {
-       this.common.stopLoading();
-       this.common.presentToast('Failed to send request. Please try again','danger');
-       });
-       }
-
-        // alert('payment done');
+        
+        alert('payment done');
        }
        , onError => {
             console.log('onError',onError);

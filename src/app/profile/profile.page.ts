@@ -31,7 +31,7 @@ imgBlobProfile: any;
 live_file_name_profile: any;
 imgBlobCover: any;
 live_file_name_cover: any;
-errors:any=['',null,undefined];
+errors:any=[0,'',null,undefined];
 userid:any;
 donationlist=[];
 userdetails:any;

@@ -27,6 +27,7 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
 import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { ShowcardsPage } from './showcards/showcards.page';
 import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';
+import { ApplePay } from '@ionic-native/apple-pay/ngx';
 @NgModule({
   declarations: [AppComponent,ShowcardsPage,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
   entryComponents: [JointeamconfirmPage,ShowcardsPage,SocialshareoptionsPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
@@ -39,6 +40,7 @@ import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx'
   providers: [
     StatusBar,
 	AppLauncher,
+	ApplePay,
 	PayPal,
 	WebIntent,
 	SocialSharing,

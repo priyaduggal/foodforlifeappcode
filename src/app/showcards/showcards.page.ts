@@ -41,6 +41,9 @@ errors:any=['',null,undefined];
 confirm()
 	{
 		this.cardid='';
+		
+		$('.ionradioch').val('');
+		//$('.ionradioch').removeClass('radio-checked');
 		$('.add_new_card_btn').hide();
 		$('.add_payment').show();
 	}
@@ -78,7 +81,11 @@ dismiss()
 		this.cvc=$('.cvcc').val();
 		
 		
-		if(this.errors.indexOf(this.cardid)>=0 && this.errors.indexOf(this.name)>=0 && this.errors.indexOf(this.card_number)>=0 && this.errors.indexOf(this.exp_date)>=0 && this.errors.indexOf(this.cvc)>=0)
+		if(this.errors.indexOf(this.cardid)>=0 
+		&& this.errors.indexOf(this.name)>=0 
+		&& this.errors.indexOf(this.card_number)>=0 
+		&& this.errors.indexOf(this.exp_date)>=0 
+		&& this.errors.indexOf(this.cvc)>=0)
 		{
 			this.common.presentToast('Please select card or add new card','danger');
 		    return false;
