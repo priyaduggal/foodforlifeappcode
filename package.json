@@ -38,6 +38,7 @@
     "@ionic/angular": "^5.8.1",
     "com.paypal.cordova.mobilesdk": "^3.5.0",
     "cordova": "^10.0.0",
+    "cordova-ios": "6.2.0",
     "cordova-res": "^0.15.3",
     "crypto-js": "^4.1.1",
     "jquery": "^3.6.0",
