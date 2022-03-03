@@ -53,22 +53,25 @@
 	   </div>
 	</ion-list>
 		<ion-list *ngSwitchCase="'beneficiaries'">
-           <div beneficiaries *ngIf="userdetails?.type==2">
-		    <div benimg   *ngFor="let bene of beneficiaries;let index=index;">
+		
+           <div beneficiaries >
+		   <div  *ngFor="let bene of beneficiaries;let index=index;">
+		    <div benimg  *ngIf="userdetails?.type!=bene?.type">
 			  <img src="{{IMAGES_URL}}/{{bene?.image}}"/>
 			 <h3>{{bene?.name}} </h3>
 			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> {{bene?.description}} <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
 			
 			</div>
 			</div>
-			 <div beneficiaries *ngIf="userdetails?.type==1">
+			</div>
+			 <!--div beneficiaries *ngIf="userdetails?.type==1">
 		    <div benimg   *ngFor="let bene of beneficiariesc;let index=index;">
 			  <img src="{{IMAGES_URL}}/{{bene?.image}}"/>
 			 <h3>{{bene?.name}} </h3>
 			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> {{bene?.description}} <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
 			
 			</div>
-			</div>
+			</div-->
 		  
 	   </ion-list>
 		<ion-list *ngSwitchCase="'activity'">

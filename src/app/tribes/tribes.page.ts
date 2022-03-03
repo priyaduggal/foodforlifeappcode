@@ -88,7 +88,7 @@ export class TribesPage implements OnInit {
    }
   getcompanyprojects()
    {
-  	 	this.api.post('tribesProjectCompany', '','').subscribe((result) => {  
+  	 	this.api.post('tribesProject', '','').subscribe((result) => {  
 		var res;
 		res = result;
 		if(res.status==1){
