@@ -29,28 +29,68 @@
      <div tribetab [ngSwitch]="tribetab">
 	
 	<ion-list *ngSwitchCase="'projects'">
-     <div projects   *ngIf="userdetails?.type==2">
-	<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
-	 <ion-thumbnail>
-	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3 >{{project.title}}</h3>
+			<div projects >
+			<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
+			<ion-thumbnail>
+			<img src="{{IMAGES_URL}}/{{project.image}}"/>
+			</ion-thumbnail>
+			<ion-label>
+			<h3 >{{project.title}}</h3>
+			</ion-label>
+			</ion-item>
+			</div>
+			
+			<div projects *ngIf="projectlist?.length==0">
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			<ion-item lines="none"  >
+				<ion-thumbnail>
+					<ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+				</ion-thumbnail>
+				<ion-label>
+					<h3 ><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></h3>
+				</ion-label>
+			</ion-item>
+			</div>
 	
-	 </ion-label>
-	</ion-item>
-	   </div>
-	     <div projects   *ngIf="userdetails?.type==1">
-	<ion-item lines="none"  *ngFor="let project of projectlist1;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
-	 <ion-thumbnail>
-	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
-	 </ion-thumbnail>
-	 <ion-label>
-	 <h3 >{{project.title}}</h3>
-	
-	 </ion-label>
-	</ion-item>
-	   </div>
 	</ion-list>
 		<ion-list *ngSwitchCase="'beneficiaries'">
 		

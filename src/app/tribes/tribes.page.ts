@@ -44,7 +44,7 @@ export class TribesPage implements OnInit {
 	  let dict ={
 		id: this.userid
 		};
-		 this.common.presentLoading();
+		// this.common.presentLoading();
 		if(this.errors.indexOf(this.userid)>=0 )
 		{
 
@@ -52,7 +52,7 @@ export class TribesPage implements OnInit {
 		return false;
 		}
   	 	this.api.post('Userdetails', dict,'').subscribe((result) => {  
-		 this.common.stopLoading();
+		// this.common.stopLoading();
 		 var res;
 		res = result;
 		if(res.status==1){
@@ -92,7 +92,7 @@ export class TribesPage implements OnInit {
 		var res;
 		res = result;
 		if(res.status==1){
-			this.projectlist1=res.data;
+			this.projectlist=res.data;
 		}else
         {
 			

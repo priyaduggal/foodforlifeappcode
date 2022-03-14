@@ -16,13 +16,13 @@
 <div id="paypal-button-container"></div>
 <ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('stripe')">Stripe</ion-button>
 <!--ion-button  expand="full" shape="round" class="btn-losns" (click)="paywith('paypal')">Paypal</ion-button-->
-<ion-button  expand="full" shape="round" class="btn-losns"(click)="gpay()" >Google Pay</ion-button>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="payWithApplePay()">Apple Pay</ion-button>
+<!--ion-button  expand="full" shape="round" class="btn-losns"(click)="gpay()" >Google Pay</ion-button>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="payWithApplePay()">Apple Pay</ion-button-->
 <!--p *ngIf="paymentlist.length==0">No records found</p-->
 
 <!--ion-radio-group value=""class="radiobox">
     <ion-item lines="none" *ngFor="let pay of paymentlist">
-      <ion-label>{{pay?.card_number}}</ion-label>
+      <ion-label>{{pay?.card_number}}</ion-label>	
       <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
     </ion-item>
 </ion-radio-group-->	
