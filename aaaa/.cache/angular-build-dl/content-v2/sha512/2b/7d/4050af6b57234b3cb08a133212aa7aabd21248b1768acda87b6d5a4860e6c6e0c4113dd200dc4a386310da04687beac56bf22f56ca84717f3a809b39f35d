@@ -1,0 +1,363 @@
+(function () {
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["edit-payment-edit-payment-module"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/edit-payment/edit-payment.page.html":
+    /*!*******************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit-payment/edit-payment.page.html ***!
+      \*******************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppEditPaymentEditPaymentPageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n        </ion-back-button>\r\n        <ion-title class=\"ion-text-center\">Edit Payment Method</ion-title>\r\n      </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n<div paymentimg class=\"ion-text-center\">\r\n<img src=\"assets/images/addpayment.jpg\"/>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Card Holder Name</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Name\" [(ngModel)]=\"name\" name=\"name\" ></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(name) >= 0 && is_submit_payment == true\">Please enter card holder name</span>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Card Number</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Card Number\" [(ngModel)]=\"card_number\" name=\"card_number\"></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(card_number) >= 0 && is_submit_payment == true\">Please enter card number</span>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Expiration Date</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t<ion-datetime displayFormat=\"MM/YYYY\" placeholder=\"Select Date\" display-timezone=\"utc\"\r\n\t\t\t\t [(ngModel)]=\"exp_date\" name=\"exp_date\" min=\"2021\" max=\"2030\"></ion-datetime>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t <span error *ngIf=\"errors.indexOf(exp_date) >= 0 && is_submit_payment == true\">Please enter expiration date</span>\r\n\t\t\t\t\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>CVC</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter CVC\" [(ngModel)]=\"cvc\" name=\"cvc\"></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t <span error *ngIf=\"errors.indexOf(cvc) >= 0 && is_submit_payment == true\">Please enter cvc</span>\r\n\t\t\t\r\n</div>\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"addcard()\">Update Payment Method</ion-button>\r\n\r\n</ion-content>\r\n";
+      /***/
+    },
+
+    /***/
+    "./src/app/edit-payment/edit-payment-routing.module.ts":
+    /*!*************************************************************!*\
+      !*** ./src/app/edit-payment/edit-payment-routing.module.ts ***!
+      \*************************************************************/
+
+    /*! exports provided: EditPaymentPageRoutingModule */
+
+    /***/
+    function srcAppEditPaymentEditPaymentRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "EditPaymentPageRoutingModule", function () {
+        return EditPaymentPageRoutingModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _edit_payment_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./edit-payment.page */
+      "./src/app/edit-payment/edit-payment.page.ts");
+
+      var routes = [{
+        path: '',
+        component: _edit_payment_page__WEBPACK_IMPORTED_MODULE_3__["EditPaymentPage"]
+      }];
+
+      var EditPaymentPageRoutingModule = function EditPaymentPageRoutingModule() {
+        _classCallCheck(this, EditPaymentPageRoutingModule);
+      };
+
+      EditPaymentPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+      })], EditPaymentPageRoutingModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/edit-payment/edit-payment.module.ts":
+    /*!*****************************************************!*\
+      !*** ./src/app/edit-payment/edit-payment.module.ts ***!
+      \*****************************************************/
+
+    /*! exports provided: EditPaymentPageModule */
+
+    /***/
+    function srcAppEditPaymentEditPaymentModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "EditPaymentPageModule", function () {
+        return EditPaymentPageModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _edit_payment_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./edit-payment-routing.module */
+      "./src/app/edit-payment/edit-payment-routing.module.ts");
+      /* harmony import */
+
+
+      var _edit_payment_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./edit-payment.page */
+      "./src/app/edit-payment/edit-payment.page.ts");
+
+      var EditPaymentPageModule = function EditPaymentPageModule() {
+        _classCallCheck(this, EditPaymentPageModule);
+      };
+
+      EditPaymentPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _edit_payment_routing_module__WEBPACK_IMPORTED_MODULE_5__["EditPaymentPageRoutingModule"]],
+        declarations: [_edit_payment_page__WEBPACK_IMPORTED_MODULE_6__["EditPaymentPage"]]
+      })], EditPaymentPageModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/edit-payment/edit-payment.page.scss":
+    /*!*****************************************************!*\
+      !*** ./src/app/edit-payment/edit-payment.page.scss ***!
+      \*****************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppEditPaymentEditPaymentPageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [paymentimg] img {\n  max-width: 250px;\n}\n\nion-content [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-top: 20px;\n}\n\nion-content [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [formfield] ion-input, ion-content [formfield] ion-datetime {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 20px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n[span] {\n  margin-bottom: 15px !important;\n  color: red;\n  padding: 11px;\n  font-size: 12px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC1wYXltZW50L2VkaXQtcGF5bWVudC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFHSSx1REFBaUI7RUFDbEIsaUJBQWU7QUFEbEI7O0FBSEE7RUFPSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUF6RDs7QUFWQTtFQWVDLGFBQVk7QUFEYjs7QUFJQTtFQU1JLGdCQUFlO0FBTm5COztBQUFBO0VBVUcsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGtDQUFrQztFQUNsQyxlQUFlO0VBQ2YsZ0JBQWU7QUFObEI7O0FBVkE7RUFrQkksa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osa0NBQW1DO0VBQ25DLFVBQVU7RUFDVixjQUFjO0VBQ2QsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0FBSmxCOztBQXRCQTtFQTZCSSxZQUFZO0VBQ1osb0JBQWdCO0VBQ2hCLGtCQUFjO0VBQ2QsZUFBZTtFQUNmLDRCQUFvQjtFQUNwQix3QkFBc0I7RUFDdEIsNkNBQTZDO0VBQzdDLFdBQVc7QUFIZjs7QUFqQ0E7RUF3Q0csc0NBQWE7RUFDYixnQkFBZ0I7RUFDaEIsa0JBQWE7RUFDSixnQkFBZ0I7RUFDekIsbUJBQW1CO0VBQ25CLHlCQUF5QjtFQUN6QixtQkFBbUI7QUFIdEI7O0FBRUE7RUFNSSw4QkFBOEI7RUFDOUIsVUFBVTtFQUNWLGFBQWE7RUFDYixlQUFlO0FBSm5CIiwiZmlsZSI6InNyYy9hcHAvZWRpdC1wYXltZW50L2VkaXQtcGF5bWVudC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcblx0e1xyXG5cdCAgaW9uLXRvb2xiYXJcclxuXHQgIHstLWlvbi1jb2xvci1iYXNlOiB2YXIoLS1pb24tY29sb3ItYmdncmFkaWVudCkhaW1wb3J0YW50O1xyXG5cdCAgLS1ib3JkZXItd2lkdGg6IDA7XHJcblx0XHJcblx0XHQgIGlvbi10aXRsZXtcclxuXHRcdCAgY29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdCAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuXHR9XHJcblx0Jjo6YWZ0ZXJcclxuXHR7XHJcblx0ZGlzcGxheTpub25lO1xyXG5cdH1cclxuXHR9XHJcbmlvbi1jb250ZW50XHJcbntcclxuW3BheW1lbnRpbWddXHJcbntcclxuICBpbWdcclxuICB7XHJcbiAgICBtYXgtd2lkdGg6MjUwcHg7XHJcbiAgfVxyXG59XHJcbltmb3JtZmllbGRdIHtcclxuXHRcdFx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG5cdFx0XHRib3JkZXI6IDFweCBzb2xpZCAjZThlOGU4O1xyXG5cdFx0XHRoZWlnaHQ6IDUycHg7XHJcblx0XHRcdGJvcmRlci1yYWRpdXM6IDUwcHg7XHJcblx0XHRcdGJhY2tncm91bmQ6dmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdHBhZGRpbmc6IDAgMTZweDtcclxuXHRcdFx0bWFyZ2luLXRvcDoyMHB4O1xyXG5cdFx0XHRsYWJlbCB7XHJcblx0XHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdFx0XHRcdHRvcDogLTEwcHg7XHJcblx0XHRcdFx0ei1pbmRleDogMTExO1xyXG5cdFx0XHRcdGJhY2tncm91bmQ6IHZhciggLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0XHRcdGxlZnQ6IDI5cHg7XHJcblx0XHRcdFx0cGFkZGluZzogMCAzcHg7XHJcblx0XHRcdFx0Zm9udC1zaXplOiAxMnB4O1xyXG5cdFx0XHRcdGZvbnQtd2VpZ2h0OiA3MDA7XHJcblx0XHRcdFx0Y29sb3I6ICMzYTNhM2E7XHJcblx0XHRcdH1cclxuXHRcdFx0aW9uLWlucHV0ICwgaW9uLWRhdGV0aW1lICB7XHJcblx0XHRcdFx0cGFkZGluZzogMHB4O1xyXG5cdFx0XHRcdC0tcGFkZGluZy1zdGFydDogMHB4O1xyXG5cdFx0XHRcdC0tcGFkZGluZy1lbmQ6IDBweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDE0cHg7XHJcblx0XHRcdFx0LS1wbGFjZWhvbGRlci1jb2xvcjogIzlhOWE5YTtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLW9wYWNpdHk6IDE7XHJcblx0XHRcdFx0Zm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG5cdFx0XHRcdGNvbG9yOiAjMjIyO1xyXG5cdFx0XHR9XHJcblx0XHR9XHJcblx0XHQuYnRuLWxvc25ze1xyXG5cdFx0XHQtLWJhY2tncm91bmQ6dmFyKCAtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxuXHRcdFx0bWFyZ2luLXRvcDogMjBweDtcclxuXHRcdFx0LS1ib3gtc2hhZG93OiBub25lO1xyXG4gICAgICAgICAgICBtaW4taGVpZ2h0OiA0OHB4O1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiAxNXB4O1xyXG5cdFx0XHR0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG5cdFx0XHRsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cdFx0fVxyXG59XHJcbltzcGFuXVxyXG57XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxNXB4ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogcmVkO1xyXG4gICAgcGFkZGluZzogMTFweDtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxufSJdfQ== */";
+      /***/
+    },
+
+    /***/
+    "./src/app/edit-payment/edit-payment.page.ts":
+    /*!***************************************************!*\
+      !*** ./src/app/edit-payment/edit-payment.page.ts ***!
+      \***************************************************/
+
+    /*! exports provided: EditPaymentPage */
+
+    /***/
+    function srcAppEditPaymentEditPaymentPageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "EditPaymentPage", function () {
+        return EditPaymentPage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../services/globalFooService.service */
+      "./src/app/services/globalFooService.service.ts");
+
+      var EditPaymentPage = /*#__PURE__*/function () {
+        function EditPaymentPage(globalFooService, activatedRoute, api, router, common) {
+          _classCallCheck(this, EditPaymentPage);
+
+          this.globalFooService = globalFooService;
+          this.activatedRoute = activatedRoute;
+          this.api = api;
+          this.router = router;
+          this.common = common;
+          this.is_submit_payment = false;
+          this.errors = ['', null, undefined];
+          this.paymentid = activatedRoute.snapshot.paramMap.get('id');
+        }
+
+        _createClass(EditPaymentPage, [{
+          key: "addcard",
+          value: function addcard() {
+            var _this = this;
+
+            this.is_submit_payment = true;
+
+            if (this.errors.indexOf(this.name) >= 0 || this.errors.indexOf(this.card_number) >= 0 || this.errors.indexOf(this.cvc) >= 0 || this.errors.indexOf(this.exp_date) >= 0) {
+              return false;
+            }
+
+            if (this.errors.indexOf(this.userid) >= 0) {
+              this.common.presentToast('Please login first!.', 'danger');
+              return false;
+            }
+
+            var dict = {
+              id: this.paymentid,
+              name: this.name,
+              card_number: this.card_number,
+              exp_date: this.exp_date,
+              cvc: this.cvc,
+              userid: this.userid
+            };
+            this.common.presentLoading();
+            this.api.post('UpdatePayment', dict, '').subscribe(function (result) {
+              _this.common.stopLoading();
+
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this.common.presentToast('Updated Successfully !.', 'success');
+
+                _this.globalFooService.publishSomeData({
+                  set: {
+                    'data': res.status
+                  }
+                });
+
+                _this.api.navCtrl.navigateRoot('/tabs/settings');
+              } else {
+                _this.common.presentToast(res.message, 'danger');
+              }
+            }, function (err) {});
+          }
+        }, {
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "ionViewDidEnter",
+          value: function ionViewDidEnter() {
+            this.userid = localStorage.getItem('userid');
+            this.getpaymentdetails();
+          }
+        }, {
+          key: "getpaymentdetails",
+          value: function getpaymentdetails() {
+            var _this2 = this;
+
+            var dict = {
+              id: this.paymentid
+            };
+            this.common.presentLoading();
+            this.api.post('paymentdetail', dict, '').subscribe(function (result) {
+              _this2.common.stopLoading();
+
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this2.payment = res.data;
+                _this2.card_number = res.data.card_number;
+                _this2.name = res.data.card_holder_name;
+                _this2.exp_date = res.data.expiry_date;
+                _this2.cvc = res.data.cvv;
+              } else {}
+            }, function (err) {});
+          }
+        }]);
+
+        return EditPaymentPage;
+      }();
+
+      EditPaymentPage.ctorParameters = function () {
+        return [{
+          type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__["GlobalFooService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
+        }, {
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
+      };
+
+      EditPaymentPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-edit-payment',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./edit-payment.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/edit-payment/edit-payment.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./edit-payment.page.scss */
+        "./src/app/edit-payment/edit-payment.page.scss"))["default"]]
+      })], EditPaymentPage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=edit-payment-edit-payment-module-es5.js.map

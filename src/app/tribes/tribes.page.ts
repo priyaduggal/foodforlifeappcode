@@ -23,7 +23,10 @@ export class TribesPage implements OnInit {
   userid:any;
   userdetails:any;
   IMAGES_URL:any = config.IMAGES_URL;
-  constructor(public modalController: ModalController,public api:ApiService, public router:Router,private common: CommonService) { }
+  constructor(public modalController: ModalController,
+  	public api:ApiService, 
+  	public router:Router,
+  	private common: CommonService) { }
 
   ngOnInit() {
   }
@@ -39,12 +42,16 @@ export class TribesPage implements OnInit {
 	  this.getactivities();
 	  
   }
+   convertdate(date)
+  {
+	return date.replace(' ', 'T');
+  }
   getuserdetails()
   {
 	  let dict ={
 		id: this.userid
 		};
-		 this.common.presentLoading();
+		// this.common.presentLoading();
 		if(this.errors.indexOf(this.userid)>=0 )
 		{
 
@@ -52,7 +59,7 @@ export class TribesPage implements OnInit {
 		return false;
 		}
   	 	this.api.post('Userdetails', dict,'').subscribe((result) => {  
-		 this.common.stopLoading();
+		// this.common.stopLoading();
 		 var res;
 		res = result;
 		if(res.status==1){
@@ -88,11 +95,11 @@ export class TribesPage implements OnInit {
    }
   getcompanyprojects()
    {
-  	 	this.api.post('tribesProjectCompany', '','').subscribe((result) => {  
+  	 	this.api.post('tribesProject', '','').subscribe((result) => {  
 		var res;
 		res = result;
 		if(res.status==1){
-			this.projectlist1=res.data;
+			this.projectlist=res.data;
 		}else
         {
 			

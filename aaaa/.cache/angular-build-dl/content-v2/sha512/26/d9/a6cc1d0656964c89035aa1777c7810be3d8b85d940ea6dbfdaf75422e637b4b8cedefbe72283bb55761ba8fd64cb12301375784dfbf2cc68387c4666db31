@@ -1,0 +1,342 @@
+(function () {
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["addpayment-addpayment-module"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/addpayment/addpayment.page.html":
+    /*!***************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/addpayment/addpayment.page.html ***!
+      \***************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppAddpaymentAddpaymentPageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n        </ion-back-button>\r\n        <ion-title class=\"ion-text-center\">Add Payment Method</ion-title>\r\n      </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n<div paymentimg class=\"ion-text-center\">\r\n<img src=\"assets/images/addpayment.jpg\"/>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Card Holder Name</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Name\" [(ngModel)]=\"name\" name=\"name\" ></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(name) >= 0 && is_submit_payment == true\">Please enter card holder name</span>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Card Number</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Card Number\" [maxlength]=\"16\" [(ngModel)]=\"card_number\" name=\"card_number\"></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(card_number) >= 0 && is_submit_payment == true\">Please enter card number</span>\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>Expiration Date</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t<ion-datetime displayFormat=\"MM/YYYY\" placeholder=\"Select Date\" display-timezone=\"utc\"\r\n\t\t\t\t [(ngModel)]=\"exp_date\" name=\"exp_date\" min=\"2021\" max=\"2030\"></ion-datetime>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t <span error *ngIf=\"errors.indexOf(exp_date) >= 0 && is_submit_payment == true\">Please enter expiration date</span>\r\n\t\t\t\t\r\n</div>\r\n<div formfield>\r\n\t\t\t\t<label>CVC</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter CVC\" [(ngModel)]=\"cvc\" name=\"cvc\"></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t <span error *ngIf=\"errors.indexOf(cvc) >= 0 && is_submit_payment == true\">Please enter cvc</span>\r\n\t\t\t\r\n</div>\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"addcard()\">Save Payment Method</ion-button>\r\n\r\n</ion-content>\r\n";
+      /***/
+    },
+
+    /***/
+    "./src/app/addpayment/addpayment-routing.module.ts":
+    /*!*********************************************************!*\
+      !*** ./src/app/addpayment/addpayment-routing.module.ts ***!
+      \*********************************************************/
+
+    /*! exports provided: AddpaymentPageRoutingModule */
+
+    /***/
+    function srcAppAddpaymentAddpaymentRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AddpaymentPageRoutingModule", function () {
+        return AddpaymentPageRoutingModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _addpayment_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./addpayment.page */
+      "./src/app/addpayment/addpayment.page.ts");
+
+      var routes = [{
+        path: '',
+        component: _addpayment_page__WEBPACK_IMPORTED_MODULE_3__["AddpaymentPage"]
+      }];
+
+      var AddpaymentPageRoutingModule = function AddpaymentPageRoutingModule() {
+        _classCallCheck(this, AddpaymentPageRoutingModule);
+      };
+
+      AddpaymentPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+      })], AddpaymentPageRoutingModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/addpayment/addpayment.module.ts":
+    /*!*************************************************!*\
+      !*** ./src/app/addpayment/addpayment.module.ts ***!
+      \*************************************************/
+
+    /*! exports provided: AddpaymentPageModule */
+
+    /***/
+    function srcAppAddpaymentAddpaymentModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AddpaymentPageModule", function () {
+        return AddpaymentPageModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _addpayment_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./addpayment-routing.module */
+      "./src/app/addpayment/addpayment-routing.module.ts");
+      /* harmony import */
+
+
+      var _addpayment_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./addpayment.page */
+      "./src/app/addpayment/addpayment.page.ts");
+
+      var AddpaymentPageModule = function AddpaymentPageModule() {
+        _classCallCheck(this, AddpaymentPageModule);
+      };
+
+      AddpaymentPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _addpayment_routing_module__WEBPACK_IMPORTED_MODULE_5__["AddpaymentPageRoutingModule"]],
+        declarations: [_addpayment_page__WEBPACK_IMPORTED_MODULE_6__["AddpaymentPage"]]
+      })], AddpaymentPageModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/addpayment/addpayment.page.scss":
+    /*!*************************************************!*\
+      !*** ./src/app/addpayment/addpayment.page.scss ***!
+      \*************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppAddpaymentAddpaymentPageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [paymentimg] img {\n  max-width: 250px;\n}\n\nion-content [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-bottom: 30px;\n}\n\nion-content [formfield] [error] {\n  margin-top: 5px;\n  font-size: 12px;\n  color: red;\n}\n\nion-content [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [formfield] ion-input, ion-content [formfield] ion-datetime {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 20px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n[span] {\n  margin-bottom: 15px !important;\n  color: red;\n  padding: 11px;\n  font-size: 12px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRkcGF5bWVudC9hZGRwYXltZW50LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUdJLHVEQUFpQjtFQUNsQixpQkFBZTtBQURsQjs7QUFIQTtFQU9JLDZCQUE0QjtFQUM1QixrQkFBaUI7RUFDVCxrQkFBa0I7RUFDbEIsNkNBQTZDO0FBQXpEOztBQVZBO0VBZUMsYUFBWTtBQURiOztBQUlBO0VBTUksZ0JBQWU7QUFObkI7O0FBQUE7RUFVRyxrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsa0NBQWtDO0VBQ2xDLGVBQWU7RUFDZixtQkFBa0I7QUFOckI7O0FBVkE7RUFrQkksZUFBZTtFQUNmLGVBQWU7RUFDbEIsVUFBUztBQUpWOztBQWhCQTtFQXVCSSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVk7RUFDWixrQ0FBbUM7RUFDbkMsVUFBVTtFQUNWLGNBQWM7RUFDZCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFIbEI7O0FBNUJBO0VBa0NJLFlBQVk7RUFDWixvQkFBZ0I7RUFDaEIsa0JBQWM7RUFDZCxlQUFlO0VBQ2YsNEJBQW9CO0VBQ3BCLHdCQUFzQjtFQUN0Qiw2Q0FBNkM7RUFDN0MsV0FBVztBQUZmOztBQXZDQTtFQTZDRyxzQ0FBYTtFQUNiLGdCQUFnQjtFQUNoQixrQkFBYTtFQUNKLGdCQUFnQjtFQUN6QixtQkFBbUI7RUFDbkIseUJBQXlCO0VBQ3pCLG1CQUFtQjtBQUZ0Qjs7QUFFQTtFQUtJLDhCQUE4QjtFQUM5QixVQUFVO0VBQ1YsYUFBYTtFQUNiLGVBQWU7QUFIbkIiLCJmaWxlIjoic3JjL2FwcC9hZGRwYXltZW50L2FkZHBheW1lbnQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlclxyXG5cdHtcclxuXHQgIGlvbi10b29sYmFyXHJcblx0ICB7LS1pb24tY29sb3ItYmFzZTogdmFyKC0taW9uLWNvbG9yLWJnZ3JhZGllbnQpIWltcG9ydGFudDtcclxuXHQgIC0tYm9yZGVyLXdpZHRoOiAwO1xyXG5cdFxyXG5cdFx0ICBpb24tdGl0bGV7XHJcblx0XHQgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHQgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblx0fVxyXG5cdCY6OmFmdGVyXHJcblx0e1xyXG5cdGRpc3BsYXk6bm9uZTtcclxuXHR9XHJcblx0fVxyXG5pb24tY29udGVudFxyXG57XHJcbltwYXltZW50aW1nXVxyXG57XHJcbiAgaW1nXHJcbiAge1xyXG4gICAgbWF4LXdpZHRoOjI1MHB4O1xyXG4gIH1cclxufVxyXG5bZm9ybWZpZWxkXSB7XHJcblx0XHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdFx0Ym9yZGVyOiAxcHggc29saWQgI2U4ZThlODtcclxuXHRcdFx0aGVpZ2h0OiA1MnB4O1xyXG5cdFx0XHRib3JkZXItcmFkaXVzOiA1MHB4O1xyXG5cdFx0XHRiYWNrZ3JvdW5kOnZhciggLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0XHRwYWRkaW5nOiAwIDE2cHg7XHJcblx0XHRcdG1hcmdpbi1ib3R0b206MzBweDtcclxuXHRcdFx0W2Vycm9yXSB7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcblx0Y29sb3I6cmVkO1xyXG59XHJcblx0XHRcdGxhYmVsIHtcclxuXHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0dG9wOiAtMTBweDtcclxuXHRcdFx0XHR6LWluZGV4OiAxMTE7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogdmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdFx0bGVmdDogMjlweDtcclxuXHRcdFx0XHRwYWRkaW5nOiAwIDNweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDEycHg7XHJcblx0XHRcdFx0Zm9udC13ZWlnaHQ6IDcwMDtcclxuXHRcdFx0XHRjb2xvcjogIzNhM2EzYTtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24taW5wdXQgLCBpb24tZGF0ZXRpbWUgIHtcclxuXHRcdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTRweDtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLWNvbG9yOiAjOWE5YTlhO1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItb3BhY2l0eTogMTtcclxuXHRcdFx0XHRmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcblx0XHRcdFx0Y29sb3I6ICMyMjI7XHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHRcdC5idG4tbG9zbnN7XHJcblx0XHRcdC0tYmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAyMHB4O1xyXG5cdFx0XHQtLWJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICAgICAgICAgIG1pbi1oZWlnaHQ6IDQ4cHg7XHJcblx0XHRcdG1hcmdpbi1ib3R0b206IDE1cHg7XHJcblx0XHRcdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0XHRcdGxldHRlci1zcGFjaW5nOiAxcHg7XHJcblx0XHR9XHJcbn1cclxuW3NwYW5dXHJcbntcclxuICAgIG1hcmdpbi1ib3R0b206IDE1cHggIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiByZWQ7XHJcbiAgICBwYWRkaW5nOiAxMXB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59Il19 */";
+      /***/
+    },
+
+    /***/
+    "./src/app/addpayment/addpayment.page.ts":
+    /*!***********************************************!*\
+      !*** ./src/app/addpayment/addpayment.page.ts ***!
+      \***********************************************/
+
+    /*! exports provided: AddpaymentPage */
+
+    /***/
+    function srcAppAddpaymentAddpaymentPageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AddpaymentPage", function () {
+        return AddpaymentPage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../services/globalFooService.service */
+      "./src/app/services/globalFooService.service.ts");
+
+      var AddpaymentPage = /*#__PURE__*/function () {
+        function AddpaymentPage(globalFooService, activatedRoute, api, router, common) {
+          _classCallCheck(this, AddpaymentPage);
+
+          this.globalFooService = globalFooService;
+          this.activatedRoute = activatedRoute;
+          this.api = api;
+          this.router = router;
+          this.common = common;
+          this.is_submit_payment = false;
+          this.errors = ['', null, undefined];
+        }
+
+        _createClass(AddpaymentPage, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "ionViewDidEnter",
+          value: function ionViewDidEnter() {
+            this.userid = localStorage.getItem('userid');
+          }
+        }, {
+          key: "addcard",
+          value: function addcard() {
+            var _this = this;
+
+            this.is_submit_payment = true;
+
+            if (this.errors.indexOf(this.name) >= 0 || this.errors.indexOf(this.card_number) >= 0 || this.errors.indexOf(this.cvc) >= 0 || this.errors.indexOf(this.exp_date) >= 0) {
+              return false;
+            }
+
+            if (this.errors.indexOf(this.userid) >= 0) {
+              this.common.presentToast('Please login first!.', 'danger');
+              return false;
+            }
+
+            var dict = {
+              name: this.name,
+              card_number: this.card_number,
+              exp_date: this.exp_date,
+              cvc: this.cvc,
+              userid: this.userid
+            };
+            this.common.presentLoading();
+            this.api.post('AddPayment', dict, '').subscribe(function (result) {
+              _this.common.stopLoading();
+
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this.name = '';
+                _this.card_number = '';
+                _this.exp_date = '';
+                _this.cvc = '';
+
+                _this.common.presentToast('Added Successfully !.', 'success');
+
+                _this.globalFooService.publishSomeData({
+                  set: {
+                    'data': res.status
+                  }
+                });
+
+                _this.api.navCtrl.navigateRoot('/tabs/settings'); //this.router.navigate(['/tabs/settings']);
+
+              } else {
+                _this.common.presentToast(res.message, 'danger');
+              }
+            }, function (err) {});
+          }
+        }]);
+
+        return AddpaymentPage;
+      }();
+
+      AddpaymentPage.ctorParameters = function () {
+        return [{
+          type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__["GlobalFooService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
+        }, {
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
+      };
+
+      AddpaymentPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-addpayment',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./addpayment.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/addpayment/addpayment.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./addpayment.page.scss */
+        "./src/app/addpayment/addpayment.page.scss"))["default"]]
+      })], AddpaymentPage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=addpayment-addpayment-module-es5.js.map

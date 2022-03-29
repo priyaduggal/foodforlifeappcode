@@ -1,0 +1,203 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["changepassword-changepassword-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/changepassword/changepassword.page.html":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/changepassword/changepassword.page.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Change Password </ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n<ion-content class=\"ion-padding\">\r\n\t<div profileinfo>\r\n\t<div editprofile>\r\n<div class=\"flds-login\">\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Old Password</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Old Password\" value=\"\"\r\n\t\t\t\t\t[(ngModel)]=\"oldpassword\" name=\"oldpassword\" type=\"password\"\r\n\t\t\t\t\t></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t\t<span error *ngIf=\"errors.indexOf(oldpassword) >= 0 && is_submit== true\">Please enter old password</span>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>New Password</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter New Password\" value=\"\"\r\n\t\t\t\t\t[(ngModel)]=\"newpassword\" name=\"newpassword\"   type=\"password\"\r\n\t\t\t\t\t></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(newpassword) >= 0 && is_submit == true\">Please enter your new password</span>\r\n\t\t\t\r\n\t\t\t</div>\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Confirm Password</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter confirm password\" [(ngModel)]=\"cpassword\" name=\"cpassword\" type=\"password\"></ion-input>\r\n\t\t\t\t\t\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t\t<span error *ngIf=\"errors.indexOf(cpassword) >= 0 && is_submit == true\">Please enter confirm password</span>\r\n\t\t\t\t\t<span error *ngIf=\"errors.indexOf(cpassword) == -1 && is_submit == true && newpassword!=cpassword\">Password and confirm password does not match</span>\r\n\t\t\t</div>\r\n\t\t\t<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\"(click)=\"save()\">Submit</ion-button>\r\n\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</ion-content>");
+
+/***/ }),
+
+/***/ "./src/app/changepassword/changepassword-routing.module.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/changepassword/changepassword-routing.module.ts ***!
+  \*****************************************************************/
+/*! exports provided: ChangepasswordPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangepasswordPageRoutingModule", function() { return ChangepasswordPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _changepassword_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./changepassword.page */ "./src/app/changepassword/changepassword.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _changepassword_page__WEBPACK_IMPORTED_MODULE_3__["ChangepasswordPage"]
+    }
+];
+let ChangepasswordPageRoutingModule = class ChangepasswordPageRoutingModule {
+};
+ChangepasswordPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ChangepasswordPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/changepassword/changepassword.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/changepassword/changepassword.module.ts ***!
+  \*********************************************************/
+/*! exports provided: ChangepasswordPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangepasswordPageModule", function() { return ChangepasswordPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _changepassword_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./changepassword-routing.module */ "./src/app/changepassword/changepassword-routing.module.ts");
+/* harmony import */ var _changepassword_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./changepassword.page */ "./src/app/changepassword/changepassword.page.ts");
+
+
+
+
+
+
+
+let ChangepasswordPageModule = class ChangepasswordPageModule {
+};
+ChangepasswordPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _changepassword_routing_module__WEBPACK_IMPORTED_MODULE_5__["ChangepasswordPageRoutingModule"]
+        ],
+        declarations: [_changepassword_page__WEBPACK_IMPORTED_MODULE_6__["ChangepasswordPage"]]
+    })
+], ChangepasswordPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/changepassword/changepassword.page.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/changepassword/changepassword.page.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [profileinfo] [editprofile] {\n  padding: 15px 15px 0;\n  margin-top: -20px;\n  background: var(--ion-color-white);\n  position: relative;\n  border-radius: 15px 15px 0 0;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] {\n  margin-bottom: 24px;\n  text-align: center;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] h2 {\n  margin: 0;\n  font-size: 14px;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] p {\n  margin: 0;\n  font-size: 12px;\n}\n\nion-content [profileinfo] [editprofile] [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-top: 32px;\n}\n\nion-content [profileinfo] [editprofile] [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [profileinfo] [editprofile] [formfield] ion-input {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content [profileinfo] [editprofile] .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 20px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\nion-content [profileinfo] [profileimg] {\n  position: relative;\n  height: 160px;\n}\n\nion-content [profileinfo] [profileimg] img {\n  max-width: 100%;\n  max-height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: bottom;\n     object-position: bottom;\n}\n\nion-content [profileinfo] [profileimg] [userinner] {\n  position: relative;\n  text-align: center;\n  margin-top: -62px;\n  z-index: 1;\n}\n\nion-content [profileinfo] [profileimg] [userinner] [btnedit] {\n  margin-left: 45px;\n  width: 30px;\n  height: 30px;\n  background: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  line-height: 30px;\n  border: 2px solid var(--ion-color-white);\n  position: absolute;\n  bottom: 1px;\n}\n\nion-content [profileinfo] [profileimg] [userinner] [btnedit] ion-icon {\n  color: var(--ion-color-white);\n}\n\nion-content [profileinfo] [profileimg] [userinner] img {\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  border: 2px solid var(--ion-color-white);\n  margin: 0 auto;\n  text-align: center;\n}\n\n[error] {\n  color: red;\n  font-size: 12px;\n  position: relative;\n  top: 0;\n}\n\nion-content {\n  margin-top: 25px !important;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhbmdlcGFzc3dvcmQvY2hhbmdlcGFzc3dvcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBSUksdURBQWlCO0VBQ2xCLGlCQUFlO0FBRmxCOztBQUhBO0VBUUksNkJBQTRCO0VBQzVCLGtCQUFpQjtFQUNULGtCQUFrQjtFQUNsQiw2Q0FBNkM7QUFEekQ7O0FBVkE7RUFnQkMsYUFBWTtBQUZiOztBQUtDO0VBS00sb0JBQW9CO0VBQ3ZCLGlCQUFpQjtFQUNqQixrQ0FBa0M7RUFDbEMsa0JBQWtCO0VBQ2xCLDRCQUE0QjtBQU5oQzs7QUFIQztFQVdJLG1CQUFtQjtFQUNwQixrQkFBa0I7QUFKdEI7O0FBUkM7RUFjRyxTQUFTO0VBQ1QsZUFBZTtBQUZuQjs7QUFiQztFQWlCRyxTQUFTO0VBQ1QsZUFBZTtBQUFuQjs7QUFsQkM7RUFzQkUsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGtDQUFrQztFQUNsQyxlQUFlO0VBQ2YsZ0JBQWU7QUFBbEI7O0FBNUJDO0VBOEJHLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGtDQUFtQztFQUNuQyxVQUFVO0VBQ1YsY0FBYztFQUNkLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztBQUVsQjs7QUF4Q0M7RUF5Q0csWUFBWTtFQUNaLG9CQUFnQjtFQUNoQixrQkFBYztFQUNkLGVBQWU7RUFDZiw0QkFBb0I7RUFDcEIsd0JBQXNCO0VBQ3RCLDZDQUE2QztFQUM3QyxXQUFXO0FBR2Y7O0FBbkRDO0VBb0RFLHNDQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGtCQUFhO0VBQ0osZ0JBQWdCO0VBQ3pCLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsbUJBQW1CO0FBR3RCOztBQTdEQztFQThESyxrQkFBa0I7RUFFckIsYUFBWTtBQUVmOztBQWxFQztFQW1FSSxlQUFlO0VBQ2hCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsb0JBQWlCO0tBQWpCLGlCQUFpQjtFQUNqQiwwQkFBc0I7S0FBdEIsdUJBQXNCO0FBRzFCOztBQTFFQztFQTJFRyxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixVQUFVO0FBR2Q7O0FBakZDO0VBaUZHLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWTtFQUNaLG9DQUFvQztFQUNwQyxrQkFBa0I7RUFDbEIscUJBQXFCO0VBQ3JCLGlCQUFpQjtFQUNqQix3Q0FBd0M7RUFDeEMsa0JBQWtCO0VBQ2xCLFdBQVc7QUFJZjs7QUE5RkM7RUE0RkMsNkJBQTRCO0FBTTlCOztBQWxHQztFQWdHSSw0Q0FBNEM7RUFDN0MsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsd0NBQXdDO0VBQ3hDLGNBQWM7RUFDZCxrQkFBa0I7QUFNdEI7O0FBRUE7RUFDQyxVQUFTO0VBQ1QsZUFBYztFQUNkLGtCQUFrQjtFQUNmLE1BQU07QUFDVjs7QUFDQztFQUNBLDJCQUEyQjtBQUU1QiIsImZpbGUiOiJzcmMvYXBwL2NoYW5nZXBhc3N3b3JkL2NoYW5nZXBhc3N3b3JkLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1oZWFkZXJcclxuXHR7XHJcblx0XHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0taW9uLWNvbG9yLWJhc2U6IHZhcigtLWlvbi1jb2xvci1iZ2dyYWRpZW50KSFpbXBvcnRhbnQ7XHJcblx0ICAtLWJvcmRlci13aWR0aDogMDtcclxuXHRcclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG5cdH1cclxuXHRpb24tY29udGVudFxyXG5cdHtcclxuXHRbcHJvZmlsZWluZm9dXHJcbiB7XHJcbiBbZWRpdHByb2ZpbGVdXHJcbiB7ICAgICBwYWRkaW5nOiAxNXB4IDE1cHggMDtcclxuICAgIG1hcmdpbi10b3A6IC0yMHB4O1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHggMTVweCAwIDA7IFxyXG5cdFt1c2VyaW5mb10ge1xyXG5cdCAgICBtYXJnaW4tYm90dG9tOiAyNHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGgyIHtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxufXAge1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcbn1cclxuXHRbZm9ybWZpZWxkXSB7XHJcblx0XHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdFx0Ym9yZGVyOiAxcHggc29saWQgI2U4ZThlODtcclxuXHRcdFx0aGVpZ2h0OiA1MnB4O1xyXG5cdFx0XHRib3JkZXItcmFkaXVzOiA1MHB4O1xyXG5cdFx0XHRiYWNrZ3JvdW5kOnZhciggLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0XHRwYWRkaW5nOiAwIDE2cHg7XHJcblx0XHRcdG1hcmdpbi10b3A6MzJweDtcclxuXHRcdFx0bGFiZWwge1xyXG5cdFx0XHRcdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRcdFx0XHR0b3A6IC0xMHB4O1xyXG5cdFx0XHRcdHotaW5kZXg6IDExMTtcclxuXHRcdFx0XHRiYWNrZ3JvdW5kOiB2YXIoIC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdFx0XHRsZWZ0OiAyOXB4O1xyXG5cdFx0XHRcdHBhZGRpbmc6IDAgM3B4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHRcdFx0XHRmb250LXdlaWdodDogNzAwO1xyXG5cdFx0XHRcdGNvbG9yOiAjM2EzYTNhO1xyXG5cdFx0XHR9XHJcblx0XHRcdGlvbi1pbnB1dCAge1xyXG5cdFx0XHRcdHBhZGRpbmc6IDBweDtcclxuXHRcdFx0XHQtLXBhZGRpbmctc3RhcnQ6IDBweDtcclxuXHRcdFx0XHQtLXBhZGRpbmctZW5kOiAwcHg7XHJcblx0XHRcdFx0Zm9udC1zaXplOiAxNHB4O1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItY29sb3I6ICM5YTlhOWE7XHJcblx0XHRcdFx0LS1wbGFjZWhvbGRlci1vcGFjaXR5OiAxO1xyXG5cdFx0XHRcdGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuXHRcdFx0XHRjb2xvcjogIzIyMjtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdFx0LmJ0bi1sb3Nuc3tcclxuXHRcdFx0LS1iYWNrZ3JvdW5kOnZhciggLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcblx0XHRcdG1hcmdpbi10b3A6IDIwcHg7XHJcblx0XHRcdC0tYm94LXNoYWRvdzogbm9uZTtcclxuICAgICAgICAgICAgbWluLWhlaWdodDogNDhweDtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMTVweDtcclxuXHRcdFx0dGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuXHRcdFx0bGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHRcdH1cclxuIH1cclxuIFtwcm9maWxlaW1nXVxyXG4geyAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICBoZWlnaHQ6MTYwcHg7XHJcbiAgIGltZ1xyXG4gICB7XHJcbiAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LWhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgb2JqZWN0LWZpdDogY292ZXI7XHJcbiAgICBvYmplY3QtcG9zaXRpb246Ym90dG9tO1xyXG4gICB9XHJcbiAgIFt1c2VyaW5uZXJdXHJcbiB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAtNjJweDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgXHJcblx0W2J0bmVkaXRdIHtcclxuICAgIG1hcmdpbi1sZWZ0OiA0NXB4O1xyXG4gICAgd2lkdGg6IDMwcHg7XHJcbiAgICBoZWlnaHQ6IDMwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBsaW5lLWhlaWdodDogMzBweDtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3R0b206IDFweDtcclxuXHRpb24taWNvblxyXG5cdHtjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdH1cclxufVxyXG4gIGltZ1xyXG5cdCAgIHtib3gtc2hhZG93OiAwcHggMHB4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcclxuXHQgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHQgICB9XHJcbn1cclxuIH1cclxuIH1cclxuICBcclxuXHR9XHJcblx0W2Vycm9yXVxyXG5cdHtcclxuXHRjb2xvcjpyZWQ7XHJcblx0Zm9udC1zaXplOjEycHg7XHJcblx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdG9wOiAwO1xyXG5cdH1cclxuXHRpb24tY29udGVudHtcclxuXHRtYXJnaW4tdG9wOiAyNXB4ICFpbXBvcnRhbnQ7XHJcblx0fSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/changepassword/changepassword.page.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/changepassword/changepassword.page.ts ***!
+  \*******************************************************/
+/*! exports provided: ChangepasswordPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangepasswordPage", function() { return ChangepasswordPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+/* harmony import */ var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/globalFooService.service */ "./src/app/services/globalFooService.service.ts");
+/* harmony import */ var _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/facebook/ngx */ "./node_modules/@ionic-native/facebook/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/__ivy_ngcc__/ngx/index.js");
+
+
+
+
+
+
+
+
+let ChangepasswordPage = class ChangepasswordPage {
+    constructor(fb, googlePlus, globalFooService, api, router, common) {
+        this.fb = fb;
+        this.googlePlus = googlePlus;
+        this.globalFooService = globalFooService;
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.is_submit = false;
+        this.errors = ['', null, undefined];
+    }
+    ngOnInit() {
+    }
+    save() {
+        this.is_submit = true;
+        if (this.errors.indexOf(this.oldpassword) >= 0 ||
+            this.errors.indexOf(this.newpassword) >= 0 ||
+            this.errors.indexOf(this.cpassword) >= 0 ||
+            this.newpassword != this.cpassword) {
+            return false;
+        }
+        else {
+            let dict = {
+                oldpassword: this.oldpassword,
+                password: this.newpassword,
+                userid: localStorage.getItem('userid'),
+            };
+            this.common.presentLoading();
+            this.api.post('changepassword', dict, '').subscribe((result) => {
+                this.is_submit = false;
+                this.common.stopLoading();
+                this.oldpassword = '';
+                this.newpassword = '';
+                this.cpassword = '';
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.api.navCtrl.navigateRoot('tabs/settings');
+                    this.common.presentToast('Password changed successfully !.', 'success');
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+            });
+        }
+    }
+};
+ChangepasswordPage.ctorParameters = () => [
+    { type: _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_6__["Facebook"] },
+    { type: _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_7__["GooglePlus"] },
+    { type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__["GlobalFooService"] },
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+];
+ChangepasswordPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-changepassword',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./changepassword.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/changepassword/changepassword.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./changepassword.page.scss */ "./src/app/changepassword/changepassword.page.scss")).default]
+    })
+], ChangepasswordPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=changepassword-changepassword-module-es2015.js.map

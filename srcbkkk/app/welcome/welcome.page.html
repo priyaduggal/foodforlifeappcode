@@ -1,0 +1,29 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content bg-white>
+	<div class="top-img-str">
+		<div class="logo-top-al">
+			<img src="assets/images/logowhitenew.png">
+		</div>
+	</div>
+	<div class="cont-login">
+		
+
+		<div class="main-ttl">
+		    <h3>Welcome</h3>
+			<p>If you want to contribute as an individual or as a company click below button</p>
+		</div>
+		<div class="flds-login">
+			<!--ion-button expand="full" routerLink="/home2" shape="round" class="btn-losns">As a Individual</ion-button>
+			<ion-button expand="full" fill="outline" routerLink="/tabs/home" shape="round" class="btn-Company">As a Company</ion-button-->
+			<ion-button expand="full" (click)="login('individual')" shape="round" class="btn-losns">As a Individual</ion-button>
+			<ion-button expand="full" fill="outline" (click)="login('company')" shape="round" class="btn-Company">As a Company</ion-button>
+			
+		</div>	
+	</div>
+
+</ion-content>

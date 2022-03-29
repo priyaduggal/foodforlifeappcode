@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ion-content, ion-header, ion-button , ion-label, h1, h2, h3, h4, h5, h6, p, span {
+	font-family: 'Poppins', sans-serif !important;
+}
+.profile_listing
+{
+	font-weight:500;
+	color: #000000b8;
+	border-bottom: 1px solid #0000001c;
+}
+.leaveteam  {
+	 height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resend{
+	font-weight: 500;
+	color:var(--ion-color-primary, #3880ff);
+}
+.jointeamconfirm {
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.list_pay{
+	padding: 4px;
+    text-align: left;
+}
+.popupconfirm
+{
+	    width: 100%;
+    padding: 15px;
+    max-width: 325px;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-wrapper{
+    background: transparent !important;
+}
+.about_us p{
+
+font-size: 14px !important;
+    line-height: 22px !important;
+    font-weight: 300 !important;
+    color:#666!important;
+    margin-top: 10px !important;
+	}
+    .about_us h4 {
+        margin: 20px 0px 20px 0px;
+    }
+.about_us span.left-rf-boc{
+    font-weight: 500;
+    line-height: 28px;
+    font-size: 18px;
+    position: relative;
+}
+
+.about_us span.left-rf-boc:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
+ }
+
+.privacy_description p{
+	
+	margin-top: 0px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    font-weight: 400;
+}
+.privacy_description h4 after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
+}
+.privacy_description ul {
+    padding-left: 35px;
+}
+.privacy_description ul li {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    font-weight: 400;
+    position: relative;
+}
+.privacy_description ul li:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    width: 7px;
+    height: 7px;
+    background: #f2a40b;
+    border-radius: 50%;
+    z-index: -1;
+    top: 7px;
+}
+.privacy_description h4{
+	margin: 20px 0px 20px 0px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+    padding-left: 7px;
+}
+.home_page .swiper-pagination
+{
+	display:none;
+}
+
+ion-toolbar ion-buttons.buttons-last-slot {
+    margin-right: 10px;;
+}
+
+
+ion-header ion-toolbar ion-back-button {
+    color: #fff;
+}
+.can-go-back > ion-header ion-toolbar ion-back-button span.button-text {
+    display: none;
+}
+
+ion-header ion-toolbar ion-buttons.buttons-first-slot.md, ion-header ion-toolbar  ion-back-button.md.button  {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+ion-header ion-toolbar ion-buttons.buttons-last-slot.md {
+    position: absolute;
+    right:5px;
+    z-index: 2;
+}
+
+
+.search ion-searchbar .searchbar-search-icon {
+    top: 0 !important;
+}
+.search ion-searchbar .searchbar-search-icon.md {
+    top: 15px !important;
+}
+
+
+.popupconfirm {
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 15px;
+}
+
+.privacy_description h4:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--ion-color-softgreen);
+    border-radius: 50%;
+    z-index: -1;
+    top: -6px;
+}

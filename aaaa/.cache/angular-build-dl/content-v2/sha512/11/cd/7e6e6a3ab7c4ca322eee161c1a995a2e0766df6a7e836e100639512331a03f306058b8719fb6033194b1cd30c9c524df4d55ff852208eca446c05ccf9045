@@ -1,0 +1,141 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["thetable-thetable-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/thetable/thetable.page.html":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/thetable/thetable.page.html ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t        <ion-buttons slot=\"start\">\r\n          <ion-menu-button></ion-menu-button>\r\n        </ion-buttons>\r\n\t<ion-title class=\"ion-text-center\">FFL Monthly Sponsor</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n\r\n<ion-content>\r\n  <ion-slides slidetable  #slideWithNav [options]=\"slideOptsOne\"  (ionSlideWillChange)=\"onSlideChangeStart($event)\" (ionSlideDidChange)=\"onSlideChanged($event)\" pager=\"false\" class=\"home-slider\">\r\n    \r\n    <ion-slide   hm-slider>\r\n      <img src=\"assets/images/sliderimg1.jpg\" style=\"width:100%;\"/>\r\n      <div class=\"sld_cnt\">\r\n      <div class=\"sld_cntinner\">\r\n\t\t<div class=\"logo-top-al\">\r\n\t\t\t<img src=\"assets/images/images.png\">\r\n\t\t</div>\r\n        <p>Start giving in a whole new way. Be matched with a children every month, in one of the World's most vulnerable countries</p>\r\n        <ion-button routerLink=\"/thetabledetail\"  shape=\"round\" expand=\"full\">Give Monthly</ion-button>\r\n      </div>\r\n      </div>\r\n    </ion-slide>\r\n\t \r\n    <!--ion-slide  hm-slider>\r\n      <img src=\"assets/images/lady.jpg\" style=\"width:100%;\"/>\r\n      <div class=\"sld_cnt\">\r\n      <div class=\"sld_cntinner\">\r\n\t\t<div class=\"logo-top-al\">\r\n\t\t\t<img src=\"assets/images/logo.png\">\r\n\t\t</div>\r\n        <p>Start giving in a whole new way. Be matched with a children every month, in one of the World's most vulnerable countries</p>\r\n        <ion-button routerLink=\"/thetabledetail\" shape=\"round\" expand=\"full\">Give Monthly</ion-button>\r\n      </div>\r\n      </div>\r\n    </ion-slide-->\r\n</ion-slides>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/thetable/thetable-routing.module.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/thetable/thetable-routing.module.ts ***!
+  \*****************************************************/
+/*! exports provided: ThetablePageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetablePageRoutingModule", function() { return ThetablePageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _thetable_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./thetable.page */ "./src/app/thetable/thetable.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _thetable_page__WEBPACK_IMPORTED_MODULE_3__["ThetablePage"]
+    }
+];
+let ThetablePageRoutingModule = class ThetablePageRoutingModule {
+};
+ThetablePageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ThetablePageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/thetable/thetable.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/thetable/thetable.module.ts ***!
+  \*********************************************/
+/*! exports provided: ThetablePageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetablePageModule", function() { return ThetablePageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _thetable_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./thetable-routing.module */ "./src/app/thetable/thetable-routing.module.ts");
+/* harmony import */ var _thetable_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./thetable.page */ "./src/app/thetable/thetable.page.ts");
+
+
+
+
+
+
+
+let ThetablePageModule = class ThetablePageModule {
+};
+ThetablePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _thetable_routing_module__WEBPACK_IMPORTED_MODULE_5__["ThetablePageRoutingModule"]
+        ],
+        declarations: [_thetable_page__WEBPACK_IMPORTED_MODULE_6__["ThetablePage"]]
+    })
+], ThetablePageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/thetable/thetable.page.scss":
+/*!*********************************************!*\
+  !*** ./src/app/thetable/thetable.page.scss ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-buttons {\n  font-size: 22px;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [hm-slider] {\n  display: flex;\n  flex-direction: column;\n}\n\nion-content [hm-slider] img {\n  height: 45vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\nion-content [hm-slider] .sld_cnt {\n  border-radius: 15px;\n  margin-top: -20px;\n  position: relative;\n  z-index: 1;\n  background: var(--ion-color-white);\n}\n\nion-content [hm-slider] .sld_cnt .sld_cntinner {\n  padding: 15px;\n  /*img\r\n\t{\r\n\twidth: 140px;\r\n    height: 140px;\r\n    object-fit: contain;\r\n    box-shadow: 0px 0px 10px rgb(0 0 0 / 28%);\r\n    border-radius: 50%;\r\n    margin-top: -80px;\r\n    background: #f8f1fd;\r\n\t}*/\n}\n\nion-content [hm-slider] .sld_cnt .sld_cntinner .logo-top-al {\n  width: 110px;\n  height: 110px;\n  display: block;\n  margin: 0 auto;\n  text-align: center;\n  margin-top: -70px;\n  background: var(--ion-color-white);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);\n  padding-top: 5px;\n  margin-bottom: 0px;\n}\n\nion-content [hm-slider] .sld_cnt .sld_cntinner .logo-top-al img {\n  width: 76px;\n  height: auto;\n}\n\nion-content [hm-slider] .sld_cnt .sld_cntinner p {\n  font-size: 13px;\n  color: #999;\n}\n\nion-content [hm-slider] .sld_cnt .sld_cntinner ion-button {\n  --box-shadow: none;\n  min-height: 42px;\n}\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGhldGFibGUvdGhldGFibGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBSUksdURBQWlCO0VBQ2xCLGlCQUFlO0FBRmxCOztBQUhBO0VBUUUsZUFBZTtBQURqQjs7QUFQQTtFQVdJLDZCQUE0QjtFQUM1QixrQkFBaUI7RUFDVCxrQkFBa0I7RUFDbEIsNkNBQTZDO0FBQXpEOztBQWRBO0VBbUJDLGFBQVk7QUFEYjs7QUFJQztFQUtHLGFBQWE7RUFDYixzQkFBc0I7QUFMMUI7O0FBREM7RUFTQSxZQUFZO0VBQ1QsV0FBVztFQUNYLG9CQUFpQjtLQUFqQixpQkFBaUI7QUFKckI7O0FBUEM7RUFjRyxtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1Ysa0NBQWtDO0FBSHRDOztBQWZDO0VBb0JHLGFBQWE7RUFxQmhCOzs7Ozs7Ozs7R0FiRTtBQUNIOztBQTdCQztFQXNCRSxZQUFZO0VBQ1osYUFBYTtFQUNiLGNBQWM7RUFDZCxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixrQ0FBa0M7RUFDbEMsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLDJDQUEyQztFQUMzQyxnQkFBZ0I7RUFDaEIsa0JBQWtCO0FBV3JCOztBQTlDQztFQXFDRyxXQUFXO0VBQ1gsWUFBWTtBQWFoQjs7QUFuREM7RUFxREEsZUFBZTtFQUNaLFdBQVc7QUFFZjs7QUF4REM7RUEwREksa0JBQWE7RUFDZCxnQkFBZ0I7QUFFcEIiLCJmaWxlIjoic3JjL2FwcC90aGV0YWJsZS90aGV0YWJsZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcblx0e1xyXG5cdFxyXG5cdCAgaW9uLXRvb2xiYXJcclxuXHQgIHstLWlvbi1jb2xvci1iYXNlOiB2YXIoLS1pb24tY29sb3ItYmdncmFkaWVudCkhaW1wb3J0YW50O1xyXG5cdCAgLS1ib3JkZXItd2lkdGg6IDA7XHJcblx0aW9uLWJ1dHRvbnNcclxuXHQge1xyXG5cdCBmb250LXNpemU6IDIycHg7XHJcblx0IH1cclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG5cdH1cclxuXHRpb24tY29udGVudFxyXG5cdHtcclxuXHRcclxuXHRbaG0tc2xpZGVyXVxyXG5cdHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGltZ1xyXG5cdHtcclxuXHRoZWlnaHQ6IDQ1dmg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG5cdH1cclxuXHQuc2xkX2NudCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG4gICAgbWFyZ2luLXRvcDogLTIwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHQuc2xkX2NudGlubmVyIHtcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcblx0XHQubG9nby10b3AtYWwge1xyXG5cdFx0XHR3aWR0aDogMTEwcHg7XHJcblx0XHRcdGhlaWdodDogMTEwcHg7XHJcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRtYXJnaW46IDAgYXV0bztcclxuXHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAtNzBweDtcclxuXHRcdFx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdFx0Ym9yZGVyLXJhZGl1czogNTAlO1xyXG5cdFx0XHRkaXNwbGF5OiBmbGV4O1xyXG5cdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRcdFx0Ym94LXNoYWRvdzogMHB4IDJweCAyNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuXHRcdFx0cGFkZGluZy10b3A6IDVweDtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMHB4O1xyXG5cdFx0XHRpbWcge1xyXG5cdFx0XHRcdHdpZHRoOiA3NnB4O1xyXG5cdFx0XHRcdGhlaWdodDogYXV0bztcclxuXHRcdFx0fVxyXG5cdFx0fVx0XHJcblx0LyppbWdcclxuXHR7XHJcblx0d2lkdGg6IDE0MHB4O1xyXG4gICAgaGVpZ2h0OiAxNDBweDtcclxuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XHJcbiAgICBib3gtc2hhZG93OiAwcHggMHB4IDEwcHggcmdiKDAgMCAwIC8gMjglKTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIG1hcmdpbi10b3A6IC04MHB4O1xyXG4gICAgYmFja2dyb3VuZDogI2Y4ZjFmZDtcclxuXHR9Ki9cclxuXHRwXHJcblx0e1xyXG5cdGZvbnQtc2l6ZTogMTNweDtcclxuICAgIGNvbG9yOiAjOTk5O1xyXG5cdH1cclxuXHRpb24tYnV0dG9uXHJcblx0e1xyXG5cdCAgICAtLWJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICBtaW4taGVpZ2h0OiA0MnB4O1xyXG5cdH1cclxufVxyXG59XHJcblx0fVxyXG5cdH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/thetable/thetable.page.ts":
+/*!*******************************************!*\
+  !*** ./src/app/thetable/thetable.page.ts ***!
+  \*******************************************/
+/*! exports provided: ThetablePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetablePage", function() { return ThetablePage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+let ThetablePage = class ThetablePage {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+ThetablePage.ctorParameters = () => [];
+ThetablePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-thetable',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./thetable.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/thetable/thetable.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./thetable.page.scss */ "./src/app/thetable/thetable.page.scss")).default]
+    })
+], ThetablePage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=thetable-thetable-module-es2015.js.map

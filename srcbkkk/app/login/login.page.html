@@ -1,0 +1,52 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content bg-white>
+	<h2 class="vrt_txt">Login</h2>
+	<div class="top-img-str"></div>
+	<div class="cont-login">		
+		<div class="logo-top-al">
+			<img src="assets/images/logonew.png">
+		</div>
+		<div class="main-ttl">
+			<h3> Login </h3>
+			<p> Fill Email Address to Login </p>
+		</div>
+		<div class="flds-login">
+			<div formfield>
+				<label>Email Address</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter email address" [(ngModel)]="login_email" name="login_email" type="email"></ion-input>
+					
+				</ion-item>
+				<span error *ngIf="errors.indexOf(login_email) >= 0 && is_submit_login == true">Please enter your email address</span>
+				    <span error *ngIf="errors.indexOf(login_email) == -1 && is_submit_login == true && !reg_exp.test(login_email.toLowerCase())">Please enter valid email address</span>
+			</div>
+			<div formfield>
+				<label>Password</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter password" [(ngModel)]="login_password" name="login_password" type="password" ></ion-input>
+				
+				</ion-item>
+					<span error *ngIf="errors.indexOf(login_password) >= 0 && is_submit_login == true">Please enter your password</span>
+			</div>
+			<ion-button (click)="login()"  type="submit" expand="full" shape="round" class="btn-losns">Login</ion-button>
+			<div class="social_signup">
+				<h5>Or Sign In With</h5>
+				<div sociallink>
+				<ion-buttons facebook  (click)="facebookLogin()">
+				<ion-icon name="logo-facebook"></ion-icon>
+				</ion-buttons>
+				<ion-buttons google (click)="googleLogin()">
+				<ion-icon name="logo-google"></ion-icon>
+				</ion-buttons>
+			</div>
+			<p>Don't have an account? <a href="javascript:void(0)" routerLink="/signup">Sign Up Here</a></p>
+			</div>
+		</div>	
+	</div>
+
+</ion-content>

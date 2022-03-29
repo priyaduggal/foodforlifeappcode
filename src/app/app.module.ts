@@ -27,6 +27,8 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
 import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { ShowcardsPage } from './showcards/showcards.page';
 import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';
+//import { ActionSheet, ActionSheetOptions } from '@awesome-cordova-plugins/action-sheet/ngx';
+import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet/ngx';
 import { ApplePay } from '@ionic-native/apple-pay/ngx';
 @NgModule({
   declarations: [AppComponent,ShowcardsPage,SocialshareoptionsPage,JointeamconfirmPage,LeaveteamconfirmPage,DeleteconfirmPage,PaymentlistmodalPage,CustomamountPage],
@@ -38,6 +40,7 @@ import { ApplePay } from '@ionic-native/apple-pay/ngx';
     HttpClientModule
   ],
   providers: [
+    ActionSheet,
     StatusBar,
 	AppLauncher,
 	ApplePay,

@@ -1,0 +1,215 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["activitydetail-activitydetail-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/activitydetail/activitydetail.page.html":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/activitydetail/activitydetail.page.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/tabs/tribes\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Activity Detail</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n<div detailbanner>\r\n<img src=\"{{IMAGES_URL}}/{{activity?.image}}\"/>\r\n</div>\r\n\r\n<div detailcontent class=\"ion-padding\">\r\n<h2>{{activity?.title}}</h2>\r\n<h5>{{activity?.meals}} meals</h5>\r\n <ion-note><ion-icon name=\"calendar-outline\"></ion-icon> {{activity?.created_at | date : 'd MMM'}}</ion-note>\r\n<p>{{activity?.description}}</p>\r\n\r\n  <ion-button shape=\"round\" expand=\"full\" (click)=\"give(activity?.id)\">Give Now</ion-button>\r\n</div>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/activitydetail/activitydetail-routing.module.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/activitydetail/activitydetail-routing.module.ts ***!
+  \*****************************************************************/
+/*! exports provided: ActivitydetailPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActivitydetailPageRoutingModule", function() { return ActivitydetailPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _activitydetail_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./activitydetail.page */ "./src/app/activitydetail/activitydetail.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _activitydetail_page__WEBPACK_IMPORTED_MODULE_3__["ActivitydetailPage"]
+    }
+];
+let ActivitydetailPageRoutingModule = class ActivitydetailPageRoutingModule {
+};
+ActivitydetailPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ActivitydetailPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/activitydetail/activitydetail.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/activitydetail/activitydetail.module.ts ***!
+  \*********************************************************/
+/*! exports provided: ActivitydetailPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActivitydetailPageModule", function() { return ActivitydetailPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _activitydetail_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./activitydetail-routing.module */ "./src/app/activitydetail/activitydetail-routing.module.ts");
+/* harmony import */ var _activitydetail_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./activitydetail.page */ "./src/app/activitydetail/activitydetail.page.ts");
+
+
+
+
+
+
+
+let ActivitydetailPageModule = class ActivitydetailPageModule {
+};
+ActivitydetailPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _activitydetail_routing_module__WEBPACK_IMPORTED_MODULE_5__["ActivitydetailPageRoutingModule"]
+        ],
+        declarations: [_activitydetail_page__WEBPACK_IMPORTED_MODULE_6__["ActivitydetailPage"]]
+    })
+], ActivitydetailPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/activitydetail/activitydetail.page.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/activitydetail/activitydetail.page.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [detailbanner] {\n  position: relative;\n  z-index: 1;\n  height: 225px;\n}\n\nion-content [detailbanner] img {\n  height: 225px;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 0px 0px 25px 25px;\n}\n\nion-content [detailbanner]:after {\n  content: \"\";\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  padding: 0;\n  background: var(--ion-color-black);\n  opacity: 0.5;\n  display: inline-block;\n  position: absolute;\n  z-index: 1;\n  border-radius: 0px 0px 25px 25px;\n}\n\nion-content [detailcontent] ion-note {\n  color: #bbb;\n  font-size: 14px;\n}\n\nion-content [detailcontent] h2 {\n  margin-bottom: 0;\n  font-size: 20px;\n  margin-top: 0;\n  font-weight: 600;\n}\n\nion-content [detailcontent] p {\n  font-size: 14px;\n  color: #666;\n  font-weight: 300;\n}\n\nion-content [detailcontent] h3 {\n  font-size: 14px;\n}\n\nion-content [detailcontent] ion-button {\n  margin-top: 30px;\n  --box-shadow: none;\n  min-height: 42px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWN0aXZpdHlkZXRhaWwvYWN0aXZpdHlkZXRhaWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBSUksdURBQWlCO0VBQ2xCLGlCQUFlO0FBRmxCOztBQUhBO0VBUUksNkJBQTRCO0VBQzVCLGtCQUFpQjtFQUNULGtCQUFrQjtFQUNsQiw2Q0FBNkM7QUFEekQ7O0FBVkE7RUFnQkMsYUFBWTtBQUZiOztBQUtBO0VBSUksa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixhQUFhO0FBTGpCOztBQURBO0VBUUksYUFBYTtFQUNiLFdBQVc7RUFDWCxvQkFBaUI7S0FBakIsaUJBQWlCO0VBQ2pCLGdDQUFnQztBQUhwQzs7QUFSQTtFQWNBLFdBQVc7RUFDUCxPQUFPO0VBQ1AsUUFBUTtFQUNSLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLGtDQUFrQztFQUNsQyxZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsZ0NBQWdDO0FBRnBDOztBQXZCQTtFQStCUSxXQUFXO0VBQ2pCLGVBQWU7QUFKakI7O0FBNUJBO0VBbUNLLGdCQUFnQjtFQUNqQixlQUFlO0VBQ2YsYUFBYTtFQUNiLGdCQUFnQjtBQUhwQjs7QUFuQ0E7RUF5Q0csZUFBZTtFQUNkLFdBQVc7RUFDWCxnQkFBZ0I7QUFGcEI7O0FBekNBO0VBK0NBLGVBQWM7QUFGZDs7QUE3Q0E7RUFrREUsZ0JBQWdCO0VBQ2Isa0JBQWE7RUFDZCxnQkFBZ0I7QUFEcEIiLCJmaWxlIjoic3JjL2FwcC9hY3Rpdml0eWRldGFpbC9hY3Rpdml0eWRldGFpbC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcbntcclxuXHRcclxuXHQgIGlvbi10b29sYmFyXHJcblx0ICB7LS1pb24tY29sb3ItYmFzZTogdmFyKC0taW9uLWNvbG9yLWJnZ3JhZGllbnQpIWltcG9ydGFudDtcclxuXHQgIC0tYm9yZGVyLXdpZHRoOiAwO1xyXG5cdFxyXG5cdFx0ICBpb24tdGl0bGV7XHJcblx0XHQgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHQgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblx0fVxyXG5cdCY6OmFmdGVyXHJcblx0e1xyXG5cdGRpc3BsYXk6bm9uZTtcclxuXHR9XHJcbn1cclxuaW9uLWNvbnRlbnRcclxue1xyXG5bZGV0YWlsYmFubmVyXVxyXG57XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgaGVpZ2h0OiAyMjVweDtcclxuIGltZyB7XHJcbiAgICBoZWlnaHQ6IDIyNXB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjVweCAyNXB4O1xyXG59XHJcbiAgJjphZnRlcntcclxuY29udGVudDogXCJcIjtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIHRvcDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItYmxhY2spO1xyXG4gICAgb3BhY2l0eTogMC41O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjVweCAyNXB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG5cclxufVxyXG5bZGV0YWlsY29udGVudF1cclxueyBpb24tbm90ZVxyXG5cdCAgeyAgICBjb2xvcjogI2JiYjtcclxuXHQgZm9udC1zaXplOiAxNHB4OyBcclxuXHQgIH1cclxuaDJcclxueyAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHRwIHtcclxuICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgY29sb3I6ICM2NjY7XHJcbiAgICBmb250LXdlaWdodDogMzAwO1xyXG59XHJcbmgzXHJcbntcclxuZm9udC1zaXplOjE0cHg7XHJcbn1cclxuaW9uLWJ1dHRvblxyXG5cdHttYXJnaW4tdG9wOiAzMHB4O1xyXG5cdCAgICAtLWJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICBtaW4taGVpZ2h0OiA0MnB4O1xyXG5cdH1cclxuXHJcbn1cclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/activitydetail/activitydetail.page.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/activitydetail/activitydetail.page.ts ***!
+  \*******************************************************/
+/*! exports provided: ActivitydetailPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActivitydetailPage", function() { return ActivitydetailPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+/* harmony import */ var _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../addamount/addamount.page */ "./src/app/addamount/addamount.page.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/globalFooService.service */ "./src/app/services/globalFooService.service.ts");
+
+
+
+
+
+
+
+
+
+let ActivitydetailPage = class ActivitydetailPage {
+    constructor(globalFooService, modalController, activatedRoute, api, router, common) {
+        this.globalFooService = globalFooService;
+        this.modalController = modalController;
+        this.activatedRoute = activatedRoute;
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_4__["config"].IMAGES_URL;
+        this.errors = ['', null, undefined];
+        this.activityid = activatedRoute.snapshot.paramMap.get('id');
+        this.globalFooService.getObservable().subscribe((data) => {
+            if (this.errors.indexOf(data.paydata) == -1) {
+                this.getactivitydetails();
+            }
+        });
+    }
+    give(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalController.create({
+                component: _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_6__["AddamountPage"],
+                cssClass: 'leaveteam',
+                componentProps: {
+                    actid: id,
+                }
+            });
+            modal.onDidDismiss().then((detail) => {
+                if (this.errors.indexOf(detail.data) == -1) {
+                    //this.team.joins=this.team.joins - 1;
+                    //this.getuserteams();
+                }
+            });
+            return yield modal.present();
+        });
+    }
+    ngOnInit() {
+    }
+    ionViewDidEnter() {
+        this.getactivitydetails();
+    }
+    getactivitydetails() {
+        let dict = {
+            id: this.activityid,
+        };
+        this.common.presentLoading();
+        this.api.post('activitydetail', dict, '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.activity = res.data;
+            }
+            else {
+            }
+        }, err => {
+        });
+    }
+};
+ActivitydetailPage.ctorParameters = () => [
+    { type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_8__["GlobalFooService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"] }
+];
+ActivitydetailPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-activitydetail',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./activitydetail.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/activitydetail/activitydetail.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./activitydetail.page.scss */ "./src/app/activitydetail/activitydetail.page.scss")).default]
+    })
+], ActivitydetailPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=activitydetail-activitydetail-module-es2015.js.map

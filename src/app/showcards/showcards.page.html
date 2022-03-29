@@ -10,7 +10,7 @@
 <ion-content>
 <div amountimg class="ion-text-center">
 <!--p>Added Cards</p-->
-{{cardid}}
+
 <p *ngIf="cards?.length==0">No cards found</p>
 <ion-radio-group class="radiobox    ionradioch"  value="">
     <ion-item lines="none" *ngFor="let pay of cards">

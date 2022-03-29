@@ -1,0 +1,516 @@
+(function () {
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~activitydetail-activitydetail-module~addamount-addamount-module~charitydetail-charitydetail-~e01b0d79"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/addamount/addamount.page.html":
+    /*!*************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/addamount/addamount.page.html ***!
+      \*************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppAddamountAddamountPageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t      <ion-buttons (click)=\"dismiss() \" slot=\"end\">\r\n         <ion-icon name=\"close-sharp\"></ion-icon>\r\n        </ion-buttons>\r\n\t<ion-title class=\"ion-text-center\">Your Amount</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n<div amountimg class=\"ion-text-center\">\r\n<img src=\"assets/images/mappic6.jpg\"/>\r\n<p>Please enter amount that you would like to donate. Miniumum donation amount is $1 dollar.</p>\r\n<p style=\"color:#1e1e1e;font-weight:500;\" *ngIf=\"errors.indexOf(charityid)==-1\">{{charity?.title}}</p>\r\n<p style=\"color:#1e1e1e;font-weight:500;\" *ngIf=\"errors.indexOf(actid)==-1\">{{act?.title}}</p>\r\n<p style=\"color:#1e1e1e;font-weight:500;\" *ngIf=\"errors.indexOf(teamid)==-1\">{{team?.name}}</p>\r\n</div>\r\n<div formfield dollar-input>\r\n\t\t\t\t<label>Your Amount</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<img src=\"assets/images/dollar-icon.png\" />\r\n\t\t\t\t\t<ion-input type=\"number\" placeholder=\"Enter Your Amount\" id=\"amount\" (keyup)=\"search_keyword($event);\"></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t\r\n</div>\r\n<p style=\"padding-top: 9px; margin: 0px; font-size: 12px; padding-left: 20px;\"><span class=\"no_meals\">0</span> meals</p>\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"confirm();\"\r\n*ngIf=\"errors.indexOf(charityid)==-1\">Confirm</ion-button>\r\n\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"confirm_in();\"\r\n*ngIf=\"errors.indexOf(charityid)>=0 && errors.indexOf(actid)>=0  && errors.indexOf(teamid)>=0  \" >Confirm</ion-button>\r\n\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"confirm_act();\"\r\n*ngIf=\"errors.indexOf(actid)==-1\">Confirm</ion-button>\r\n\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"confirm_team();\"\r\n*ngIf=\"errors.indexOf(teamid)==-1\">Confirm</ion-button>\r\n</ion-content>\r\n";
+      /***/
+    },
+
+    /***/
+    "./src/app/addamount/addamount.page.scss":
+    /*!***********************************************!*\
+      !*** ./src/app/addamount/addamount.page.scss ***!
+      \***********************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppAddamountAddamountPageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header ion-toolbar ion-buttons {\n  font-size: 25px;\n  margin-right: 10px;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [amountimg] img {\n  height: 120px;\n  width: 120px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 5px solid var(--ion-color-softgreen);\n}\n\nion-content [amountimg] p {\n  font-size: 14px;\n  line-height: 22px;\n  font-weight: 300;\n  color: #adadad;\n  margin-top: 10px;\n}\n\nion-content [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-top: 20px;\n}\n\nion-content [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [formfield] ion-input, ion-content [formfield] ion-datetime {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content [formfield][dollar-input] img {\n  max-width: 15px;\n  margin-right: 4px;\n}\n\nion-content [formfield][dollar-input] ion-item {\n  --padding-start:0px;\n}\n\nion-content .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 10px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRkYW1vdW50L2FkZGFtb3VudC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFJSSx1REFBaUI7RUFDbEIsaUJBQWU7QUFGbEI7O0FBSEE7RUFRSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUR6RDs7QUFWQTtFQWVFLGVBQWU7RUFDYixrQkFBa0I7QUFEdEI7O0FBZkE7RUFxQkMsYUFBWTtBQUZiOztBQUtBO0VBS00sYUFBYTtFQUNiLFlBQVk7RUFDWixvQkFBaUI7S0FBakIsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQiw0Q0FBNEM7QUFObEQ7O0FBSEE7RUFZSSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsZ0JBQWdCO0FBTHBCOztBQVhBO0VBcUJHLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQ0FBa0M7RUFDbEMsZUFBZTtFQUNmLGdCQUFlO0FBTmxCOztBQXJCQTtFQTZCSSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVk7RUFDWixrQ0FBbUM7RUFDbkMsVUFBVTtFQUNWLGNBQWM7RUFDZCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFKbEI7O0FBakNBO0VBd0NJLFlBQVk7RUFDWixvQkFBZ0I7RUFDaEIsa0JBQWM7RUFDZCxlQUFlO0VBQ2YsNEJBQW9CO0VBQ3BCLHdCQUFzQjtFQUN0Qiw2Q0FBNkM7RUFDN0MsV0FBVztBQUhmOztBQTVDQTtFQXFEWSxlQUFjO0VBQ2QsaUJBQWlCO0FBTDdCOztBQWpEQTtFQTBEYSxtQkFBZ0I7QUFMN0I7O0FBckRBO0VBK0RHLHNDQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGtCQUFhO0VBQ0osZ0JBQWdCO0VBQ3pCLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsbUJBQW1CO0FBTnRCIiwiZmlsZSI6InNyYy9hcHAvYWRkYW1vdW50L2FkZGFtb3VudC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcbntcclxuXHRcclxuXHQgIGlvbi10b29sYmFyXHJcblx0ICB7LS1pb24tY29sb3ItYmFzZTogdmFyKC0taW9uLWNvbG9yLWJnZ3JhZGllbnQpIWltcG9ydGFudDtcclxuXHQgIC0tYm9yZGVyLXdpZHRoOiAwO1xyXG5cdFxyXG5cdFx0ICBpb24tdGl0bGV7XHJcblx0XHQgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHQgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblx0XHRpb24tYnV0dG9uc1xyXG5cdFx0e1xyXG5cdFx0Zm9udC1zaXplOiAyNXB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG5cdFx0fVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG59XHJcbmlvbi1jb250ZW50XHJcbntbYW1vdW50aW1nXVxyXG57XHJcbiAgaW1nXHJcbiAge1xyXG4gICAgICBoZWlnaHQ6IDEyMHB4O1xyXG4gICAgICB3aWR0aDogMTIwcHg7XHJcbiAgICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgIGJvcmRlcjogNXB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci1zb2Z0Z3JlZW4pO1xyXG4gIH1cclxuICBwXHJcbiAge1x0Zm9udC1zaXplOiAxNHB4O1xyXG5cdFx0XHRcdGxpbmUtaGVpZ2h0OiAyMnB4O1xyXG5cdFx0XHRcdGZvbnQtd2VpZ2h0OiAzMDA7XHJcblx0XHRcdFx0Y29sb3I6ICNhZGFkYWQ7XHJcblx0XHRcdFx0bWFyZ2luLXRvcDogMTBweDtcclxuICBcclxuICB9XHJcbn1cclxuW2Zvcm1maWVsZF0ge1xyXG5cdFx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHRcdGJvcmRlcjogMXB4IHNvbGlkICNlOGU4ZTg7XHJcblx0XHRcdGhlaWdodDogNTJweDtcclxuXHRcdFx0Ym9yZGVyLXJhZGl1czogNTBweDtcclxuXHRcdFx0YmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdFx0cGFkZGluZzogMCAxNnB4O1xyXG5cdFx0XHRtYXJnaW4tdG9wOjIwcHg7XHJcblx0XHRcdGxhYmVsIHtcclxuXHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0dG9wOiAtMTBweDtcclxuXHRcdFx0XHR6LWluZGV4OiAxMTE7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogdmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdFx0bGVmdDogMjlweDtcclxuXHRcdFx0XHRwYWRkaW5nOiAwIDNweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDEycHg7XHJcblx0XHRcdFx0Zm9udC13ZWlnaHQ6IDcwMDtcclxuXHRcdFx0XHRjb2xvcjogIzNhM2EzYTtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24taW5wdXQgLCBpb24tZGF0ZXRpbWUgIHtcclxuXHRcdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTRweDtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLWNvbG9yOiAjOWE5YTlhO1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItb3BhY2l0eTogMTtcclxuXHRcdFx0XHRmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcblx0XHRcdFx0Y29sb3I6ICMyMjI7XHJcblx0XHRcdH1cclxuXHRcdFx0Jltkb2xsYXItaW5wdXRdXHJcblx0XHRcdHtcclxuXHRcdFx0ICAgIGltZ1xyXG5cdFx0XHQgICAge1xyXG5cdFx0XHQgICAgICAgICBtYXgtd2lkdGg6MTVweDtcclxuXHRcdFx0ICAgICAgICAgbWFyZ2luLXJpZ2h0OiA0cHg7XHJcblx0XHRcdCAgICB9XHJcblx0XHRcdCAgICAgaW9uLWl0ZW1cclxuXHRcdFx0ICAgICB7XHJcblx0XHRcdCAgICAgICAgICAtLXBhZGRpbmctc3RhcnQ6MHB4O1xyXG5cdFx0XHQgICAgIH1cclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdFx0LmJ0bi1sb3Nuc3tcclxuXHRcdFx0LS1iYWNrZ3JvdW5kOnZhciggLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcblx0XHRcdG1hcmdpbi10b3A6IDEwcHg7XHJcblx0XHRcdC0tYm94LXNoYWRvdzogbm9uZTtcclxuICAgICAgICAgICAgbWluLWhlaWdodDogNDhweDtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMTVweDtcclxuXHRcdFx0dGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuXHRcdFx0bGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHRcdH1cclxufSJdfQ== */";
+      /***/
+    },
+
+    /***/
+    "./src/app/addamount/addamount.page.ts":
+    /*!*********************************************!*\
+      !*** ./src/app/addamount/addamount.page.ts ***!
+      \*********************************************/
+
+    /*! exports provided: AddamountPage */
+
+    /***/
+    function srcAppAddamountAddamountPageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AddamountPage", function () {
+        return AddamountPage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../config */
+      "./src/app/config.ts");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! jquery */
+      "./node_modules/jquery/dist/jquery.js");
+      /* harmony import */
+
+
+      var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _paymentlistmodal_paymentlistmodal_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../paymentlistmodal/paymentlistmodal.page */
+      "./src/app/paymentlistmodal/paymentlistmodal.page.ts");
+
+      var AddamountPage = /*#__PURE__*/function () {
+        function AddamountPage(navParams, api, router, common, modalController) {
+          _classCallCheck(this, AddamountPage);
+
+          this.navParams = navParams;
+          this.api = api;
+          this.router = router;
+          this.common = common;
+          this.modalController = modalController;
+          this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_4__["config"].IMAGES_URL;
+          this.errors = ['', null, undefined];
+          this.timeout = null;
+          this.charityid = navParams.get('id');
+          this.actid = navParams.get('actid');
+          this.teamid = navParams.get('teamid'); //alert(this.charityid);
+        }
+
+        _createClass(AddamountPage, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "search_keyword",
+          value: function search_keyword(event) {
+            clearTimeout(this.timeout);
+            var self = this;
+            this.timeout = setTimeout(function () {
+              if (self.errors.indexOf(event.target.value) == -1) {
+                self.search_text = event.target.value;
+                self.minimum = 1;
+
+                if (self.search_text < self.minimum) {
+                  self.common.presentToast('Minimum donation is 1 dollar !.', 'danger');
+                  self.search_text = '';
+                  jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val('');
+                }
+
+                var tot = self.search_text % self.minimum;
+
+                if (tot == 0) {} else {
+                  var min = self.search_text - tot;
+                  jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(min);
+                  self.common.presentToast('We have rounded the amount entered to the nearest number of meals', 'success');
+                }
+
+                var val = jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(); //  var tot1=val * 4;
+
+                var mul = val * 100;
+                var tot1 = mul / self.totalcents;
+                jquery__WEBPACK_IMPORTED_MODULE_6__('.no_meals').text(tot1);
+                console.log(self.search_text);
+              } else {
+                self.search_text = event.target.value;
+                jquery__WEBPACK_IMPORTED_MODULE_6__('.no_meals').text('0'); //self.save1();  
+              }
+            }, 500);
+          }
+        }, {
+          key: "dismiss",
+          value: function dismiss() {
+            this.modalController.dismiss({
+              'dismissed': true
+            });
+          }
+        }, {
+          key: "ionViewDidEnter",
+          value: function ionViewDidEnter() {
+            if (this.errors.indexOf(this.charityid) == -1) {
+              this.Charitydetail();
+            }
+
+            if (this.errors.indexOf(this.teamid) == -1) {
+              this.teamdetails();
+            }
+
+            if (this.errors.indexOf(this.actid) == -1) {
+              this.actdetail();
+            }
+
+            this.getsettings();
+            this.userid = localStorage.getItem('userid');
+          }
+        }, {
+          key: "getsettings",
+          value: function getsettings() {
+            var _this = this;
+
+            this.api.post('getadsettings', '', '').subscribe(function (result) {
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this.totalcents = res.data.totalcents; //alert(this.totalcents);
+              } else {}
+            }, function (err) {});
+          }
+        }, {
+          key: "confirm_act",
+          value: function confirm_act() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var _this2 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      if (!(this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val()) >= 0)) {
+                        _context.next = 3;
+                        break;
+                      }
+
+                      this.common.presentToast('Please enter amount !', 'danger');
+                      return _context.abrupt("return", false);
+
+                    case 3:
+                      this.dismiss();
+                      _context.next = 6;
+                      return this.modalController.create({
+                        component: _paymentlistmodal_paymentlistmodal_page__WEBPACK_IMPORTED_MODULE_8__["PaymentlistmodalPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          actid: this.actid,
+                          amount: jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(),
+                          userid: this.userid
+                        }
+                      });
+
+                    case 6:
+                      modal = _context.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this2.errors.indexOf(detail.data) == -1) {}
+                      });
+                      _context.next = 10;
+                      return modal.present();
+
+                    case 10:
+                      return _context.abrupt("return", _context.sent);
+
+                    case 11:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
+          key: "confirm_team",
+          value: function confirm_team() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this3 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      if (!(this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val()) >= 0)) {
+                        _context2.next = 3;
+                        break;
+                      }
+
+                      this.common.presentToast('Please enter amount !', 'danger');
+                      return _context2.abrupt("return", false);
+
+                    case 3:
+                      this.dismiss();
+                      _context2.next = 6;
+                      return this.modalController.create({
+                        component: _paymentlistmodal_paymentlistmodal_page__WEBPACK_IMPORTED_MODULE_8__["PaymentlistmodalPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          teamid: this.teamid,
+                          amount: jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(),
+                          userid: this.userid
+                        }
+                      });
+
+                    case 6:
+                      modal = _context2.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this3.errors.indexOf(detail.data) == -1) {}
+                      });
+                      _context2.next = 10;
+                      return modal.present();
+
+                    case 10:
+                      return _context2.abrupt("return", _context2.sent);
+
+                    case 11:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+          }
+        }, {
+          key: "confirm_in",
+          value: function confirm_in() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+              var _this4 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      if (!(this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val()) >= 0)) {
+                        _context3.next = 3;
+                        break;
+                      }
+
+                      this.common.presentToast('Please enter amount !', 'danger');
+                      return _context3.abrupt("return", false);
+
+                    case 3:
+                      this.dismiss();
+                      _context3.next = 6;
+                      return this.modalController.create({
+                        component: _paymentlistmodal_paymentlistmodal_page__WEBPACK_IMPORTED_MODULE_8__["PaymentlistmodalPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          amount: jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(),
+                          userid: this.userid
+                        }
+                      });
+
+                    case 6:
+                      modal = _context3.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this4.errors.indexOf(detail.data) == -1) {}
+                      });
+                      _context3.next = 10;
+                      return modal.present();
+
+                    case 10:
+                      return _context3.abrupt("return", _context3.sent);
+
+                    case 11:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3, this);
+            }));
+          }
+        }, {
+          key: "confirm",
+          value: function confirm() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+              var _this5 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                while (1) {
+                  switch (_context4.prev = _context4.next) {
+                    case 0:
+                      if (!(this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val()) >= 0)) {
+                        _context4.next = 3;
+                        break;
+                      }
+
+                      this.common.presentToast('Please enter amount !', 'danger');
+                      return _context4.abrupt("return", false);
+
+                    case 3:
+                      this.dismiss();
+                      _context4.next = 6;
+                      return this.modalController.create({
+                        component: _paymentlistmodal_paymentlistmodal_page__WEBPACK_IMPORTED_MODULE_8__["PaymentlistmodalPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          charityid: this.charityid,
+                          amount: jquery__WEBPACK_IMPORTED_MODULE_6__('#amount').val(),
+                          userid: this.userid
+                        }
+                      });
+
+                    case 6:
+                      modal = _context4.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this5.errors.indexOf(detail.data) == -1) {//this.team.joins=this.team.joins - 1;
+                          //this.getuserteams();
+                        }
+                      });
+                      _context4.next = 10;
+                      return modal.present();
+
+                    case 10:
+                      return _context4.abrupt("return", _context4.sent);
+
+                    case 11:
+                    case "end":
+                      return _context4.stop();
+                  }
+                }
+              }, _callee4, this);
+            }));
+          }
+        }, {
+          key: "teamdetails",
+          value: function teamdetails() {
+            var _this6 = this;
+
+            var dict = {
+              id: this.teamid
+            }; //this.common.presentLoading();
+
+            this.api.post('teamdetail', dict, '').subscribe(function (result) {
+              //this.common.stopLoading();
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this6.team = res.data;
+              } else {}
+            }, function (err) {});
+          }
+        }, {
+          key: "actdetail",
+          value: function actdetail() {
+            var _this7 = this;
+
+            var dict = {
+              id: this.actid
+            }; //this.common.presentLoading();
+
+            this.api.post('activitydetail', dict, '').subscribe(function (result) {
+              //this.common.stopLoading();
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this7.act = res.data;
+              } else {}
+            }, function (err) {});
+          }
+        }, {
+          key: "Charitydetail",
+          value: function Charitydetail() {
+            var _this8 = this;
+
+            var dict = {
+              id: this.charityid
+            }; //this.common.presentLoading();
+
+            this.api.post('charitydetail', dict, '').subscribe(function (result) {
+              //this.common.stopLoading();
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this8.charity = res.data; //this.images=res.images;
+              } else {}
+            }, function (err) {});
+          }
+        }]);
+
+        return AddamountPage;
+      }();
+
+      AddamountPage.ctorParameters = function () {
+        return [{
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["NavParams"]
+        }, {
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"]
+        }];
+      };
+
+      AddamountPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-addamount',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./addamount.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/addamount/addamount.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./addamount.page.scss */
+        "./src/app/addamount/addamount.page.scss"))["default"]]
+      })], AddamountPage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=default~activitydetail-activitydetail-module~addamount-addamount-module~charitydetail-charitydetail-~e01b0d79-es5.js.map

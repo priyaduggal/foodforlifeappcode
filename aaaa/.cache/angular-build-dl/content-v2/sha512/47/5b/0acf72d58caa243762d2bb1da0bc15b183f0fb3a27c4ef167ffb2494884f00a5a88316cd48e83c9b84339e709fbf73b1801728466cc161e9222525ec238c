@@ -1,0 +1,433 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["thetabledetail-thetabledetail-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/thetabledetail/thetabledetail.page.html":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/thetabledetail/thetabledetail.page.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-back-button defaultHref=\"/tabs/thetable\" slot=\"start\">\r\n        </ion-back-button>\r\n        <ion-title class=\"ion-text-center\">Subscription Plans</ion-title>\r\n      </ion-toolbar>\r\n</ion-header><!--ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t      <ion-buttons slot=\"start\">\r\n          <ion-back-button  defaulHref=\"/thetable\"></ion-back-button>\r\n        </ion-buttons>\r\n\t<ion-title class=\"ion-text-center\">Subscription Plans</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header-->\r\n\r\n<ion-content>\r\n\r\n<!--div packimg>\r\n  <img src=\"assets/images/sliderimg1.jpg\" style=\"width:100%;\"/> \r\n</div-->\r\n<!--div packdetail class=\"ion-padding\"  *ngIf=\"sublist?.length>0\">\r\n<h3>Transactions</h3>\r\n<table>\r\n<th>Transaction ID</th>\r\n<th>Amount</th>\r\n<th>Date</th>\r\n<th>Date</th>\r\n</table>\r\n</div-->\r\n<div packdetail class=\"ion-padding\" >\r\n<div choose_plan_div >\r\n\t<h3>Choose An Amount</h3>\r\n    <ion-item *ngFor=\"let li of list\" lines=\"none\" (click)=\"selectwekk($event,li?.id)\" class=\"day day{{li?.id}}\" class=\"ion-no-padding\">\r\n\t\t<ion-avatar slot=\"start\" routerLink=\"message\"> \r\n\t\t\t<img src=\"{{IMAGES_URL}}/{{li?.image}}\" /> \r\n\t\t</ion-avatar>\t\t\r\n\t\t<ion-label>\r\n\t\t\t<!-- <h2>Basic Plan</h2> -->\r\n\t\t\t<span class=\"timeage\">${{li?.amount}} <small>/ monthly</small></span>\r\n\t\t\t<p>{{li?.description}}</p>\r\n\t\t\t<p>{{meals(li?.amount)}} Meals</p>\r\n\t\t</ion-label>\r\n    </ion-item> \r\n    <ion-item lines=\"none\"  class=\"amount_day day\">\r\n\t\t<ion-avatar slot=\"start\" routerLink=\"message\">  \r\n\t\t\t<img src=\"assets/images/prj15.jpg\" /> \r\n\t\t</ion-avatar>\t\t\r\n\t\t<ion-label>\r\n\t\t\t<ion-icon edit_plan (click)=\"addamount()\" name=\"create-outline\"></ion-icon>\r\n\t\t\t<!-- <h2>Basic Plan</h2> -->\r\n\t\t\t<span class=\"timeage\" id=\"amount\">Your Choice <small>/ monthly</small></span>\r\n\t\t\t<input type=\"hidden\" value=\"0\" id=\"amountval\">\r\n\t\t\t<!-- <p>Do eiusmod tempor incididunt ut.</p> -->\r\n\t\t</ion-label>\r\n    </ion-item> \r\n</div>\t\r\n <!--ion-slides pager=\"false\" [options]=\"slideOpts\">\r\n        <ion-slide  *ngFor=\"let li of list\"  (click)=\"selectwekk($event,li?.id)\" class=\"day day{{li?.id}}\" >\r\n          <div plans>\r\n\t\t\t  <img src=\"{{IMAGES_URL}}/{{li?.image}}\"/>\r\n\t\t\t  <h4>${{li?.amount}}</h4>\r\n\t\t\t  <p>monthly</p>\r\n\t\t  </div>\r\n        </ion-slide>\r\n\t\t<ion-slide class=\"amount_day day\">\r\n          <div plans>\r\n\t\t  <ion-icon (click)=\"addamount()\" name=\"create-outline\"></ion-icon>\r\n\t\t\t  <img src=\"assets/images/prj15.jpg\"/>\r\n\t\t\t  <h4 id=\"amount\">Your Choice</h4>\r\n\t\t\t  <input type=\"hidden\" value=\"\" id=\"amountval\">\r\n\t\t\t  <p>monthly</p>\r\n\t\t  </div>\r\n        </ion-slide>\r\n      </ion-slides-->\r\n<div packcontent>\r\n<p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>\r\n<ion-radio-group value=\"{{cardid}}\" class=\"radiobox\">\r\n    <ion-item lines=\"none\" *ngFor=\"let pay of paymentlist\">\r\n      <ion-label>\r\n\t\t<div account-default> \r\n\t\t\t<span> **** </span>\r\n\t\t\t<span> **** </span>\r\n\t\t\t<span> **** </span>\r\n\t\t\t<span>{{pay?.card_number.substr(pay?.card_number.length - 4)}}  </span>\r\n\t\t</div>\t\t  \r\n\t  <!-- {{pay?.card_number}} -->\r\n\t  </ion-label>\r\n      <ion-radio value=\"{{pay?.id}}\"  (click)=\"cardno(pay?.id)\" class=\"radiobox\"></ion-radio>\r\n    </ion-item>\r\n</ion-radio-group>\t\r\n\r\n\r\n\r\n<div addpayment><a routerLink=\"/addpayment\" href=\"javascript:void(0)\"><ion-icon name=\"add-sharp\"></ion-icon> Add Payment Method</a></div>\r\n  <ion-button shape=\"round\" expand=\"full\" (click)=\"subs();\" *ngIf=\"errors.indexOf(sublist)>=0\">Confirm Subscription</ion-button>\r\n   <ion-button shape=\"round\" expand=\"full\" (click)=\"updatesubs();\" *ngIf=\"errors.indexOf(sublist)==-1\">Update Subscription</ion-button>\r\n<span sub_detail>Your subscription will be renew automatically after every month. You can cancel it any time.</span>\r\n</div>\r\n</div>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/thetabledetail/thetabledetail-routing.module.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/thetabledetail/thetabledetail-routing.module.ts ***!
+  \*****************************************************************/
+/*! exports provided: ThetabledetailPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetabledetailPageRoutingModule", function() { return ThetabledetailPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _thetabledetail_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./thetabledetail.page */ "./src/app/thetabledetail/thetabledetail.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _thetabledetail_page__WEBPACK_IMPORTED_MODULE_3__["ThetabledetailPage"]
+    }
+];
+let ThetabledetailPageRoutingModule = class ThetabledetailPageRoutingModule {
+};
+ThetabledetailPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ThetabledetailPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/thetabledetail/thetabledetail.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/thetabledetail/thetabledetail.module.ts ***!
+  \*********************************************************/
+/*! exports provided: ThetabledetailPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetabledetailPageModule", function() { return ThetabledetailPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _thetabledetail_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./thetabledetail-routing.module */ "./src/app/thetabledetail/thetabledetail-routing.module.ts");
+/* harmony import */ var _thetabledetail_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./thetabledetail.page */ "./src/app/thetabledetail/thetabledetail.page.ts");
+
+
+
+
+
+
+
+let ThetabledetailPageModule = class ThetabledetailPageModule {
+};
+ThetabledetailPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _thetabledetail_routing_module__WEBPACK_IMPORTED_MODULE_5__["ThetabledetailPageRoutingModule"]
+        ],
+        declarations: [_thetabledetail_page__WEBPACK_IMPORTED_MODULE_6__["ThetabledetailPage"]]
+    })
+], ThetabledetailPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/thetabledetail/thetabledetail.page.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/thetabledetail/thetabledetail.page.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-buttons {\n  font-size: 22px;\n}\n\nion-header ion-toolbar ion-buttons[mr-10] {\n  margin-right: 10px;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content .active_plan [plans] {\n  border: 2px solid var(--ion-color-primary);\n}\n\nion-content [packimg] {\n  min-height: 220px;\n  max-height: 220px;\n  position: relative;\n  z-index: 1;\n}\n\nion-content [packimg] img {\n  border-radius: 0px 0px 25px 25px;\n  min-height: 220px;\n  max-height: 220px;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\nion-content [packimg]:after {\n  border-radius: 0px 0px 25px 25px;\n  content: \"\";\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: #000;\n  opacity: .5;\n  display: inline-block;\n  position: absolute;\n}\n\nion-content [packdetail] {\n  position: relative;\n  z-index: 1;\n  text-align: center;\n  padding-top: 25px;\n}\n\nion-content [packdetail] h3 {\n  font-weight: 600;\n  margin: 0px 0px 25px;\n  color: #000;\n  font-size: 17px;\n  padding: 6px 0px 0px 12px;\n  text-align: left;\n  position: relative;\n  z-index: 1;\n}\n\nion-content [packdetail] h3:before {\n  position: absolute;\n  content: \"\";\n  left: 0px;\n  top: 0px;\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  background: rgba(243, 165, 12, 0.11);\n  z-index: -1;\n}\n\nion-content [packdetail] ion-button {\n  min-height: 42px;\n  --box-shadow:none;\n}\n\nion-content [packdetail] [packcontent] [sub_detail] {\n  font-weight: 300;\n  color: #adadad;\n  font-size: 11px;\n  line-height: 17px;\n  display: block;\n  margin-top: 10px;\n}\n\nion-content [packdetail] [packcontent] p {\n  font-weight: 300;\n  color: #adadad;\n  font-size: 14px;\n}\n\nion-content [packdetail] [packcontent] [addpayment] {\n  text-align: left;\n  font-size: 14px;\n  margin-bottom: 10px;\n}\n\nion-content [packdetail] [packcontent] [addpayment] a {\n  text-decoration: none;\n}\n\nion-content [packdetail] [packcontent] [account-default] {\n  display: flex;\n  align-items: center;\n  margin: 0px 5px 0px 0px;\n  letter-spacing: 3px;\n}\n\nion-content [packdetail] [packcontent] [account-default] span {\n  font-weight: 500;\n  color: #000000;\n  font-size: 12px;\n  line-height: 17px;\n  display: block;\n  margin-left: 15px;\n}\n\nion-content [packdetail] [packcontent] [account-default] span:first-child {\n  margin-left: 0px;\n}\n\nion-content [packdetail] [plans] {\n  position: relative;\n  background: var(--ion-color-white);\n  box-shadow: 0px 0px 10px black;\n  margin-top: 10px;\n  width: 100%;\n  padding: 15px 10px;\n  border-radius: 6px;\n}\n\nion-content [packdetail] [plans] ion-icon {\n  position: absolute;\n  right: 5px;\n  top: 4px;\n  color: var(--ion-color-primary);\n}\n\nion-content [packdetail] [plans] img {\n  height: 40px;\n}\n\nion-content [packdetail] [plans] h4 {\n  font-size: 13px;\n  margin: 10px 0px 0px;\n}\n\nion-content [packdetail] [plans] p {\n  font-weight: 300;\n  color: #adadad;\n  font-size: 11px;\n  margin: 0px;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item {\n  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.14);\n  --padding-start: 15px;\n  --padding-end: 15px;\n  --inner-padding-end: 0px;\n  --padding-top: 15px;\n  --padding-bottom: 15px;\n  border-radius: 11px;\n  --background: #fffbf2;\n  border: 2px solid #fffbf2;\n  margin-bottom: 20px;\n  position: relative;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item [edit_plan] {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  color: var(--ion-color-primary);\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-avatar {\n  min-width: 80px;\n  height: 80px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 10px;\n  --border-radius: 10px;\n  margin: 0px 10px 0px 0px;\n  background: #fde6b3;\n  padding: 8px;\n  outline: 0px;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-label {\n  margin: 0;\n  white-space: normal;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-label h2 {\n  margin: 0 0 5px;\n  padding-right: 16px;\n  font-size: 15px;\n  font-weight: 600;\n  color: #000;\n  white-space: normal;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-label p {\n  font-size: 11px;\n  margin: 4px 0 0px;\n  font-weight: 500;\n  line-height: 23px;\n  color: #6b6b6b;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-label .timeage {\n  font-size: 12px;\n  color: #2e2e2e;\n  display: block;\n  font-weight: 600;\n  white-space: normal;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item ion-label .timeage small {\n  font-size: 10px;\n  color: #909092;\n  font-weight: 500;\n}\n\nion-content [packdetail] [choose_plan_div] ion-item.active_plan {\n  border: 2px solid var(--ion-color-primary);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGhldGFibGVkZXRhaWwvdGhldGFibGVkZXRhaWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBSUksdURBQWlCO0VBQ2xCLGlCQUFlO0FBRmxCOztBQUhBO0VBUUUsZUFBZTtBQURqQjs7QUFQQTtFQVdHLGtCQUFpQjtBQUFwQjs7QUFYQTtFQWdCSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUR6RDs7QUFsQkE7RUEwQkMsYUFBWTtBQUpiOztBQU9BO0VBTUksMENBQTBDO0FBVDlDOztBQUdBO0VBVU8saUJBQWlCO0VBQ3BCLGlCQUFpQjtFQUNyQixrQkFBaUI7RUFDakIsVUFBUztBQVRUOztBQUpBO0VBZUssZ0NBQWdDO0VBQzlCLGlCQUFpQjtFQUNwQixpQkFBaUI7RUFDakIsV0FBVztFQUNYLG9CQUFpQjtLQUFqQixpQkFBaUI7QUFQckI7O0FBWkE7RUFxQmEsZ0NBQWdDO0VBQ3pDLFdBQVc7RUFDWCxNQUFNO0VBQ04sT0FBTztFQUNQLFFBQVE7RUFDUixTQUFTO0VBQ1QsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxxQkFBcUI7RUFDckIsa0JBQWtCO0FBTHRCOztBQXpCQTtFQW1DSSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLGtCQUFrQjtFQUNyQixpQkFBaUI7QUFObEI7O0FBaENBO0VBd0NDLGdCQUFnQjtFQUNiLG9CQUFvQjtFQUN2QixXQUFXO0VBQ1gsZUFBZTtFQUNmLHlCQUF5QjtFQUN0QixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLFVBQVU7QUFKZDs7QUEzQ0E7RUFpREUsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxTQUFTO0VBQ1QsUUFBUTtFQUNSLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG9DQUF1QztFQUN2QyxXQUFXO0FBRmI7O0FBdkRBO0VBOERBLGdCQUFlO0VBQ2YsaUJBQWE7QUFIYjs7QUE1REE7RUFxRUEsZ0JBQWdCO0VBQ1osY0FBYztFQUNkLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsY0FBYztFQUNkLGdCQUFnQjtBQUxwQjs7QUFyRUE7RUE0RUUsZ0JBQWdCO0VBQ2QsY0FBYztFQUNkLGVBQWU7QUFIbkI7O0FBM0VBO0VBZ0ZJLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsbUJBQWtCO0FBRHRCOztBQWpGQTtFQW9GRSxxQkFBcUI7QUFDdkI7O0FBckZBO0VBeUZFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQUFyQjs7QUE1RkE7RUErRkcsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxpQkFBaUI7QUFDcEI7O0FBckdBO0VBdUdJLGdCQUFnQjtBQUVwQjs7QUF6R0E7RUE0R1Msa0JBQWtCO0VBQ3ZCLGtDQUFrQztFQUNsQyw4QkFBd0M7RUFDeEMsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsa0JBQWtCO0FBQ3RCOztBQW5IQTtFQXFISyxrQkFBa0I7RUFDckIsVUFBVTtFQUNWLFFBQVE7RUFDUiwrQkFBK0I7QUFFakM7O0FBMUhBO0VBNEhLLFlBQVk7QUFFakI7O0FBOUhBO0VBK0hJLGVBQWU7RUFDZixvQkFBb0I7QUFHeEI7O0FBbklBO0VBaUlHLGdCQUFnQjtFQUNmLGNBQWM7RUFDZCxlQUFlO0VBQ2YsV0FBVztBQU1mOztBQTFJQTtFQTJJWSw0Q0FBOEM7RUFDdkQscUJBQWdCO0VBQ2hCLG1CQUFjO0VBQ2Qsd0JBQW9CO0VBQ3BCLG1CQUFjO0VBQ2Qsc0JBQWlCO0VBQ1IsbUJBQW1CO0VBQzVCLHFCQUFhO0VBQ0oseUJBQXlCO0VBQ3pCLG1CQUFtQjtFQUM1QixrQkFBa0I7QUFHckI7O0FBeEpBO0VBd0pJLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsUUFBUTtFQUNSLCtCQUErQjtBQUluQzs7QUEvSkE7RUE4SmdCLGVBQWU7RUFDZixZQUFZO0VBQ1osb0JBQWlCO0tBQWpCLGlCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIscUJBQWdCO0VBQ2hCLHdCQUF3QjtFQUNwQyxtQkFBbUI7RUFDbkIsWUFBWTtFQUNaLFlBQVk7QUFLaEI7O0FBM0tBO0VBMEtJLFNBQVM7RUFDVCxtQkFBbUI7QUFLdkI7O0FBaExBO0VBOEtLLGVBQWU7RUFDZixtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsbUJBQW1CO0FBTXhCOztBQXpMQTtFQXVMSyxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsY0FBYztBQU1uQjs7QUFqTUE7RUErTEssZUFBZTtFQUNmLGNBQWM7RUFDZCxjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQU14Qjs7QUF6TUE7RUFzTVMsZUFBZTtFQUNsQixjQUFjO0VBQ2QsZ0JBQWdCO0FBT3RCOztBQS9NQTtFQThNTywwQ0FBMEM7QUFLakQiLCJmaWxlIjoic3JjL2FwcC90aGV0YWJsZWRldGFpbC90aGV0YWJsZWRldGFpbC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcbntcclxuXHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0taW9uLWNvbG9yLWJhc2U6IHZhcigtLWlvbi1jb2xvci1iZ2dyYWRpZW50KSFpbXBvcnRhbnQ7XHJcblx0ICAtLWJvcmRlci13aWR0aDogMDtcclxuXHQgaW9uLWJ1dHRvbnNcclxuXHQge1xyXG5cdCBmb250LXNpemU6IDIycHg7XHJcblx0ICZbIG1yLTEwXVxyXG5cdCB7XHJcblx0ICBtYXJnaW4tcmlnaHQ6MTBweDtcclxuXHQgfVxyXG5cdCB9XHJcbiAgICBcclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG4gICAgICAgXHJcblx0fVxyXG4gICAgXHJcblx0Jjo6YWZ0ZXJcclxuXHR7XHJcblx0ZGlzcGxheTpub25lO1xyXG5cdH1cclxufVxyXG5pb24tY29udGVudFxyXG57XHJcbi5hY3RpdmVfcGxhblxyXG57XHJcbltwbGFuc11cclxue1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG59XHRcclxufVxyXG5bcGFja2ltZ11cclxueyAgICAgIG1pbi1oZWlnaHQ6IDIyMHB4O1xyXG4gICAgbWF4LWhlaWdodDogMjIwcHg7XHJcbnBvc2l0aW9uOnJlbGF0aXZlO1xyXG56LWluZGV4OjE7XHJcbmltZ1xyXG57ICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjVweCAyNXB4O1xyXG4gICAgICAgbWluLWhlaWdodDogMjIwcHg7XHJcbiAgICBtYXgtaGVpZ2h0OiAyMjBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgb2JqZWN0LWZpdDogY292ZXI7XHJcbn1cclxuJjphZnRlciB7ICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjVweCAyNXB4O1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIHRvcDogMDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIGJhY2tncm91bmQ6ICMwMDA7XHJcbiAgICBvcGFjaXR5OiAuNTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufVxyXG59XHJcbltwYWNrZGV0YWlsXVxyXG57ICAgIFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRwYWRkaW5nLXRvcDogMjVweDtcclxuXHRcdGgzIHtcclxuXHRmb250LXdlaWdodDogNjAwO1xyXG4gICAgbWFyZ2luOiAwcHggMHB4IDI1cHg7XHJcblx0Y29sb3I6ICMwMDA7XHJcblx0Zm9udC1zaXplOiAxN3B4O1xyXG5cdHBhZGRpbmc6IDZweCAwcHggMHB4IDEycHg7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgei1pbmRleDogMTtcclxuXHQmOmJlZm9yZSB7XHJcblx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRjb250ZW50OiBcIlwiO1xyXG5cdFx0bGVmdDogMHB4O1xyXG5cdFx0dG9wOiAwcHg7XHRcdFxyXG5cdFx0d2lkdGg6IDMycHg7XHJcblx0XHRoZWlnaHQ6IDMycHg7XHJcblx0XHRib3JkZXItcmFkaXVzOiA1MCU7XHJcblx0XHRiYWNrZ3JvdW5kOiByZ2JhKDI0MyAsIDE2NSAsIDEyICwgMC4xMSk7XHJcblx0XHR6LWluZGV4OiAtMTtcclxuXHR9XHRcclxufVxyXG5pb24tYnV0dG9uXHJcbntcclxubWluLWhlaWdodDo0MnB4O1xyXG4tLWJveC1zaGFkb3c6bm9uZTtcclxufVxyXG5bcGFja2NvbnRlbnRdXHJcbntcclxuW3N1Yl9kZXRhaWxdXHJcbntcclxuZm9udC13ZWlnaHQ6IDMwMDtcclxuICAgIGNvbG9yOiAjYWRhZGFkO1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDE3cHg7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbn1cclxucHtmb250LXdlaWdodDogMzAwO1xyXG5cdFx0XHRcdGNvbG9yOiAjYWRhZGFkO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG59W2FkZHBheW1lbnRdIHtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOjEwcHg7XHJcblx0YVxyXG5cdHt0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcblx0fVxyXG59XHJcblx0W2FjY291bnQtZGVmYXVsdF1cclxuXHR7XHJcblx0XHRkaXNwbGF5OiBmbGV4O1xyXG5cdFx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRcdG1hcmdpbjogMHB4IDVweCAwcHggMHB4O1xyXG5cdFx0bGV0dGVyLXNwYWNpbmc6IDNweDtcclxuXHRcdHNwYW5cclxuXHRcdHtcclxuXHRcdFx0Zm9udC13ZWlnaHQ6IDUwMDtcclxuXHRcdFx0Y29sb3I6ICMwMDAwMDA7XHJcblx0XHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHRcdFx0bGluZS1oZWlnaHQ6IDE3cHg7XHJcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRtYXJnaW4tbGVmdDogMTVweDtcdFxyXG5cdFx0XHQmOmZpcnN0LWNoaWxkXHJcblx0XHRcdHtcclxuXHRcdFx0XHRtYXJnaW4tbGVmdDogMHB4O1xyXG5cdFx0XHR9XHJcblx0XHR9XHJcblx0fVxyXG59XHJcbltwbGFuc10ge3Bvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICBib3gtc2hhZG93OiAwcHggMHB4IDEwcHggcmdiYSgwLDAsMCwxMyUpO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogMTVweCAxMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG5cdGlvbi1pY29uXHJcblx0e1xyXG5cdCAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRyaWdodDogNXB4O1xyXG5cdFx0dG9wOiA0cHg7XHJcblx0XHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG5cdH1cclxuXHRpbWdcclxuXHR7XHJcblx0ICAgIGhlaWdodDogNDBweDtcclxuXHR9XHJcblx0aDQge1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgbWFyZ2luOiAxMHB4IDBweCAwcHg7XHJcbn1we2ZvbnQtd2VpZ2h0OiAzMDA7XHJcblx0XHRcdFx0Y29sb3I6ICNhZGFkYWQ7XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxufVxyXG59XHJcbiAgICBbY2hvb3NlX3BsYW5fZGl2XVxyXG5cdHtcclxuXHRcdGlvbi1pdGVtXHJcblx0XHR7XHJcbiAgICAgICAgICAgIGJveC1zaGFkb3c6MHB4IDBweCAyNHB4IHJnYmEoMCAsIDAgLCAwICwgMC4xNCk7XHJcblx0XHRcdC0tcGFkZGluZy1zdGFydDogMTVweDtcclxuXHRcdFx0LS1wYWRkaW5nLWVuZDogMTVweDtcclxuXHRcdFx0LS1pbm5lci1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHQtLXBhZGRpbmctdG9wOiAxNXB4O1xyXG5cdFx0XHQtLXBhZGRpbmctYm90dG9tOiAxNXB4O1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMXB4O1xyXG5cdFx0XHQtLWJhY2tncm91bmQ6ICNmZmZiZjI7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMnB4IHNvbGlkICNmZmZiZjI7XHRcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuXHRcdFx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG5cdFx0XHRbZWRpdF9wbGFuXVxyXG5cdFx0XHR7XHJcblx0XHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdFx0XHRcdHJpZ2h0OiAwcHg7XHJcblx0XHRcdFx0dG9wOiAwcHg7XHJcblx0XHRcdFx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcdFx0XHRcclxuXHRcdFx0fVxyXG4gICAgICAgICAgICBpb24tYXZhdGFye1xyXG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiA4MHB4O1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiA4MHB4O1xyXG4gICAgICAgICAgICAgICAgb2JqZWN0LWZpdDogY292ZXI7XHJcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgLS1ib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwcHggMTBweCAwcHggMHB4O1xyXG5cdFx0XHRcdGJhY2tncm91bmQ6ICNmZGU2YjM7XHJcblx0XHRcdFx0cGFkZGluZzogOHB4O1xyXG5cdFx0XHRcdG91dGxpbmU6IDBweDtcclxuICAgICAgICAgICAgfVxyXG5cdFx0XHRpb24tbGFiZWxcclxuXHRcdFx0e1xyXG5cdFx0XHRcdG1hcmdpbjogMDtcclxuXHRcdFx0XHR3aGl0ZS1zcGFjZTogbm9ybWFsO1xyXG5cdFx0XHRcdGgyXHJcblx0XHRcdFx0e1xyXG5cdFx0XHRcdFx0bWFyZ2luOiAwIDAgNXB4O1xyXG5cdFx0XHRcdFx0cGFkZGluZy1yaWdodDogMTZweDtcclxuXHRcdFx0XHRcdGZvbnQtc2l6ZTogMTVweDtcclxuXHRcdFx0XHRcdGZvbnQtd2VpZ2h0OiA2MDA7XHJcblx0XHRcdFx0XHRjb2xvcjogIzAwMDtcclxuXHRcdFx0XHRcdHdoaXRlLXNwYWNlOiBub3JtYWw7XHJcblx0XHRcdFx0fVxyXG5cdFx0XHRcdHBcclxuXHRcdFx0XHR7XHJcblx0XHRcdFx0XHRmb250LXNpemU6IDExcHg7XHJcblx0XHRcdFx0XHRtYXJnaW46IDRweCAwIDBweDtcclxuXHRcdFx0XHRcdGZvbnQtd2VpZ2h0OiA1MDA7XHJcblx0XHRcdFx0XHRsaW5lLWhlaWdodDogMjNweDtcclxuXHRcdFx0XHRcdGNvbG9yOiAjNmI2YjZiO1xyXG5cdFx0XHRcdH1cclxuXHRcdFx0XHQudGltZWFnZVxyXG5cdFx0XHRcdHtcclxuXHRcdFx0XHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHRcdFx0XHRcdGNvbG9yOiAjMmUyZTJlO1xyXG5cdFx0XHRcdFx0ZGlzcGxheTogYmxvY2s7XHJcblx0XHRcdFx0XHRmb250LXdlaWdodDogNjAwO1xyXG5cdFx0XHRcdFx0d2hpdGUtc3BhY2U6IG5vcm1hbDtcclxuXHRcdFx0XHRcdHNtYWxsXHJcblx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHQgICAgZm9udC1zaXplOiAxMHB4O1xyXG5cdFx0XHRcdFx0XHRjb2xvcjogIzkwOTA5MjtcclxuXHRcdFx0XHRcdFx0Zm9udC13ZWlnaHQ6IDUwMDtcclxuXHRcdFx0XHRcdH1cclxuXHRcdFx0XHR9XHJcbiAgICAgICAgICAgIH1cclxuXHRcdFx0Ji5hY3RpdmVfcGxhblxyXG5cdFx0XHR7XHJcblx0XHRcdCAgICBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHRcclxuXHRcdFx0fVxyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/thetabledetail/thetabledetail.page.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/thetabledetail/thetabledetail.page.ts ***!
+  \*******************************************************/
+/*! exports provided: ThetabledetailPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThetabledetailPage", function() { return ThetabledetailPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _customamount_customamount_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../customamount/customamount.page */ "./src/app/customamount/customamount.page.ts");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+let ThetabledetailPage = class ThetabledetailPage {
+    constructor(router, modalController, api, common) {
+        this.router = router;
+        this.modalController = modalController;
+        this.api = api;
+        this.common = common;
+        this.list = [];
+        this.paymentlist = [];
+        this.sublist = [];
+        this.errors = ['', null, undefined];
+        this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_5__["config"].IMAGES_URL;
+        this.slideOpts = {
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 10,
+            initialSlide: 1,
+            speed: 400
+        };
+        this.show = false;
+        this.buttonName = 'Show';
+    }
+    addamount() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalController.create({
+                component: _customamount_customamount_page__WEBPACK_IMPORTED_MODULE_3__["CustomamountPage"],
+                cssClass: 'leaveteam',
+                componentProps: {}
+            });
+            modal.onDidDismiss().then((detail) => {
+                if (this.errors.indexOf(detail.data) == -1) {
+                    jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val(detail.data.data);
+                    jquery__WEBPACK_IMPORTED_MODULE_8__('#amount').text(detail.data.data);
+                    jquery__WEBPACK_IMPORTED_MODULE_8__('.amount_day').addClass('active_plan');
+                }
+            });
+            return yield modal.present();
+        });
+    }
+    meals(amt) {
+        //1dollar =100cents 
+        //convert dollar into cents 
+        var newamt = amt * 100;
+        var newamt = newamt / this.totalcents;
+        return newamt;
+    }
+    Charitylist() {
+        this.api.post('tribesProject', '', '').subscribe((result) => {
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.totalcents = res.settings.totalcents;
+            }
+            else {
+                this.totalcents = res.settings.totalcents;
+            }
+        }, err => {
+        });
+    }
+    cardno(id) {
+        this.cardid = id;
+    }
+    updatesubs() {
+        if (this.errors.indexOf(this.cardid) >= 0) {
+            this.common.presentToast('Please select card', 'danger');
+            return false;
+        }
+        if (this.errors.indexOf(this.days) >= 0 && this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val()) >= 0) {
+            this.common.presentToast('Please select plan or add amount', 'danger');
+            return false;
+        }
+        if (this.errors.indexOf(this.days) == -1) {
+            let dict = {
+                cardid: this.cardid,
+                plan_id: this.days,
+                userid: this.userid,
+            };
+            this.common.presentLoading();
+            this.api.post('update_monthly_Subscription', dict, '').subscribe((result) => {
+                this.common.stopLoading();
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.common.presentToast('Subscription updated Successfully !.', 'success');
+                    this.router.navigate(['/tabs/home']);
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+                this.common.stopLoading();
+                this.common.presentToast('Some error occured', 'danger');
+            });
+        }
+        if (this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val()) == -1) {
+            let dict = {
+                cardid: this.cardid,
+                userid: this.userid,
+                amount: jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val(),
+            };
+            this.common.presentLoading();
+            this.api.post('update_monthly_Subscription', dict, '').subscribe((result) => {
+                this.common.stopLoading();
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.cardid = '';
+                    jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val("");
+                    this.common.presentToast('Subscribed Successfully !.', 'success');
+                    this.router.navigate(['/tabs/home']);
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+                this.common.stopLoading();
+                this.common.presentToast('Some error occured', 'danger');
+            });
+        }
+    }
+    subs() {
+        if (this.errors.indexOf(this.cardid) >= 0) {
+            this.common.presentToast('Please select card', 'danger');
+            return false;
+        }
+        if (this.errors.indexOf(this.days) >= 0 && this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val()) >= 0) {
+            this.common.presentToast('Please select plan or add amount', 'danger');
+            return false;
+        }
+        if (this.errors.indexOf(this.days) == -1) {
+            let dict = {
+                cardid: this.cardid,
+                plan_id: this.days,
+                userid: this.userid,
+            };
+            this.common.presentLoading();
+            this.api.post('add_monthly_Subscription', dict, '').subscribe((result) => {
+                this.common.stopLoading();
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.common.presentToast('Subscribed Successfully !.', 'success');
+                    this.router.navigate(['/tabs/home']);
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+                this.common.stopLoading();
+                this.common.presentToast('Some error occured', 'danger');
+            });
+        }
+        if (this.errors.indexOf(jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val()) == -1) {
+            let dict = {
+                cardid: this.cardid,
+                userid: this.userid,
+                amount: jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val(),
+            };
+            this.common.presentLoading();
+            this.api.post('add_monthly_Subscription', dict, '').subscribe((result) => {
+                this.common.stopLoading();
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.cardid = '';
+                    jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val("");
+                    this.common.presentToast('Subscribed Successfully !.', 'success');
+                    this.router.navigate(['/tabs/home']);
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+                this.common.stopLoading();
+                this.common.presentToast('Some error occured', 'danger');
+            });
+        }
+    }
+    selectwekk(event, day) {
+        if (jquery__WEBPACK_IMPORTED_MODULE_8__["inArray"](day, this.days) >= 0) {
+            var carIndex = this.days.indexOf(day);
+            this.days = '';
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.day').removeClass('active_plan');
+        }
+        else {
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.day').removeClass('active_plan');
+            jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val('');
+            jquery__WEBPACK_IMPORTED_MODULE_8__('#amount').text('0');
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.amount_day').removeClass('active_plan');
+            this.days = '';
+            this.days = day;
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.day' + day).addClass('active_plan');
+        }
+    }
+    ngOnInit() {
+    }
+    select(id) {
+        this.show = !this.show;
+        // CHANGE THE NAME OF THE BUTTON.
+        if (this.show) {
+            this.buttonName = "Hide";
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.plans_list' + id).addClass("active_plan");
+        }
+        else {
+            this.buttonName = "Show";
+            jquery__WEBPACK_IMPORTED_MODULE_8__('.plans_list' + id).removeClass("active_plan");
+        }
+        this.planid = id;
+    }
+    ionViewDidEnter() {
+        this.userid = localStorage.getItem('userid');
+        this.getsubscription();
+        this.listpayment();
+        this.subscriptionlistUser();
+        this.Charitylist();
+    }
+    subscriptionlistUser() {
+        let dict = {
+            userid: this.userid,
+        };
+        this.api.post('Sublistuser', dict, '').subscribe((result) => {
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.sublist = res.data;
+                console.log(this.sublist);
+                if (this.errors.indexOf(this.sublist) == -1) {
+                    var res1;
+                    res1 = this.sublist;
+                    this.cardid = res1.cardid;
+                    if (this.errors.indexOf(res1.plan_id) >= 0) {
+                        jquery__WEBPACK_IMPORTED_MODULE_8__('#amountval').val(res1.payment_amount);
+                        jquery__WEBPACK_IMPORTED_MODULE_8__('#amount').text(res1.payment_amount);
+                        jquery__WEBPACK_IMPORTED_MODULE_8__('.amount_day').addClass('active_plan');
+                    }
+                    else {
+                        this.days = res1.plan_id;
+                        jquery__WEBPACK_IMPORTED_MODULE_8__('.day' + this.days).addClass('active_plan');
+                    }
+                }
+            }
+            else {
+                this.common.presentToast(res.message, 'danger');
+            }
+        }, err => {
+        });
+    }
+    listpayment() {
+        let dict = {
+            userid: this.userid,
+        };
+        this.api.post('ListPayment', dict, '').subscribe((result) => {
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.paymentlist = res.data;
+            }
+            else {
+                this.common.presentToast(res.message, 'danger');
+            }
+        }, err => {
+        });
+    }
+    getsubscription() {
+        this.common.presentLoading();
+        this.api.post('subscriptionlist', '', '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.list = res.data;
+            }
+            else {
+            }
+        }, err => {
+        });
+    }
+};
+ThetabledetailPage.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] },
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_6__["CommonService"] }
+];
+ThetabledetailPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-thetabledetail',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./thetabledetail.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/thetabledetail/thetabledetail.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./thetabledetail.page.scss */ "./src/app/thetabledetail/thetabledetail.page.scss")).default]
+    })
+], ThetabledetailPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=thetabledetail-thetabledetail-module-es2015.js.map

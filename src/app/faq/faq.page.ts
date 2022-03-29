@@ -24,9 +24,7 @@ faqlist=[];
   }
   getallfaq()
   {
-	this.common.presentLoading();
 	this.api.post('GetAllFaq','','').subscribe((result) => {  
-	this.common.stopLoading();
 	var res;
 	res = result;
 	if(res.status==1){
@@ -36,7 +34,7 @@ faqlist=[];
 	{
 	//this.common.presentToast(res.message,'danger');
 	this.faqlist=[];
-	}
+	}	
 	},
 	err => {
 		 

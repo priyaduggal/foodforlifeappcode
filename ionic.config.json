@@ -1,7 +1,8 @@
 {
   "name": "food-for-life",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

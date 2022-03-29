@@ -254,7 +254,7 @@ public uploader:FileUploader = new FileUploader({url: ''});
 		if(res.status==1){
 		this.userdetails=res.data;
 		this.donationlist=res.donations;
-		this.common.presentToast(res.message,'success');
+		//this.common.presentToast(res.message,'success');
 		}else
 		{
 		this.common.presentToast(res.message,'danger');

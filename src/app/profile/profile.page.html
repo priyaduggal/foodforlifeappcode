@@ -73,7 +73,7 @@ Your Donations
 		<ion-note>
 		<ion-icon name="calendar-outline">
 		</ion-icon>
-		{{don?.donated_at | date : 'd MMM yyyy'}}
+		{{convertdate(don?.donated_at) | date : 'd MMM yyyy'}}
 		</ion-note>
 		<span class="dontns_share">
 		<ion-icon name="share-social-outline" class="socialshare" (click)="socialshare(don)"></ion-icon>

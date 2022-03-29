@@ -25,6 +25,12 @@ export class ActivitydetailPage implements OnInit {
 			}
 });
 	}
+
+	convertdate(date)
+  {
+
+	return date;
+  }
  async give(id)
    {
 	   const modal = await this.modalController.create({

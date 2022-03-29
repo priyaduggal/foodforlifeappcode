@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>foodforlife-312813.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:616880040152:ios:8e4a17dc4d1ce07ae14fad</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>

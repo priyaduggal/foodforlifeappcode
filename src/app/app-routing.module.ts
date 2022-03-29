@@ -154,6 +154,10 @@ const routes: Routes = [
     path: 'showcards',
     loadChildren: () => import('./showcards/showcards.module').then( m => m.ShowcardsPageModule)
   },
+  {
+    path: 'changepassword',
+    loadChildren: () => import('./changepassword/changepassword.module').then( m => m.ChangepasswordPageModule)
+  },
 
 ];
 

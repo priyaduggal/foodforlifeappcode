@@ -1,0 +1,57 @@
+ <ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/searchteam" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Team Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div profileinfo>
+<div profileimg>
+  <img src="assets/images/krishnadasHaiti.jpg"/>
+  <div userinner>
+
+<img src="assets/images/createteam.png"  *ngIf="errors.indexOf(team?.image)>=0">
+<img src="{{IMAGES_URL}}/{{team?.image}}"  *ngIf="errors.indexOf(team?.image)==-1">
+</div>
+</div>
+<div userimg>
+
+<h2>{{team?.name}}</h2>
+<ion-row>
+<ion-col size="6">
+<div teammeal>
+<span>
+<ion-icon name="heart"></ion-icon>
+</span>
+<div mealright>
+<h4>{{team?.meals}}</h4>
+<p>meals</p>
+</div>
+</div>
+</ion-col>
+<ion-col size="6">
+<div teammeal>
+<span>
+<ion-icon name="people"></ion-icon>
+</span>
+<div mealright>
+<h4>{{team?.joins}}</h4>
+<p>members</p>
+</div>
+</div>
+</ion-col>
+</ion-row>
+</div>
+</div>
+<div teaminner>
+<h2 heading>
+Detail
+</h2>
+<p>{{team?.description}} </p>
+ <ion-button shape="round" expand="full" *ngIf="userid!=team?.userid && joined?.indexOf(team?.id)>=0"(click)="give(team?.id)" >Give for this team</ion-button>
+  <ion-button shape="round" expand="full" *ngIf="userid!=team?.userid && joined?.indexOf(team?.id)==-1" (click)="join_team()">Join team</ion-button>
+   <ion-button shape="round" expand="full" *ngIf="userid!=team?.userid && joined?.indexOf(team?.id)>=0" (click)="leave_team()">Leave Team</ion-button>
+</div>
+</ion-content>

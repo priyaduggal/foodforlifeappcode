@@ -1,0 +1,515 @@
+(function () {
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["teamdetail-teamdetail-module"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/teamdetail/teamdetail.page.html":
+    /*!***************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/teamdetail/teamdetail.page.html ***!
+      \***************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppTeamdetailTeamdetailPageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = " <ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/searchteam\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Team Detail</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n<div profileinfo>\r\n<div profileimg>\r\n  <img src=\"assets/images/krishnadasHaiti.jpg\"/>\r\n  <div userinner>\r\n\r\n<img src=\"assets/images/createteam.png\"  *ngIf=\"errors.indexOf(team?.image)>=0\">\r\n<img src=\"{{IMAGES_URL}}/{{team?.image}}\"  *ngIf=\"errors.indexOf(team?.image)==-1\">\r\n</div>\r\n</div>\r\n<div userimg>\r\n\r\n<h2>{{team?.name}}</h2>\r\n<ion-row>\r\n<ion-col size=\"6\">\r\n<div teammeal>\r\n<span>\r\n<ion-icon name=\"heart\"></ion-icon>\r\n</span>\r\n<div mealright>\r\n<h4>{{team?.meals}}</h4>\r\n<p>meals</p>\r\n</div>\r\n</div>\r\n</ion-col>\r\n<ion-col size=\"6\">\r\n<div teammeal>\r\n<span>\r\n<ion-icon name=\"people\"></ion-icon>\r\n</span>\r\n<div mealright>\r\n<h4>{{team?.joins}}</h4>\r\n<p>members</p>\r\n</div>\r\n</div>\r\n</ion-col>\r\n</ion-row>\r\n</div>\r\n</div>\r\n<div teaminner>\r\n<h2 heading>\r\nDetail\r\n</h2>\r\n<p>{{team?.description}} </p>\r\n <ion-button shape=\"round\" expand=\"full\" *ngIf=\"userid!=team?.userid && joined?.indexOf(team?.id)>=0\"(click)=\"give(team?.id)\" >Give for this team</ion-button>\r\n  <ion-button shape=\"round\" expand=\"full\" *ngIf=\"userid!=team?.userid && joined?.indexOf(team?.id)==-1\" (click)=\"join_team()\">Join team</ion-button>\r\n   <ion-button shape=\"round\" expand=\"full\" *ngIf=\"userid!=team?.userid && joined?.indexOf(team?.id)>=0\" (click)=\"leave_team()\">Leave Team</ion-button>\r\n</div>\r\n</ion-content>\r\n";
+      /***/
+    },
+
+    /***/
+    "./src/app/teamdetail/teamdetail-routing.module.ts":
+    /*!*********************************************************!*\
+      !*** ./src/app/teamdetail/teamdetail-routing.module.ts ***!
+      \*********************************************************/
+
+    /*! exports provided: TeamdetailPageRoutingModule */
+
+    /***/
+    function srcAppTeamdetailTeamdetailRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TeamdetailPageRoutingModule", function () {
+        return TeamdetailPageRoutingModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _teamdetail_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./teamdetail.page */
+      "./src/app/teamdetail/teamdetail.page.ts");
+
+      var routes = [{
+        path: '',
+        component: _teamdetail_page__WEBPACK_IMPORTED_MODULE_3__["TeamdetailPage"]
+      }];
+
+      var TeamdetailPageRoutingModule = function TeamdetailPageRoutingModule() {
+        _classCallCheck(this, TeamdetailPageRoutingModule);
+      };
+
+      TeamdetailPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+      })], TeamdetailPageRoutingModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/teamdetail/teamdetail.module.ts":
+    /*!*************************************************!*\
+      !*** ./src/app/teamdetail/teamdetail.module.ts ***!
+      \*************************************************/
+
+    /*! exports provided: TeamdetailPageModule */
+
+    /***/
+    function srcAppTeamdetailTeamdetailModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TeamdetailPageModule", function () {
+        return TeamdetailPageModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _teamdetail_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./teamdetail-routing.module */
+      "./src/app/teamdetail/teamdetail-routing.module.ts");
+      /* harmony import */
+
+
+      var _teamdetail_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./teamdetail.page */
+      "./src/app/teamdetail/teamdetail.page.ts");
+
+      var TeamdetailPageModule = function TeamdetailPageModule() {
+        _classCallCheck(this, TeamdetailPageModule);
+      };
+
+      TeamdetailPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _teamdetail_routing_module__WEBPACK_IMPORTED_MODULE_5__["TeamdetailPageRoutingModule"]],
+        declarations: [_teamdetail_page__WEBPACK_IMPORTED_MODULE_6__["TeamdetailPage"]]
+      })], TeamdetailPageModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/teamdetail/teamdetail.page.scss":
+    /*!*************************************************!*\
+      !*** ./src/app/teamdetail/teamdetail.page.scss ***!
+      \*************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppTeamdetailTeamdetailPageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-buttons {\n  font-size: 22px;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [profileinfo] [userimg] {\n  padding: 60px 15px 0;\n  margin-top: -20px;\n  background: var(--ion-color-white);\n  position: relative;\n  border-radius: 15px 15px 0 0;\n}\n\nion-content [profileinfo] [userimg] [btnaccount] {\n  display: block;\n  text-align: center;\n  font-size: 13px;\n}\n\nion-content [profileinfo] [userimg] h2 {\n  margin-top: 5px;\n  margin-bottom: 5px;\n  font-size: 14px;\n  font-weight: 500;\n  text-align: center;\n}\n\nion-content [profileinfo] [userimg] ion-row {\n  max-width: 276px;\n  margin: 0 auto;\n}\n\nion-content [profileinfo] [userimg] ion-row [teammeal] {\n  margin-top: 10px;\n  display: flex;\n  align-items: center;\n}\n\nion-content [profileinfo] [userimg] ion-row [teammeal] span {\n  width: 35px;\n  height: 35px;\n  background: rgba(251, 173, 21, 0.18);\n  border-radius: 50%;\n  text-align: center;\n  line-height: 41px;\n  color: var(--ion-color-primary);\n  margin-right: 10px;\n}\n\nion-content [profileinfo] [userimg] ion-row [teammeal] [mealright] h4 {\n  text-align: left;\n  margin: 0;\n  font-size: 14px;\n}\n\nion-content [profileinfo] [userimg] ion-row [teammeal] [mealright] p {\n  color: #9d9d9d;\n  font-size: 13px;\n  margin: 0;\n}\n\nion-content [profileinfo] [profileimg] {\n  position: relative;\n  height: 160px;\n}\n\nion-content [profileinfo] [profileimg] img {\n  max-width: 100%;\n  max-height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: bottom;\n     object-position: bottom;\n}\n\nion-content [profileinfo] [profileimg] [userinner] {\n  position: relative;\n  text-align: center;\n  margin-top: -62px;\n  z-index: 1;\n}\n\nion-content [profileinfo] [profileimg] [userinner] img {\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  border: 2px solid var(--ion-color-white);\n  margin: 0 auto;\n  text-align: center;\n}\n\nion-content [teaminner] {\n  padding: 15px;\n}\n\nion-content [teaminner] ion-button {\n  --box-shadow: none;\n  min-height: 42px;\n}\n\nion-content [teaminner] h2[heading] {\n  font-size: 20px;\n  margin-top: 0px;\n  position: relative;\n  z-index: 1;\n  font-weight: 600;\n}\n\nion-content [teaminner] h2[heading]:after {\n  /*opacity: .5;*/\n  content: '';\n  background: var(--ion-color-softgreen);\n  height: 9px;\n  width: 50px;\n  position: absolute;\n  bottom: 0px;\n  left: 0px;\n  z-index: -1;\n}\n\nion-content [teaminner] p {\n  color: #9d9d9d;\n  font-size: 14px;\n}\n\n#background-content {\n  background: transparent;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGVhbWRldGFpbC90ZWFtZGV0YWlsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUlJLHVEQUFpQjtFQUNsQixpQkFBZTtBQUZsQjs7QUFIQTtFQVFFLGVBQWU7QUFEakI7O0FBUEE7RUFXSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUF6RDs7QUFkQTtFQW1CQyxhQUFZO0FBRGI7O0FBSUM7RUFLTSxvQkFBb0I7RUFDdkIsaUJBQWlCO0VBQ2pCLGtDQUFrQztFQUNsQyxrQkFBa0I7RUFDbEIsNEJBQTRCO0FBTGhDOztBQUpDO0VBV0csY0FBYztFQUNkLGtCQUFrQjtFQUNsQixlQUFlO0FBSG5COztBQVZDO0VBZ0JLLGVBQWU7RUFDakIsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsa0JBQWtCO0FBRnRCOztBQWxCQztFQXdCRCxnQkFBZ0I7RUFDWixjQUFjO0FBRmxCOztBQXZCQztFQTBCVyxnQkFBZ0I7RUFDeEIsYUFBYTtFQUNiLG1CQUFtQjtBQUN2Qjs7QUE3QkM7RUErQkEsV0FBVztFQUNSLFlBQVk7RUFDWixvQ0FBb0M7RUFDcEMsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsK0JBQStCO0VBQy9CLGtCQUFrQjtBQUV0Qjs7QUF4Q0M7RUEyQ0csZ0JBQWdCO0VBQ2hCLFNBQVM7RUFDVCxlQUFlO0FBQ25COztBQTlDQztFQWdERCxjQUFjO0VBQ2QsZUFBZTtFQUNkLFNBQVM7QUFFVjs7QUFwREM7RUF5REssa0JBQWtCO0VBRXJCLGFBQVk7QUFGZjs7QUF6REM7RUE4REksZUFBZTtFQUNoQixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLG9CQUFpQjtLQUFqQixpQkFBaUI7RUFDakIsMEJBQXNCO0tBQXRCLHVCQUFzQjtBQUQxQjs7QUFqRUM7RUFzRUcsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsVUFBVTtBQURkOztBQXhFQztFQTZFSSw0Q0FBNEM7RUFDN0MsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsd0NBQXdDO0VBQ3hDLGNBQWM7RUFDZCxrQkFBa0I7QUFEdEI7O0FBbEZDO0VBeUZFLGFBQVk7QUFIZjs7QUF0RkM7RUE0Rkksa0JBQWE7RUFDZCxnQkFBZ0I7QUFGcEI7O0FBM0ZDO0VBa0dBLGVBQWU7RUFDaEIsZUFBZTtFQUNmLGtCQUFpQjtFQUNqQixVQUFVO0VBQ1YsZ0JBQWU7QUFIZjs7QUFuR0M7RUF3R0csZUFBQTtFQUNBLFdBQVc7RUFDWCxzQ0FBc0M7RUFDdEMsV0FBVztFQUNYLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFNBQVM7RUFDVCxXQUFXO0FBRGY7O0FBL0dDO0VBcUhELGNBQWM7RUFDZCxlQUFlO0FBRmY7O0FBT0U7RUFDRSx1QkFBdUI7QUFKM0IiLCJmaWxlIjoic3JjL2FwcC90ZWFtZGV0YWlsL3RlYW1kZXRhaWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlclxyXG5cdHtcclxuXHRcclxuXHQgIGlvbi10b29sYmFyXHJcblx0ICB7LS1pb24tY29sb3ItYmFzZTogdmFyKC0taW9uLWNvbG9yLWJnZ3JhZGllbnQpIWltcG9ydGFudDtcclxuXHQgIC0tYm9yZGVyLXdpZHRoOiAwO1xyXG5cdGlvbi1idXR0b25zXHJcblx0IHtcclxuXHQgZm9udC1zaXplOiAyMnB4O1xyXG5cdCB9XHJcblx0XHQgIGlvbi10aXRsZXtcclxuXHRcdCAgY29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdCAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuXHR9XHJcblx0Jjo6YWZ0ZXJcclxuXHR7XHJcblx0ZGlzcGxheTpub25lO1xyXG5cdH1cclxuXHR9XHJcblx0aW9uLWNvbnRlbnRcclxuXHR7XHJcblx0W3Byb2ZpbGVpbmZvXVxyXG4ge1xyXG4gW3VzZXJpbWddXHJcbiB7ICAgICBwYWRkaW5nOiA2MHB4IDE1cHggMDtcclxuICAgIG1hcmdpbi10b3A6IC0yMHB4O1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHggMTVweCAwIDA7XHJcbiBbYnRuYWNjb3VudF0ge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbn1cclxuXHRoMiB7XHJcbiAgICAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweDtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuaW9uLXJvd1xyXG57XHJcbm1heC13aWR0aDogMjc2cHg7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuW3RlYW1tZWFsXSB7bWFyZ2luLXRvcDogMTBweDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdHNwYW5cclxuXHR7XHJcblx0d2lkdGg6IDM1cHg7XHJcbiAgICBoZWlnaHQ6IDM1cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDI1MSwgMTczLCAyMSAsIC4xOCk7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBsaW5lLWhlaWdodDogNDFweDtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcblx0fVxyXG5cdFttZWFscmlnaHRdXHJcbntcclxuXHRoNCB7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG59cFxyXG57XHJcbmNvbG9yOiAjOWQ5ZDlkO1xyXG5mb250LXNpemU6IDEzcHg7XHJcbiBtYXJnaW46IDA7XHJcbn1cclxufVxyXG59XHQgXHJcbn1cdCBcclxuIH1cclxuIFtwcm9maWxlaW1nXVxyXG4geyAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICBoZWlnaHQ6MTYwcHg7XHJcbiAgIGltZ1xyXG4gICB7XHJcbiAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LWhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgb2JqZWN0LWZpdDogY292ZXI7XHJcbiAgICBvYmplY3QtcG9zaXRpb246Ym90dG9tO1xyXG4gICB9XHJcbiAgIFt1c2VyaW5uZXJdXHJcbiB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAtNjJweDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgXHJcblxyXG4gIGltZ1xyXG5cdCAgIHtib3gtc2hhZG93OiAwcHggMHB4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcclxuXHQgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHQgICB9XHJcbn1cclxuIH1cclxuIH1cclxuICBbdGVhbWlubmVyXVxyXG4gIHtwYWRkaW5nOjE1cHg7XHJcbiAgaW9uLWJ1dHRvblxyXG5cdHtcclxuXHQgICAgLS1ib3gtc2hhZG93OiBub25lO1xyXG4gICAgbWluLWhlaWdodDogNDJweDtcclxuXHR9XHJcbiAgIGgyXHJcbntcclxuJltoZWFkaW5nXVxyXG57Zm9udC1zaXplOiAyMHB4O1xyXG5tYXJnaW4tdG9wOiAwcHg7XHJcbnBvc2l0aW9uOnJlbGF0aXZlO1xyXG56LWluZGV4OiAxO1xyXG5mb250LXdlaWdodDo2MDA7XHJcbiY6YWZ0ZXIge1xyXG4gICAgLypvcGFjaXR5OiAuNTsqL1xyXG4gICAgY29udGVudDogJyc7XHJcbiAgICBiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc29mdGdyZWVuKTtcclxuICAgIGhlaWdodDogOXB4O1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3R0b206IDBweDtcclxuICAgIGxlZnQ6IDBweDtcclxuICAgIHotaW5kZXg6IC0xO1xyXG59XHJcbn1cclxufXBcclxue1xyXG5jb2xvcjogIzlkOWQ5ZDtcclxuZm9udC1zaXplOiAxNHB4O1xyXG59XHJcbiAgfVxyXG5cdH1cclxuXHJcbiAgI2JhY2tncm91bmQtY29udGVudCB7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxufSJdfQ== */";
+      /***/
+    },
+
+    /***/
+    "./src/app/teamdetail/teamdetail.page.ts":
+    /*!***********************************************!*\
+      !*** ./src/app/teamdetail/teamdetail.page.ts ***!
+      \***********************************************/
+
+    /*! exports provided: TeamdetailPage */
+
+    /***/
+    function srcAppTeamdetailTeamdetailPageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TeamdetailPage", function () {
+        return TeamdetailPage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../config */
+      "./src/app/config.ts");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var _jointeamconfirm_jointeamconfirm_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../jointeamconfirm/jointeamconfirm.page */
+      "./src/app/jointeamconfirm/jointeamconfirm.page.ts");
+      /* harmony import */
+
+
+      var _leaveteamconfirm_leaveteamconfirm_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../leaveteamconfirm/leaveteamconfirm.page */
+      "./src/app/leaveteamconfirm/leaveteamconfirm.page.ts");
+      /* harmony import */
+
+
+      var _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../addamount/addamount.page */
+      "./src/app/addamount/addamount.page.ts");
+      /* harmony import */
+
+
+      var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../services/globalFooService.service */
+      "./src/app/services/globalFooService.service.ts");
+
+      var TeamdetailPage = /*#__PURE__*/function () {
+        function TeamdetailPage(globalFooService, modalController, activatedRoute, api, router, common) {
+          var _this = this;
+
+          _classCallCheck(this, TeamdetailPage);
+
+          this.globalFooService = globalFooService;
+          this.modalController = modalController;
+          this.activatedRoute = activatedRoute;
+          this.api = api;
+          this.router = router;
+          this.common = common;
+          this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_5__["config"].IMAGES_URL;
+          this.errors = ['', null, undefined];
+          this.joined = [];
+          this.teamid = activatedRoute.snapshot.paramMap.get('id');
+          this.globalFooService.getObservable().subscribe(function (data) {
+            if (_this.errors.indexOf(data.paydata1) == -1) {
+              console.log('ssssss');
+              _this.userid = localStorage.getItem('userid');
+
+              _this.getteamdetails();
+
+              _this.getuserteams();
+            }
+          });
+        }
+
+        _createClass(TeamdetailPage, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "give",
+          value: function give(id) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var _this2 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      _context.next = 2;
+                      return this.modalController.create({
+                        component: _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_9__["AddamountPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          teamid: id
+                        }
+                      });
+
+                    case 2:
+                      modal = _context.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this2.errors.indexOf(detail.data) == -1) {}
+                      });
+                      _context.next = 6;
+                      return modal.present();
+
+                    case 6:
+                      return _context.abrupt("return", _context.sent);
+
+                    case 7:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
+          key: "ionViewDidEnter",
+          value: function ionViewDidEnter() {
+            this.userid = localStorage.getItem('userid');
+            this.getteamdetails();
+            this.getuserteams();
+          }
+        }, {
+          key: "leave_team",
+          value: function leave_team() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this3 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      _context2.next = 2;
+                      return this.modalController.create({
+                        component: _leaveteamconfirm_leaveteamconfirm_page__WEBPACK_IMPORTED_MODULE_8__["LeaveteamconfirmPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          userid: this.userid,
+                          teamid: this.team.id
+                        }
+                      });
+
+                    case 2:
+                      modal = _context2.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this3.errors.indexOf(detail.data) == -1) {
+                          _this3.team.joins = _this3.team.joins - 1;
+
+                          _this3.getuserteams();
+                        }
+                      });
+                      _context2.next = 6;
+                      return modal.present();
+
+                    case 6:
+                      return _context2.abrupt("return", _context2.sent);
+
+                    case 7:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+          }
+        }, {
+          key: "join_team",
+          value: function join_team() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+              var _this4 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      _context3.next = 2;
+                      return this.modalController.create({
+                        component: _jointeamconfirm_jointeamconfirm_page__WEBPACK_IMPORTED_MODULE_7__["JointeamconfirmPage"],
+                        cssClass: 'jointeamconfirm',
+                        componentProps: {
+                          userid: this.userid,
+                          teamid: this.team.id
+                        }
+                      });
+
+                    case 2:
+                      modal = _context3.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this4.errors.indexOf(detail.data) == -1) {
+                          _this4.team.joins = _this4.team.joins + 1;
+
+                          _this4.getuserteams();
+                        }
+                      });
+                      _context3.next = 6;
+                      return modal.present();
+
+                    case 6:
+                      return _context3.abrupt("return", _context3.sent);
+
+                    case 7:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3, this);
+            }));
+          }
+        }, {
+          key: "getuserteams",
+          value: function getuserteams() {
+            var _this5 = this;
+
+            var dict = {
+              userid: this.userid
+            };
+            console.log(dict);
+            this.api.post('UserJoinedTeams', dict, '').subscribe(function (result) {
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                var array2 = [];
+
+                if (res.data.length > 0) {
+                  res.data.forEach(function (o) {
+                    array2.push(o.teamid);
+                  });
+                }
+
+                _this5.joined = array2;
+              } else {
+                _this5.joined = [];
+              }
+            }, function (err) {});
+          }
+        }, {
+          key: "getteamdetails",
+          value: function getteamdetails() {
+            var _this6 = this;
+
+            var dict = {
+              id: this.teamid
+            };
+            this.common.presentLoading();
+            this.api.post('teamdetail', dict, '').subscribe(function (result) {
+              _this6.common.stopLoading();
+
+              var res;
+              res = result;
+
+              if (res.status == 1) {
+                _this6.team = res.data;
+              } else {}
+            }, function (err) {});
+          }
+        }]);
+
+        return TeamdetailPage;
+      }();
+
+      TeamdetailPage.ctorParameters = function () {
+        return [{
+          type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_10__["GlobalFooService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
+        }, {
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_6__["CommonService"]
+        }];
+      };
+
+      TeamdetailPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-teamdetail',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./teamdetail.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/teamdetail/teamdetail.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./teamdetail.page.scss */
+        "./src/app/teamdetail/teamdetail.page.scss"))["default"]]
+      })], TeamdetailPage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=teamdetail-teamdetail-module-es5.js.map

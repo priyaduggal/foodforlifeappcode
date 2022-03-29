@@ -101,6 +101,9 @@ ion-searchbar {
     padding-inline-start: 20px!important;
     padding-inline-end: 15px!important;
 	}
+    ion-app {
+        margin-top: env(safe-area-inset-top);
+        }
 	.searchbar-clear-button
 	{
 	   right: 40px;

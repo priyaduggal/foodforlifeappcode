@@ -1,0 +1,339 @@
+(function () {
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contactus-contactus-module"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/contactus/contactus.page.html":
+    /*!*************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/contactus/contactus.page.html ***!
+      \*************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppContactusContactusPageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Contact Us</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n<ion-content class=\"ion-padding\">\r\n\t<div profileinfo>\r\n\t<div editprofile>\r\n<div class=\"flds-login\">\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Name</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Name\" value=\"\"\r\n\t\t\t\t\t[(ngModel)]=\"name\" name=\"name\" \r\n\t\t\t\t\t></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t\t<span error *ngIf=\"errors.indexOf(name) >= 0 && is_submit== true\">Please enter your name</span>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Email Address</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Email Address\" value=\"\"\r\n\t\t\t\t\t[(ngModel)]=\"email\" name=\"email\" \r\n\t\t\t\t\t></ion-input>\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(email) >= 0 && is_submit == true\">Please enter your email address</span>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(email) == -1 && is_submit == true && !reg_exp.test(email.toLowerCase())\">Please enter valid email address</span>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Phone Number</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter phone number\" [(ngModel)]=\"phone\" name=\"phone\" type=\"number\"></ion-input>\r\n\t\t\t\t\t\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t\t<span error *ngIf=\"errors.indexOf(phone) >= 0 && is_submit == true\">Please enter your phone number</span>\r\n\t\t\t</div>\r\n\t\t\t<div formfield>\r\n\t\t\t\t<label>Message</label>\r\n\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input placeholder=\"Enter Message\" [(ngModel)]=\"message\" name=\"message\" type=\"text\"></ion-input>\r\n\t\t\t\t\t\r\n\t\t\t\t</ion-item>\r\n\t\t\t\t<span error *ngIf=\"errors.indexOf(message) >= 0 && is_submit == true\">Please enter message</span>\r\n\t\t\t</div>\r\n\t\t\t<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\"(click)=\"save()\">Submit</ion-button>\r\n\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</ion-content>";
+      /***/
+    },
+
+    /***/
+    "./src/app/contactus/contactus-routing.module.ts":
+    /*!*******************************************************!*\
+      !*** ./src/app/contactus/contactus-routing.module.ts ***!
+      \*******************************************************/
+
+    /*! exports provided: ContactusPageRoutingModule */
+
+    /***/
+    function srcAppContactusContactusRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ContactusPageRoutingModule", function () {
+        return ContactusPageRoutingModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _contactus_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./contactus.page */
+      "./src/app/contactus/contactus.page.ts");
+
+      var routes = [{
+        path: '',
+        component: _contactus_page__WEBPACK_IMPORTED_MODULE_3__["ContactusPage"]
+      }];
+
+      var ContactusPageRoutingModule = function ContactusPageRoutingModule() {
+        _classCallCheck(this, ContactusPageRoutingModule);
+      };
+
+      ContactusPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+      })], ContactusPageRoutingModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/contactus/contactus.module.ts":
+    /*!***********************************************!*\
+      !*** ./src/app/contactus/contactus.module.ts ***!
+      \***********************************************/
+
+    /*! exports provided: ContactusPageModule */
+
+    /***/
+    function srcAppContactusContactusModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ContactusPageModule", function () {
+        return ContactusPageModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _contactus_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./contactus-routing.module */
+      "./src/app/contactus/contactus-routing.module.ts");
+      /* harmony import */
+
+
+      var _contactus_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./contactus.page */
+      "./src/app/contactus/contactus.page.ts");
+
+      var ContactusPageModule = function ContactusPageModule() {
+        _classCallCheck(this, ContactusPageModule);
+      };
+
+      ContactusPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _contactus_routing_module__WEBPACK_IMPORTED_MODULE_5__["ContactusPageRoutingModule"]],
+        declarations: [_contactus_page__WEBPACK_IMPORTED_MODULE_6__["ContactusPage"]]
+      })], ContactusPageModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/contactus/contactus.page.scss":
+    /*!***********************************************!*\
+      !*** ./src/app/contactus/contactus.page.scss ***!
+      \***********************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppContactusContactusPageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [profileinfo] [editprofile] {\n  padding: 15px 15px 0;\n  margin-top: -20px;\n  background: var(--ion-color-white);\n  position: relative;\n  border-radius: 15px 15px 0 0;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] {\n  margin-bottom: 24px;\n  text-align: center;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] h2 {\n  margin: 0;\n  font-size: 14px;\n}\n\nion-content [profileinfo] [editprofile] [userinfo] p {\n  margin: 0;\n  font-size: 12px;\n}\n\nion-content [profileinfo] [editprofile] [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-top: 32px;\n}\n\nion-content [profileinfo] [editprofile] [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [profileinfo] [editprofile] [formfield] ion-input {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content [profileinfo] [editprofile] .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 20px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\nion-content [profileinfo] [profileimg] {\n  position: relative;\n  height: 160px;\n}\n\nion-content [profileinfo] [profileimg] img {\n  max-width: 100%;\n  max-height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: bottom;\n     object-position: bottom;\n}\n\nion-content [profileinfo] [profileimg] [userinner] {\n  position: relative;\n  text-align: center;\n  margin-top: -62px;\n  z-index: 1;\n}\n\nion-content [profileinfo] [profileimg] [userinner] [btnedit] {\n  margin-left: 45px;\n  width: 30px;\n  height: 30px;\n  background: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  line-height: 30px;\n  border: 2px solid var(--ion-color-white);\n  position: absolute;\n  bottom: 1px;\n}\n\nion-content [profileinfo] [profileimg] [userinner] [btnedit] ion-icon {\n  color: var(--ion-color-white);\n}\n\nion-content [profileinfo] [profileimg] [userinner] img {\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  border: 2px solid var(--ion-color-white);\n  margin: 0 auto;\n  text-align: center;\n}\n\n[error] {\n  color: red;\n  font-size: 12px;\n  position: relative;\n  top: 0;\n}\n\nion-content {\n  margin-top: 25px !important;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGFjdHVzL2NvbnRhY3R1cy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFJSSx1REFBaUI7RUFDbEIsaUJBQWU7QUFGbEI7O0FBSEE7RUFRSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUR6RDs7QUFWQTtFQWdCQyxhQUFZO0FBRmI7O0FBS0M7RUFLTSxvQkFBb0I7RUFDdkIsaUJBQWlCO0VBQ2pCLGtDQUFrQztFQUNsQyxrQkFBa0I7RUFDbEIsNEJBQTRCO0FBTmhDOztBQUhDO0VBV0ksbUJBQW1CO0VBQ3BCLGtCQUFrQjtBQUp0Qjs7QUFSQztFQWNHLFNBQVM7RUFDVCxlQUFlO0FBRm5COztBQWJDO0VBaUJHLFNBQVM7RUFDVCxlQUFlO0FBQW5COztBQWxCQztFQXNCRSxrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsa0NBQWtDO0VBQ2xDLGVBQWU7RUFDZixnQkFBZTtBQUFsQjs7QUE1QkM7RUE4Qkcsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osa0NBQW1DO0VBQ25DLFVBQVU7RUFDVixjQUFjO0VBQ2QsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0FBRWxCOztBQXhDQztFQXlDRyxZQUFZO0VBQ1osb0JBQWdCO0VBQ2hCLGtCQUFjO0VBQ2QsZUFBZTtFQUNmLDRCQUFvQjtFQUNwQix3QkFBc0I7RUFDdEIsNkNBQTZDO0VBQzdDLFdBQVc7QUFHZjs7QUFuREM7RUFvREUsc0NBQWE7RUFDYixnQkFBZ0I7RUFDaEIsa0JBQWE7RUFDSixnQkFBZ0I7RUFDekIsbUJBQW1CO0VBQ25CLHlCQUF5QjtFQUN6QixtQkFBbUI7QUFHdEI7O0FBN0RDO0VBOERLLGtCQUFrQjtFQUVyQixhQUFZO0FBRWY7O0FBbEVDO0VBbUVJLGVBQWU7RUFDaEIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxvQkFBaUI7S0FBakIsaUJBQWlCO0VBQ2pCLDBCQUFzQjtLQUF0Qix1QkFBc0I7QUFHMUI7O0FBMUVDO0VBMkVHLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLFVBQVU7QUFHZDs7QUFqRkM7RUFpRkcsaUJBQWlCO0VBQ2pCLFdBQVc7RUFDWCxZQUFZO0VBQ1osb0NBQW9DO0VBQ3BDLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLHdDQUF3QztFQUN4QyxrQkFBa0I7RUFDbEIsV0FBVztBQUlmOztBQTlGQztFQTRGQyw2QkFBNEI7QUFNOUI7O0FBbEdDO0VBZ0dJLDRDQUE0QztFQUM3QyxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQix3Q0FBd0M7RUFDeEMsY0FBYztFQUNkLGtCQUFrQjtBQU10Qjs7QUFFQTtFQUNDLFVBQVM7RUFDVCxlQUFjO0VBQ2Qsa0JBQWtCO0VBQ2YsTUFBTTtBQUNWOztBQUNDO0VBQ0EsMkJBQTJCO0FBRTVCIiwiZmlsZSI6InNyYy9hcHAvY29udGFjdHVzL2NvbnRhY3R1cy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyXHJcblx0e1xyXG5cdFxyXG5cdCAgaW9uLXRvb2xiYXJcclxuXHQgIHstLWlvbi1jb2xvci1iYXNlOiB2YXIoLS1pb24tY29sb3ItYmdncmFkaWVudCkhaW1wb3J0YW50O1xyXG5cdCAgLS1ib3JkZXItd2lkdGg6IDA7XHJcblx0XHJcblx0XHQgIGlvbi10aXRsZXtcclxuXHRcdCAgY29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdCAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuXHR9XHJcblx0Jjo6YWZ0ZXJcclxuXHR7XHJcblx0ZGlzcGxheTpub25lO1xyXG5cdH1cclxuXHR9XHJcblx0aW9uLWNvbnRlbnRcclxuXHR7XHJcblx0W3Byb2ZpbGVpbmZvXVxyXG4ge1xyXG4gW2VkaXRwcm9maWxlXVxyXG4geyAgICAgcGFkZGluZzogMTVweCAxNXB4IDA7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjBweDtcclxuICAgIGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNXB4IDE1cHggMCAwOyBcclxuXHRbdXNlcmluZm9dIHtcclxuXHQgICAgbWFyZ2luLWJvdHRvbTogMjRweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRoMiB7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbn1wIHtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxufVxyXG59XHJcblx0W2Zvcm1maWVsZF0ge1xyXG5cdFx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHRcdGJvcmRlcjogMXB4IHNvbGlkICNlOGU4ZTg7XHJcblx0XHRcdGhlaWdodDogNTJweDtcclxuXHRcdFx0Ym9yZGVyLXJhZGl1czogNTBweDtcclxuXHRcdFx0YmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdFx0cGFkZGluZzogMCAxNnB4O1xyXG5cdFx0XHRtYXJnaW4tdG9wOjMycHg7XHJcblx0XHRcdGxhYmVsIHtcclxuXHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0dG9wOiAtMTBweDtcclxuXHRcdFx0XHR6LWluZGV4OiAxMTE7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogdmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdFx0bGVmdDogMjlweDtcclxuXHRcdFx0XHRwYWRkaW5nOiAwIDNweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDEycHg7XHJcblx0XHRcdFx0Zm9udC13ZWlnaHQ6IDcwMDtcclxuXHRcdFx0XHRjb2xvcjogIzNhM2EzYTtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24taW5wdXQgIHtcclxuXHRcdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTRweDtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLWNvbG9yOiAjOWE5YTlhO1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItb3BhY2l0eTogMTtcclxuXHRcdFx0XHRmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcblx0XHRcdFx0Y29sb3I6ICMyMjI7XHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHRcdC5idG4tbG9zbnN7XHJcblx0XHRcdC0tYmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAyMHB4O1xyXG5cdFx0XHQtLWJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICAgICAgICAgIG1pbi1oZWlnaHQ6IDQ4cHg7XHJcblx0XHRcdG1hcmdpbi1ib3R0b206IDE1cHg7XHJcblx0XHRcdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0XHRcdGxldHRlci1zcGFjaW5nOiAxcHg7XHJcblx0XHR9XHJcbiB9XHJcbiBbcHJvZmlsZWltZ11cclxuIHsgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuICAgaGVpZ2h0OjE2MHB4O1xyXG4gICBpbWdcclxuICAge1xyXG4gICAgIG1heC13aWR0aDogMTAwJTtcclxuICAgIG1heC1oZWlnaHQ6IDEwMCU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgb2JqZWN0LXBvc2l0aW9uOmJvdHRvbTtcclxuICAgfVxyXG4gICBbdXNlcmlubmVyXVxyXG4ge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogLTYycHg7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gIFxyXG5cdFtidG5lZGl0XSB7XHJcbiAgICBtYXJnaW4tbGVmdDogNDVweDtcclxuICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgbGluZS1oZWlnaHQ6IDMwcHg7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAxcHg7XHJcblx0aW9uLWljb25cclxuXHR7Y29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHR9XHJcbn1cclxuICBpbWdcclxuXHQgICB7Ym94LXNoYWRvdzogMHB4IDBweCAxMHB4IHJnYmEoMCwgMCwgMCwgMC4yNSk7XHJcblx0ICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0ICAgfVxyXG59XHJcbiB9XHJcbiB9XHJcbiAgXHJcblx0fVxyXG5cdFtlcnJvcl1cclxuXHR7XHJcblx0Y29sb3I6cmVkO1xyXG5cdGZvbnQtc2l6ZToxMnB4O1xyXG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHRvcDogMDtcclxuXHR9XHJcblx0aW9uLWNvbnRlbnR7XHJcblx0bWFyZ2luLXRvcDogMjVweCAhaW1wb3J0YW50O1xyXG5cdH0iXX0= */";
+      /***/
+    },
+
+    /***/
+    "./src/app/contactus/contactus.page.ts":
+    /*!*********************************************!*\
+      !*** ./src/app/contactus/contactus.page.ts ***!
+      \*********************************************/
+
+    /*! exports provided: ContactusPage */
+
+    /***/
+    function srcAppContactusContactusPageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ContactusPage", function () {
+        return ContactusPage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../services/globalFooService.service */
+      "./src/app/services/globalFooService.service.ts");
+      /* harmony import */
+
+
+      var _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @ionic-native/facebook/ngx */
+      "./node_modules/@ionic-native/facebook/__ivy_ngcc__/ngx/index.js");
+      /* harmony import */
+
+
+      var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @ionic-native/google-plus/ngx */
+      "./node_modules/@ionic-native/google-plus/__ivy_ngcc__/ngx/index.js");
+
+      var ContactusPage = /*#__PURE__*/function () {
+        function ContactusPage(fb, googlePlus, globalFooService, api, router, common) {
+          _classCallCheck(this, ContactusPage);
+
+          this.fb = fb;
+          this.googlePlus = googlePlus;
+          this.globalFooService = globalFooService;
+          this.api = api;
+          this.router = router;
+          this.common = common;
+          this.is_submit = false;
+          this.errors = ['', null, undefined];
+          this.reg_exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        }
+
+        _createClass(ContactusPage, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "save",
+          value: function save() {
+            var _this = this;
+
+            this.is_submit = true;
+
+            if (this.errors.indexOf(this.name) >= 0 || !this.reg_exp.test(String(this.email).toLowerCase()) || this.errors.indexOf(this.email) >= 0 || this.errors.indexOf(this.phone) >= 0 || this.errors.indexOf(this.message) >= 0) {
+              return false;
+            } else {
+              var dict = {
+                name: this.name,
+                email: this.email,
+                phone: this.phone,
+                message: this.message
+              };
+              this.common.presentLoading();
+              this.api.post('contactUs', dict, '').subscribe(function (result) {
+                _this.is_submit = false;
+
+                _this.common.stopLoading();
+
+                _this.name = '';
+                _this.email = '';
+                _this.phone = '';
+                _this.message = '';
+                var res;
+                res = result;
+
+                if (res.status == 1) {
+                  _this.common.presentToast('Saved Successfully !.', 'success');
+                } else {
+                  _this.common.presentToast(res.message, 'danger');
+                }
+              }, function (err) {});
+            }
+          }
+        }]);
+
+        return ContactusPage;
+      }();
+
+      ContactusPage.ctorParameters = function () {
+        return [{
+          type: _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_6__["Facebook"]
+        }, {
+          type: _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_7__["GooglePlus"]
+        }, {
+          type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_5__["GlobalFooService"]
+        }, {
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
+      };
+
+      ContactusPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-contactus',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./contactus.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/contactus/contactus.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./contactus.page.scss */
+        "./src/app/contactus/contactus.page.scss"))["default"]]
+      })], ContactusPage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=contactus-contactus-module-es5.js.map

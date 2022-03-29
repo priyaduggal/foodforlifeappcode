@@ -1,0 +1,72 @@
+.popupsocialshare {
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    max-width: 325px;
+    margin: 0 auto;
+    h4 {
+        margin-top: 45px;
+        margin-bottom: 0;
+    }
+    ion-button.instagramIcon {
+        --background: #c32aa3 ;
+    }
+     ion-button.facebookIcon{
+        --background: #3b5998 ;
+    }
+    
+    ion-button.whatsappIcon {
+        --background: #25d366 ;
+    }
+    
+    ion-button.envelopeIcon{
+        --background: #dd4b39 ;
+        --ion-color-contrast: #fff !important;
+    }
+}
+
+
+ion-content{
+    --background: #0000006e;
+    ion-row {
+        margin-bottom: 25px;
+        margin-top: 20px;
+        ion-button {
+            --border-radius: 50% !important;
+            width: 54px;
+            height: 54px;
+        }
+    }
+    .popupsocialshare p {
+        text-align: center;
+    }
+    .popup_actionwrap {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        ion-button {
+            --background: transparent;
+            --color: #3a3a3a;
+            font-size: 26px;
+            margin: 0;
+            --padding-start: 0;
+            --padding-end: 0;
+            height: 45px;
+            margin-right: 9px;
+            margin-top: 5px;
+        }
+       
+      
+    }
+}

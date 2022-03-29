@@ -1,0 +1,251 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["createteam-createteam-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/createteam/createteam.page.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/createteam/createteam.page.html ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/searchteam\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Create Team</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\t<ion-content class=\"ion-padding\">\r\n\t<div teamdetail>\r\n\t<!--img src=\"assets/images/createteam.png\" class=\"user_image\" /--->\r\n\t<div class=\"profile_thumbnail_wrpr\">\r\n\t\t<div class=\"profile_thumbnail_userimg\">\r\n\t\t\t<img   src=\"assets/images/createteam.png\" *ngIf=\"is_license_uploaded == false\"  class=\"user_image1\">\r\n\t\t\t<img *ngIf=\"is_license_uploaded == true\"  [src]=\"sanitizer.bypassSecurityTrustUrl(license_image_url)\"\r\n\t\t\tclass=\"user_image1\">\r\n\t\t\t<!--label for=\"editprofile1\"><i class=\"fa fa-pencil\"></i></label--->\r\n\t\t\t<label for=\"editprofile1\" btnedit >\r\n\t\t\t<ion-icon name=\"camera-outline\"></ion-icon>\r\n\t\t\t</label>\r\n\t\t\t<input type=\"file\" (change)=\"uploadImage($event)\" name=\"editprofile1\" id=\"editprofile1\" style=\"display:none\">\r\n\t\t\t\r\n\t\t</div>\r\n\t\t<span error *ngIf=\"errors.indexOf(this.license_file) >= 0 && is_submit_team == true\">Please select Image</span>\r\n\t\t</div>\t\r\n\t\r\n\t\r\n\t<div formfield>\r\n\t<label>Name</label>\r\n\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t<ion-input placeholder=\"Enter Team Name\" [(ngModel)]=\"name\" name=\"name\" ></ion-input>\r\n\t</ion-item>\r\n\t<span error *ngIf=\"errors.indexOf(name) >= 0 && is_submit_team == true\">Please enter team name</span>\r\n\t\t\t\t\r\n\t</div>\r\n\t<div formfield>\r\n\t<label>Description</label>\r\n\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t<ion-input placeholder=\"Enter Description\" [(ngModel)]=\"description\" name=\"description\" ></ion-input>\r\n\t</ion-item>\r\n\t<span error *ngIf=\"errors.indexOf(description) >= 0 && is_submit_team == true\">Please enter team description</span>\t\t\r\n\t</div>\r\n\t<p *ngIf=\"teamlist?.length==0\">No records found..!</p>\r\n\t<ion-item  teamcont lines=\"none\" *ngFor=\"let team of teamlist\" >\r\n\t\t <ion-thumbnail>\r\n\t\t <img src=\"assets/images/createteam.png\"  *ngIf=\"errors.indexOf(team?.image)>=0\">\r\n         <img src=\"{{IMAGES_URL}}/{{team?.image}}\"  *ngIf=\"errors.indexOf(team?.image)==-1\">\r\n\t\t </ion-thumbnail>\r\n\t\t <ion-label>\r\n\t\t <h2>{{team?.name}}</h2>\r\n\t\t <p><span><ion-icon name=\"heart\"></ion-icon>{{team?.meals}}</span> <span><ion-icon name=\"people\"></ion-icon>{{team?.joins}}</span></p>\r\n\t\t </ion-label>\r\n\t\t <ion-icon name=\"chevron-forward-outline\" slot=\"end\" routerLink=\"/teamdetail/{{team?.id}}\"></ion-icon>\r\n\t\t</ion-item>\r\n</div>\r\n\t<ion-fab  vertical=\"bottom\" horizontal=\"end\" edge size=\"small\" slot=\"fixed\" (click)=\"submit();\">\r\n    <ion-fab-button>\r\n     <ion-icon name=\"checkmark-outline\" ></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/createteam/createteam-routing.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/createteam/createteam-routing.module.ts ***!
+  \*********************************************************/
+/*! exports provided: CreateteamPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateteamPageRoutingModule", function() { return CreateteamPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _createteam_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createteam.page */ "./src/app/createteam/createteam.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _createteam_page__WEBPACK_IMPORTED_MODULE_3__["CreateteamPage"]
+    }
+];
+let CreateteamPageRoutingModule = class CreateteamPageRoutingModule {
+};
+CreateteamPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], CreateteamPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/createteam/createteam.module.ts":
+/*!*************************************************!*\
+  !*** ./src/app/createteam/createteam.module.ts ***!
+  \*************************************************/
+/*! exports provided: CreateteamPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateteamPageModule", function() { return CreateteamPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _createteam_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createteam-routing.module */ "./src/app/createteam/createteam-routing.module.ts");
+/* harmony import */ var _createteam_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./createteam.page */ "./src/app/createteam/createteam.page.ts");
+
+
+
+
+
+
+
+let CreateteamPageModule = class CreateteamPageModule {
+};
+CreateteamPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _createteam_routing_module__WEBPACK_IMPORTED_MODULE_5__["CreateteamPageRoutingModule"]
+        ],
+        declarations: [_createteam_page__WEBPACK_IMPORTED_MODULE_6__["CreateteamPage"]]
+    })
+], CreateteamPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/createteam/createteam.page.scss":
+/*!*************************************************!*\
+  !*** ./src/app/createteam/createteam.page.scss ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content [teamdetail] {\n  text-align: Center;\n}\n\nion-content [teamdetail] [formfield] {\n  position: relative;\n  border: 1px solid #e8e8e8;\n  height: 52px;\n  border-radius: 50px;\n  background: var(--ion-color-white);\n  padding: 0 16px;\n  margin-top: 20px;\n  margin-bottom: 35px;\n}\n\nion-content [teamdetail] [formfield] label {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content [teamdetail] [formfield] ion-input, ion-content [teamdetail] [formfield] ion-datetime {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 14px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n}\n\nion-content [teamdetail] .profile_thumbnail_wrpr span[error] {\n  text-align: center;\n  margin-top: 0;\n}\n\nion-content [teamdetail] img {\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  border: 2px solid var(--ion-color-white);\n  margin: 0 auto;\n  text-align: center;\n}\n\nion-content [teamdetail] [teamcont] {\n  --padding-start: 10px;\n  margin-top: 15px;\n  border-radius: 15px 0 15px;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  border-left: 2px solid var(--ion-color-primary);\n  --inner-padding-end: 5px;\n}\n\nion-content [teamdetail] [teamcont] ion-thumbnail {\n  width: 70px;\n  height: 70px;\n}\n\nion-content [teamdetail] [teamcont] ion-thumbnail img {\n  width: 70px;\n  height: 70px;\n  border-radius: 8px;\n}\n\nion-content [teamdetail] [teamcont] ion-label {\n  margin-left: 15px;\n}\n\nion-content [teamdetail] [teamcont] ion-label h2 {\n  margin-bottom: 5px;\n}\n\nion-content [teamdetail] [teamcont] ion-label p span {\n  margin-right: 10px;\n  font-size: 14px;\n}\n\nion-content [teamdetail] [teamcont] ion-label p span ion-icon {\n  margin-right: 3px;\n  color: var(--ion-color-primary);\n}\n\nion-content ion-fab {\n  bottom: 3px;\n  right: 4px;\n}\n\n[error] {\n  font-size: 12px;\n  color: red;\n  display: block;\n  text-align: left;\n  margin-top: 6px;\n}\n\n[btnedit] {\n  background: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  line-height: 30px;\n  border: 2px solid var(--ion-color-white);\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  top: 26px;\n  margin-left: -28px;\n}\n\n[btnedit] ion-icon {\n  color: var(--ion-color-white);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRldGVhbS9jcmVhdGV0ZWFtLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUlJLHVEQUFpQjtFQUNsQixpQkFBZTtBQUZsQjs7QUFIQTtFQVFJLDZCQUE0QjtFQUM1QixrQkFBaUI7RUFDVCxrQkFBa0I7RUFDbEIsNkNBQTZDO0FBRHpEOztBQVZBO0VBZ0JDLGFBQVk7QUFGYjs7QUFNQTtFQW9DQSxrQkFBaUI7QUF0Q2pCOztBQUVBO0VBS0csa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGtDQUFrQztFQUNsQyxlQUFlO0VBQ2YsZ0JBQWU7RUFDZixtQkFBa0I7QUFIckI7O0FBVEE7RUFjSSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFlBQVk7RUFDWixrQ0FBbUM7RUFDbkMsVUFBVTtFQUNWLGNBQWM7RUFDZCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFEbEI7O0FBckJBO0VBeUJJLFlBQVk7RUFDWixvQkFBZ0I7RUFDaEIsa0JBQWM7RUFDZCxlQUFlO0VBQ2YsNEJBQW9CO0VBQ3BCLHdCQUFzQjtFQUN0Qiw2Q0FBNkM7RUFDN0MsV0FBVztBQUFmOztBQWhDQTtFQXVDRSxrQkFBa0I7RUFDbEIsYUFBYTtBQUhmOztBQXJDQTtFQTZDRSw0Q0FBNEM7RUFDMUMsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsd0NBQXdDO0VBQ3hDLGNBQWM7RUFDZCxrQkFBa0I7QUFKdEI7O0FBL0NBO0VBc0RFLHFCQUFnQjtFQUNYLGdCQUFnQjtFQUNuQiwwQkFBMEI7RUFDMUIsMkNBQTJDO0VBQzNDLCtDQUErQztFQUMvQyx3QkFBb0I7QUFIeEI7O0FBeERBO0VBOERPLFdBQVc7RUFDZCxZQUFZO0FBRmhCOztBQTdEQTtFQWtFSyxXQUFXO0VBQ1osWUFBWTtFQUNmLGtCQUFpQjtBQURsQjs7QUFuRUE7RUF5RUksaUJBQWlCO0FBRnJCOztBQXZFQTtFQTRFSSxrQkFBa0I7QUFEdEI7O0FBM0VBO0VBaUZLLGtCQUFpQjtFQUNsQixlQUFjO0FBRmxCOztBQWhGQTtFQW9GSyxpQkFBZ0I7RUFDakIsK0JBQThCO0FBQWxDOztBQXJGQTtFQTZGSSxXQUFXO0VBQ1gsVUFBVTtBQUpkOztBQUVBO0VBT0MsZUFBZTtFQUNaLFVBQVU7RUFDVixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFMbkI7O0FBRUE7RUFRSSxvQ0FBb0M7RUFDcEMsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixpQkFBaUI7RUFDakIsd0NBQXdDO0VBQ3hDLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxrQkFBa0I7QUFOdEI7O0FBRUE7RUFPRSw2QkFBNEI7QUFMOUIiLCJmaWxlIjoic3JjL2FwcC9jcmVhdGV0ZWFtL2NyZWF0ZXRlYW0ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlclxyXG57XHJcblx0XHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0taW9uLWNvbG9yLWJhc2U6IHZhcigtLWlvbi1jb2xvci1iZ2dyYWRpZW50KSFpbXBvcnRhbnQ7XHJcblx0ICAtLWJvcmRlci13aWR0aDogMDtcclxuXHRcclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG59XHJcblxyXG5pb24tY29udGVudFxyXG57XHJcblxyXG5bdGVhbWRldGFpbF1cclxue1tmb3JtZmllbGRdIHtcclxuXHRcdFx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG5cdFx0XHRib3JkZXI6IDFweCBzb2xpZCAjZThlOGU4O1xyXG5cdFx0XHRoZWlnaHQ6IDUycHg7XHJcblx0XHRcdGJvcmRlci1yYWRpdXM6IDUwcHg7XHJcblx0XHRcdGJhY2tncm91bmQ6dmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdHBhZGRpbmc6IDAgMTZweDtcclxuXHRcdFx0bWFyZ2luLXRvcDoyMHB4O1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOjM1cHg7XHJcblx0XHRcdGxhYmVsIHtcclxuXHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0dG9wOiAtMTBweDtcclxuXHRcdFx0XHR6LWluZGV4OiAxMTE7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogdmFyKCAtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdFx0bGVmdDogMjlweDtcclxuXHRcdFx0XHRwYWRkaW5nOiAwIDNweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDEycHg7XHJcblx0XHRcdFx0Zm9udC13ZWlnaHQ6IDcwMDtcclxuXHRcdFx0XHRjb2xvcjogIzNhM2EzYTtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24taW5wdXQgLCBpb24tZGF0ZXRpbWUgIHtcclxuXHRcdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTRweDtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLWNvbG9yOiAjOWE5YTlhO1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItb3BhY2l0eTogMTtcclxuXHRcdFx0XHRmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcblx0XHRcdFx0Y29sb3I6ICMyMjI7XHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHJcbnRleHQtYWxpZ246Q2VudGVyO1xyXG4ucHJvZmlsZV90aHVtYm5haWxfd3JwciB7XHJcblx0c3BhbltlcnJvcl0ge1xyXG5cdFx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdFx0bWFyZ2luLXRvcDogMDtcclxuXHR9XHJcbn1cclxuaW1nXHJcbntcclxuXHQgYm94LXNoYWRvdzogMHB4IDBweCAxMHB4IHJnYmEoMCwgMCwgMCwgMC4yNSk7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgIG1hcmdpbjogMCBhdXRvO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblt0ZWFtY29udF1cclxuXHR7LS1wYWRkaW5nLXN0YXJ0OiAxMHB4O1xyXG4gICAgICAgbWFyZ2luLXRvcDogMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHggMCAxNXB4O1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAxMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuICAgIGJvcmRlci1sZWZ0OiAycHggc29saWQgdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG4gICAgLS1pbm5lci1wYWRkaW5nLWVuZDogNXB4O1xyXG5cdCAgaW9uLXRodW1ibmFpbFxyXG5cdCAge1xyXG5cdCAgICAgIHdpZHRoOiA3MHB4O1xyXG4gICAgaGVpZ2h0OiA3MHB4O1xyXG5cdGltZ1xyXG5cdHtcclxuXHQgICAgd2lkdGg6IDcwcHg7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcblx0Ym9yZGVyLXJhZGl1czo4cHg7XHJcblx0fVxyXG5cdCAgfVxyXG5cdCAgaW9uLWxhYmVsXHJcblx0ICB7XHJcblx0ICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcblx0ICAgaDJcclxuXHQgICB7XHJcblx0ICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG5cdCAgIH1cclxuXHQgICBwXHJcblx0ICAge1xyXG5cdCAgIHNwYW5cclxuXHQgICB7bWFyZ2luLXJpZ2h0OjEwcHg7XHJcblx0ICAgZm9udC1zaXplOjE0cHg7XHJcblx0ICAgaW9uLWljb25cclxuXHQgICB7bWFyZ2luLXJpZ2h0OjNweDtcclxuXHQgICBjb2xvcjp2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcblx0ICAgfVxyXG5cdCAgIH1cclxuXHQgICB9XHJcblx0ICB9XHJcblx0fVxyXG5cdH1cclxuaW9uLWZhYiB7XHJcbiAgICBib3R0b206IDNweDtcclxuICAgIHJpZ2h0OiA0cHg7IFxyXG59XHJcbn1cclxuW2Vycm9yXVxyXG57XHJcblx0Zm9udC1zaXplOiAxMnB4O1xyXG4gICAgY29sb3I6IHJlZDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIG1hcmdpbi10b3A6IDZweDtcclxufVxyXG5cclxuXHJcbltidG5lZGl0XSB7XHJcbiAgICBiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBsaW5lLWhlaWdodDogMzBweDtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICB3aWR0aDogMzBweDtcclxuICAgIGhlaWdodDogMzBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogMjZweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMjhweDtcclxuXHJcblx0aW9uLWljb25cclxuXHR7Y29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHR9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/createteam/createteam.page.ts":
+/*!***********************************************!*\
+  !*** ./src/app/createteam/createteam.page.ts ***!
+  \***********************************************/
+/*! exports provided: CreateteamPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateteamPage", function() { return CreateteamPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+/* harmony import */ var ng2_file_upload__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng2-file-upload */ "./node_modules/ng2-file-upload/__ivy_ngcc__/fesm2015/ng2-file-upload.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+let CreateteamPage = class CreateteamPage {
+    constructor(activatedRoute, api, router, common, sanitizer) {
+        this.activatedRoute = activatedRoute;
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.sanitizer = sanitizer;
+        this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_4__["config"].IMAGES_URL;
+        this.is_submit_team = false;
+        this.errors = ['', null, undefined];
+        this.teamlist = [];
+        this.allowedMimes = ['image/png', 'image/jpg', 'image/jpeg'];
+        this.license_error = false;
+        this.is_license_uploaded = false;
+        this.uploader = new ng2_file_upload__WEBPACK_IMPORTED_MODULE_6__["FileUploader"]({ url: '' });
+        this.userid = localStorage.getItem('userid');
+    }
+    ngOnInit() {
+    }
+    uploadImage(event) {
+        this.license_error = false;
+        var self = this;
+        if (event.target.files && event.target.files[0]) {
+            var reader = new FileReader();
+            var image_file = event.target.files[0];
+            if (self.allowedMimes.indexOf(image_file.type) == -1) {
+                this.license_error = true;
+                this.common.presentToast('This format is not allowed !.', 'danger');
+            }
+            else {
+                self.license_file = image_file;
+                self.license_image_url = window.URL.createObjectURL(image_file);
+                jquery__WEBPACK_IMPORTED_MODULE_8__('.user_image1').attr('src', self.license_image_url);
+            }
+        }
+    }
+    ionViewDidEnter() {
+        this.userid = localStorage.getItem('userid');
+        this.getmyteam();
+    }
+    getmyteam() {
+        let dict = {
+            userid: this.userid,
+        };
+        this.common.presentLoading();
+        this.api.post('Getmyteams', dict, '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.teamlist = res.data;
+            }
+            else {
+            }
+        }, err => {
+        });
+    }
+    submit() {
+        this.is_submit_team = true;
+        if (this.errors.indexOf(this.license_file) >= 0 || this.errors.indexOf(this.name) >= 0 || this.errors.indexOf(this.description) >= 0) {
+            return false;
+        }
+        if (this.errors.indexOf(this.userid) >= 0) {
+            this.common.presentToast('Please login first!.', 'danger');
+            return false;
+        }
+        this.common.presentLoading();
+        const frmData = new FormData();
+        frmData.append("image", this.license_file);
+        frmData.append("name", this.name);
+        frmData.append("description", this.description);
+        frmData.append("userid", this.userid);
+        this.api.post('addTeam', frmData, '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.is_submit_team = false;
+                this.getmyteam();
+                this.license_file = '';
+                this.name = '';
+                this.description = '';
+                this.license_file = '';
+                this.is_license_uploaded = false;
+                jquery__WEBPACK_IMPORTED_MODULE_8__('.user_image1').attr('src', 'assets/images/createteam.png');
+                this.common.presentToast('Team added successfully!.', 'success');
+            }
+            else {
+                this.common.presentToast('Error in adding team!.', 'danger');
+            }
+        }, err => {
+        });
+    }
+};
+CreateteamPage.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"] },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__["DomSanitizer"] }
+];
+CreateteamPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-createteam',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./createteam.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/createteam/createteam.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./createteam.page.scss */ "./src/app/createteam/createteam.page.scss")).default]
+    })
+], CreateteamPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=createteam-createteam-module-es2015.js.map

@@ -143,11 +143,12 @@ type_login:any;
 		this.api.post('loginUser', dict,'').subscribe((result) => {  
 		this.is_submit_login = false;
 		this.common.stopLoading();
-		this.login_email = '';
-		this.login_password = '';
+		
 		var res;
 		res = result;
 		if(res.status==1){
+			this.login_email = '';
+		this.login_password = '';
 			var userId = this.api.encryptData(res.data.id,config.ENC_SALT);
 			localStorage.setItem('userid',res.data.id);
 			localStorage.setItem('food_token',userId);

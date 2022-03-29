@@ -1,0 +1,87 @@
+   <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <!--ion-title>Tribes</ion-title-->
+        <ion-title>Impact</ion-title>
+		<ion-buttons routerLink="/searchteam" slot="end" mr-10>
+		<ion-icon name="search-outline"></ion-icon>
+		</ion-buttons>
+      </ion-toolbar>
+	  </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment [(ngModel)]="tribetab">
+		<ion-segment-button value="projects">
+		 Projects
+		</ion-segment-button>
+		<ion-segment-button value="beneficiaries" *ngIf="userdetails?.type==1">
+		   Testimonials
+		</ion-segment-button>
+		<ion-segment-button value="beneficiaries" *ngIf="userdetails?.type==2">
+		   Testimonials
+		</ion-segment-button>
+		<ion-segment-button value="activity">
+		   Activites
+		</ion-segment-button>
+  </ion-segment>
+     <div tribetab [ngSwitch]="tribetab">
+	
+	<ion-list *ngSwitchCase="'projects'">
+     <div projects   *ngIf="userdetails?.type==2">
+	<ion-item lines="none"  *ngFor="let project of projectlist;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
+	 <ion-thumbnail>
+	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
+	 </ion-thumbnail>
+	 <ion-label>
+	 <h3 >{{project.title}}</h3>
+	
+	 </ion-label>
+	</ion-item>
+	   </div>
+	     <div projects   *ngIf="userdetails?.type==1">
+	<ion-item lines="none"  *ngFor="let project of projectlist1;let index=index;" routerLink="/charitydetail/{{project?.id}}" >
+	 <ion-thumbnail>
+	   <img src="{{IMAGES_URL}}/{{project.image}}"/>
+	 </ion-thumbnail>
+	 <ion-label>
+	 <h3 >{{project.title}}</h3>
+	
+	 </ion-label>
+	</ion-item>
+	   </div>
+	</ion-list>
+		<ion-list *ngSwitchCase="'beneficiaries'">
+           <div beneficiaries *ngIf="userdetails?.type==2">
+		    <div benimg   *ngFor="let bene of beneficiaries;let index=index;">
+			  <img src="{{IMAGES_URL}}/{{bene?.image}}"/>
+			 <h3>{{bene?.name}} </h3>
+			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> {{bene?.description}} <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
+			
+			</div>
+			</div>
+			 <div beneficiaries *ngIf="userdetails?.type==1">
+		    <div benimg   *ngFor="let bene of beneficiariesc;let index=index;">
+			  <img src="{{IMAGES_URL}}/{{bene?.image}}"/>
+			 <h3>{{bene?.name}} </h3>
+			<p><span commastop><img src="assets/images/quotation-marks.png"/></span> {{bene?.description}} <span commasbottom><img src="assets/images/quotation-marks.png"/></span></p>
+			
+			</div>
+			</div>
+		  
+	   </ion-list>
+		<ion-list *ngSwitchCase="'activity'">
+		<div activityimg  *ngFor="let act of activities" routerLink="/activitydetail/{{act?.id}}">
+	   <img  src="{{IMAGES_URL}}/{{act?.image}}"/>
+	   <div activitycontent>
+	   <ion-note><ion-icon name="calendar-outline"></ion-icon> {{act?.created_at | date : 'd MMM'}}</ion-note>
+	   <p  routerLink="/activitydetail/{{act?.id}}">{{act?.description}}</p>
+	      <ion-button shape="round" expand="full"  (click)="give(act?.id)">Give Now</ion-button>
+	   </div>
+	   </div>
+	  
+	   
+	</ion-list>
+	</div>
+</ion-content>

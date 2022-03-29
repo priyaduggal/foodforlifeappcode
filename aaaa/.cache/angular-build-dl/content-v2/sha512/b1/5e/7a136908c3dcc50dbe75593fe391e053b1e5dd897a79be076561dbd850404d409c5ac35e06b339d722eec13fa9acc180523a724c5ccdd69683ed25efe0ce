@@ -1,0 +1,432 @@
+(function () {
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["home-home-module"], {
+    /***/
+    "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html":
+    /*!***************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html ***!
+      \***************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function node_modulesRawLoaderDistCjsJsSrcAppHomeHomePageHtml(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<!--ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>home</ion-title>\r\n  </ion-toolbar>\r\n</ion-header-->\r\n<ion-content home-page *ngIf=\"type_login==2\">\r\n     <ion-header>\r\n      <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n          <ion-menu-button></ion-menu-button>\r\n        </ion-buttons>\r\n        <ion-title>Goals</ion-title>\r\n\t\t<!--ion-buttons mr-10 (click)=\"presentModal()\" slot=\"end\">\r\n\t\t  <img height=\"22px\" src=\"assets/images/jar.png\"/>\r\n\t\t</ion-buttons-->\r\n      </ion-toolbar>\r\n\t  </ion-header>\r\n      <ion-slides #slideWithNav [options]=\"slideOptsOne\"   pager=\"true\" class=\"home-slider\">\r\n    \r\n    <ion-slide  hm-slider  *ngFor=\"let charity of list\"  routerLink=\"/charitydetail/{{charity?.id}}\">\r\n      <img src=\"{{IMAGES_URL}}/{{charity?.image}}\" style=\"width:100%;\"/>\r\n      <div class=\"sld_cnt\">\r\n        <div>\r\n        <h3>{{charity?.title}}</h3>\r\n        <p>{{charity?.description.substring(0,100)}}...</p>\r\n\t\t<ion-row>\r\n\t\t<!--><ion-col size=\"6\">\r\n        <ion-button shape=\"round\">Give Now</ion-button>\r\n\t\t</ion-col></-->\r\n\t\t<ion-col size=\"12\" class=\"ion-no-padding\">\r\n\t\t<p class=\"ion-text-left\"><b>{{charity?.meals}} Meals</b></p>\r\n\t\t</ion-col>\r\n\t\t</ion-row>\r\n      </div>\r\n      </div>\r\n    </ion-slide>\r\n    \r\n  </ion-slides>\r\n<ion-row>\r\n\r\n\r\n  <ion-col size=\"12\" class=\"ion-padding-start ion-padding-end\"> \r\n    <div class=\"donationjar\">\r\n      <h3><span>Donation</span> Jar</h3>\r\n  \r\n\t  <div donationimg>\r\n\t   <img src=\"assets/images/don.gif\"/>\r\n\t  </div>\r\n     <!--p>Please press button below to donate 25 cents</p-->\r\n     <p>Click here to feed a child</p>\r\n\t <p>Each meal is only {{totalcents}} cents</p>\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"give_in()\">Give Now</ion-button>\r\n<span>To Donate More <a href=\"javasctipt:void(0)\"(click)=\"give_in()\">Click Here</a> </span>     \r\n    </div>\r\n  </ion-col>\r\n</ion-row>\r\n\r\n</ion-content>\r\n\r\n<ion-content home-page    *ngIf=\"type_login==1\">\r\n     <ion-header>\r\n      <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n          <ion-menu-button></ion-menu-button>\r\n        </ion-buttons>\r\n        <ion-title>Goals</ion-title>\r\n\t\t<ion-buttons mr-10 (click)=\"presentModal()\" slot=\"end\">\r\n\t\t  <img height=\"22px\" src=\"assets/images/jar.png\"/>\r\n\t\t</ion-buttons>\r\n      </ion-toolbar>\r\n\t  </ion-header>\r\n      <ion-slides #slideWithNav [options]=\"slideOptsOne\"  (ionSlideWillChange)=\"onSlideChangeStart($event)\" (ionSlideDidChange)=\"onSlideChanged($event)\" pager=\"true\" class=\"home-slider\">\r\n    \r\n    <ion-slide  hm-slider *ngFor=\"let charity of list\">\r\n      <img src=\"{{IMAGES_URL}}/{{charity?.image}}\" style=\"width:100%;\"/>\r\n      <div class=\"sld_cnt\">\r\n        <div>\r\n        <h3 routerLink=\"/charitydetail/{{charity?.id}}\">{{charity?.title}}</h3>\r\n        <p>{{charity?.description.substring(0,100)}}...</p>\r\n\t\t<ion-row>\r\n\t\t<ion-col size=\"6\">\r\n        <ion-button shape=\"round\" (click)=\"give(charity?.id)\">Give Now</ion-button>\r\n\t\t</ion-col>\r\n\t\t<ion-col size=\"6\">\r\n\t\t<p class=\"ion-text-right\"><b>{{charity?.meals}} Meals</b></p>\r\n\t\t</ion-col>\r\n\t\t</ion-row>\r\n      </div>\r\n      </div>\r\n    </ion-slide>\r\n   \r\n  </ion-slides>\r\n<ion-row>\r\n\r\n\r\n  <ion-col size=\"12\" class=\"ion-padding-start ion-padding-end\"> \r\n    <div class=\"service_box home_page\"> \r\n\t<h2 heads>Get Certified For Doing Good</h2>\r\n\t<ion-slides #slideWithNav [options]=\"slideOptsOne\"  (ionSlideWillChange)=\"onSlideChangeStart($event)\" (ionSlideDidChange)=\"onSlideChanged($event)\" pager=\"true\" class=\"home-slider\" loop=\"false\" >\r\n\t<ion-slide>\r\n    <div class=\"width100\"> \r\n      <h3><span>Feed </span>  A Child</h3>\r\n      <!--p>Show that your company cares</p-->\r\n\t  <div omgcertify>\r\n\t   <img src=\"assets/images/omg.png\"/>\r\n\t  </div>\r\n      <ion-button shape=\"round\" fill=\"outline\" href=\"https://omguarantee.com/company-registration/\">Get Certified</ion-button>\r\n    </div>\r\n\t  </ion-slide>\r\n     </ion-slides>\r\n    </div>\r\n  </ion-col>\r\n</ion-row>\r\n<ion-row>\r\n\r\n\r\n  <ion-col size=\"12\" class=\"ion-padding-start ion-padding-end\"> \r\n    <div class=\"donationjar\">\r\n      <h3><span>Donation</span> Jar</h3>\r\n  \r\n\t  <div donationimg>\r\n\t   <img src=\"assets/images/don.gif\"/>\r\n\t  </div>\r\n     <!--p>Please press button below to donate 25 cents</p-->\r\n     <p>Click here to feed a child</p>\r\n\t  <p>Each meal is only 25 cents</p>\r\n<ion-button  expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"give_in()\">Give Now</ion-button>\r\n<span>To Donate More <a href=\"javasctipt:void(0)\"(click)=\"give_in()\">Click Here</a> </span>     \r\n    </div>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-content>\r\n";
+      /***/
+    },
+
+    /***/
+    "./src/app/home/home-routing.module.ts":
+    /*!*********************************************!*\
+      !*** ./src/app/home/home-routing.module.ts ***!
+      \*********************************************/
+
+    /*! exports provided: HomePageRoutingModule */
+
+    /***/
+    function srcAppHomeHomeRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "HomePageRoutingModule", function () {
+        return HomePageRoutingModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./home.page */
+      "./src/app/home/home.page.ts");
+
+      var routes = [{
+        path: '',
+        component: _home_page__WEBPACK_IMPORTED_MODULE_3__["HomePage"]
+      }];
+
+      var HomePageRoutingModule = function HomePageRoutingModule() {
+        _classCallCheck(this, HomePageRoutingModule);
+      };
+
+      HomePageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+      })], HomePageRoutingModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/home/home.module.ts":
+    /*!*************************************!*\
+      !*** ./src/app/home/home.module.ts ***!
+      \*************************************/
+
+    /*! exports provided: HomePageModule */
+
+    /***/
+    function srcAppHomeHomeModuleTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "HomePageModule", function () {
+        return HomePageModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _home_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./home-routing.module */
+      "./src/app/home/home-routing.module.ts");
+      /* harmony import */
+
+
+      var _home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./home.page */
+      "./src/app/home/home.page.ts");
+
+      var HomePageModule = function HomePageModule() {
+        _classCallCheck(this, HomePageModule);
+      };
+
+      HomePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _home_routing_module__WEBPACK_IMPORTED_MODULE_5__["HomePageRoutingModule"]],
+        declarations: [_home_page__WEBPACK_IMPORTED_MODULE_6__["HomePage"]]
+      })], HomePageModule);
+      /***/
+    },
+
+    /***/
+    "./src/app/home/home.page.scss":
+    /*!*************************************!*\
+      !*** ./src/app/home/home.page.scss ***!
+      \*************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppHomeHomePageScss(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "[home-page] {\n  margin: 0 10px !important;\n  --background: #f3f3f3;\n}\n\n[home-page] ion-header {\n  position: absolute;\n}\n\n[home-page] ion-header ion-toolbar {\n  --background: transparent;\n  --border-width: 0;\n}\n\n[home-page] ion-header ion-toolbar ion-buttons {\n  color: var(--ion-color-white);\n}\n\n[home-page] ion-header ion-toolbar ion-buttons[mr-10] {\n  margin-right: 10px;\n}\n\n[home-page] ion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\n[home-page] ion-header::after {\n  display: none;\n}\n\n[home-page] .home-slider [hm-slider] {\n  --bullet-background:#dcdcdc;\n  --bullet-background-active:var(--ion-color-primary);\n  display: block;\n  text-align: left;\n  border-radius: 0px 0px 20px 20px;\n  overflow: hidden;\n}\n\n[home-page] .home-slider [hm-slider] img {\n  border-radius: 0px 0px 20px 20px;\n  height: 65vh;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 7px;\n  top: 0;\n  background: rgba(0, 0, 0, 0.6);\n  color: var(--ion-color-white);\n  padding: 25px 25px 40px 25px;\n  display: flex;\n  align-items: flex-end;\n  border-radius: 0 0 20px 20px;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt h3 {\n  font-size: 16px;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt p {\n  font-size: 12px;\n  color: var(--ion-color-white);\n  margin: 10px 0;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt ion-button {\n  font-size: 12px;\n  --padding-start: 30px;\n  --padding-end: 25px;\n  letter-spacing: 0.7px;\n  --background:var(--ion-color-primary);\n  margin: 0;\n}\n\n[home-page] .home-slider .swiper-pagination {\n  --scroll-bar-background: red;\n}\n\n[home-page] .service_box {\n  padding: 25px 8px 0px;\n  border-radius: 10px;\n  background-color: var(--ion-color-white);\n  position: relative;\n  color: var(--ion-color-black);\n  text-align: center;\n  background-image: url('srt.png'), url('srb.png');\n  background-position: 10px top, right 15px bottom;\n  background-repeat: no-repeat, no-repeat;\n  background-size: 35px;\n  margin-bottom: 10px;\n  width: 100%;\n  /*margin-top: 7px;*/\n}\n\n[home-page] .service_box [heads] {\n  margin: 0;\n  font-weight: 600;\n  display: inline-block;\n  font-size: 18px;\n  position: relative;\n  z-index: 1;\n}\n\n[home-page] .service_box [heads]:after {\n  content: \"\";\n  height: 30px;\n  width: 30px;\n  background: var(--ion-color-softgreen);\n  display: inline-block;\n  position: absolute;\n  bottom: -4px;\n  left: -10px;\n  opacity: 0.5;\n  border-radius: 50%;\n  z-index: -1;\n}\n\n[home-page] .service_box .width100 {\n  width: 100%;\n  padding: 0px 0px 40px;\n}\n\n[home-page] .service_box .width100 [omgcertify] img {\n  max-width: 90px;\n}\n\n[home-page] .service_box .width100 h3 {\n  margin: 10px 0px 10px;\n  font-weight: 500;\n  display: inline-block;\n  font-size: 17px;\n  color: #1d1d1d;\n}\n\n[home-page] .service_box .width100 h3 span {\n  position: relative;\n  z-index: 1;\n}\n\n[home-page] .service_box .width100 h3 span:after {\n  content: \"\";\n  height: 6px;\n  width: 100%;\n  background: var(--ion-color-softgreen);\n  /*opacity:.5;*/\n  display: inline-block;\n  position: absolute;\n  bottom: 2px;\n  left: 0;\n  z-index: -1;\n}\n\n[home-page] .service_box .width100 p {\n  margin: 7px 0px 7px;\n  color: rgba(0, 0, 0, 0.5);\n  font-size: 13px;\n}\n\n[home-page] .service_box .width100 ion-button {\n  font-size: 13px;\n  color: var(--ion-color-black);\n  letter-spacing: initial;\n  width: 85%;\n}\n\n[home-page] {\n  margin: 0 10px !important;\n  --background: #f3f3f3;\n}\n\n[home-page] ion-header {\n  position: absolute;\n}\n\n[home-page] ion-header ion-toolbar {\n  --background: transparent;\n  --border-width: 0;\n}\n\n[home-page] ion-header ion-toolbar ion-buttons {\n  color: var(--ion-color-white);\n}\n\n[home-page] ion-header ion-toolbar ion-buttons[mr-10] {\n  margin-right: 10px;\n}\n\n[home-page] ion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\n[home-page] ion-header::after {\n  display: none;\n}\n\n[home-page] .home-slider [hm-slider] {\n  --bullet-background:#dcdcdc;\n  --bullet-background-active:var(--ion-color-primary);\n  display: block;\n  text-align: left;\n  border-radius: 0px 0px 20px 20px;\n  overflow: hidden;\n}\n\n[home-page] .home-slider [hm-slider] img {\n  border-radius: 0px 0px 20px 20px;\n  height: 43vh;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 7px;\n  top: 0;\n  background: rgba(0, 0, 0, 0.6);\n  color: var(--ion-color-white);\n  padding: 25px 25px 40px 25px;\n  display: flex;\n  align-items: flex-end;\n  border-radius: 0 0 20px 20px;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt h3 {\n  font-size: 16px;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt p {\n  font-size: 12px;\n  color: var(--ion-color-white);\n  margin: 5px 0px 0px;\n}\n\n[home-page] .home-slider [hm-slider] .sld_cnt ion-button {\n  font-size: 12px;\n  --padding-start: 30px;\n  --padding-end: 25px;\n  letter-spacing: 0.7px;\n  --background:var(--ion-color-primary);\n  margin: 0;\n}\n\n[home-page] .home-slider .swiper-pagination {\n  --scroll-bar-background: red;\n}\n\n[home-page] .donationjar {\n  padding: 10px 10px  5px;\n  border-radius: 10px;\n  background-color: var(--ion-color-white);\n  position: relative;\n  color: var(--ion-color-black);\n  text-align: center;\n  margin-bottom: 0px;\n}\n\n[home-page] .donationjar [donationimg] {\n  margin: 0px;\n}\n\n[home-page] .donationjar [donationimg] img {\n  max-width: 132px;\n}\n\n[home-page] .donationjar h3 {\n  margin: 0;\n  font-weight: 600;\n  display: inline-block;\n  font-size: 18px;\n}\n\n[home-page] .donationjar h3 span {\n  position: relative;\n  z-index: 1;\n}\n\n[home-page] .donationjar h3 span:after {\n  content: \"\";\n  height: 4px;\n  width: 100%;\n  background: var(--ion-color-softgreen);\n  /*opacity:.5;*/\n  display: inline-block;\n  position: absolute;\n  bottom: 5px;\n  left: 0;\n  z-index: -1;\n}\n\n[home-page] .donationjar p {\n  color: rgba(0, 0, 0, 0.5);\n  font-size: 13px;\n  margin: 0;\n}\n\n[home-page] .donationjar span {\n  font-size: 14px;\n  line-height: 22px;\n  font-weight: 300;\n  color: #adadad;\n  margin-top: 0px;\n  display: block;\n  text-align: center;\n}\n\n[home-page] .donationjar .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 0px;\n  --box-shadow: none;\n  min-height: 42px;\n  margin-bottom: 0px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlCQUF5QjtFQUN6QixxQkFBYTtBQUNqQjs7QUFFQTtFQUFHLGtCQUFpQjtBQUVwQjs7QUFFQTtFQUZJLHlCQUFhO0VBQWEsaUJBQWU7QUFLN0M7O0FBRUE7RUFKSSw2QkFBNEI7QUFNaEM7O0FBRUE7RUFMSSxrQkFBaUI7QUFPckI7O0FBRUE7RUFMSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQU96RDs7QUFFQTtFQUpDLGFBQVk7QUFNYjs7QUFFQTtFQURRLDJCQUFvQjtFQUNwQixtREFBMkI7RUFDM0IsY0FBYTtFQUNiLGdCQUFlO0VBQ2YsZ0NBQWdDO0VBQ2hDLGdCQUFlO0FBR3ZCOztBQUVBO0VBRkssZ0NBQWdDO0VBQ2xDLFlBQVk7RUFDWixvQkFBaUI7S0FBakIsaUJBQWlCO0FBSXBCOztBQUVBO0VBSFksa0JBQWlCO0VBQ2pCLE9BQU07RUFDTixRQUFPO0VBQ1AsV0FBVTtFQUNWLE1BQUs7RUFDTCw4QkFBMkI7RUFDM0IsNkJBQTRCO0VBQzVCLDRCQUE0QjtFQUM1QixhQUFZO0VBQ1oscUJBQW9CO0VBQ3BCLDRCQUEyQjtBQUt2Qzs7QUFFQTtFQUxnQixlQUFjO0FBTzlCOztBQUVBO0VBTmdCLGVBQWM7RUFDZCw2QkFBNEI7RUFDNUIsY0FBYztBQVE5Qjs7QUFFQTtFQVBnQixlQUFlO0VBQ2YscUJBQWdCO0VBQ2hCLG1CQUFjO0VBQ2QscUJBQXFCO0VBQ3JCLHFDQUFhO0VBQ2IsU0FBUztBQVN6Qjs7QUFFQTtFQUhJLDRCQUF3QjtBQUs1Qjs7QUFFQTtFQUpRLHFCQUFvQjtFQUNwQixtQkFBa0I7RUFDbEIsd0NBQXVDO0VBQ3ZDLGtCQUFpQjtFQUNqQiw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ2pCLGdEQUF1RjtFQUN2RixnREFBZ0Q7RUFDdEQsdUNBQXVDO0VBQ3ZDLHFCQUFxQjtFQUNyQixt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ZixjQUFjO0VBQ2Qsa0JBQWtCO0FBcUJ0Qjs7QUFFQTtFQW5CRyxzQ0FBYTtFQUNiLGVBQWU7RUFDZixrQkFBYTtFQUNKLGdCQUFnQjtFQUN6QixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLG1CQUFtQjtBQXFCdEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiW2hvbWUtcGFnZV17XHJcbiAgICBtYXJnaW46IDAgMTBweCAhaW1wb3J0YW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZjNmM2YzO1xyXG5pb24taGVhZGVyXHJcblx0e1xyXG5cdCAgcG9zaXRpb246YWJzb2x1dGU7XHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7LS1ib3JkZXItd2lkdGg6IDA7XHJcblx0ICBpb24tYnV0dG9uc1xyXG5cdCAge1xyXG5cdCAgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0ICAgJlttci0xMF1cclxuXHQgICB7XHJcblx0ICAgbWFyZ2luLXJpZ2h0OjEwcHg7XHJcblx0ICAgfVxyXG5cdCAgfVxyXG5cdFx0ICBpb24tdGl0bGV7XHJcblx0XHQgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHQgIHRleHQtYWxpZ246Y2VudGVyO1xyXG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWYgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblx0fVxyXG5cdCY6OmFmdGVyXHJcblx0e1xyXG5cdGRpc3BsYXk6bm9uZTtcclxuXHR9XHJcblx0fVxyXG5cclxuICAgIC5ob21lLXNsaWRlcntcclxuICAgICAgICBcclxuICAgIFtobS1zbGlkZXJde1xyXG4gICAgICAgIC0tYnVsbGV0LWJhY2tncm91bmQ6I2RjZGNkYztcclxuICAgICAgICAtLWJ1bGxldC1iYWNrZ3JvdW5kLWFjdGl2ZTp2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICAgICAgZGlzcGxheTpibG9jaztcclxuICAgICAgICB0ZXh0LWFsaWduOmxlZnQ7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMHB4IDBweCAyMHB4IDIwcHg7XHJcbiAgICAgICAgb3ZlcmZsb3c6aGlkZGVuO1xyXG4gICAgICAgIFxyXG4gICAgICAgIGltZ3tcclxuXHRcdCAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjBweCAyMHB4O1xyXG5cdFx0XHRoZWlnaHQ6IDY1dmg7XHJcblx0XHRcdG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgICAgIH1cclxuICAgICAgICAuc2xkX2NudHtcclxuICAgICAgICAgICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICAgICAgICAgIGxlZnQ6MDtcclxuICAgICAgICAgICAgcmlnaHQ6MDtcclxuICAgICAgICAgICAgYm90dG9tOjdweDtcclxuICAgICAgICAgICAgdG9wOjA7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQ6cmdiYSgwLDAsMCwwLjYwKTtcclxuICAgICAgICAgICAgY29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgICAgICAgICAgcGFkZGluZzoyNXB4IDI1cHggNDBweCAyNXB4IDtcclxuICAgICAgICAgICAgZGlzcGxheTpmbGV4O1xyXG4gICAgICAgICAgICBhbGlnbi1pdGVtczpmbGV4LWVuZDtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czowIDAgMjBweCAyMHB4O1xyXG4gICAgICAgICAgICBoM3tcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZToxNnB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIHB7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6MTJweDtcclxuICAgICAgICAgICAgICAgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW46IDEwcHggMDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICBpb24tYnV0dG9ue1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgLS1wYWRkaW5nLXN0YXJ0OiAzMHB4O1xyXG4gICAgICAgICAgICAgICAgLS1wYWRkaW5nLWVuZDogMjVweDtcclxuICAgICAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjdweDtcclxuICAgICAgICAgICAgICAgIC0tYmFja2dyb3VuZDp2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgIFxyXG59XHJcbi5ob21lLXNsaWRlciAuc3dpcGVyLXBhZ2luYXRpb24ge1xyXG4gICAgLS1zY3JvbGwtYmFyLWJhY2tncm91bmQ6IHJlZDtcclxufVxyXG4gICAgLnNlcnZpY2VfYm94e1xyXG4gICAgICAgIHBhZGRpbmc6MjVweCA4cHggMHB4O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6MTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICAgICAgcG9zaXRpb246cmVsYXRpdmU7XHJcbiAgICAgICAgY29sb3I6dmFyKC0taW9uLWNvbG9yLWJsYWNrKTtcclxuICAgICAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOnVybChcIi4uLy4uL2Fzc2V0cy9pbWFnZXMvc3J0LnBuZ1wiKSwgdXJsKFwiLi4vLi4vYXNzZXRzL2ltYWdlcy9zcmIucG5nXCIpO1xyXG4gICAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IDEwcHggdG9wLCByaWdodCAxNXB4IGJvdHRvbTtcclxuXHRcdGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQsIG5vLXJlcGVhdDtcclxuXHRcdGJhY2tncm91bmQtc2l6ZTogMzVweDtcclxuXHRcdG1hcmdpbi1ib3R0b206MTBweDtcclxuXHQgICAgd2lkdGg6IDEwMCU7XHRcclxuXHRcdC8qbWFyZ2luLXRvcDogN3B4OyovXHJcblx0XHRbaGVhZHNdXHJcblx0XHR7XHJcblx0XHRcdG1hcmdpbjogMDtcclxuXHRcdFx0Zm9udC13ZWlnaHQ6IDYwMDtcclxuXHRcdFx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG5cdFx0XHRmb250LXNpemU6MThweDtcdFx0XHJcblx0XHQgICAgcG9zaXRpb246cmVsYXRpdmU7XHJcblx0XHRcdHotaW5kZXg6MTtcclxuXHRcdFx0XHQmOmFmdGVye1xyXG5cdFx0XHRcdFx0XHRcdGNvbnRlbnQ6IFwiXCI7XHJcblx0XHRcdFx0XHRcdFx0aGVpZ2h0OiAzMHB4O1xyXG5cdFx0XHRcdFx0XHRcdHdpZHRoOiAzMHB4O1xyXG5cdFx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1zb2Z0Z3JlZW4pO1xyXG5cdFx0XHRcdFx0XHRcdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHRcdFx0XHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0XHRcdFx0Ym90dG9tOiAtNHB4O1xyXG5cdFx0XHRcdFx0XHRcdGxlZnQ6IC0xMHB4O1xyXG5cdFx0XHRcdFx0XHRcdG9wYWNpdHk6IDAuNTtcclxuXHRcdFx0XHRcdFx0XHRib3JkZXItcmFkaXVzOiA1MCU7XHJcblx0XHRcdFx0XHRcdFx0ei1pbmRleDogLTE7XHJcblx0XHRcdFx0fVx0XHRcdFxyXG5cdFx0fVxyXG5cdFx0XHQud2lkdGgxMDBcclxuXHRcdFx0e1xyXG5cdFx0XHR3aWR0aDoxMDAlO1xyXG5cdFx0ICAgIHBhZGRpbmc6IDBweCAwcHggNDBweDtcdFxyXG5cdFx0XHRcclxuXHRcdFx0W29tZ2NlcnRpZnldXHJcblx0XHRcdHtcclxuXHRcdFx0aW1nXHJcblx0XHRcdHtcclxuXHRcdFx0IG1heC13aWR0aDogOTBweDtcclxuXHRcdFx0fVxyXG5cdFx0XHR9XHJcblx0XHRcdGgze1xyXG5cdFx0XHRcdG1hcmdpbjogMTBweCAwcHggMTBweDtcclxuXHRcdFx0XHRmb250LXdlaWdodDogNTAwO1xyXG5cdFx0XHRcdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHRcdFx0XHRmb250LXNpemU6IDE3cHg7XHJcblxyXG5cdFx0XHRcdGNvbG9yOiAjMWQxZDFkO1xyXG5cdFx0XHRcdHNwYW57XHJcblx0XHRcdFx0XHRwb3NpdGlvbjpyZWxhdGl2ZTtcclxuXHRcdFx0XHRcdHotaW5kZXg6MTtcclxuXHRcdFx0XHRcdCY6YWZ0ZXJ7XHJcblx0XHRcdFx0XHRcdGNvbnRlbnQ6IFwiXCI7XHJcblx0XHRcdFx0XHRcdGhlaWdodDogNnB4O1xyXG5cdFx0XHRcdFx0XHR3aWR0aDogMTAwJTtcclxuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXNvZnRncmVlbik7XHJcblx0XHRcdFx0XHRcdC8qb3BhY2l0eTouNTsqL1xyXG5cdFx0XHRcdFx0XHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcblx0XHRcdFx0XHRcdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRcdFx0XHRcdFx0Ym90dG9tOiAycHg7XHJcblx0XHRcdFx0XHRcdGxlZnQ6IDA7XHJcblx0XHRcdFx0XHRcdHotaW5kZXg6IC0xO1xyXG5cdFx0XHRcdFx0fVxyXG5cdFx0XHRcdH1cclxuXHRcdFx0fVxyXG5cdFx0XHRwe21hcmdpbjogN3B4IDBweCA3cHg7XHJcblx0XHRcdFx0ICAgY29sb3I6IHJnYmEoMCwgMCwgMCAsIDAuNTApO1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTNweDtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24tYnV0dG9ue1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTNweDtcclxuXHRcdFx0XHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLWJsYWNrKTtcclxuXHRcdFx0XHRsZXR0ZXItc3BhY2luZzppbml0aWFsO1xyXG5cdFx0XHRcdHdpZHRoOjg1JTtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG4gICAgfVxyXG59XHJcbltob21lLXBhZ2Vde1xyXG4gICAgbWFyZ2luOiAwIDEwcHggIWltcG9ydGFudDtcclxuICAgIC0tYmFja2dyb3VuZDogI2YzZjNmMztcclxuaW9uLWhlYWRlclxyXG5cdHtcclxuXHQgIHBvc2l0aW9uOmFic29sdXRlO1xyXG5cdCAgaW9uLXRvb2xiYXJcclxuXHQgIHstLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50Oy0tYm9yZGVyLXdpZHRoOiAwO1xyXG5cdCAgaW9uLWJ1dHRvbnNcclxuXHQgIHtcclxuXHQgICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdCAgICZbbXItMTBdXHJcblx0ICAge1xyXG5cdCAgIG1hcmdpbi1yaWdodDoxMHB4O1xyXG5cdCAgIH1cclxuXHQgIH1cclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG5cdH1cclxuXHJcbiAgICAuaG9tZS1zbGlkZXJ7XHJcbiAgICAgICAgXHJcbiAgICBbaG0tc2xpZGVyXXtcclxuICAgICAgICAtLWJ1bGxldC1iYWNrZ3JvdW5kOiNkY2RjZGM7XHJcbiAgICAgICAgLS1idWxsZXQtYmFja2dyb3VuZC1hY3RpdmU6dmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG4gICAgICAgIGRpc3BsYXk6YmxvY2s7XHJcbiAgICAgICAgdGV4dC1hbGlnbjpsZWZ0O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjBweCAyMHB4O1xyXG4gICAgICAgIG92ZXJmbG93OmhpZGRlbjtcclxuICAgICAgICBcclxuICAgICAgICBpbWd7XHJcblx0XHQgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxuXHRcdFx0aGVpZ2h0OiA0M3ZoO1xyXG5cdFx0XHRvYmplY3QtZml0OiBjb3ZlcjtcclxuICAgICAgICB9XHJcbiAgICAgICAgLnNsZF9jbnR7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOmFic29sdXRlO1xyXG4gICAgICAgICAgICBsZWZ0OjA7XHJcbiAgICAgICAgICAgIHJpZ2h0OjA7XHJcbiAgICAgICAgICAgIGJvdHRvbTo3cHg7XHJcbiAgICAgICAgICAgIHRvcDowO1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOnJnYmEoMCwwLDAsMC42MCk7XHJcbiAgICAgICAgICAgIGNvbG9yOnZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6MjVweCAyNXB4IDQwcHggMjVweCA7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6ZmxleDtcclxuICAgICAgICAgICAgYWxpZ24taXRlbXM6ZmxleC1lbmQ7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6MCAwIDIwcHggMjBweDtcclxuICAgICAgICAgICAgaDN7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6MTZweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICBwe1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOjEycHg7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luOiA1cHggMHB4IDBweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICBpb24tYnV0dG9ue1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgLS1wYWRkaW5nLXN0YXJ0OiAzMHB4O1xyXG4gICAgICAgICAgICAgICAgLS1wYWRkaW5nLWVuZDogMjVweDtcclxuICAgICAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjdweDtcclxuICAgICAgICAgICAgICAgIC0tYmFja2dyb3VuZDp2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgIFxyXG59XHJcbi5ob21lLXNsaWRlciAuc3dpcGVyLXBhZ2luYXRpb24ge1xyXG4gICAgLS1zY3JvbGwtYmFyLWJhY2tncm91bmQ6IHJlZDtcclxufS5kb25hdGlvbmphcntcclxuICAgICAgICAgcGFkZGluZzoxMHB4IDEwcHggIDVweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOjEwcHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG4gICAgICAgIHBvc2l0aW9uOnJlbGF0aXZlO1xyXG4gICAgICAgIGNvbG9yOnZhcigtLWlvbi1jb2xvci1ibGFjayk7XHJcbiAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcblx0XHRtYXJnaW4tYm90dG9tOjBweDtcclxuXHRcdFtkb25hdGlvbmltZ11cclxuXHRcdHsgICAgbWFyZ2luOjBweDtcclxuXHRcdGltZ1xyXG5cdFx0e1xyXG5cdFx0IG1heC13aWR0aDogMTMycHg7XHJcblx0XHR9XHJcblx0XHR9XHJcbiAgICAgICAgaDN7XHJcbiAgICAgICAgICAgIG1hcmdpbjogMDtcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBmb250LXNpemU6MThweDtcclxuICAgICAgICAgICAgc3BhbntcclxuICAgICAgICAgICAgICAgIHBvc2l0aW9uOnJlbGF0aXZlO1xyXG5cdFx0XHRcdHotaW5kZXg6MTtcclxuICAgICAgICAgICAgICAgICY6YWZ0ZXJ7XHJcbiAgICAgICAgICAgICAgICAgICAgY29udGVudDogXCJcIjtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDRweDtcclxuICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc29mdGdyZWVuKTtcclxuXHRcdFx0XHRcdC8qb3BhY2l0eTouNTsqL1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgICAgICAgICAgYm90dG9tOiA1cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbGVmdDogMDtcclxuICAgICAgICAgICAgICAgICAgICB6LWluZGV4OiAtMTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgICAgICBwe1xyXG4gICAgICAgICAgICBjb2xvcjogcmdiYSgwLCAwLCAwICwgMC41MCk7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTNweDtcclxuXHRcdFx0bWFyZ2luOjA7XHJcbiAgICAgICAgfVxyXG4gc3BhblxyXG4gIHtmb250LXNpemU6IDE0cHg7XHJcbiAgICBsaW5lLWhlaWdodDogMjJweDtcclxuICAgIGZvbnQtd2VpZ2h0OiAzMDA7XHJcbiAgICBjb2xvcjogI2FkYWRhZDtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIFxyXG4gIH1cclxuXHRcdC5idG4tbG9zbnN7XHJcblx0XHRcdC0tYmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAwcHg7XHJcblx0XHRcdC0tYm94LXNoYWRvdzogbm9uZTtcclxuICAgICAgICAgICAgbWluLWhlaWdodDogNDJweDtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMHB4O1xyXG5cdFx0XHR0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG5cdFx0XHRsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cdFx0fVx0XHRcclxuICAgIH1cclxufVxyXG4iXX0= */";
+      /***/
+    },
+
+    /***/
+    "./src/app/home/home.page.ts":
+    /*!***********************************!*\
+      !*** ./src/app/home/home.page.ts ***!
+      \***********************************/
+
+    /*! exports provided: HomePage */
+
+    /***/
+    function srcAppHomeHomePageTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "HomePage", function () {
+        return HomePage;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../services/globalFooService.service */
+      "./src/app/services/globalFooService.service.ts");
+      /* harmony import */
+
+
+      var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../common/common.service */
+      "./src/app/common/common.service.ts");
+      /* harmony import */
+
+
+      var _services_api_api_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../services/api/api.service */
+      "./src/app/services/api/api.service.ts");
+      /* harmony import */
+
+
+      var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../config */
+      "./src/app/config.ts");
+      /* harmony import */
+
+
+      var _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../addamount/addamount.page */
+      "./src/app/addamount/addamount.page.ts");
+
+      var HomePage = /*#__PURE__*/function () {
+        function HomePage(api, globalFooService, modalController, common) {
+          var _this = this;
+
+          _classCallCheck(this, HomePage);
+
+          this.api = api;
+          this.globalFooService = globalFooService;
+          this.modalController = modalController;
+          this.common = common;
+          this.IMAGES_URL = _config__WEBPACK_IMPORTED_MODULE_6__["config"].IMAGES_URL;
+          this.errors = ['', null, undefined];
+          this.list = [];
+          this.slideOptsOne = {
+            initialSlide: 0,
+            slidesPerView: 1,
+            autoplay: true,
+            speed: 900
+          };
+          this.globalFooService.getObservable().subscribe(function (data) {
+            if (_this.errors.indexOf(data.foo) == -1) {
+              _this.type_login = data.foo.data.type;
+              localStorage.setItem('type_login', data.foo.data.type);
+            }
+
+            console.log(_this.errors.indexOf(data.set));
+
+            if (_this.errors.indexOf(data.set) == -1) {
+              _this.type_login = data.set.data;
+              localStorage.setItem('type_login', '1');
+            }
+          });
+        }
+
+        _createClass(HomePage, [{
+          key: "give_in",
+          value: function give_in() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var _this2 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      _context.next = 2;
+                      return this.modalController.create({
+                        component: _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_7__["AddamountPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {}
+                      });
+
+                    case 2:
+                      modal = _context.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this2.errors.indexOf(detail.data) == -1) {//this.team.joins=this.team.joins - 1;
+                          //this.getuserteams();
+                        }
+                      });
+                      _context.next = 6;
+                      return modal.present();
+
+                    case 6:
+                      return _context.abrupt("return", _context.sent);
+
+                    case 7:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
+          key: "give",
+          value: function give(id) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this3 = this;
+
+              var modal;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      _context2.next = 2;
+                      return this.modalController.create({
+                        component: _addamount_addamount_page__WEBPACK_IMPORTED_MODULE_7__["AddamountPage"],
+                        cssClass: 'leaveteam',
+                        componentProps: {
+                          id: id
+                        }
+                      });
+
+                    case 2:
+                      modal = _context2.sent;
+                      modal.onDidDismiss().then(function (detail) {
+                        if (_this3.errors.indexOf(detail.data) == -1) {//this.team.joins=this.team.joins - 1;
+                          //this.getuserteams();
+                        }
+                      });
+                      _context2.next = 6;
+                      return modal.present();
+
+                    case 6:
+                      return _context2.abrupt("return", _context2.sent);
+
+                    case 7:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+          }
+        }, {
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "ionViewDidEnter",
+          value: function ionViewDidEnter() {
+            this.userid = localStorage.getItem('userid');
+            this.type_login = localStorage.getItem('type_login');
+            this.Charitylist();
+          }
+        }, {
+          key: "Charitylist",
+          value: function Charitylist() {
+            var _this4 = this;
+
+            if (this.type_login == '2') {
+              this.api.post('tribesProject', '', '').subscribe(function (result) {
+                var res;
+                res = result;
+
+                if (res.status == 1) {
+                  _this4.list = res.data;
+                  _this4.totalcents = res.settings.totalcents;
+                } else {
+                  _this4.totalcents = res.settings.totalcents;
+                }
+              }, function (err) {});
+            } else {
+              this.api.post('tribesProjectCompany', '', '').subscribe(function (result) {
+                var res;
+                res = result;
+
+                if (res.status == 1) {
+                  _this4.list = res.data;
+                } else {}
+              }, function (err) {});
+            }
+          }
+        }]);
+
+        return HomePage;
+      }();
+
+      HomePage.ctorParameters = function () {
+        return [{
+          type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_5__["ApiService"]
+        }, {
+          type: _services_globalFooService_service__WEBPACK_IMPORTED_MODULE_3__["GlobalFooService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]
+        }, {
+          type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }];
+      };
+
+      HomePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-home',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! raw-loader!./home.page.html */
+        "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html"))["default"],
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+        /*! ./home.page.scss */
+        "./src/app/home/home.page.scss"))["default"]]
+      })], HomePage);
+      /***/
+    }
+  }]);
+})();
+//# sourceMappingURL=home-home-module-es5.js.map

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/tribes" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Activity Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div detailbanner>
+<img src="{{IMAGES_URL}}/{{activity?.image}}"/>
+</div>
+
+<div detailcontent class="ion-padding">
+<h2>{{activity?.title}}</h2>
+<h5>{{activity?.meals}} meals</h5>
+ <ion-note><ion-icon name="calendar-outline"></ion-icon> {{activity?.created_at | date : 'd MMM'}}</ion-note>
+<p>{{activity?.description}}</p>
+
+  <ion-button shape="round" expand="full" (click)="give(activity?.id)">Give Now</ion-button>
+</div>
+</ion-content>

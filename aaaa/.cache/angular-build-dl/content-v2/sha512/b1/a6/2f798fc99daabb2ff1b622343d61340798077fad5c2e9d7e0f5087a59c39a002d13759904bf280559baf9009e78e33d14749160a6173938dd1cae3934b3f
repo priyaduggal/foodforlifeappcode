@@ -1,0 +1,174 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["faq-faq-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/faq/faq.page.html":
+/*!*************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/faq/faq.page.html ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">FAQ</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n<ion-content class=\"ion-padding\">\r\n<div faqlist *ngFor=\"let faq of faqlist\">\r\n<h3 subhead>\r\n {{faq?.title}}\r\n</h3>\r\n\t<p>{{faq?.description}}</p>\r\n</div>\r\n<div  *ngIf=\"faqlist.length==0\" class=\"skeletonclass\">\r\n<div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%;\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div>\r\n<div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%;\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div><div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%;\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div><div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div><div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div><div faqlist>\r\n<h3 subhead>\r\n <ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text>\r\n</h3>\r\n\t<p><ion-skeleton-text animated style=\"width: 100%\" ></ion-skeleton-text></p>\r\n</div>\r\n</div>\r\n\r\n\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/faq/faq-routing.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/faq/faq-routing.module.ts ***!
+  \*******************************************/
+/*! exports provided: FaqPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FaqPageRoutingModule", function() { return FaqPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _faq_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./faq.page */ "./src/app/faq/faq.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _faq_page__WEBPACK_IMPORTED_MODULE_3__["FaqPage"]
+    }
+];
+let FaqPageRoutingModule = class FaqPageRoutingModule {
+};
+FaqPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], FaqPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/faq/faq.module.ts":
+/*!***********************************!*\
+  !*** ./src/app/faq/faq.module.ts ***!
+  \***********************************/
+/*! exports provided: FaqPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FaqPageModule", function() { return FaqPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _faq_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./faq-routing.module */ "./src/app/faq/faq-routing.module.ts");
+/* harmony import */ var _faq_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./faq.page */ "./src/app/faq/faq.page.ts");
+
+
+
+
+
+
+
+let FaqPageModule = class FaqPageModule {
+};
+FaqPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _faq_routing_module__WEBPACK_IMPORTED_MODULE_5__["FaqPageRoutingModule"]
+        ],
+        declarations: [_faq_page__WEBPACK_IMPORTED_MODULE_6__["FaqPage"]]
+    })
+], FaqPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/faq/faq.page.scss":
+/*!***********************************!*\
+  !*** ./src/app/faq/faq.page.scss ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content {\n  --background: #f7f7f7;\n}\n\nion-content [faqlist] {\n  margin-bottom: 20px;\n  padding: 10px 15px;\n  background: var(--ion-color-white);\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);\n  border-radius: 10px;\n}\n\nion-content [faqlist] [subhead] {\n  margin: 15px 0px 10px  0px;\n  font-size: 16px;\n  position: relative;\n  z-index: 1;\n  padding-left: 7px;\n}\n\nion-content [faqlist] [subhead]:after {\n  content: '';\n  position: absolute;\n  left: 0;\n  width: 30px;\n  height: 30px;\n  background: var(--ion-color-softgreen);\n  border-radius: 50%;\n  z-index: -1;\n  /*opacity: 0.5;*/\n  top: -6px;\n}\n\nion-content [faqlist] p {\n  font-size: 14px;\n  color: #999;\n  margin-bottom: 10px;\n}\n\n.skeletonclass h3 {\n  height: 12px;\n}\n\n.skeletonclass p {\n  height: 50px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmFxL2ZhcS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFJSSx1REFBaUI7RUFDbEIsaUJBQWU7QUFGbEI7O0FBSEE7RUFRSSw2QkFBNEI7RUFDNUIsa0JBQWlCO0VBQ1Qsa0JBQWtCO0VBQ2xCLDZDQUE2QztBQUR6RDs7QUFWQTtFQWdCQyxhQUFZO0FBRmI7O0FBSUM7RUFFRCxxQkFBYTtBQUZiOztBQUFDO0VBS0csbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixrQ0FBa0M7RUFDbEMsNENBQTRDO0VBQzVDLG1CQUFtQjtBQUR2Qjs7QUFSQztFQVdFLDBCQUEwQjtFQUMxQixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixpQkFBaUI7QUFDcEI7O0FBaEJDO0VBaUJFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1osc0NBQXNDO0VBQ3RDLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZ0JBQUE7RUFDQSxTQUFTO0FBR1o7O0FBN0JDO0VBK0JLLGVBQWU7RUFDbkIsV0FBVztFQUNYLG1CQUFtQjtBQUVyQjs7QUFHQTtFQUNBLFlBQVc7QUFBWDs7QUFFQTtFQUNBLFlBQVc7QUFDWCIsImZpbGUiOiJzcmMvYXBwL2ZhcS9mYXEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlclxyXG57XHJcblx0XHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0taW9uLWNvbG9yLWJhc2U6IHZhcigtLWlvbi1jb2xvci1iZ2dyYWRpZW50KSFpbXBvcnRhbnQ7XHJcblx0ICAtLWJvcmRlci13aWR0aDogMDtcclxuXHRcclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG59aW9uLWNvbnRlbnRcclxue1xyXG4tLWJhY2tncm91bmQ6ICNmN2Y3Zjc7XHJcbiBbZmFxbGlzdF1cclxuIHsgICAgXHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgcGFkZGluZzogMTBweCAxNXB4O1xyXG4gICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgIGJveC1zaGFkb3c6IDBweCAwcHggMTBweCByZ2JhKDAsIDAsIDAsIDAuMTUpO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuXHRbc3ViaGVhZF0ge1xyXG5cdFx0XHRtYXJnaW46IDE1cHggMHB4IDEwcHggIDBweDtcclxuXHRcdFx0Zm9udC1zaXplOiAxNnB4O1xyXG5cdFx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHRcdHotaW5kZXg6IDE7XHJcblx0XHRcdHBhZGRpbmctbGVmdDogN3B4O1xyXG5cdFx0XHQmOmFmdGVyIHtcclxuXHRcdFx0Y29udGVudDogJyc7XHJcblx0XHRcdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRcdFx0bGVmdDogMDtcclxuXHRcdFx0d2lkdGg6IDMwcHg7XHJcblx0XHRcdGhlaWdodDogMzBweDtcclxuXHRcdFx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXNvZnRncmVlbik7XHJcblx0XHRcdGJvcmRlci1yYWRpdXM6IDUwJTtcclxuXHRcdFx0ei1pbmRleDogLTE7XHJcblx0XHRcdC8qb3BhY2l0eTogMC41OyovXHJcblx0XHRcdHRvcDogLTZweDtcclxuXHRcdH1cclxuXHRcdH1cclxuXHRcdHBcclxuXHRcdHtcclxuXHRcdCAgICBmb250LXNpemU6IDE0cHg7XHJcblx0XHRjb2xvcjogIzk5OTtcclxuXHRcdG1hcmdpbi1ib3R0b206IDEwcHg7XHJcblx0XHR9XHJcbn1cclxuXHJcbn1cclxuLnNrZWxldG9uY2xhc3MgaDN7XHJcbmhlaWdodDoxMnB4O1xyXG59XHJcbi5za2VsZXRvbmNsYXNzIHB7XHJcbmhlaWdodDo1MHB4O1xyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/faq/faq.page.ts":
+/*!*********************************!*\
+  !*** ./src/app/faq/faq.page.ts ***!
+  \*********************************/
+/*! exports provided: FaqPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FaqPage", function() { return FaqPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+
+
+
+
+
+let FaqPage = class FaqPage {
+    constructor(api, router, common) {
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.faqlist = [];
+    }
+    ngOnInit() {
+    }
+    ionViewDidEnter() {
+        this.getallfaq();
+    }
+    getallfaq() {
+        this.api.post('GetAllFaq', '', '').subscribe((result) => {
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.faqlist = res.data;
+                //this.common.presentToast('FAQ fetched successfully !.','success');
+            }
+            else {
+                //this.common.presentToast(res.message,'danger');
+                this.faqlist = [];
+            }
+        }, err => {
+        });
+    }
+};
+FaqPage.ctorParameters = () => [
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+];
+FaqPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-faq',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./faq.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/faq/faq.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./faq.page.scss */ "./src/app/faq/faq.page.scss")).default]
+    })
+], FaqPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=faq-faq-module-es2015.js.map

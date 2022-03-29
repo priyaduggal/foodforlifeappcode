@@ -14,6 +14,7 @@ import * as $ from 'jquery';
 })
 export class ThetabledetailPage implements OnInit {
 list=[];
+totalcents:any;
 paymentlist=[];
 sublist=[];
 days:any;
@@ -54,6 +55,38 @@ slideOpts = {
        });
     return await modal.present();
   }
+  
+  meals(amt)
+  {
+	  //1dollar =100cents 
+	  //convert dollar into cents 
+	  
+	  var newamt=amt * 100;
+	  var newamt=newamt / this.totalcents;
+	  return newamt;
+  }
+    Charitylist()
+   {
+	  
+  	 	this.api.post('tribesProject', '','').subscribe((result) => {  
+		var res;
+		res = result;
+		if(res.status==1){
+		
+			this.totalcents=res.settings.totalcents;
+		}else
+		{
+			this.totalcents=res.settings.totalcents;
+		}
+        },
+        err => {
+             
+        });
+	  
+   }
+  
+  
+  
   cardno(id)
 	{
 		this.cardid=id;
@@ -242,6 +275,7 @@ slideOpts = {
 	  this.getsubscription();
 	  this.listpayment();
 	  this.subscriptionlistUser();
+	  this.Charitylist();
   }
   subscriptionlistUser()
   {

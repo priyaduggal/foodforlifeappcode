@@ -21,7 +21,10 @@ errors:any=['',null,undefined];
 userid:any;
 joined=[];
 team:any;
-  constructor(private globalFooService: GlobalFooService,public modalController: ModalController,public activatedRoute: ActivatedRoute,public api:ApiService, public router:Router,private common: CommonService) {
+  constructor(private globalFooService: GlobalFooService,
+  public modalController: ModalController,
+  public activatedRoute: ActivatedRoute,
+  public api:ApiService, public router:Router,private common: CommonService) {
 	this.teamid = activatedRoute.snapshot.paramMap.get('id');
 	this.globalFooService.getObservable().subscribe((data) => {
 	if(this.errors.indexOf(data.paydata1)==-1)

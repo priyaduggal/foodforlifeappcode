@@ -1,0 +1,176 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["terms-terms-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/terms/terms.page.html":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/terms/terms.page.html ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\t<ion-back-button defaultHref=\"/tabs/settings\" slot=\"start\">\r\n\t</ion-back-button>\r\n\t<ion-title class=\"ion-text-center\">Terms Of Use</ion-title>\r\n  </ion-toolbar>\r\n  </ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n<div class=\"content-terms\">\r\n        \r\n\t\t<div class=\"content-terms privacy_description\" [innerHTML]=\"privacy?.description\">\r\n\t\t</div>\r\n\t\t\r\n\t\t\r\n\t</div>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/terms/terms-routing.module.ts":
+/*!***********************************************!*\
+  !*** ./src/app/terms/terms-routing.module.ts ***!
+  \***********************************************/
+/*! exports provided: TermsPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermsPageRoutingModule", function() { return TermsPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _terms_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./terms.page */ "./src/app/terms/terms.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _terms_page__WEBPACK_IMPORTED_MODULE_3__["TermsPage"]
+    }
+];
+let TermsPageRoutingModule = class TermsPageRoutingModule {
+};
+TermsPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], TermsPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/terms/terms.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/terms/terms.module.ts ***!
+  \***************************************/
+/*! exports provided: TermsPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermsPageModule", function() { return TermsPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _terms_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./terms-routing.module */ "./src/app/terms/terms-routing.module.ts");
+/* harmony import */ var _terms_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./terms.page */ "./src/app/terms/terms.page.ts");
+
+
+
+
+
+
+
+let TermsPageModule = class TermsPageModule {
+};
+TermsPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _terms_routing_module__WEBPACK_IMPORTED_MODULE_5__["TermsPageRoutingModule"]
+        ],
+        declarations: [_terms_page__WEBPACK_IMPORTED_MODULE_6__["TermsPage"]]
+    })
+], TermsPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/terms/terms.page.scss":
+/*!***************************************!*\
+  !*** ./src/app/terms/terms.page.scss ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header ion-toolbar {\n  --ion-color-base: var(--ion-color-bggradient)!important;\n  --border-width: 0;\n}\n\nion-header ion-toolbar ion-title {\n  color: var(--ion-color-white);\n  text-align: center;\n  font-style: normal;\n  font-family: 'Poppins', sans-serif !important;\n}\n\nion-header::after {\n  display: none;\n}\n\nion-content .content-terms [subhead] {\n  margin: 15px 0px 10px  0px;\n  font-size: 18px;\n  position: relative;\n  z-index: 1;\n  padding-left: 7px;\n}\n\nion-content .content-terms [subhead]:after {\n  content: '';\n  position: absolute;\n  left: 0;\n  width: 30px;\n  height: 30px;\n  background: var(--ion-color-softgreen);\n  border-radius: 50%;\n  z-index: -1;\n  /*opacity: 0.5;*/\n  top: -6px;\n}\n\nion-content .content-terms p {\n  margin-top: 0px;\n  margin-bottom: 7px;\n  font-size: 14px;\n  line-height: 24px;\n  color: #999;\n  font-weight: 400;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGVybXMvdGVybXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBSUksdURBQWlCO0VBQ2xCLGlCQUFlO0FBRmxCOztBQUhBO0VBUUksNkJBQTRCO0VBQzVCLGtCQUFpQjtFQUNULGtCQUFrQjtFQUNsQiw2Q0FBNkM7QUFEekQ7O0FBVkE7RUFnQkMsYUFBWTtBQUZiOztBQUtBO0VBSUcsMEJBQTBCO0VBQzFCLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLGlCQUFpQjtBQUxwQjs7QUFIQTtFQVVHLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1osc0NBQXNDO0VBQ3RDLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZ0JBQUE7RUFDQSxTQUFTO0FBSFo7O0FBaEJBO0VBd0JHLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixXQUFZO0VBQ1osZ0JBQWdCO0FBSm5CIiwiZmlsZSI6InNyYy9hcHAvdGVybXMvdGVybXMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlclxyXG57XHJcblx0XHJcblx0ICBpb24tdG9vbGJhclxyXG5cdCAgey0taW9uLWNvbG9yLWJhc2U6IHZhcigtLWlvbi1jb2xvci1iZ2dyYWRpZW50KSFpbXBvcnRhbnQ7XHJcblx0ICAtLWJvcmRlci13aWR0aDogMDtcclxuXHRcclxuXHRcdCAgaW9uLXRpdGxle1xyXG5cdFx0ICBjb2xvcjp2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0ICB0ZXh0LWFsaWduOmNlbnRlcjtcclxuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cdH1cclxuXHQmOjphZnRlclxyXG5cdHtcclxuXHRkaXNwbGF5Om5vbmU7XHJcblx0fVxyXG59XHJcbmlvbi1jb250ZW50XHJcbntcdFxyXG5cdC5jb250ZW50LXRlcm1zIHtcclxuXHRcdFtzdWJoZWFkXSB7XHJcblx0XHRcdG1hcmdpbjogMTVweCAwcHggMTBweCAgMHB4O1xyXG5cdFx0XHRmb250LXNpemU6IDE4cHg7XHJcblx0XHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdFx0ei1pbmRleDogMTtcclxuXHRcdFx0cGFkZGluZy1sZWZ0OiA3cHg7XHJcblx0XHRcdCY6YWZ0ZXIge1xyXG5cdFx0XHRjb250ZW50OiAnJztcclxuXHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdFx0XHRsZWZ0OiAwO1xyXG5cdFx0XHR3aWR0aDogMzBweDtcclxuXHRcdFx0aGVpZ2h0OiAzMHB4O1xyXG5cdFx0XHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itc29mdGdyZWVuKTtcclxuXHRcdFx0Ym9yZGVyLXJhZGl1czogNTAlO1xyXG5cdFx0XHR6LWluZGV4OiAtMTtcclxuXHRcdFx0LypvcGFjaXR5OiAwLjU7Ki9cclxuXHRcdFx0dG9wOiAtNnB4O1xyXG5cdFx0fVxyXG5cdFx0fVxyXG5cclxuXHRcdHAge1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAwcHg7IFxyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiA3cHg7XHJcblx0XHRcdGZvbnQtc2l6ZTogMTRweDtcclxuXHRcdFx0bGluZS1oZWlnaHQ6IDI0cHg7XHJcblx0XHRcdGNvbG9yOiAgIzk5OTtcclxuXHRcdFx0Zm9udC13ZWlnaHQ6IDQwMDtcclxuXHRcdH1cclxuXHR9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/terms/terms.page.ts":
+/*!*************************************!*\
+  !*** ./src/app/terms/terms.page.ts ***!
+  \*************************************/
+/*! exports provided: TermsPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermsPage", function() { return TermsPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+
+
+
+
+
+let TermsPage = class TermsPage {
+    constructor(api, router, common) {
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.termlist = [];
+    }
+    ngOnInit() {
+    }
+    ionViewDidEnter() {
+        this.getallterms();
+    }
+    getallterms() {
+        this.common.presentLoading();
+        this.api.post('getprivacypolicy', '', '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                this.privacy = res.data;
+                //this.common.presentToast('Terms of use fetched successfully !.','success');
+            }
+            else {
+                this.common.presentToast(res.message, 'danger');
+                this.privacy = '';
+            }
+        }, err => {
+        });
+    }
+};
+TermsPage.ctorParameters = () => [
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+];
+TermsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-terms',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./terms.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/terms/terms.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./terms.page.scss */ "./src/app/terms/terms.page.scss")).default]
+    })
+], TermsPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=terms-terms-module-es2015.js.map

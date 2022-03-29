@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/tribes" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Search or Create Team</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="search">
+  <ion-searchbar placeholder="Search Team..." (keyup)="search_keyword($event);"   ></ion-searchbar>
+  </div>
+  <ion-item lines="none" *ngIf="teams?.length==0">
+	 <ion-label>
+		 <h2>Teams not found</h2>
+		  </ion-label>
+		</ion-item>
+  
+  <ion-item lines="none" *ngFor="let team of teams" routerLink="/teamdetail/{{team?.id}}" detail="false">
+		 <ion-thumbnail>
+		 <img src="{{IMAGES_URL}}/{{team?.image}}"/>
+		 </ion-thumbnail>
+		 <ion-label>
+		 <h2>{{team?.name}}</h2>
+		 <p><span><ion-icon name="heart"></ion-icon>{{team?.meals}}</span> <span><ion-icon name="people"></ion-icon>{{team?.joins}}</span></p>
+		 </ion-label>
+		 <ion-icon name="chevron-forward-outline" slot="end" ></ion-icon>
+		</ion-item>
+				
+		<ion-fab routerLink="/createteam" vertical="bottom" horizontal="end" edge size="small" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

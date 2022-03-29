@@ -1,0 +1,240 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["otp-otp-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/otp/otp.page.html":
+/*!*************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/otp/otp.page.html ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!--ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>signup</ion-title>\r\n  </ion-toolbar>\r\n</ion-header-->\r\n\r\n<ion-content bg-white>\r\n<ion-header>\r\n\r\n   <ion-back-button defaultHref=\"/signup\">\r\n   </ion-back-button>\r\n \r\n</ion-header>\r\n\t<h2 class=\"vrt_txt\">OTP CODE</h2>\r\n\t<div class=\"top-img-str\"></div>\r\n\t<div class=\"cont-login\">\r\n\t\t\r\n\t\t<div class=\"logo-top-al\">\r\n\t\t\t<img src=\"assets/images/logo.png\">\r\n\t\t</div>\r\n\t\t<div class=\"main-ttl\">\r\n\t\t\t<h3> Confirmation Code </h3>\r\n\t\t\t<p> We have sent a code to your  email address please enter it below. </p>\r\n\t\t</div>\r\n\t\t<div class=\"flds-login\">\r\n\t\t\t<div formfield>\r\n        \r\n\t\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input type=\"tel\" #otp1 (keyup)=\"otpController($event,otp2,'')\"  maxlength=\"1\" [(ngModel)]=\"input1\"></ion-input>\r\n\t\t\t\t\t</ion-item>\r\n\t\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\r\n\t\t\t\t\t<ion-input type=\"tel\" #otp2 (keyup)=\"otpController($event,otp3,otp1)\"  maxlength=\"1\" [(ngModel)]=\"input2\"> </ion-input>\r\n\t\t\t\t\t</ion-item>\r\n\t\t\t\t\t<ion-item lines=\"none\" class=\"fls\">\r\n\t\t\t\t    <ion-input type=\"tel\" #otp3 (keyup)=\"otpController($event,otp4,otp2)\" maxlength=\"1\" [(ngModel)]=\"input3\"> </ion-input>\r\n\t\t\t\t\t</ion-item>\r\n\t\t\t\t\t<ion-item lines=\"none\" class=\"fls\"> \r\n\t\t\t\t\t<ion-input type=\"tel\" #otp4  maxlength=\"1\" [(ngModel)]=\"input4\"> </ion-input>\r\n\t\t\t\t\t</ion-item>\r\n\t\t\t</div>\r\n\t\t\t<ion-button expand=\"full\" shape=\"round\" class=\"btn-losns\" (click)=\"verify()\">Submit Now</ion-button>\r\n\t\t\t<div class=\"warning\" >No email received <p  class=\"resend\" (click)=\"resend()\">Resend Code</p></div>\r\n\t\t\t\r\n\t\t</div>\t\r\n\t</div>\r\n\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./src/app/otp/otp-routing.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/otp/otp-routing.module.ts ***!
+  \*******************************************/
+/*! exports provided: OtpPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OtpPageRoutingModule", function() { return OtpPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _otp_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./otp.page */ "./src/app/otp/otp.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _otp_page__WEBPACK_IMPORTED_MODULE_3__["OtpPage"]
+    }
+];
+let OtpPageRoutingModule = class OtpPageRoutingModule {
+};
+OtpPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], OtpPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/otp/otp.module.ts":
+/*!***********************************!*\
+  !*** ./src/app/otp/otp.module.ts ***!
+  \***********************************/
+/*! exports provided: OtpPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OtpPageModule", function() { return OtpPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _otp_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./otp-routing.module */ "./src/app/otp/otp-routing.module.ts");
+/* harmony import */ var _otp_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./otp.page */ "./src/app/otp/otp.page.ts");
+
+
+
+
+
+
+
+let OtpPageModule = class OtpPageModule {
+};
+OtpPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _otp_routing_module__WEBPACK_IMPORTED_MODULE_5__["OtpPageRoutingModule"]
+        ],
+        declarations: [_otp_page__WEBPACK_IMPORTED_MODULE_6__["OtpPage"]]
+    })
+], OtpPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/otp/otp.page.scss":
+/*!***********************************!*\
+  !*** ./src/app/otp/otp.page.scss ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-content[bg-white] {\n  background: var(--ion-color-white);\n  --background:var(--ion-color-white);\n}\n\nion-content[bg-white] ion-header {\n  position: absolute;\n}\n\nion-content[bg-white] ion-header ion-back-button {\n  float: left;\n  color: var(--ion-color-white);\n}\n\nion-content[bg-white] h2.vrt_txt {\n  transform: rotate(-90deg);\n  transform-origin: left;\n  bottom: 0;\n  text-align: left;\n  white-space: nowrap;\n  position: absolute;\n  font-size: 60px;\n  left: 48px;\n  text-transform: uppercase;\n  font-weight: 900;\n  color: rgba(239, 160, 7, 0.1);\n  z-index: 1;\n}\n\nion-content[bg-white] .top-img-str {\n  background: url('haitikidtasty.jpg');\n  height: 210px;\n  position: relative;\n  background-size: cover;\n  z-index: 0;\n  background-position: center;\n}\n\nion-content[bg-white] .top-img-str:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background: var(--ion-color-black);\n  opacity: 0.35;\n}\n\nion-content[bg-white] .cont-login {\n  position: relative;\n  padding: 25px;\n  background: var(--ion-color-white);\n  border-radius: 30px;\n  margin-top: -30px;\n}\n\nion-content[bg-white] .cont-login .logo-top-al {\n  width: 110px;\n  height: 110px;\n  display: block;\n  margin: 0 auto;\n  text-align: center;\n  margin-top: -70px;\n  background: var(--ion-color-white);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);\n  padding-top: 5px;\n  margin-bottom: 35px;\n}\n\nion-content[bg-white] .cont-login .logo-top-al img {\n  width: 56px;\n  height: auto;\n}\n\nion-content[bg-white] .cont-login .main-ttl {\n  text-align: center;\n  margin-bottom: 40px;\n}\n\nion-content[bg-white] .cont-login .main-ttl h3 {\n  margin: 0px;\n  font-size: 25px;\n  font-weight: 700;\n  color: #272727;\n}\n\nion-content[bg-white] .cont-login .main-ttl p {\n  margin: 0px;\n  font-size: 13px;\n  color: #9d9d9d;\n  margin-top: 7px;\n  font-weight: 500;\n  letter-spacing: 0.3px;\n}\n\nion-content[bg-white] .cont-login .flds-login [formfield] {\n  position: relative;\n  background: var(--ion-color-white);\n  display: flex;\n  justify-content: space-between;\n}\n\nion-content[bg-white] .cont-login .flds-login [formfield] .fls {\n  border: 1px solid #e8e8e8;\n  width: 66px;\n  text-align: center;\n  border-radius: 26px;\n}\n\nion-content[bg-white] .cont-login .flds-login [formfield] span.ttl-s {\n  position: absolute;\n  top: -10px;\n  z-index: 111;\n  background: var(--ion-color-white);\n  left: 29px;\n  padding: 0 3px;\n  font-size: 12px;\n  font-weight: 700;\n  color: #3a3a3a;\n}\n\nion-content[bg-white] .cont-login .flds-login [formfield] ion-input {\n  padding: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  font-size: 16px;\n  --placeholder-color: #9a9a9a;\n  --placeholder-opacity: 1;\n  font-family: 'Poppins', sans-serif !important;\n  color: #222;\n  margin-left: -10px;\n}\n\nion-content[bg-white] .cont-login .flds-login .btn-losns {\n  --background:var( --ion-color-primary);\n  margin-top: 20px;\n  --box-shadow: none;\n  min-height: 48px;\n  margin-bottom: 15px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\nion-content[bg-white] .cont-login .flds-login .warning {\n  color: #c2c2c2;\n  text-align: center;\n  margin: 0 4px;\n  font-size: 13px;\n}\n\nion-content[bg-white] .cont-login .flds-login .warning a {\n  display: block;\n  text-decoration: none;\n  font-weight: 500;\n}\n\nion-content[bg-white] .cont-login .flds-login .social_signup {\n  text-align: center;\n  margin-top: 40px;\n}\n\nion-content[bg-white] .cont-login .flds-login .social_signup h5 {\n  text-align: center;\n  display: inline-block;\n  position: relative;\n  color: #878686;\n}\n\nion-content[bg-white] .cont-login .flds-login .social_signup h5:after {\n  content: \"\";\n  display: block;\n  height: 1px;\n  width: 30px;\n  background: #878686;\n  position: absolute;\n  right: -40px;\n  top: 10px;\n}\n\nion-content[bg-white] .cont-login .flds-login .social_signup h5:before {\n  content: \"\";\n  display: block;\n  height: 1px;\n  width: 30px;\n  background: #878686;\n  position: absolute;\n  left: -40px;\n  top: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3RwL290cC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFXQyxrQ0FBaUM7RUFDakMsbUNBQWE7QUFUZDs7QUFIQTtFQUdHLGtCQUFpQjtBQUlwQjs7QUFQQTtFQU1PLFdBQVc7RUFDUiw2QkFBNEI7QUFLdEM7O0FBWkE7RUFjRSx5QkFBeUI7RUFDbkIsc0JBQXNCO0VBQ3RCLFNBQVM7RUFDVCxnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsVUFBVTtFQUNWLHlCQUF5QjtFQUN6QixnQkFBZ0I7RUFDaEIsNkJBQTZCO0VBQzdCLFVBQVU7QUFFbEI7O0FBM0JBO0VBNEJFLG9DQUF1RDtFQUN2RCxhQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixVQUFVO0VBQ1YsMkJBQTJCO0FBRzdCOztBQXBDQTtFQW1DRyxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLE9BQU87RUFDUCxRQUFRO0VBQ1IsTUFBTTtFQUNOLFNBQVM7RUFDVCxrQ0FBa0M7RUFDbEMsYUFBYTtBQUtoQjs7QUEvQ0E7RUE4Q0Usa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixrQ0FBa0M7RUFDbEMsbUJBQW1CO0VBQ25CLGlCQUFpQjtBQUtuQjs7QUF2REE7RUFvREcsWUFBWTtFQUNaLGFBQWE7RUFDYixjQUFjO0VBQ2QsY0FBYztFQUNkLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsa0NBQWtDO0VBQ2xDLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QiwyQ0FBMkM7RUFDM0MsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQU90Qjs7QUF4RUE7RUFtRUksV0FBVztFQUNYLFlBQVk7QUFTaEI7O0FBN0VBO0VBd0VHLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFTdEI7O0FBbEZBO0VBMkVJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFXbEI7O0FBekZBO0VBaUZJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsY0FBYztFQUNkLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIscUJBQXFCO0FBWXpCOztBQWxHQTtFQTJGWSxrQkFBa0I7RUFDbEIsa0NBQWtDO0VBQ2xDLGFBQWE7RUFDYiw4QkFBOEI7QUFXMUM7O0FBekdBO0VBZ0dnQix5QkFBeUI7RUFDekIsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFhbkM7O0FBaEhBO0VBc0dJLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGtDQUFrQztFQUNsQyxVQUFVO0VBQ1YsY0FBYztFQUNkLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztBQWNsQjs7QUE1SEE7RUFpSEksWUFBWTtFQUNaLG9CQUFnQjtFQUNoQixrQkFBYztFQUNkLGVBQWU7RUFDZiw0QkFBb0I7RUFDcEIsd0JBQXNCO0VBQ3RCLDZDQUE2QztFQUNqQyxXQUFXO0VBQ1gsa0JBQWtCO0FBZWxDOztBQXhJQTtFQTZISyxzQ0FBYTtFQUNmLGdCQUFnQjtFQUNoQixrQkFBYTtFQUNKLGdCQUFnQjtFQUN6QixtQkFBbUI7RUFDbkIseUJBQXlCO0VBQ3pCLG1CQUFtQjtBQWV0Qjs7QUFsSkE7RUFzSUcsY0FBYztFQUNkLGtCQUFrQjtFQUNsQixhQUFhO0VBQ0osZUFBZTtBQWdCM0I7O0FBekpBO0VBMklnQixjQUFhO0VBQ2IscUJBQW9CO0VBQ3BCLGdCQUNKO0FBaUJaOztBQS9KQTtFQWlKRyxrQkFBaUI7RUFDakIsZ0JBQWU7QUFrQmxCOztBQXBLQTtFQW9KSSxrQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLGtCQUFpQjtFQUNqQixjQUFhO0FBb0JqQjs7QUEzS0E7RUF5SkssV0FBVztFQUNYLGNBQWM7RUFDZCxXQUFXO0VBQ1gsV0FBVztFQUNYLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFNBQVM7QUFzQmQ7O0FBdExBO0VBbUtLLFdBQVc7RUFDWCxjQUFjO0VBQ2QsV0FBVztFQUNYLFdBQVc7RUFDWCxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxTQUFTO0FBdUJkIiwiZmlsZSI6InNyYy9hcHAvb3RwL290cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudFtiZy13aGl0ZV0ge1xyXG5cdGlvbi1oZWFkZXJcclxuXHR7XHJcblx0ICBwb3NpdGlvbjphYnNvbHV0ZTtcclxuXHQgIGlvbi1iYWNrLWJ1dHRvblxyXG5cdCAge1xyXG5cdCAgICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgICAgICAgY29sb3I6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHJcblx0ICB9XHJcblx0fVxyXG5cdGJhY2tncm91bmQ6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHQtLWJhY2tncm91bmQ6dmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRoMi52cnRfdHh0IHtcclxuXHRcdHRyYW5zZm9ybTogcm90YXRlKC05MGRlZyk7XHJcbiAgICAgICAgdHJhbnNmb3JtLW9yaWdpbjogbGVmdDtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBmb250LXNpemU6IDYwcHg7XHJcbiAgICAgICAgbGVmdDogNDhweDtcclxuICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbiAgICAgICAgY29sb3I6IHJnYmEoMjM5LCAxNjAsIDcsIDAuMSk7XHJcbiAgICAgICAgei1pbmRleDogMTtcclxuXHR9XHJcblx0LnRvcC1pbWctc3RyIHtcclxuXHRcdGJhY2tncm91bmQ6dXJsKFwiLi4vLi4vYXNzZXRzL2ltYWdlcy9oYWl0aWtpZHRhc3R5LmpwZ1wiKTtcclxuXHRcdGhlaWdodDoyMTBweDtcclxuXHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcblx0XHR6LWluZGV4OiAwO1xyXG5cdFx0YmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG5cdFx0JjphZnRlciB7XHJcblx0XHRcdGNvbnRlbnQ6IFwiXCI7XHJcblx0XHRcdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRcdFx0bGVmdDogMDtcclxuXHRcdFx0cmlnaHQ6IDA7XHJcblx0XHRcdHRvcDogMDtcclxuXHRcdFx0Ym90dG9tOiAwO1xyXG5cdFx0XHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItYmxhY2spO1xyXG5cdFx0XHRvcGFjaXR5OiAwLjM1O1xyXG5cdFx0fVxyXG5cdH1cclxuXHQuY29udC1sb2dpbiB7XHJcblx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHRwYWRkaW5nOiAyNXB4O1xyXG5cdFx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuXHRcdGJvcmRlci1yYWRpdXM6IDMwcHg7XHJcblx0XHRtYXJnaW4tdG9wOiAtMzBweDtcclxuXHRcdC5sb2dvLXRvcC1hbCB7XHJcblx0XHRcdHdpZHRoOiAxMTBweDtcclxuXHRcdFx0aGVpZ2h0OiAxMTBweDtcclxuXHRcdFx0ZGlzcGxheTogYmxvY2s7XHJcblx0XHRcdG1hcmdpbjogMCBhdXRvO1xyXG5cdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0XHRcdG1hcmdpbi10b3A6IC03MHB4O1xyXG5cdFx0XHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0XHRib3JkZXItcmFkaXVzOiA1MCU7XHJcblx0XHRcdGRpc3BsYXk6IGZsZXg7XHJcblx0XHRcdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0XHRcdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cdFx0XHRib3gtc2hhZG93OiAwcHggMnB4IDI0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xyXG5cdFx0XHRwYWRkaW5nLXRvcDogNXB4O1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiAzNXB4O1xyXG5cdFx0XHRpbWcge1xyXG5cdFx0XHRcdHdpZHRoOiA1NnB4O1xyXG5cdFx0XHRcdGhlaWdodDogYXV0bztcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdFx0Lm1haW4tdHRsIHtcclxuXHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiA0MHB4O1xyXG5cdFx0XHRoMyB7XHJcblx0XHRcdFx0bWFyZ2luOiAwcHg7XHJcblx0XHRcdFx0Zm9udC1zaXplOiAyNXB4O1xyXG5cdFx0XHRcdGZvbnQtd2VpZ2h0OiA3MDA7XHJcblx0XHRcdFx0Y29sb3I6ICMyNzI3Mjc7XHJcblx0XHRcdH1cclxuXHRcdFx0cCB7XHJcblx0XHRcdFx0bWFyZ2luOiAwcHg7XHJcblx0XHRcdFx0Zm9udC1zaXplOiAxM3B4O1xyXG5cdFx0XHRcdGNvbG9yOiAjOWQ5ZDlkO1xyXG5cdFx0XHRcdG1hcmdpbi10b3A6IDdweDtcclxuXHRcdFx0XHRmb250LXdlaWdodDogNTAwO1xyXG5cdFx0XHRcdGxldHRlci1zcGFjaW5nOiAwLjNweDtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdFx0LmZsZHMtbG9naW57XHJcblx0XHQgW2Zvcm1maWVsZF17XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXdoaXRlKTtcclxuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgICAgICAuZmxzIHtcclxuICAgICAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNlOGU4ZTg7XHJcbiAgICAgICAgICAgICAgICB3aWR0aDogNjZweDtcclxuICAgICAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDI2cHg7XHJcbiAgICAgICAgICAgIH1cclxuXHRcdFx0c3Bhbi50dGwtcyB7XHJcblx0XHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdFx0XHRcdHRvcDogLTEwcHg7XHJcblx0XHRcdFx0ei1pbmRleDogMTExO1xyXG5cdFx0XHRcdGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdFx0bGVmdDogMjlweDtcclxuXHRcdFx0XHRwYWRkaW5nOiAwIDNweDtcclxuXHRcdFx0XHRmb250LXNpemU6IDEycHg7XHJcblx0XHRcdFx0Zm9udC13ZWlnaHQ6IDcwMDtcclxuXHRcdFx0XHRjb2xvcjogIzNhM2EzYTtcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24taW5wdXQgIHtcclxuXHRcdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMTZweDtcclxuXHRcdFx0XHQtLXBsYWNlaG9sZGVyLWNvbG9yOiAjOWE5YTlhO1xyXG5cdFx0XHRcdC0tcGxhY2Vob2xkZXItb3BhY2l0eTogMTtcclxuXHRcdFx0XHRmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogIzIyMjtcclxuICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAtMTBweDtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdFx0LmJ0bi1sb3Nuc3tcclxuXHRcdCAgIC0tYmFja2dyb3VuZDp2YXIoIC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG5cdFx0XHRtYXJnaW4tdG9wOiAyMHB4O1xyXG5cdFx0XHQtLWJveC1zaGFkb3c6IG5vbmU7XHJcbiAgICAgICAgICAgIG1pbi1oZWlnaHQ6IDQ4cHg7XHJcblx0XHRcdG1hcmdpbi1ib3R0b206IDE1cHg7XHJcblx0XHRcdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0XHRcdGxldHRlci1zcGFjaW5nOiAxcHg7XHJcblx0XHR9XHJcblx0XHQud2FybmluZ3tcclxuXHRcdFx0Y29sb3I6ICNjMmMyYzI7XHJcblx0XHRcdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRcdFx0bWFyZ2luOiAwIDRweDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICAgICAgICBhe1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTpibG9jaztcclxuICAgICAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lO1xyXG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6NTAwXHJcbiAgICAgICAgICAgIH1cclxuXHRcdH1cclxuXHRcdC5zb2NpYWxfc2lnbnVwe1xyXG5cdFx0XHR0ZXh0LWFsaWduOmNlbnRlcjtcclxuXHRcdFx0bWFyZ2luLXRvcDo0MHB4O1xyXG5cdFx0XHRoNXtcclxuXHRcdFx0XHR0ZXh0LWFsaWduOmNlbnRlcjtcclxuXHRcdFx0XHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcblx0XHRcdFx0cG9zaXRpb246cmVsYXRpdmU7XHJcblx0XHRcdFx0Y29sb3I6Izg3ODY4NjtcclxuXHRcdFx0XHQmOmFmdGVye1xyXG5cdFx0XHRcdFx0Y29udGVudDogXCJcIjtcclxuXHRcdFx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRcdFx0aGVpZ2h0OiAxcHg7XHJcblx0XHRcdFx0XHR3aWR0aDogMzBweDtcclxuXHRcdFx0XHRcdGJhY2tncm91bmQ6ICM4Nzg2ODY7XHJcblx0XHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0XHRyaWdodDogLTQwcHg7XHJcblx0XHRcdFx0XHR0b3A6IDEwcHg7XHJcblx0XHRcdFx0fVxyXG5cdFx0XHRcdCY6YmVmb3Jle1xyXG5cdFx0XHRcdFx0Y29udGVudDogXCJcIjtcclxuXHRcdFx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRcdFx0aGVpZ2h0OiAxcHg7XHJcblx0XHRcdFx0XHR3aWR0aDogMzBweDtcclxuXHRcdFx0XHRcdGJhY2tncm91bmQ6ICM4Nzg2ODY7XHJcblx0XHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0XHRcdFx0XHRsZWZ0OiAtNDBweDtcclxuXHRcdFx0XHRcdHRvcDogMTBweDtcclxuXHRcdFx0XHR9XHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHR9XHJcblx0XHRcclxuXHR9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/otp/otp.page.ts":
+/*!*********************************!*\
+  !*** ./src/app/otp/otp.page.ts ***!
+  \*********************************/
+/*! exports provided: OtpPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OtpPage", function() { return OtpPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api/api.service */ "./src/app/services/api/api.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var _common_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/common.service */ "./src/app/common/common.service.ts");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+let OtpPage = class OtpPage {
+    constructor(api, router, common) {
+        this.api = api;
+        this.router = router;
+        this.common = common;
+        this.errors = ['', null, undefined];
+    }
+    ngOnInit() {
+    }
+    resend() {
+        let dict = {
+            otpid: this.otpid,
+            userid: this.signup_data,
+        };
+        this.common.presentLoading();
+        this.api.post('resendemail', dict, '').subscribe((result) => {
+            this.common.stopLoading();
+            var res;
+            res = result;
+            if (res.status == 1) {
+                localStorage.setItem('otp_verify', res.otp);
+                this.common.presentToast(res.message, 'success');
+            }
+            else {
+                this.common.presentToast(res.message, 'danger');
+            }
+        }, err => {
+        });
+    }
+    test(event) {
+        jquery__WEBPACK_IMPORTED_MODULE_6__('#two').focus();
+    }
+    ionViewDidEnter() {
+        this.otpid = localStorage.getItem('otp_verify');
+        this.signup_data = localStorage.getItem('signup_data');
+        this.type_login = localStorage.getItem('type_login');
+    }
+    otpController(event, next, prev) {
+        if (event.target.value.length < 1 && prev) {
+            prev.setFocus();
+        }
+        else if (next && event.target.value.length > 0) {
+            next.setFocus();
+        }
+        else {
+            return 0;
+        }
+    }
+    verify() {
+        this.otpid = localStorage.getItem('otp_verify');
+        if (this.errors.indexOf(this.input1) >= 0 || this.errors.indexOf(this.input2) >= 0 || this.errors.indexOf(this.input3) >= 0 || this.errors.indexOf(this.input4) >= 0) {
+            this.common.presentToast('Please enter 4 digit OTP!.', 'danger');
+            return false;
+        }
+        else {
+            let dict = {
+                otpid: this.otpid,
+                otp: this.input1 + this.input2 + this.input3 + this.input4,
+                userid: this.signup_data,
+            };
+            this.common.presentLoading();
+            this.api.post('VerifyOtp', dict, '').subscribe((result) => {
+                this.common.stopLoading();
+                var res;
+                res = result;
+                if (res.status == 1) {
+                    this.input1 = '';
+                    this.input2 = '';
+                    this.input3 = '';
+                    this.input4 = '';
+                    var userId = this.api.encryptData(res.data.id, _config__WEBPACK_IMPORTED_MODULE_4__["config"].ENC_SALT);
+                    localStorage.setItem('userid', res.data.id);
+                    localStorage.setItem('food_token', userId);
+                    localStorage.setItem('food_first_name', res.data.first_name);
+                    localStorage.setItem('food_last_name', res.data.last_name);
+                    localStorage.setItem('food_email', res.data.email);
+                    localStorage.setItem('food_type', res.data.type);
+                    localStorage.setItem('is_logged_in_user', 'true');
+                    this.router.navigate(['/tabs/home']);
+                    this.common.presentToast(res.message, 'success');
+                }
+                else {
+                    this.common.presentToast(res.message, 'danger');
+                }
+            }, err => {
+            });
+        }
+    }
+};
+OtpPage.ctorParameters = () => [
+    { type: _services_api_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _common_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"] }
+];
+OtpPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-otp',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./otp.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/otp/otp.page.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./otp.page.scss */ "./src/app/otp/otp.page.scss")).default]
+    })
+], OtpPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=otp-otp-module-es2015.js.map

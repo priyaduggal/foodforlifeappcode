@@ -1,0 +1,187 @@
+   <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+		<ion-buttons (click)="logout()" slot="end">
+		<ion-icon name="log-out-outline"></ion-icon>
+		</ion-buttons>
+      </ion-toolbar>
+	  </ion-header>
+
+<ion-content class="ion-padding">
+<div settinglist>
+	<div class="ocid-s">
+		<span class="ich-d"> <ion-icon name="shield-checkmark-outline"></ion-icon> </span>
+		<h2 heading>
+		Payment Details
+		</h2>
+		<p>You Saved Payment Methods</p>
+	</div>
+
+<div *ngFor="let pay of paymentlist" class="paymentlist">
+<p>{{pay?.card_number}} {{pay?.card_holder_name}}</p>
+<div>
+<ion-buttons   edit-btn routerLink="/edit_payment/{{pay?.id}}">
+<ion-icon name="pencil-outline"></ion-icon>
+</ion-buttons>
+<ion-buttons  delete-btn (click)="delete(pay?.id)">
+<ion-icon name="trash-outline"></ion-icon>
+</ion-buttons>
+</div>
+</div>
+<ion-button  expand="full" shape="round" routerLink="/addpayment">Add Payment Method</ion-button>
+</div>
+<div settinglist>
+ <ion-item lines="none">
+    <ion-label>Set Reminder</ion-label>
+    <ion-toggle [ngModel]="SetRemainder" (ngModelChange)="notifyAndUpdateIsToggled($event)"></ion-toggle>
+  </ion-item>
+  <h3 subhead>
+How Often
+</h3>
+<ion-radio-group value="{{how_often}}">
+    <ion-item lines="none">
+      <ion-label>Once a day</ion-label>
+      <ion-radio value="day"  (click)="howoften('day')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Once a week</ion-label>
+      <ion-radio value="week"   (click)="howoften('week')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Once a month</ion-label>
+      <ion-radio value="month"  (click)="howoften('month')"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+  <h3 subhead>
+At What Time
+</h3>
+<ion-radio-group value="{{what_time}}">
+    <ion-item lines="none">
+      <ion-label>Breakfast(8am)</ion-label>
+      <ion-radio value="day" (click)="whattime('day')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Lunch (12pm)</ion-label>
+      <ion-radio value="week"(click)="whattime('week')" ></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Dinner (7pm)</ion-label>
+      <ion-radio value="month" (click)="whattime('month')"></ion-radio>
+    </ion-item>
+</ion-radio-group>
+</div>
+
+<div settinglist>
+ <ion-item lines="none">
+    <ion-label>Push Notifications</ion-label>
+    <ion-toggle [ngModel]="PushNotification" (ngModelChange)="PushNotificationfun($event)"></ion-toggle>
+  </ion-item>
+ 
+</div>
+<div settinglist>
+<h2 heading>
+Privacy
+</h2>
+<p>Control who can see your activities on FoodForLife</p>
+  <h3 subhead>
+When I Donate
+</h3>
+<ion-radio-group value="{{what_donate}}">
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="everybody"(click)="whatdonate('everybody')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="friends" (click)="whatdonate('friends')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="onlyme" (click)="whatdonate('onlyme')"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+  <h3 subhead>
+The Number Of Meals I Donate
+</h3>
+<ion-radio-group value="{{no_meals}}">
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="everybody" (click)="noofmeals('everybody')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="friends"(click)="noofmeals('friends')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="onlyme" (click)="noofmeals('onlyme')"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+  <h3 subhead>
+My Profile
+</h3>
+<ion-radio-group value="{{my_profile}}">
+    <ion-item lines="none">
+      <ion-label>Everybody</ion-label>
+      <ion-radio value="everybody" (click)="myprofile('everybody')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>My Friends</ion-label>
+      <ion-radio value="friends"(click)="myprofile('friends')"></ion-radio>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Only Me</ion-label>
+      <ion-radio value="onlyme"(click)="myprofile('onlyme')"></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+
+</div>
+<div settinglist settinglinks>
+    <ion-item lines="none">
+	<ion-icon iconleft name="star-outline" slot="start"></ion-icon>
+      <ion-label>Rate Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   <ion-item detail="false" lines="none" routerLink="/contactus">
+	  <ion-icon iconleft name="call-outline" slot="start"></ion-icon>
+      <ion-label>Contact Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	  <ion-item detail="false" lines="none" routerLink="/faq">
+	  <ion-icon iconleft name="help-circle-outline" slot="start"></ion-icon>
+      <ion-label>FAQ</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	  <ion-item detail="false" lines="none" routerLink="/terms">
+		<ion-icon iconleft name="pricetags-outline" slot="start"></ion-icon>
+      <ion-label>Terms Of Use</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   	   <ion-item detail="false" lines="none" routerLink="/about">
+	  <ion-icon iconleft name="information-circle-outline" slot="start"></ion-icon>
+      <ion-label>About Us</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+	   	   <ion-item detail="false" lines="none" routerLink="/privacy">
+	 	<ion-icon iconleft name="pricetags-outline" slot="start"></ion-icon>
+      <ion-label>Privacy Policy</ion-label>
+	  <ion-buttons slot="end">
+	  <ion-icon name="chevron-forward"></ion-icon>
+	  </ion-buttons>
+	   </ion-item>
+</div>
+</ion-content>
