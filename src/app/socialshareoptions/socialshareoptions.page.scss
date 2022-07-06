@@ -57,7 +57,8 @@ ion-content{
         right: 0;
         ion-button {
             --background: transparent;
-            --color: #3a3a3a;
+            --color: var(--ion-color-primary);
+			--box-shadow: none;
             font-size: 26px;
             margin: 0;
             --padding-start: 0;

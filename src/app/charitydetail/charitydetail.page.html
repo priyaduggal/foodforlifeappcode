@@ -9,10 +9,13 @@
 <div detailbanner>
 <img src="{{IMAGES_URL}}/{{charity?.image}}"/>
 <h2>{{charity?.title}}</h2>
+
 </div>
 <div detailcontent class="ion-padding">
 <div badge>
-<!--span *ngFor="let tag of tags">{{tag}}</span-->
+<span style="font-size: 12px;">{{percent * 100}}%</span>
+<ion-progress-bar value="{{percent}}" style="margin-top: 5px;"></ion-progress-bar> 
+<h3>${{donations}} out of ${{charity?.goal_amount}}  </h3> 
 </div>
 <h3>{{charity?.meals}} Meals Distributed</h3>
 <h2 heading>
@@ -22,11 +25,19 @@ Overview
 <!--h2 heading>
 Image Gallery
 </h2-->
-<!--ion-slides slidetable  #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider" *ngIf="images?.length>0">
+ <ion-slides slidetable  #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider" *ngIf="images?.length>0">
     <ion-slide  hm-slider *ngFor="let image of images">
-      <img src="{{IMAGES_URL}}/{{image?.image}}" style="width:100%;"/>
+      <img src="{{IMAGES_URL}}/{{image?.images}}" style="width:100%;"/>
     </ion-slide>
-</ion-slides-->
+</ion-slides>
+
+<span *ngIf="errors.indexOf(charity?.address)==-1">{{charity?.address}}</span>
+
+ <div id="map" #target  ></div>
+ 
+
+
+
 <ion-button shape="round" expand="full" (click)="give(charity?.id)">Give Now</ion-button>
 </div>
 </ion-content>

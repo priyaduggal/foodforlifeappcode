@@ -101,9 +101,31 @@ ion-searchbar {
     padding-inline-start: 20px!important;
     padding-inline-end: 15px!important;
 	}
+
+
+    
+        
+    
 	.searchbar-clear-button
 	{
 	   right: 40px;
 	}
 }
 }
+
+
+ion-app {
+    margin-top: env(safe-area-inset-top);
+    }
+
+    ion-header ion-toolbar:first-of-type {
+        padding-top: 0;
+    }
+
+    .paypal-checkout-sandbox-iframe {
+        border: 0;
+        }
+        
+        html.plt-ios .paypal-checkout-sandbox-iframe {
+        top: env(safe-area-inset-top) !important;
+        }

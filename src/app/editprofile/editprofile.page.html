@@ -65,6 +65,13 @@
 				</ion-item>
 				<span error *ngIf="errors.indexOf(address) >= 0 && is_submit_update== true">Please enter your address</span>
 </div>
+<div formfield>
+				<label>Phone</label>
+				<ion-item lines="none" class="fls"> 
+					<ion-input placeholder="Enter Phone" value="{{userdetails?.phone}}" [(ngModel)]="phone" name="phone" ></ion-input>
+				</ion-item>
+				<span error *ngIf="errors.indexOf(phone) >= 0 && is_submit_update== true">Please enter your phone number</span>
+</div>
 
 <div formfield>
 				<label>Facebook Url</label>

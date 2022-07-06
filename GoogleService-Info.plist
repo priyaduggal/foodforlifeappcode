@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>616880040152-nh480kscq7ihklj3utg7ovt6r51nqmr1.apps.googleusercontent.com</string>
+	<string>644296139301-4bkkjasefktuo2u8975gnqp5qgn0f5gk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.616880040152-nh480kscq7ihklj3utg7ovt6r51nqmr1</string>
+	<string>com.googleusercontent.apps.644296139301-4bkkjasefktuo2u8975gnqp5qgn0f5gk</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB1WiXebYVq9KagdcafqtiZqN1DJ5pfido</string>
+	<string>AIzaSyDQBE6u4oxOTpDIWZYOJumxxiEEIOmFLJs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>616880040152</string>
+	<string>644296139301</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>io.foodforlife.com</string>
+	<string>io.ffldonate.com</string>
 	<key>PROJECT_ID</key>
-	<string>foodforlife-312813</string>
+	<string>ffldonate</string>
 	<key>STORAGE_BUCKET</key>
-	<string>foodforlife-312813.appspot.com</string>
+	<string>ffldonate.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:616880040152:ios:8e4a17dc4d1ce07ae14fad</string>
+	<string>1:644296139301:ios:52f5983aeb4cb9749b55cc</string>
 </dict>
 </plist>

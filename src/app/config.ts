@@ -1,4 +1,5 @@
-var MAIN_URL = 'http://dev.indiit.solutions/foodforlife/api/'; //edit your public ip
+var MAIN_URL = 'https://apps.ffl.org/fflapp/';
+
 //var MAIN_URL_PORT = '3002/';
 //var SOCKET_URL_PORT = '3001/'; 
 export const config = {

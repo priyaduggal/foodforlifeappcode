@@ -143,19 +143,16 @@ type_login:any;
 		this.api.post('loginUser', dict,'').subscribe((result) => {  
 		this.is_submit_login = false;
 		this.common.stopLoading();
-		this.login_email = '';
-		this.login_password = '';
+		
 		var res;
 		res = result;
 		if(res.status==1){
+			this.login_email = '';
+		this.login_password = '';
 			var userId = this.api.encryptData(res.data.id,config.ENC_SALT);
 			localStorage.setItem('userid',res.data.id);
 			localStorage.setItem('food_token',userId);
-			localStorage.setItem('food_first_name',res.data.first_name);
-			localStorage.setItem('food_last_name',res.data.last_name);
-			localStorage.setItem('food_email',res.data.email);
-			localStorage.setItem('food_type',res.data.type);
-			localStorage.setItem('profile_pic',res.data.image);
+			localStorage.setItem('is_logged_in_user','true');
 			this.globalFooService.publishSomeData({
             	foo: {'data': res.data}
 			});

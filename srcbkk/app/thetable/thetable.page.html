@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+	<ion-title class="ion-text-center">FFL Monthly Sponsor</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-slides slidetable  #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="false" class="home-slider">
+    
+    <ion-slide   hm-slider>
+      <img src="assets/images/sliderimg1.jpg" style="width:100%;"/>
+      <div class="sld_cnt">
+      <div class="sld_cntinner">
+		<div class="logo-top-al">
+			<img src="assets/images/images.png">
+		</div>
+        <p>Start giving in a whole new way. Be matched with a children every month, in one of the World's most vulnerable countries</p>
+        <ion-button routerLink="/thetabledetail"  shape="round" expand="full">Give Monthly</ion-button>
+      </div>
+      </div>
+    </ion-slide>
+	 
+    <!--ion-slide  hm-slider>
+      <img src="assets/images/lady.jpg" style="width:100%;"/>
+      <div class="sld_cnt">
+      <div class="sld_cntinner">
+		<div class="logo-top-al">
+			<img src="assets/images/logo.png">
+		</div>
+        <p>Start giving in a whole new way. Be matched with a children every month, in one of the World's most vulnerable countries</p>
+        <ion-button routerLink="/thetabledetail" shape="round" expand="full">Give Monthly</ion-button>
+      </div>
+      </div>
+    </ion-slide-->
+</ion-slides>
+</ion-content>

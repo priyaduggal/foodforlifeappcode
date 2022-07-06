@@ -14,9 +14,11 @@ import * as $ from 'jquery';
 })
 export class ThetabledetailPage implements OnInit {
 list=[];
+totalcents:any;
 paymentlist=[];
 sublist=[];
 days:any;
+day:any;
 userid:any;
 planid:any;
 cardid:any;
@@ -54,13 +56,66 @@ slideOpts = {
        });
     return await modal.present();
   }
+  
+  meals(amt)
+  {
+	  //1dollar =100cents 
+	  //convert dollar into cents 
+	  
+	  var newamt=amt * 100;
+	  var newamt=newamt / this.totalcents;
+	  return newamt;
+  }
+    Charitylist()
+   {
+	  
+  	 	this.api.post('tribesProject', '','').subscribe((result) => {  
+		var res;
+		res = result;
+		if(res.status==1){
+		
+			this.totalcents=res.settings.totalcents;
+		}else
+		{
+			this.totalcents=res.settings.totalcents;
+		}
+        },
+        err => {
+             
+        });
+	  
+   }
+  
+  
+  
   cardno(id)
 	{
 		this.cardid=id;
 	}
-	updatesubs()
+	async updatesubs()
 	{
-	if(this.errors.indexOf(this.cardid)>=0)
+	
+	
+	 const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		day:this.days,
+		status:'cardlist',
+		action:'updatesubscription'
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		//this.team.joins=this.team.joins - 1;
+		//this.getuserteams();
+		}
+		});
+    return await modal.present();  
+		
+	/* if(this.errors.indexOf(this.cardid)>=0)
 	  {
 		  this.common.presentToast('Please select card','danger');
 		  return false;
@@ -127,10 +182,30 @@ slideOpts = {
 							this.common.presentToast('Some error occured','danger');
 							});
 	  } 
-	}
-  subs()
+	 */
+	 
+	 }
+ async subs()
   {
-	  if(this.errors.indexOf(this.cardid)>=0)
+	 const modal = await this.modalController.create({
+		component: AddamountPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		day:this.days,
+		status:'cardlist'
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		//this.team.joins=this.team.joins - 1;
+		//this.getuserteams();
+		}
+		});
+    return await modal.present();  
+	
+	  /* if(this.errors.indexOf(this.cardid)>=0)
 	  {
 		  this.common.presentToast('Please select card','danger');
 		  return false;
@@ -199,9 +274,11 @@ slideOpts = {
 							this.common.presentToast('Some error occured','danger');
 							});
 	  } 
-  }
+   */
+   }
   selectwekk(event,day)
   {
+	
 			if ($.inArray(day, this.days) >= 0) {
 			var carIndex = this.days.indexOf(day);
 			this.days='';
@@ -216,7 +293,9 @@ slideOpts = {
 			this.days='';
 			this.days=day;
 			$('.day'+day).addClass('active_plan');
+			
 		}
+		this.days=day;
   }
   ngOnInit() {
   }
@@ -242,6 +321,7 @@ slideOpts = {
 	  this.getsubscription();
 	  this.listpayment();
 	  this.subscriptionlistUser();
+	  this.Charitylist();
   }
   subscriptionlistUser()
   {
@@ -259,6 +339,7 @@ slideOpts = {
 				
 				var res1;
 				res1 = this.sublist;
+				
 				this.cardid=res1.cardid;
 				
 				if(this.errors.indexOf(res1.plan_id)>=0)
@@ -268,10 +349,17 @@ slideOpts = {
 			    $('.amount_day').addClass('active_plan');
 				}else
 				{
-				this.days=res1.plan_id;
-				$('.day'+this.days).addClass('active_plan');
+				if(res1.type!='One time'){
+					this.days=res1.plan_id;
+					$('.day'+this.days).addClass('active_plan');
+					
+				}else{
+					$('.weekselect:first').click();
+				}
 				} 
-			} 
+			}else{
+              $('.weekselect:first').click();
+			}				
 			
 		}else
 		{

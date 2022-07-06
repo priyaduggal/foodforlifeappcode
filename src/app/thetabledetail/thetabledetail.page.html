@@ -15,9 +15,9 @@
 
 <ion-content>
 
-<div packimg>
+<!--div packimg>
   <img src="assets/images/sliderimg1.jpg" style="width:100%;"/> 
-</div>
+</div-->
 <!--div packdetail class="ion-padding"  *ngIf="sublist?.length>0">
 <h3>Transactions</h3>
 <table>
@@ -28,9 +28,35 @@
 </table>
 </div-->
 <div packdetail class="ion-padding" >
-<h3>Choose An Amount</h3>
- 
- <ion-slides pager="false" [options]="slideOpts">
+<div choose_plan_div >
+	<h3>Choose An Amount</h3>
+	
+	<p *ngIf="errors.indexOf(sublist)==-1 && sublist.type!='One time'" class="subscribed">You are subscribed with ${{sublist.amount}}/{{sublist?.type}} plan ,to update this plan choose desired plan and click update subscription</p>
+    <ion-item *ngFor="let li of list" lines="none" (click)="selectwekk($event,li?.id)" class="day day{{li?.id}}" class="ion-no-padding weekselect">
+		<ion-avatar slot="start" routerLink="message"> 
+			<img src="{{IMAGES_URL}}/{{li?.image}}" /> 
+		</ion-avatar>		
+		<ion-label>
+			<!-- <h2>Basic Plan</h2> -->
+			<span class="timeage">${{li?.amount}} <small>/ {{li?.type}}</small></span>
+			<p>{{li?.description}}</p>
+			<p>{{meals(li?.amount)}} Meals</p>
+		</ion-label>
+    </ion-item> 
+  <!--   <ion-item lines="none"  class="amount_day day">
+		<ion-avatar slot="start" routerLink="message">  
+			<img src="assets/images/prj15.jpg" /> 
+		</ion-avatar>		
+		 <ion-label>
+			<ion-icon edit_plan (click)="addamount()" name="create-outline"></ion-icon>
+			
+			<span class="timeage" id="amount">Your Choice <small>/ monthly</small></span>
+			<input type="hidden" value="0" id="amountval">
+		
+		</ion-label> 
+    </ion-item>  -->
+</div>	
+ <!--ion-slides pager="false" [options]="slideOpts">
         <ion-slide  *ngFor="let li of list"  (click)="selectwekk($event,li?.id)" class="day day{{li?.id}}" >
           <div plans>
 			  <img src="{{IMAGES_URL}}/{{li?.image}}"/>
@@ -47,22 +73,37 @@
 			  <p>monthly</p>
 		  </div>
         </ion-slide>
-      </ion-slides>
-<div packcontent>
+      </ion-slides-->
+<!-- <div packcontent>
 <p>Help vulnerable families in India , Africa , South America and Ukraine  purchase healty food</p>
 <ion-radio-group value="{{cardid}}" class="radiobox">
     <ion-item lines="none" *ngFor="let pay of paymentlist">
-      <ion-label>{{pay?.card_number}}</ion-label>
+      <ion-label>
+		<div account-default> 
+			<span> **** </span>
+			<span> **** </span>
+			<span> **** </span>
+			<span>{{pay?.card_number.substr(pay?.card_number.length - 4)}}  </span>
+		</div>		  
+	 
+	  </ion-label>
       <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"></ion-radio>
     </ion-item>
 </ion-radio-group>	
-
-
-
 <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
   <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)>=0">Confirm Subscription</ion-button>
    <ion-button shape="round" expand="full" (click)="updatesubs();" *ngIf="errors.indexOf(sublist)==-1">Update Subscription</ion-button>
-<span>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
-</div>
+<span sub_detail>Your subscription will be renew automatically after every month. You can cancel it any time.</span>
+</div> -->
+
+<!-- <div addpayment><a routerLink="/addpayment" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div> -->
+  <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)>=0">Add Payment Method
+  </ion-button>
+   <ion-button shape="round" expand="full" (click)="subs();" *ngIf="errors.indexOf(sublist)==-1 && sublist.type=='One time'">Add Payment Method
+   </ion-button>
+   <ion-button shape="round" expand="full" (click)="updatesubs();" *ngIf="errors.indexOf(sublist)==-1 && sublist.type!='One time'">Update Subscription
+   </ion-button>
+<!-- <span sub_detail>Your subscription will be renew automatically after every month. You can cancel it any time.</span> -->
+
 </div>
 </ion-content>

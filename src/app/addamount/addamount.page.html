@@ -3,11 +3,81 @@
 	      <ion-buttons (click)="dismiss() " slot="end">
          <ion-icon name="close-sharp"></ion-icon>
         </ion-buttons>
-	<ion-title class="ion-text-center">Your Amount</ion-title>
+	<ion-title class="ion-text-center" *ngIf="status!='cardlist'">Your Amount</ion-title>
+	<ion-title class="ion-text-center" *ngIf="status=='cardlist'">Added Cards</ion-title>
   </ion-toolbar>
   </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="status=='cardlist'">
+<p *ngIf="paymentlist?.length==0">No records found</p>
+
+   <div payment_list>
+   
+   <ion-radio-group class="radiobox    ionradioch"  value="">
+   
+   <ion-item lines="none" *ngFor="let pay of paymentlist">
+					<ion-label>
+						<div class="box-crdits">
+							<div class="top-cips">
+								<p> <span> {{pay?.card_holder_name}} </span> </p>
+							</div>
+							<ion-row class="ion-align-items-center">
+								<ion-col size="12" class="ion-no-padding">
+									<div class="accnt-nusm"> 
+										<span> **** </span>
+										<span> **** </span>
+										<span> **** </span>
+										<span> {{pay?.card_number.substr(pay?.card_number.length - 4)}}  </span>
+									</div>						
+								</ion-col>
+								<!-- <ion-col size="3" class="ion-no-padding">
+									<div class="tst-lta ion-text-right">
+										<p> Exp Date <span> 14/20 </span> </p>
+									</div>						
+								</ion-col> -->
+							</ion-row>
+						</div>
+					</ion-label>
+				
+      <ion-radio value="{{pay?.id}}"  (click)="cardno(pay?.id)" class="radiobox"  ></ion-radio>
+    </ion-item>
+</ion-radio-group>	
+ 
+		<!-- 	<ion-item-sliding *ngFor="let pay of paymentlist">
+				<ion-item lines="none">
+					<ion-label>
+						<div class="box-crdits">
+							<div class="top-cips">
+								<p> Name <span> {{pay?.card_holder_name}} </span> </p>
+							</div>
+							<ion-row class="ion-align-items-center">
+								<ion-col size="12" class="ion-no-padding">
+									<div class="accnt-nusm"> 
+										<span> **** </span>
+										<span> **** </span>
+										<span> **** </span>
+										<span> {{pay?.card_number.substr(pay?.card_number.length - 4)}}  </span>
+									</div>						
+								</ion-col>
+							</ion-row>
+						</div>
+					</ion-label>
+				</ion-item>
+				<ion-item-options>
+					<ion-item-option payment_delete (click)="delete(pay?.id)">
+						<ion-icon slot="bottom" name="trash"></ion-icon>
+					</ion-item-option>
+					<ion-item-option payment_edit routerLink="/edit_payment/{{pay?.id}}">
+						<ion-icon slot="bottom" name="create-outline"></ion-icon>
+					</ion-item-option>
+				</ion-item-options>
+			</ion-item-sliding>	 -->	
+        </div>
+		<div addpayment><a (click)="addpayment()" href="javascript:void(0)"><ion-icon name="add-sharp"></ion-icon> Add Payment Method</a></div>
+		<ion-button shape="round" expand="full" (click)="confirmsubscription();" >Pay Amount</ion-button>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="status!='cardlist'">
 <div amountimg class="ion-text-center">
 <img src="assets/images/mappic6.jpg"/>
 <p>Please enter amount that you would like to donate. Miniumum donation amount is $1 dollar.</p>

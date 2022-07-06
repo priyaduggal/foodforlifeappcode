@@ -5,7 +5,10 @@ import { config } from '../config';
 import {CommonService} from '../common/common.service';
 import * as $ from 'jquery';
 import { ModalController,NavParams } from '@ionic/angular';
+import { PaymentlistnewPage } from '../paymentlistnew/paymentlistnew.page';
 import { PaymentlistmodalPage } from '../paymentlistmodal/paymentlistmodal.page';
+import { AddcardPage } from '../addcard/addcard.page';
+
 @Component({
   selector: 'app-addamount',
   templateUrl: './addamount.page.html',
@@ -20,22 +23,109 @@ totalcents:any;
 userid:any;
 actid:any;
 teamid:any;
+paymentlist:any=[];
 IMAGES_URL:any = config.IMAGES_URL;
 errors:any=['',null,undefined];
 minimum:any;
 timeout=null;
+status:any;
 act:any;
+planid:any;
+cardid:any;
+action:any;
   constructor(public navParams: NavParams,public api:ApiService,
   public router:Router,private common: CommonService,public modalController: ModalController) {
-	  
 	this.charityid = navParams.get('id');
 	this.actid = navParams.get('actid');
 	this.teamid = navParams.get('teamid');
+	this.status = navParams.get('status');
+	this.planid = navParams.get('day');
+	this.action = navParams.get('action');
 	
-	//alert(this.charityid);
-	  }
+	
+}
+async confirmsubscription(){
+	
+	 if(this.errors.indexOf(this.cardid)>=0 )
+	{
+        this.common.presentToast('Please select card !.','danger');
+		return false;
+	}else{
+		this.dismiss();
+		 const modal = await this.modalController.create({
+		component: PaymentlistnewPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		planid:this.planid,
+		cardid:this.cardid,
+		userid:this.userid,
+		action:this.action
+		}
+		});
 
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+		}
+		});
+    return await modal.present();
+	}
+	
+}
+cardno(id)
+	{
+		this.cardid=id;
+		
+	}
   ngOnInit() {
+  }
+  async addpayment(){
+	    const modal = await this.modalController.create({
+		component: AddcardPage,
+		cssClass: 'leaveteam',
+		componentProps: {
+		actid:this.actid,
+		amount:$('#amount').val(),
+		userid:this.userid
+		}
+		});
+
+		modal.onDidDismiss().then((detail) => {
+		if(this.errors.indexOf(detail.data)==-1)
+		{
+			this.listpayment();
+		}
+		});
+    return await modal.present(); 
+  }
+  listpayment()
+  {
+	  if(this.errors.indexOf(this.userid)>=0 )
+	{
+		
+        this.common.presentToast('Please login first!.','danger');
+		return false;
+	}
+		let dict ={
+		userid: this.userid,
+		};
+        this.common.presentLoading();
+  	 	this.api.post('ListPayment', dict,'').subscribe((result) => {  
+		this.common.stopLoading();
+		var res;
+		res = result;
+		if(res.status==1){
+			this.paymentlist=res.data;
+			
+		}else
+		{
+		this.common.presentToast(res.message,'danger');
+		}
+        },
+        err => {
+             
+        });
+  
   }
   search_keyword(event)
   {  
@@ -101,6 +191,7 @@ act:any;
 	}
 	this.getsettings();
 	this.userid=localStorage.getItem('userid');
+	this.listpayment();
    }
    getsettings()
    {

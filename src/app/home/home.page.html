@@ -3,16 +3,14 @@
     <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header-->
-<ion-content home-page *ngIf="type_login==2">
+<!-- <ion-content home-page *ngIf="type_login==2">
      <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Goals</ion-title>
-		<!--ion-buttons mr-10 (click)="presentModal()" slot="end">
-		  <img height="22px" src="assets/images/jar.png"/>
-		</ion-buttons-->
+        <ion-title>Spotlight</ion-title>
+		
       </ion-toolbar>
 	  </ion-header>
       <ion-slides #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider">
@@ -24,9 +22,7 @@
         <h3>{{charity?.title}}</h3>
         <p>{{charity?.description.substring(0,100)}}...</p>
 		<ion-row>
-		<!--><ion-col size="6">
-        <ion-button shape="round">Give Now</ion-button>
-		</ion-col></-->
+		
 		<ion-col size="12" class="ion-no-padding">
 		<p class="ion-text-left"><b>{{charity?.meals}} Meals</b></p>
 		</ion-col>
@@ -46,24 +42,24 @@
 	  <div donationimg>
 	   <img src="assets/images/don.gif"/>
 	  </div>
-     <!--p>Please press button below to donate 25 cents</p-->
+    
      <p>Click here to feed a child</p>
 	 <p>Each meal is only {{totalcents}} cents</p>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
-<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
+		<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+			
     </div>
   </ion-col>
 </ion-row>
 
-</ion-content>
+</ion-content> -->
 
-<ion-content home-page    *ngIf="type_login==1">
+<ion-content home-page   >
      <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Goals</ion-title>
+        <ion-title>Spotlight</ion-title>
 		<ion-buttons mr-10 (click)="presentModal()" slot="end">
 		  <img height="22px" src="assets/images/jar.png"/>
 		</ion-buttons>
@@ -123,9 +119,9 @@
 	  </div>
      <!--p>Please press button below to donate 25 cents</p-->
      <p>Click here to feed a child</p>
-	  <p>Each meal is only 25 cents</p>
-<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
-<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
+	  <p>Each meal is only {{totalcents}} cents</p>
+	<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+		<!-- <span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>    -->  
     </div>
   </ion-col>
 </ion-row>

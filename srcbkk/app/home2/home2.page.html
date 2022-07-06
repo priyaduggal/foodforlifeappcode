@@ -1,0 +1,93 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content home-page>
+     <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Goals</ion-title>
+		<!--ion-buttons mr-10 (click)="presentModal()" slot="end">
+		  <img height="22px" src="assets/images/jar.png"/>
+		</ion-buttons-->
+      </ion-toolbar>
+	  </ion-header>
+      <ion-slides #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider">
+    
+    <ion-slide  hm-slider>
+      <img src="assets/images/sliderimg1.jpg" style="width:100%;"/>
+      <div class="sld_cnt">
+        <div>
+        <h3 routerLink="/charitydetail">Feed Children Around World</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p>
+		<ion-row>
+		<!--><ion-col size="6">
+        <ion-button shape="round">Give Now</ion-button>
+		</ion-col></-->
+		<ion-col size="12" class="ion-no-padding">
+		<p class="ion-text-left"><b>5000 Meals</b></p>
+		</ion-col>
+		</ion-row>
+      </div>
+      </div>
+    </ion-slide>
+    <ion-slide  hm-slider>
+      <img src="assets/images/sliderimg2.png" style="width:100%;"/>
+      <div class="sld_cnt">
+        <div>
+        <h3 routerLink="/charitydetail">Feed Children Around World</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p>
+        	<ion-row>
+		<!--><ion-col size="6">
+        <ion-button shape="round">Give Now</ion-button>
+		</ion-col></-->
+		<ion-col size="12" class="ion-no-padding">
+		<p class="ion-text-left"><b>5000 Meals</b></p>
+		</ion-col>
+		</ion-row>
+		
+      </div>
+      </div>
+    </ion-slide>
+    <ion-slide  hm-slider>
+      <img src="assets/images/sliderimg3.jpg" style="width:100%;"/>
+      <div class="sld_cnt">
+        <div>
+        <h3 routerLink="/charitydetail">Feed Children Around World</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p>
+     	<ion-row>
+		<!--><ion-col size="6">
+        <ion-button shape="round">Give Now</ion-button>
+		</ion-col></-->
+		<ion-col size="12" class="ion-no-padding">
+		<p class="ion-text-left"><b>5000 Meals</b></p>
+		</ion-col>
+		</ion-row>
+      </div>
+      </div>
+	   
+    </ion-slide>
+    
+  </ion-slides>
+<ion-row>
+
+
+  <ion-col size="12" class="ion-padding-start ion-padding-end"> 
+    <div class="donationjar">
+      <h3><span>Donation</span> Jar</h3>
+  
+	  <div donationimg>
+	   <img src="assets/images/donationjar1.png"/>
+	  </div>
+     <p>Please press button below to donate 25 cents</p>
+<ion-button  expand="full" shape="round" class="btn-losns">Give Now</ion-button>
+<span>To Donate More <a href="javasctipt:void(0)">Click Here</a> </span>     
+    </div>
+  </ion-col>
+</ion-row>
+
+</ion-content>

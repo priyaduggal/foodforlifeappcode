@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "616880040152",
-    "project_id": "foodforlife-312813",
-    "storage_bucket": "foodforlife-312813.appspot.com"
+    "project_number": "644296139301",
+    "project_id": "ffldonate",
+    "storage_bucket": "ffldonate.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:616880040152:android:50cce39596349adfe14fad",
+        "mobilesdk_app_id": "1:644296139301:android:9a8282b6f901e4ad9b55cc",
         "android_client_info": {
-          "package_name": "io.foodforlife.com"
+          "package_name": "io.ffldonate.com"
         }
       },
       "oauth_client": [
         {
-          "client_id": "616880040152-f2b6ak0o95f8sqjfmafpj2em396k1bpu.apps.googleusercontent.com",
+          "client_id": "644296139301-bclcv7pn3qj4ir859u47hl5gmomhfunc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC0JbRHt0ufSuX_o48g13z3cz0n0xnAduk"
+          "current_key": "AIzaSyA4Cgfuy-AhYf0wnCABa-_x-3YyUPM81HA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "616880040152-f2b6ak0o95f8sqjfmafpj2em396k1bpu.apps.googleusercontent.com",
+              "client_id": "644296139301-bclcv7pn3qj4ir859u47hl5gmomhfunc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

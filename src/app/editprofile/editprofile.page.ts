@@ -35,6 +35,7 @@ donationlist=[];
 userdetails:any;
 IMAGES_URL:any = config.IMAGES_URL;
 first_name:any;
+phone:any;
 last_name:any;
 email:any;
 address:any;
@@ -269,7 +270,7 @@ public uploader:FileUploader = new FileUploader({url: ''});
 	update()
 	{
     this.is_submit_update = true;
-    if(this.errors.indexOf(this.first_name) >= 0 ||  this.errors.indexOf(this.last_name) >= 0 ||  this.errors.indexOf(this.email) >= 0 ||  this.errors.indexOf(this.address) >= 0){
+    if(this.errors.indexOf(this.first_name) >= 0 || this.errors.indexOf(this.phone) >= 0|| this.errors.indexOf(this.last_name) >= 0 ||  this.errors.indexOf(this.email) >= 0 ||  this.errors.indexOf(this.address) >= 0){
       return false;
     }
 	if(this.errors.indexOf(this.userid)>=0 )
@@ -290,6 +291,7 @@ public uploader:FileUploader = new FileUploader({url: ''});
 	frmData.append("facebook",this.facebook);
 	frmData.append("twitter",this.twitter);
 	frmData.append("linkedin",this.linkedin);
+	frmData.append("phone",this.phone);
 	frmData.append("id",this.userid);
 	
 	this.common.presentLoading();

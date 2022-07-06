@@ -23,7 +23,10 @@ export class TribesPage implements OnInit {
   userid:any;
   userdetails:any;
   IMAGES_URL:any = config.IMAGES_URL;
-  constructor(public modalController: ModalController,public api:ApiService, public router:Router,private common: CommonService) { }
+  constructor(public modalController: ModalController,
+  	public api:ApiService, 
+  	public router:Router,
+  	private common: CommonService) { }
 
   ngOnInit() {
   }
@@ -38,6 +41,10 @@ export class TribesPage implements OnInit {
 	  this.getcbeneficiaries();
 	  this.getactivities();
 	  
+  }
+   convertdate(date)
+  {
+	return date.replace(' ', 'T');
   }
   getuserdetails()
   {

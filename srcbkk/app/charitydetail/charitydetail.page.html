@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/home" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div detailbanner>
+<img src="{{IMAGES_URL}}/{{charity?.image}}"/>
+<h2>{{charity?.title}}</h2>
+</div>
+<div detailcontent class="ion-padding">
+<div badge>
+<!--span *ngFor="let tag of tags">{{tag}}</span-->
+</div>
+<h3>{{charity?.meals}} Meals Distributed</h3>
+<h2 heading>
+Overview
+</h2>
+<p>{{charity?.description}}</p>
+<!--h2 heading>
+Image Gallery
+</h2-->
+<!--ion-slides slidetable  #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider" *ngIf="images?.length>0">
+    <ion-slide  hm-slider *ngFor="let image of images">
+      <img src="{{IMAGES_URL}}/{{image?.image}}" style="width:100%;"/>
+    </ion-slide>
+</ion-slides-->
+<ion-button shape="round" expand="full" (click)="give(charity?.id)">Give Now</ion-button>
+</div>
+</ion-content>

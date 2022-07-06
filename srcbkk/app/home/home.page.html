@@ -1,0 +1,132 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header-->
+<ion-content home-page *ngIf="type_login==2">
+     <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Goals</ion-title>
+		<!--ion-buttons mr-10 (click)="presentModal()" slot="end">
+		  <img height="22px" src="assets/images/jar.png"/>
+		</ion-buttons-->
+      </ion-toolbar>
+	  </ion-header>
+      <ion-slides #slideWithNav [options]="slideOptsOne"   pager="true" class="home-slider">
+    
+    <ion-slide  hm-slider  *ngFor="let charity of list"  routerLink="/charitydetail/{{charity?.id}}">
+      <img src="{{IMAGES_URL}}/{{charity?.image}}" style="width:100%;"/>
+      <div class="sld_cnt">
+        <div>
+        <h3>{{charity?.title}}</h3>
+        <p>{{charity?.description.substring(0,100)}}...</p>
+		<ion-row>
+		<!--><ion-col size="6">
+        <ion-button shape="round">Give Now</ion-button>
+		</ion-col></-->
+		<ion-col size="12" class="ion-no-padding">
+		<p class="ion-text-left"><b>{{charity?.meals}} Meals</b></p>
+		</ion-col>
+		</ion-row>
+      </div>
+      </div>
+    </ion-slide>
+    
+  </ion-slides>
+<ion-row>
+
+
+  <ion-col size="12" class="ion-padding-start ion-padding-end"> 
+    <div class="donationjar">
+      <h3><span>Donation</span> Jar</h3>
+  
+	  <div donationimg>
+	   <img src="assets/images/don.gif"/>
+	  </div>
+     <!--p>Please press button below to donate 25 cents</p-->
+     <p>Click here to feed a child</p>
+	 <p>Each meal is only {{totalcents}} cents</p>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
+    </div>
+  </ion-col>
+</ion-row>
+
+</ion-content>
+
+<ion-content home-page    *ngIf="type_login==1">
+     <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Goals</ion-title>
+		<ion-buttons mr-10 (click)="presentModal()" slot="end">
+		  <img height="22px" src="assets/images/jar.png"/>
+		</ion-buttons>
+      </ion-toolbar>
+	  </ion-header>
+      <ion-slides #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider">
+    
+    <ion-slide  hm-slider *ngFor="let charity of list">
+      <img src="{{IMAGES_URL}}/{{charity?.image}}" style="width:100%;"/>
+      <div class="sld_cnt">
+        <div>
+        <h3 routerLink="/charitydetail/{{charity?.id}}">{{charity?.title}}</h3>
+        <p>{{charity?.description.substring(0,100)}}...</p>
+		<ion-row>
+		<ion-col size="6">
+        <ion-button shape="round" (click)="give(charity?.id)">Give Now</ion-button>
+		</ion-col>
+		<ion-col size="6">
+		<p class="ion-text-right"><b>{{charity?.meals}} Meals</b></p>
+		</ion-col>
+		</ion-row>
+      </div>
+      </div>
+    </ion-slide>
+   
+  </ion-slides>
+<ion-row>
+
+
+  <ion-col size="12" class="ion-padding-start ion-padding-end"> 
+    <div class="service_box home_page"> 
+	<h2 heads>Get Certified For Doing Good</h2>
+	<ion-slides #slideWithNav [options]="slideOptsOne"  (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="onSlideChanged($event)" pager="true" class="home-slider" loop="false" >
+	<ion-slide>
+    <div class="width100"> 
+      <h3><span>Feed </span>  A Child</h3>
+      <!--p>Show that your company cares</p-->
+	  <div omgcertify>
+	   <img src="assets/images/omg.png"/>
+	  </div>
+      <ion-button shape="round" fill="outline" href="https://omguarantee.com/company-registration/">Get Certified</ion-button>
+    </div>
+	  </ion-slide>
+     </ion-slides>
+    </div>
+  </ion-col>
+</ion-row>
+<ion-row>
+
+
+  <ion-col size="12" class="ion-padding-start ion-padding-end"> 
+    <div class="donationjar">
+      <h3><span>Donation</span> Jar</h3>
+  
+	  <div donationimg>
+	   <img src="assets/images/don.gif"/>
+	  </div>
+     <!--p>Please press button below to donate 25 cents</p-->
+     <p>Click here to feed a child</p>
+	  <p>Each meal is only 25 cents</p>
+<ion-button  expand="full" shape="round" class="btn-losns" (click)="give_in()">Give Now</ion-button>
+<span>To Donate More <a href="javasctipt:void(0)"(click)="give_in()">Click Here</a> </span>     
+    </div>
+  </ion-col>
+</ion-row>
+</ion-content>

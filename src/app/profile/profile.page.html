@@ -35,14 +35,14 @@
 <a btnaccount  routerLink="/signup" href="javascript:void(0)"*ngIf="errors.indexOf(userid)>=0">Create Account or Login</a>
 </div>
 </div>
-<div profileinner *ngIf="userdetails?.type==1">
+<div profileinner >
 <p class="profile_listing">First Name <span style="float: right;font-weight: 200;">{{userdetails?.first_name}}</span></p> 
 <p class="profile_listing">Last Name <span style="float: right;font-weight: 200;">{{userdetails?.last_name}}</span></p> 
 <p class="profile_listing">Email <span style="float: right;font-weight: 200;">  {{userdetails?.email}}</span></p> 
 <p class="profile_listing">Address <span style="float: right;font-weight: 200;">{{userdetails?.address}}</span></p> 
 
 </div>
-<div profileinner *ngIf="userdetails?.type==2">
+<div profileinner >
 <h2 heading>
 Your Donations
 </h2>
@@ -73,7 +73,7 @@ Your Donations
 		<ion-note>
 		<ion-icon name="calendar-outline">
 		</ion-icon>
-		{{don?.donated_at | date : 'd MMM yyyy'}}
+		{{convertdate(don?.donated_at) | date : 'd MMM yyyy'}}
 		</ion-note>
 		<span class="dontns_share">
 		<ion-icon name="share-social-outline" class="socialshare" (click)="socialshare(don)"></ion-icon>

@@ -1,0 +1,13 @@
+ion-content{
+    --background: #0000006e;
+    .popupconfirm p {
+        text-align: center;
+    }
+    .popup_actionwrap {
+        display: flex;
+        ion-button {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

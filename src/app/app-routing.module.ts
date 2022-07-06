@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+	loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+   // loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
   },
   { 
     path: '', loadChildren: './tabs/tabs.module#TabsPageModule' 
@@ -157,6 +158,18 @@ const routes: Routes = [
   {
     path: 'changepassword',
     loadChildren: () => import('./changepassword/changepassword.module').then( m => m.ChangepasswordPageModule)
+  },
+  {
+    path: 'addcard',
+    loadChildren: () => import('./addcard/addcard.module').then( m => m.AddcardPageModule)
+  },
+  {
+    path: 'paymentlistnew',
+    loadChildren: () => import('./paymentlistnew/paymentlistnew.module').then( m => m.PaymentlistnewPageModule)
+  },
+  {
+    path: 'thankyou',
+    loadChildren: () => import('./thankyou/thankyou.module').then( m => m.ThankyouPageModule)
   },
 
 ];

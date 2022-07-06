@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
 first_name:any;
 last_name:any;
 email:any;
+is_logged_in_user:any;
 profile_pic:any;
   constructor(
   private platform: Platform,
@@ -38,7 +39,7 @@ profile_pic:any;
 	private router: Router,
 	private globalFooService: GlobalFooService
   ) {
-	 
+	 this.is_logged_in_user=localStorage.getItem('is_logged_in_user');
 	  this.globalFooService.getObservable().subscribe((data) => {
 			if(this.errors.indexOf(data.foo)==-1)
 			{
@@ -61,6 +62,12 @@ profile_pic:any;
     this.initializeApp();
   }
  initializeApp() {
+	 
+	  if(localStorage.getItem('is_logged_in_user') == 'true'){
+		   this.router.navigate(['/tabs/home']);
+	  }else{
+		   this.router.navigate(['/']);
+	  }
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();

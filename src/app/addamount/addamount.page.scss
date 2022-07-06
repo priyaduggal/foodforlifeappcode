@@ -94,3 +94,108 @@ ion-content
 			letter-spacing: 1px;
 		}
 }
+[payment_list]
+{
+	padding: 20px 0px 0px;
+	ion-item-sliding
+	{
+		background: rgba(255 , 255 , 255 , 1);
+		width: 100%;
+		border-radius: 12px;
+		border: 1px solid #fafafa;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.03);
+        margin-bottom: 20px;    			
+		ion-item
+		{
+		    --background:var(--ion-color-white);
+			--background: var(--ion-color-white);
+			--padding-start: 10px;
+			--inner-padding-end: 0px;
+			--padding-bottom: 10px;
+			--padding-top: 10px;
+			--padding-end: 10px;			
+			ion-label
+			{
+				margin:0px;		
+				.box-crdits 
+				{
+					width: 100%;
+					.top-cips 
+					{
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+					    margin-bottom: 5px;	
+						p {
+							font-size: 10px;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							margin: 0px;
+							color:var(--ion-color-black);
+							span {
+								display: block;
+								font-size: 13px;
+								font-weight: 500;
+								letter-spacing: 2px;
+							}
+						}
+					}
+					.accnt-nusm 
+					{
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						margin: 0px 5px 0px 0px;
+						letter-spacing: 3px;
+						span
+						{
+							color: rgba(0,0,0,0.8);
+							font-size: 12px;
+							font-weight: 500;
+						}
+					}
+					.tst-lta 
+					{
+						p {
+							color: rgba(0,0,0,0.8);
+							font-size: 10px;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							margin: 0px;
+							span {
+								display: block;
+								font-size: 13px;
+								font-weight: 500;
+								letter-spacing: 2px;
+							}
+						}
+					}			
+				}		
+			}		
+		}
+        ion-item-options
+        {
+		    ion-item-option
+			{
+			    padding: 0px 1px;
+				font-size: 20px;
+				outline: 0px;
+				&[payment_delete]
+				{
+					background: var(--ion-color-primary);
+				}
+				&[payment_edit]
+				{
+					background: var(--ion-color-green);
+				}
+			}
+		}			
+	}
+}[addpayment] {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom:10px;
+	a
+	{text-decoration: none;
+	}
+}

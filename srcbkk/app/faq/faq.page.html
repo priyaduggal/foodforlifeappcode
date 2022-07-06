@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	<ion-back-button defaultHref="/tabs/settings" slot="start">
+	</ion-back-button>
+	<ion-title class="ion-text-center">FAQ</ion-title>
+  </ion-toolbar>
+  </ion-header>
+<ion-content class="ion-padding">
+<div faqlist *ngFor="let faq of faqlist">
+<h3 subhead>
+ {{faq?.title}}
+</h3>
+	<p>{{faq?.description}}</p>
+</div>
+<div  *ngIf="faqlist.length==0" class="skeletonclass">
+<div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%;" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div>
+<div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%;" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div><div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%;" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div><div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div><div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div><div faqlist>
+<h3 subhead>
+ <ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text>
+</h3>
+	<p><ion-skeleton-text animated style="width: 100%" ></ion-skeleton-text></p>
+</div>
+</div>
+
+
+</ion-content>

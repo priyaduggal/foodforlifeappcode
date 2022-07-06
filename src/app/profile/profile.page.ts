@@ -14,6 +14,8 @@ import { Crop } from '@ionic-native/crop/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { SocialshareoptionsPage } from '../socialshareoptions/socialshareoptions.page';
 declare var window: any; 
+//import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet/ngx';
+import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet/ngx';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -39,6 +41,7 @@ IMAGES_URL:any = config.IMAGES_URL;
   constructor(public modalController: ModalController,
   private socialSharing: SocialSharing,
   public api:ApiService,
+  private actionSheet: ActionSheet,
   public router:Router,
   private common: CommonService,
   private camera: Camera,
@@ -48,6 +51,14 @@ IMAGES_URL:any = config.IMAGES_URL;
 
   ngOnInit() {
   }
+
+
+
+  convertdate(date)
+  {
+	return date.replace(' ', 'T');
+  }
+
  async socialshare(donation)
   {
 	 

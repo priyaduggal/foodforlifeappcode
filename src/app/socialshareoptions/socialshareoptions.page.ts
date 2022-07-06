@@ -72,6 +72,7 @@ cancel()
 	this.modalController.dismiss();
 }
 ShareWhatsapp(){
+
     this.socialSharing.shareViaWhatsApp(this.description)
   }
   ShareFacebook(){
@@ -83,10 +84,19 @@ ShareWhatsapp(){
     //this.socialSharing.share(text, 'MEDIUM', null, url)
   }
   SendEmail(){
-    this.socialSharing.shareViaEmail( this.description, 'FoodForLife Donations', ['email@address.com'])
+      this.socialSharing.shareViaEmail( this.description, 'FoodForLife Donations', ['recipient@example.org']).then(function() {
+  console.log('Successful share');
+}).catch(function(error) {
+  console.log('Error sharing:', error)
+});
+
+
+    //this.socialSharing.shareViaEmail( this.description, 'FoodForLife Donations', ['email@address.com'])
   }
 
   SendTwitter(){
+
+
     this.socialSharing.shareViaTwitter(this.description, this.imgurl, this.link)
   }
 

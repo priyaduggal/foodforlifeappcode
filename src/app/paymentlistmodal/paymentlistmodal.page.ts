@@ -273,6 +273,8 @@ shippingType: string = "shipping"
 			});
 	  }else if(text=='stripe')
 	  {
+		  
+		 
 		  this.callstripe();
 		  
 		  

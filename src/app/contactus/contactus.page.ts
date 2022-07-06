@@ -18,6 +18,8 @@ email:any;
 message:any;
 reg_exp:any;
 phone:any;
+userdetails:any;
+userid:any;
 errors:any=['',null,undefined];
   constructor(private fb: Facebook,
    private googlePlus: GooglePlus,
@@ -27,7 +29,45 @@ errors:any=['',null,undefined];
   this.reg_exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 }
+ ionViewDidEnter()
+  {
+	   this.userid=localStorage.getItem('userid');
+	   this.getuserdetails();
+  }
+   	
+  getuserdetails()
+  {
+	  let dict ={
+		id: this.userid
+		};
+		
+		if(this.errors.indexOf(this.userid)>=0 )
+		{
 
+		this.common.presentToast('Please login first!.','danger');
+		return false;
+		}
+		this.common.presentLoading();
+  	 	this.api.post('Userdetails', dict,'').subscribe((result) => {  
+		this.common.stopLoading();
+		var res;
+		res = result;
+		if(res.status==1){
+		this.userdetails=res.data;
+		this.email=this.userdetails.email;
+		this.name=this.userdetails.first_name;
+		this.phone=this.userdetails.phone;
+	
+		console.log(this.userdetails);
+		}else
+		{
+		this.common.presentToast(res.message,'danger');
+		}
+        },
+        err => {
+             
+        });
+  }
   ngOnInit() {
   }
   save()
